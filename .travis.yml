@@ -4,4 +4,4 @@ compiler:
 sudo: false
 
 script:
-  - git help lfs
+  - git lfs
