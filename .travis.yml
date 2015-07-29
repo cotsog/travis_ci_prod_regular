@@ -1,7 +1,5 @@
-language: cpp
-compiler:
-  - clang
-sudo: false
-
 script:
-  - git lfs
+  - echo test
+
+addons:
+  sauce_connect: true
