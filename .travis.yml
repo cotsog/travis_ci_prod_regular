@@ -4,4 +4,4 @@ compiler:
 sudo: false
 
 script:
-  - clang --version
+  - git help lfs
