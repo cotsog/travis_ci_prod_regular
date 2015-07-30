@@ -1,7 +1,10 @@
 script:
-  - apt-cache showpkg cmake
-  - cmake --version
+  - gcc-5 --version
+  - g++-5 --version
 addons:
   apt:
+    sources:
+    - ubuntu-toolchain-r-test
     packages:
-      - cmake
+    - gcc-5
+    - g++-5
