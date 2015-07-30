@@ -1,1 +1,5 @@
 script: cmake --version
+addons:
+  apt:
+    packages:
+      - cmake
