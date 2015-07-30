@@ -1,4 +1,6 @@
-script: cmake --version
+script:
+  - apt-cache showpkg cmake
+  - cmake --version
 addons:
   apt:
     packages:
