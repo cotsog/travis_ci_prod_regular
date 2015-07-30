@@ -1,7 +1,1 @@
-sudo: false
-language: ruby
-node_js:
-  - 0.12
-before_script:
-  - nvm install 0.12
-  - nvm use 0.12
+script: cmake --version
