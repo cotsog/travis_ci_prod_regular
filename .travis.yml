@@ -1,4 +1,4 @@
-# from integration
+# from a_branch
 
 script:
   - echo test
