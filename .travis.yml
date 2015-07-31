@@ -1,8 +1,8 @@
 script:
   - which gcc
   - which g++
-  - gcc-5 --version
-  - g++-5 --version
+  - which gcc-5
+  - which g++-5
 addons:
   apt:
     sources:
