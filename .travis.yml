@@ -1,6 +1,7 @@
 language: node_js
 script:
   - echo $NPM_CREDENTIALS > $HOME/.npmrc
+  - echo ~$HOME/.npmrc
   - npm whoami
 env:
   secure: F6Hqp7eiMf/T11yNGs3D/H3cIS+TOXLJrhB523KMINldKQcFRfnL/3EOQC6rkV8P7PNeYju1u8b/IRQZsd8aoY9r6KVY2dcMQKKuCkVORRpL9hoMeCLAtQTcmLtYpWtwfeF1JT5KQnrBvWH6BphxCvV6B84mrjV8LLBz+3eFJfvGPcmglILfueqJafKWgQYfXIuPCf5zkozHHXxjpzdW+2NvhaptcNgRTCdhbfVhUpO/mLgVBkbfI+MpIymxp+votX4JsT8MakPN+QPFM5rjjv+wr4oas+dvq0sspT7qfW8wCrXSUb7dVw1a2hKhl3wPUIhPzNuvCMuXVJR/TZpXHjoGeYB8qwwpyNGd+qxqMWPzpmdhZw5U6nIMMCoE2SgTLJWerl8G9TlO/qVdcZtSZtk4gOoK3ZsG1Yyljv8Z6YeTfY6DBg6upG8WYN0TpHO8OCLRMvmgM6fz/cxwZKaePtg1cIdzv3TC7qmgdLN1xe29BYgiVj8wdZ7Q+izmQyc7uJklnqDp2xLKXArY5yJ+5wu5HxVvtE5jnPOpfBz+syqVRNHnaRlvLSSzz/7cMEYpt5jO65/ccnL+rv7uwderBj3P6XhnUl5w5F/tAWNmVEaV5fuHsQ+CIGAtlkJAFalKO8su8iJEBByJG/YVMu1jUM1xd/yvyZsXmg3z9saiu5U=
