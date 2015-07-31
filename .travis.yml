@@ -1,6 +1,8 @@
 script:
   - which gcc
+  - readlink -f /usr/bin/gcc
   - which g++
+  - readlink -f /usr/bin/g++
   - which gcc-5
   - which g++-5
 addons:
