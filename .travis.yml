@@ -1,5 +1,8 @@
 language: node_js
 script:
+  - npm --version
+  - curl -L https://www.npmjs.com/install.sh | sh
+  - npm --version
   - cat $HOME/.npmrc
   - npm config set //registry.npmjs.org/:_authToken $NPM_CREDENTIALS
   - npm whoami
