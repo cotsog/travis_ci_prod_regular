@@ -3,6 +3,7 @@ script:
   - echo $HOME/.npmrc
   - echo //registry.npmjs.org/:_authToken=${NPM_CREDENTIALS} > $HOME/.npmrc
   - npm whoami
+  - cat $HOME/.npmrc
 env:
   global:
     secure: fUvZjZfPo9hw7ckK09qkVrFk87cL5wiF32NKyzNCkZ+hIxz6zVnI8SqvRrS3GtuAaTqpHS0WsAGiH0ql6pmjsF4yWas6wy0Zx9iQuBmlrU14XZO5mms4X61tdTRHuC62N7hVf4AGnD9qxqvCa8t1N3u9Xg2scdIj05+J/b+ywCs6YoZYjaAbOg7CYMUnIbfWfkl7au7TzTBhQiep5kI152MdMKwwJL3Ysj6MNcnvNCqKqP99GLEbUIaMA4L2Kb43VsFnbWdcmLgOdEsn4DzqHqDf+8rQc1W5uTfm/zw3BE9qm1Mw2V6BUOrv0WuAL5GH4UZdTdar9G4wQZ3DXpdNATewNCaCXcTH3xu3rRP8AeyQfNNoX3DUqpj3MTn8Q0bogX+T/E+5mVVeNX0KgPxO1i1ean2W1ZrlViRNij7z8Vb1g5FkR3fOcES+QF+aSSk2MHzOXOPQ6ESdEazuNhiKhtIWSqc7Nfd4GVeCSkOBqKUVSgv19JpyIfGlDCe9+vMkrAO4SjkxnsRYEKajUtgNGcVzjYT8NPaxpZ5IZqmzx/YBlUHh9JuLz/nuEhPMwa/vyDYmIy/VmvVMZ8YX5EDdUWb3R/RS/87fubL9nXd2UdYarsHeCO5CHu9pdibk1n+ycfuLJVz7O9lohU5I8k0At1KZxD5ynkL9onx4Z/eCQak=
