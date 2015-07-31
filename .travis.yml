@@ -1,7 +1,7 @@
 language: node_js
 script:
   - echo $HOME/.npmrc
-  - echo //registry.npmjs.org/:_authToken=${NPM_CREDENTIALS} > $HOME/.npmrc
+  - npm config set //registry.npmjs.org/:_authToken $NPM_CREDENTIALS
   - npm whoami
   - cat $HOME/.npmrc
 env:
