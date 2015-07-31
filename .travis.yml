@@ -1,3 +1,4 @@
+sudo: required
 script:
   - which gcc
   - readlink -f /usr/bin/gcc
@@ -5,6 +6,7 @@ script:
   - readlink -f /usr/bin/g++
   - which gcc-5
   - which g++-5
+  - sudo unlink /usr/bin/gcc && sudo ln -s /usr/bin/gcc /usr/bin/gcc-5
 addons:
   apt:
     sources:
