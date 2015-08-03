@@ -1,3 +1,2 @@
 cython==0.22
 cytoolz==0.7.2
-bcolz==0.8.1
