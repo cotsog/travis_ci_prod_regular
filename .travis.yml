@@ -1,4 +1,6 @@
 sudo: required
+services:
+  - docker
 install:
   - chmod +x ./install_gnuplot.sh
   - sudo ./install_gnuplot.sh
