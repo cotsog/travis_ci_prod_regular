@@ -2,5 +2,4 @@ sudo: required
 install:
   - chmod +x ./install_gnuplot.sh
   - sudo ./install_gnuplot.sh
-  # - find . | grep gnuplot
   - gnuplot --version
