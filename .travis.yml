@@ -1,5 +1,6 @@
+sudo: required
 install:
   - chmod +x ./install_gnuplot.sh
-  - ./install_gnuplot.sh
-  - find . | grep gnuplot
+  - sudo ./install_gnuplot.sh
+  # - find . | grep gnuplot
   - gnuplot --version
