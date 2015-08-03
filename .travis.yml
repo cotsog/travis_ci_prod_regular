@@ -1,4 +1,4 @@
 language: python
 script:
-  - pip install --user cython
+  - pip install cython
   - cython --version
