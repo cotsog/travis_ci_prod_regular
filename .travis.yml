@@ -1,15 +1,4 @@
-language: node_js
-node_js:
-  - "0.12"
+language: python
 script:
-  #- npm --version
-  #- curl -L https://www.npmjs.com/install.sh | sh
-  # - npm --version
-  # - cat $HOME/.npmrc
-  # - npm config set //registry.npmjs.org/:_authToken $NPM_CREDENTIALS
-  # - npm whoami
-  # - cat $HOME/.npmrc
-  - mysql --version
-env:
-  global:
-    secure: i1i4XdsZcuMMyCW0LXRMuGE7lj7SukJR7C7BiYD5RQ5mDNGL3+tsQPXd24Sre3Me6Uc7gATgXL0mg6hS3cnzVY9ilqDFTbFMwAi9YZu1hByfsB2l2tgE6vRLB8w1AiAyeGwC1SGh1iNvWIjtmpliAnoLQs1Ip4HSPqbu3h9eF8kgmszUwD3pGJAqnwO1uDYfqSVsJZxS/U3Ie8lFiXXbjaRorVeJ+ObRQPgtXXC91kXUQT6uGAmqjUzaMvj7g5OH/ZrcZEHfYMWusylNFK+7bAo6qzKvtaE6OfRGT70tyvM1CAVmSIu7ibv9P74Uc/BV6CUpA9VzZ57EIja1dxIbTN/Nh/a3ICJ1gslgSmntcWDwco4fQWAGAX1/9Bdtk68iLPIQUcLZy9hyQ1vN7XJKynZ84E2qJu8/u8KWhrOMeBsCRpBkWHfLmCAxmKIwrsPebOxtMzFjXfqgL8nUvjQ/TmWXdZGueneGFl9uKPbMd3tsVsMpTfjpH0NYH/AHnSjNYTw1XdiamZXVk4QDC9qjxvwtC1rTnIsto6dZG/Dglb79l92V7Kkc600/jjDUa4p3+9X2T/PwTasxpKgsl5hxvtdL4q5DzHLlTssawkpZzpGQ7ph+0OTTnDGJbbmQBw7+Ugaq5h1FRESQIHX8meSGSmoo6P5kgx0mhyUj1GADSow=
+  - pip install --user cython
+  - cython --version
