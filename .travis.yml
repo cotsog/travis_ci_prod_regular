@@ -1,4 +1,6 @@
 language: python
+before_install:
+  - pip install cython
 install:
   - pip install -r requirements.txt
 script:
