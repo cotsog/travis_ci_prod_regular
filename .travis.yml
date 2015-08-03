@@ -5,4 +5,4 @@ install:
   - pip install -r requirements.txt
 script:
   # - pip install cython
-  # - cython --version
+  - cython --version
