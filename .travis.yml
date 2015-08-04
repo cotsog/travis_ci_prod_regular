@@ -5,7 +5,11 @@ addons:
     sources:
       - ubuntu-sdk-team
     packages:
+      - libqt5webkit5-dev
       - qtdeclarative5-dev
 
+before_script:
+  - export QMAKE=/usr/lib/x86_64-linux-gnu/qt5/bin/qmake
+
 script:
-  - qt5-qmake --version
+  - qmake --version
