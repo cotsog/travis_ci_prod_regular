@@ -1,22 +1,11 @@
 language: cpp
 
-sudo: required
-services:
-  - docker
-
 addons:
   apt:
     sources:
-      - ubuntu-toolchain-r-test
+      - ubuntu-sdk-team
     packages:
-      - gcc-4.8
-      - g++-4.8
+      - qtdeclarative5-dev
 
 script:
-  - gcc --version
-  - sudo unlink /usr/bin/gcc && sudo ln -s /usr/bin/gcc-4.8 /usr/bin/gcc
-  - gcc --version
-
-compiler:
-  - clang
-  - gcc
+  - qmake --version
