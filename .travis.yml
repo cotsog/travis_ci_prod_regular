@@ -8,4 +8,4 @@ addons:
       - qtdeclarative5-dev
 
 script:
-  - qmake-qt5 --version
+  - qt5-qmake --version
