@@ -1,6 +1,15 @@
-sudo: required
-install:
-  - chmod +x ./install_gnuplot.sh
-  - sudo ./install_gnuplot.sh
-  # - find . | grep gnuplot
-  - gnuplot --version
+language: cpp
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - gcc-4.8
+      - g++-4.8
+
+script: gcc --version
+
+compiler:
+  - clang
+  - gcc
