@@ -1,6 +1,8 @@
 language: cpp
 
 sudo: required
+services:
+  - docker
 
 addons:
   apt:
