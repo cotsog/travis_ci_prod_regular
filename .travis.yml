@@ -1,9 +1,7 @@
-language: cpp
+sudo: false
 
-addons:
-  apt:
-    packages:
-      - luajit
-
+before_install:
+  - npm install -g npm 
+  
 script:
-  - /usr/bin/luajit-2.0.0-beta9 --version
+  - npm -v
