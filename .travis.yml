@@ -1,11 +1,7 @@
-language: cpp
-
-addons:
-  apt:
-    packages:
-      - luajit
-      - libluajit-5.1-dev
-
-script:
-  - /usr/bin/luajit-2.0.0-beta9 --version
-  - ls -al /usr/include/luajit-2.0/
+language:android
+android:
+  components:
+    - build-tools-21.1.2
+    - android-21
+    - extra
+script:	echo $GRADLE_OPTS
