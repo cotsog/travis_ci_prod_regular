@@ -4,4 +4,4 @@ android:
     - build-tools-22.0.1
     - android-21
     - extra
-script:	echo $GRADLE_OPTS
+script:	java -XX:+PrintFlagsFinal -version | grep HeapSize
