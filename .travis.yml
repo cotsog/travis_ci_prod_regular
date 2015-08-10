@@ -5,4 +5,4 @@ language: java
 install:
   - sudo apt-get install openjdk-8-jdk
 script:
-  - java --version
+  - java -version
