@@ -1,2 +1,138 @@
-cytoolz==0.7.2
-bcolz==0.8.1
+-i https://pypi.gocept.com/simple
+--extra-index-url https://pypi.python.org/simple
+
+# Web Server
+gunicorn==18.0
+gevent==1.0.1
+
+# Middleware
+Paste==1.7.5.1
+turnstile==0.7.0b2
+
+# Monitoring
+newrelic==2.54.0.41
+
+# App Framework
+pyramid==1.5.1
+pyramid-chameleon==0.3
+pyramid-debugtoolbar==2.1
+pyramid-geoip==0.2.3
+pyramid-layout==0.9
+pyramid-mako==1.0.2
+pyramid-raven==0.1.2
+pyramid-tm==0.7
+pyramid-weblayer==0.14.1
+pyramid_hsts==1.2.3
+
+# Zope is a Pyramid dependency, which we're specific about to make sure we get
+# a set of compatible libraries.
+zope.component==4.0.2
+zope.deprecation==4.0.0
+zope.event==4.0.0
+zope.interface==4.0.1
+zope.proxy==4.0.0
+
+# Memcache.
+pylibmc==1.2.3
+python-binary-memcached==0.19
+
+# Templating.
+mako==1.0.0
+https://opendesk-packages.herokuapp.com/dogpile.cache-0.5.4.1.tar.gz
+
+# Session
+beaker==1.6.4
+https://opendesk-packages.herokuapp.com/beaker_extensions-0.2.4dev.tar.gz
+pyramid-beaker==0.8
+
+# Database client
+psycopg2==2.5.3
+gevent-psycopg2==0.0.3
+
+# ORM
+sqlalchemy==0.9.8
+zope.sqlalchemy==0.7.5
+pyramid_basemodel==0.3.4
+
+# Migrations
+alembic==0.6.5
+
+# Redis.
+redis==2.10.1
+pyramid_redis==0.1.3
+
+# Instance token cache.
+alkey==0.6
+
+# Schema
+https://opendesk-packages.herokuapp.com/colander-1.0b3.tar.gz
+https://opendesk-packages.herokuapp.com/cornice-0.17.tar.gz
+
+# Forms
+deform==0.9.7
+https://opendesk-packages.herokuapp.com/pyramid_deform-0.2a6.tar.gz
+# n.b.: we install the version of deform_bootstrap that's compatible
+# with bootstrap3 for opendesk.
+https://opendesk-packages.herokuapp.com/deform_bootstrap-3.0.2.tar.gz
+# and we install the version that's compatible with bootstrap2 for
+# fabhub -- having renamed that egg `deform_bootstrap2` in order to
+# allow it to co-exist in the same env.
+# https://opendesk-packages.herokuapp.com/deform_bootstrap2-0.3.6.tar.gz
+https://s3-eu-west-1.amazonaws.com/package-index/deform_bootstrap2-0.3.7.tar.gz
+
+# Mailer
+pyramid_postmark==0.3.2
+
+# Asset pipeline
+assetgen==0.3.4
+pyramid-assetgen==0.5.5
+
+# Authentication
+pyramid_simpleauth==0.7.1
+
+# Shell
+bpython
+
+# Testing
+coverage==3.6
+mock==1.0.1
+nose==1.3.0
+WebTest==2.0.15
+
+# Utils
+autopep8==1.0.3
+babel==1.3
+boto==2.31.1
+dnspython==1.11.1
+embedly==0.5.0
+fysom==2.0.1
+json2html==0.3
+html2text==3.200.3
+htmllaundry==2.0
+inflect==0.2.4
+markdown2==2.2.1
+nameparser==0.2.7
+pygeoip==0.3.1
+pypdf2==1.18
+python-dateutil==2.2
+pytz==2014.4
+reportlab==3.1.44
+requests==2.3.0
+simplejson==3.5.3
+slugify==0.0.1
+stripe==1.18.0
+wsgicors==0.4
+wsgiproxy==0.2.2
+xlrd==0.9.3
+
+# Createsend.
+-e git+https://github.com/campaignmonitor/createsend-python.git#egg=createsend
+# Patched Podio py API.
+-e git+https://github.com/opendesk/podio-py.git#egg=podio-py
+# Segment.io
+-e git+https://github.com/segmentio/analytics-python.git#egg=analytics
+
+# XXX temporary -- fix this once stabalised.
+-e git+https://github.com/opendesk/ntorque.git#egg=ntorque
+-e git+https://github.com/opendesk/pyramid_torque_engine.git#egg=pyramid_torque_engine
+-e git+https://github.com/opendesk/winnow.git#egg=winnow
