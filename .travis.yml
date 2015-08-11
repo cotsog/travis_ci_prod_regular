@@ -1,12 +1,7 @@
-language: java
-
-sudo: required
-
-jdk:
-  - oraclejdk8
-
-install: true
-
-script:
-  - sudo apt-get update && sudo apt-get install oracle-java8-installer
-  - java -version
+language: python
+python: 2.7
+install:
+  - pip install -U pip
+  - pip install setuptools==0.8
+  - pip install setuptools_git==1.1
+  - pip install -r requirements.txt
