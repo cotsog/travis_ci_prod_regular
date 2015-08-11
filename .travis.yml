@@ -4,4 +4,4 @@ services:
 language: python
 
 before_install:
-  - sudo apt-get install libcmph-dev
+  - sudo apt-get install cmph
