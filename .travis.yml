@@ -2,10 +2,14 @@ sudo: required
 services:
   - docker
 language: java
-install:
+jdk:
+  - openjdk7
+  - openjdk8
+before_install:
   - sudo add-apt-repository ppa:openjdk-r/ppa -y
   - sudo apt-get update -q
   - sudo apt-get install openjdk-8-jdk
-  - sudo update-java-alternatives -s java-1.8.0-openjdk-amd64
+  # - sudo update-java-alternatives -s java-1.8.0-openjdk-amd64
 script:
   - java -version
+  - javac -version
