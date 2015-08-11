@@ -6,8 +6,8 @@ jdk:
   - openjdk7
   - openjdk8
 before_install:
-  - [[ "$TRAVIS_JDK_VERSION" = "openjdk8" ]] && sudo ./install_openjdk8.sh
-  - [[ "$TRAVIS_JDK_VERSION" = "openjdk8" ]] && jdk_switcher use openjdk8
+  - [ "$TRAVIS_JDK_VERSION" == "openjdk8" ] && sudo ./install_openjdk8.sh
+  - [ "$TRAVIS_JDK_VERSION" == "openjdk8" ] && jdk_switcher use openjdk8
 script:
   - java -version
   - javac -version
