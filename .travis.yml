@@ -1,14 +1,12 @@
-sudo: required
-services:
-  - docker
 language: java
+
+sudo: required
+
 jdk:
-  - openjdk7
-  - openjdk8
-before_install:
-  - if [ "$TRAVIS_JDK_VERSION" == "openjdk8" ]; then chmod +x ./install_openjdk8.sh; fi
-  - if [ "$TRAVIS_JDK_VERSION" == "openjdk8" ]; then sudo ./install_openjdk8.sh; fi
-  - if [ "$TRAVIS_JDK_VERSION" == "openjdk8" ]; then jdk_switcher use openjdk8; fi
+  - oraclejdk8
+
+install: true
+
 script:
+  - sudo apt-get update && sudo apt-get install oracle-java8-installer
   - java -version
-  - javac -version
