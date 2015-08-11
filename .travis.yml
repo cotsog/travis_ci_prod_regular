@@ -1,7 +1,7 @@
 language: go
 
 go:
-  - 1.5
+  - 1.5rc1
 
 script:
   - export GO15VENDOREXPERIMENT=1
