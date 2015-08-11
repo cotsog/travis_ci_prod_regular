@@ -1,9 +1,9 @@
-language: python
-python: 2.7
-install:
-  - pip install --upgrade setuptools
-  - pip install --upgrade pip
-  - pip install setuptools_git==1.1
-  - pip install -r requirements.txt
+language: go
+
+go:
+  - 1.5
+
 script:
-  - easy_install --version
+  - export GO15VENDOREXPERIMENT=1
+  - echo $TRAVIS_GO_VERSION
+  - go --version
