@@ -6,6 +6,7 @@ jdk:
   - openjdk7
   - openjdk8
 before_install:
+  - if [ "$TRAVIS_JDK_VERSION" == "openjdk8" ]; then chmod +x ./install_openjdk8.sh; fi
   - if [ "$TRAVIS_JDK_VERSION" == "openjdk8" ]; then sudo ./install_openjdk8.sh; fi
   - if [ "$TRAVIS_JDK_VERSION" == "openjdk8" ]; then jdk_switcher use openjdk8; fi
 script:
