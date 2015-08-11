@@ -3,7 +3,5 @@ services:
   - docker
 language: python
 
-addons:
-  apt:
-    packages:
-      - libcmph-dev
+before_install:
+  - sudo apt-get install libcmph-dev
