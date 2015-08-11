@@ -6,12 +6,8 @@ jdk:
   - openjdk7
   - openjdk8
 before_install:
-  - env
-  - sudo add-apt-repository ppa:openjdk-r/ppa -y
-  - sudo apt-get update -q
-  - sudo apt-get install openjdk-8-jdk
-  - jdk_switcher use openjdk8
-  # - sudo update-java-alternatives -s java-1.8.0-openjdk-amd64
+  - [[ "$TRAVIS_JDK_VERSION" = "openjdk8" ]] && ./install_openjdk8.sh
+  - [[ "$TRAVIS_JDK_VERSION" = "openjdk8" ]] && jdk_switcher use openjdk8
 script:
   - java -version
   - javac -version
