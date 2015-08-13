@@ -1,4 +1,3 @@
-sudo: required
 language: python
 install: pip install twine
 script: echo script
