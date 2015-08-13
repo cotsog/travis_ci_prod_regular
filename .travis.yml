@@ -1,6 +1,6 @@
 sudo: required
 language: python
-install: echo install
+install: pip install twine
 script: echo script
 deploy:
   provider: pypi
