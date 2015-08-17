@@ -1,9 +1,3 @@
-language: python
-install: pip install twine
-script: echo script
-deploy:
-  provider: pypi
-  user: username
-  password: password
-  server: https://mypackageindex.com/index
-  edge: true
+language: objective-c
+osx_image: xcode6.4
+script: xctool --version
