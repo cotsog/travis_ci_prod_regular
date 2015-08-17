@@ -1,5 +1,5 @@
 language: objective-c
 osx_image: xcode6.4
 before_install:
-  - brew switch xctool 0.21
+  - brew install xctool 0.2.1
 script: xctool --version
