@@ -1,4 +1,6 @@
 sudo: required
+services:
+  - docker
 language: python
 install: echo install
 script: echo script
