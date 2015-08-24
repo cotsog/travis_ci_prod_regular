@@ -1,5 +1,9 @@
-language: objective-c
-osx_image: xcode6.4
-before_install:
-  - brew install xctool 0.2.1
-script: xctool --version
+language: python
+install: echo install
+script: echo script
+deploy:
+  provider: pypi
+  user: username
+  password: password
+  server: https://mypackageindex.com/index
+  edge: true
