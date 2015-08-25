@@ -1,4 +1,4 @@
-# Comments test PR integration
+# Comments master
 sudo: required
 language: java
 jdk:
