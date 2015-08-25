@@ -7,3 +7,6 @@ jdk:
 script:
   - echo $JAVA_HOME
   - mvn -version
+
+branches:
+  only: [master]
