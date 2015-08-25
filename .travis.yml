@@ -1,3 +1,4 @@
+# test direct push
 script: echo test
 branches:
   only: [master]
