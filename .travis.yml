@@ -1,7 +1,12 @@
-# from integration
-
+# Comments test PR
+sudo: required
+language: java
+jdk:
+  - oraclejdk8
+  - oraclejdk7
 script:
-  - echo test
+  - echo $JAVA_HOME
+  - mvn -version
 
-addons:
-  sauce_connect: true
+branches:
+  only: [master]
