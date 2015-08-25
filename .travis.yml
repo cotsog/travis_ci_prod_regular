@@ -1,7 +1,3 @@
-# from a_branch
-
-script:
-  - echo test
-
-addons:
-  sauce_connect: true
+script: echot test
+branches:
+  only: [master]
