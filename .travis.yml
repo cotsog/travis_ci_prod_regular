@@ -1,4 +1,6 @@
-# test direct push
+before_install:
+  - mkdir travis-phantomjs-2.0
+  - wget https://s3.amazonaws.com/travis-phantomjs/phantomjs-2.0.0-ubuntu-12.04.tar.bz2 -O $PWD/travis-phantomjs-2.0/phantomjs-2.0.0-ubuntu-12.04.tar.bz2
+  - tar -xvf $PWD/travis-phantomjs/phantomjs-2.0.0-ubuntu-12.04.tar.bz2 -C $PWD/travis-phantomjs-2.0
+  - export PATH=$PWD/travis-phantomjs-2.0:$PATH
 script: echo test
-branches:
-  only: [master]
