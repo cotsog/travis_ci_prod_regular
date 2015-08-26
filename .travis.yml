@@ -3,4 +3,5 @@ addons:
     packages:
       - apache2
 
-script: httpd -S
+script:
+  - find -D tree /etc/apache2/
