@@ -5,3 +5,5 @@ addons:
 
 script:
   - find -D tree /etc/apache2/
+  - cat /etc/apache2/apache2.conf
+  - cat /etc/apache2/httpd.conf
