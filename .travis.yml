@@ -3,4 +3,5 @@ language: php
 
 script:
   - php -S localhost:8080 &
+  - sleep 10
   - curl localhost:8080
