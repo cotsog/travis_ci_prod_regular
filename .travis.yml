@@ -1,7 +1,5 @@
 sudo: false
-language: php
 
 script:
-  - php -S localhost:80 &
-  - sleep 10
-  - curl localhost:80
+  - chromedriver --version
+
