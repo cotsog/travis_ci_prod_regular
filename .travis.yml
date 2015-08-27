@@ -1,8 +1,6 @@
 sudo: false
-addons:
-  postgresql: "9.4"
+language: php
 
 script:
-  - postgres -V
-  - psql -V
-  - pg_config --version
+  - php -S localhost:8080
+  - curl localhost:8080
