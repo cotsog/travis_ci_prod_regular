@@ -1,2 +1,3 @@
+sudo: required
 script:
   - mysql -e "show variables like '%timeout%';"
