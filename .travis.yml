@@ -1,5 +1,2 @@
-sudo: required
-
 script:
-  - chromedriver --version
-
+  - mysql -e "show variables like '%timeout%';"
