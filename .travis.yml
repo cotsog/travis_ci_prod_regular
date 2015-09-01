@@ -1,4 +1,12 @@
-language: ruby
+sudo: false
+language: php
+
+addons:
+  hosts:
+    - pd.velenje.dev
+
 script:
-  - RAILS_ENV=test
-  - echo $RAILS_ENV
+  - php -S localhost:8080 &
+  - sleep 10
+  - curl pd.velenje.dev:8080
+  - curl localhost:8080
