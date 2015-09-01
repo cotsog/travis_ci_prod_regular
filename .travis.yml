@@ -1,12 +1,5 @@
 sudo: false
-language: php
-
-addons:
-  hosts:
-    - pd.velenje.dev
+language: ruby
 
 script:
-  - php -S localhost:8080 &
-  - sleep 10
-  - curl pd.velenje.dev:8080
-  - curl localhost:8080
+  - nvm ls
