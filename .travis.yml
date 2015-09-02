@@ -3,4 +3,4 @@ sudo: false
 language: ruby
 
 script:
-  - nvm ls
+  - gem install phantomjs -v 1.9.7.0
