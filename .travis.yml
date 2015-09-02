@@ -4,3 +4,4 @@ language: ruby
 
 script:
   - gem install phantomjs -v 1.9.7.0
+  - phantomjs --version
