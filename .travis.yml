@@ -3,7 +3,6 @@ sudo: false
 language: ruby
 
 script:
-  - curl http://rds.ca
-  - gem install phantomjs -v 1.9.7.0 -V
-  - phantomjs --version
-  - echo TESTSETSTSTSTSTSSTST
+  - mysql -e "show variables like '%timeout%';"
+  - mysql -e "set global wait_timeout =28800;"
+  - mysql -e "show variables like '%timeout%';"
