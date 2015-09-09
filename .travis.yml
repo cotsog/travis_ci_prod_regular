@@ -4,5 +4,5 @@ language: ruby
 
 script:
   - mysql -e "show variables like '%timeout%';"
-  - mysql -e "set global wait_timeout =28800;"
+  - mysql -e "set global wait_timeout = 28800;"
   - mysql -e "show variables like '%timeout%';"
