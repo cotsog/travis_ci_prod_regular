@@ -1,8 +1,3 @@
-# Trigger, trigger
 sudo: false
-language: ruby
+language: node_js
 
-script:
-  - mysql -e "show variables like '%timeout%';"
-  - mysql -e "set global wait_timeout = 28800;"
-  - mysql -e "show variables like '%timeout%';"
