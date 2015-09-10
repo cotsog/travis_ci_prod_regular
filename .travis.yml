@@ -1,6 +1,6 @@
 sudo: required
 services:
   - docker
-language: php
+language: python
 before_install: nvm ls
 
