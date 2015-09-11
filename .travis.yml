@@ -1,6 +1,4 @@
-sudo: required
-services:
-  - docker
+sudo: false
 language: python
 addons:
   apt:
@@ -9,5 +7,5 @@ addons:
       - libssl1.0.0
 
 script:
-  - openssl version
+  - openssl version -b
   - python -c "import ssl; print ssl.OPENSSL_VERSION"
