@@ -1,6 +1,11 @@
-sudo: false
-language: php
+language: python
+python: 2.7.9
 addons:
-  mariadb: '10.0'
+  apt:
+    packages:
+      - openssl
+      - libssl1.0.0
 
-script: mysql --version
+script:
+  - openssl version
+  - python -c "import ssl; print ssl.OPENSSL_VERSION"
