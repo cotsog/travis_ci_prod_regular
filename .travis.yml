@@ -1,6 +1,6 @@
 sudo: false
-language: python
+language: php
 addons:
   mariadb: '10.0'
 
-script: mariadb --version
+script: mysql --version
