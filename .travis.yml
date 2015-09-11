@@ -1,11 +1,6 @@
-sudo: required
-services:
-  - docker
+sudo: false
 language: python
 addons:
-  apt:
-    packages:
-      - openssl
-      - libssl1.0.0
+  mariadb: '10.0'
 
-script: openssl version
+script: mariadb --version
