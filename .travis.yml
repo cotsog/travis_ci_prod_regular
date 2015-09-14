@@ -15,15 +15,15 @@ android:
     - platform-tools
 
 script:
-  - wget -O - http://dl.google.com/android/ndk/android-ndk-r10d-linux-x86_64.bin | tee android-ndk-r10d-linux-x86_64.bin | md5sum > MD5SUM
-  #- wget http://dl.google.com/android/ndk/android-ndk-r10d-linux-x86_64.bin -O ndk.bin
+  - wget http://dl.google.com/android/ndk/android-ndk-r10d-linux-x86_64.bin -O ndk.bin
+  - md5sum ndk.bin > ndk_md5.txt
   - chmod a+x ndk.bin
   - ./ndk.bin > ndk_install.log
 
 after_failure:
-  - cat MD5SUM
+  - cat ndk_md5.txt
   - curl -T ndk_install.log chunk.io
 
 after_success:
-  - cat MD5SUM
+  - cat ndk_md5.txt
   - tail ndk_install.log
