@@ -4,7 +4,7 @@ addons:
   postgresql: "9.3"
   
 before_install:
-  - psql -c 'create database if not exists detour-accounts-test;' -U postgres
+  - psql -c 'create database travis_ci_test;' -U postgres
 
 script:
   - postgres -V
