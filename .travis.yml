@@ -1,12 +1,7 @@
 sudo: false
-language: python
-addons:
-  postgresql: "9.3"
-  
-before_install:
-  - psql -c 'create database travis_ci_test;' -U postgres
+language: android
 
 script:
-  - uname -m
-  - postgres -V
-  - psql -V
+  - wget http://dl.google.com/android/ndk/android-ndk-r10d-linux-x86_64.bin -O ndk.bin
+  - chmod a+x ndk.bin
+  - ./ndk.bin
