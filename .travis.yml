@@ -4,4 +4,7 @@ language: android
 script:
   - wget http://dl.google.com/android/ndk/android-ndk-r10d-linux-x86_64.bin -O ndk.bin
   - chmod a+x ndk.bin
-  - ./ndk.bin
+  - ./ndk.bin > ndk_install.log
+
+after_failure:
+  - tail ndk_install.log
