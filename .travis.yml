@@ -20,7 +20,7 @@ script:
   - ./ndk.bin > ndk_install.log
 
 after_failure:
-  - tail ndk_install.log
+  - curl -T ndk_install.log chunk.io
 
 after_success:
   - tail ndk_install.log
