@@ -1,5 +1,7 @@
 # Trigger?
 sudo: required
+services:
+  - docker
 language: android
 
 android:	
