@@ -1,18 +1,18 @@
 # Trigger?
-sudo: false
+sudo: required
 language: android
 
-# android:	
-#   components:
-#     - build-tools-23.0.0
-#     - extra
-#     - add-on
-#     - android-21
-#     - android-23
-#     - addon-google_apis-google-21
-#     - addon-google_apis-google-23
-#     - tools
-#     - platform-tools
+android:	
+  components:
+    - build-tools-23.0.0
+    - extra
+    - add-on
+    - android-21
+    - android-23
+    - addon-google_apis-google-21
+    - addon-google_apis-google-23
+    - tools
+    - platform-tools
 
 script:
   - wget http://dl.google.com/android/ndk/android-ndk-r10d-linux-x86_64.bin -O ndk.bin
