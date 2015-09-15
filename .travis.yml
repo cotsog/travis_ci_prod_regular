@@ -1,10 +1,5 @@
 sudo: required
 services:
   - docker
-  
-addons:
-  apt:
-    packages:
-    - scons
     
 script: scons --version
