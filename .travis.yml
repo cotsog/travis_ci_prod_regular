@@ -1,14 +1,6 @@
-language: cpp
-script: 
-  - gcc-4.9 --version
-  - g++-4.9 --version
-install:
-  - if [ "$CXX" = "g++" ]; then export CXX="g++-4.9" CC="gcc-4.9"; fi
-addons:
-  apt:
-    sources:
-    - ubuntu-toolchain-r-test
-    packages:
-    - gcc-4.9
-    - g++-4.9
+language: python
+script:
+  - pip install click || exit
+  - pip install arrow || exit
+  - pip install botocore || exit
 sudo: false
