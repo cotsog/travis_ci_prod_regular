@@ -4,4 +4,4 @@ node_js:
 before_install:
   - nvm list
   - nvm ls-remote
-sudo: required
+sudo: false
