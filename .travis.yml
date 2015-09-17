@@ -1,6 +1,4 @@
-language: python
+language: node_js
 script:
-  - pip install click || exit
-  - pip install arrow || exit
-  - pip install botocore || exit
+  - nvm list
 sudo: false
