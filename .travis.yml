@@ -1,4 +1,5 @@
 language: node_js
-script:
+before_install:
+  - nvm list
   - nvm ls-remote
 sudo: false
