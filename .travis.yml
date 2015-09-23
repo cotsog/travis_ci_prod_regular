@@ -1,7 +1,18 @@
-language: node_js
-node_js:
-  - "4.1"
-before_install:
-  - nvm list
-  - nvm ls-remote
+# Trigger?
 sudo: false
+language: android
+
+android:	
+  components:
+    - build-tools-23.0.0
+    - extra
+    - add-on
+    - android-21
+    - android-23
+    - addon-google_apis-google-21
+    - addon-google_apis-google-23
+    - tools
+    - platform-tools
+
+script:
+  - echo "Test!"
