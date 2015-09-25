@@ -4,8 +4,12 @@ language: php
 
 addons:
   apt:
-    sources: mongodb-3.0-precise
-    packages: mongodb-org-server
-
+    debug: true
+    sources:
+      - boost-latest
+      - ubuntu-toolchain-r-test
+      - llvm-toolchain-precise-3.6
+    packages:
+      - clang-3.6
 script:
   - echo "Test!"
