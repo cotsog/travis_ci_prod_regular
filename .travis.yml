@@ -5,3 +5,5 @@ install: true
 script:
   - echo $JSON_TEST_BAD
   - echo $JSON_TEST_GOOD
+  - echo $A
+  - echo $B
