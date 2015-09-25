@@ -1,15 +1,11 @@
-# Trigger?
 sudo: false
-language: php
+language: ruby
 
-addons:
-  apt:
-    debug: true
-    sources:
-      - boost-latest
-      - ubuntu-toolchain-r-test
-      - llvm-toolchain-precise-3.6
-    packages:
-      - clang-3.6
+before_install:
+- true
+
+cache:
+  bundler
+
 script:
-  - echo "Test!"
+- echo "Script!"
