@@ -2,10 +2,10 @@ sudo: false
 language: ruby
 
 before_install:
-- true
+  - true
 
 cache:
   bundler
 
 script:
-- echo "Script!"
+  - echo "Script!"
