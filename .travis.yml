@@ -1,11 +1,5 @@
 sudo: false
-language: ruby
-
-before_install:
-  - true
-
-cache:
-  bundler
 
 script:
-  - echo "Script!"
+  - echo "JSON_TEST_BAD = $JSON_TEST_BAD"
+  - echo "JSON_TEST_GOOD = $JSON_TEST_GOOD"
