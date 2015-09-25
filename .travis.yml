@@ -1,5 +1,6 @@
 sudo: false
-language: ruby
+
+install: true
 
 script:
   - echo "JSON_TEST_BAD: $JSON_TEST_BAD"
