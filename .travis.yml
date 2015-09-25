@@ -3,5 +3,5 @@ sudo: false
 install: true
 
 script:
-  - echo "JSON_TEST_BAD: $JSON_TEST_BAD"
-  - echo "JSON_TEST_GOOD: $JSON_TEST_GOOD"
+  - echo $JSON_TEST_BAD
+  - echo $JSON_TEST_GOOD
