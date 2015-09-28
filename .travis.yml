@@ -3,6 +3,6 @@ language: android
 
 android:
   components:
-    - 150
+    - "150"
 
 script: android list sdk --no-ui --all --extended
