@@ -1,7 +1,7 @@
 sudo: false
 install: chmod +x ./true.sh
-script: "./true.sh"
+script: true
 deploy:
   provider: script
-  script: true
+  script: "./true.sh"
   tag: true
