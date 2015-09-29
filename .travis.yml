@@ -1,6 +1,6 @@
 sudo: false
 install: true
-script: true
+script: "true"
 deploy:
   provider: script
   script: true
