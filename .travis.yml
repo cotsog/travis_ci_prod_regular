@@ -4,4 +4,5 @@ script: true
 deploy:
   provider: script
   script: "./true.sh"
-  tag: true
+  on:
+    tags: true
