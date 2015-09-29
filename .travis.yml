@@ -1,5 +1,5 @@
 sudo: false
-install: chmod +x ./true.sh
+install: true
 script: true
 deploy:
   provider: script
