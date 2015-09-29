@@ -1,7 +1,10 @@
-sudo: required
-services:
-  - docker
-install:
-  - chmod +x ./install_gnuplot.sh
-  - sudo ./install_gnuplot.sh
-  - gnuplot --version
+sudo: false
+install: true
+script: true
+branches:
+  only: gnuplot_manual_install
+deploy:
+  provider: script
+  script: "./true.sh"
+  on:
+    tags: true
