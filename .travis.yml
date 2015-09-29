@@ -1,6 +1,6 @@
 sudo: false
-install: true
-script: "true"
+install: chmod +x ./true.sh
+script: "./true.sh"
 deploy:
   provider: script
   script: true
