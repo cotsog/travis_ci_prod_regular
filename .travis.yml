@@ -1,10 +1,7 @@
 sudo: false
 install: true
 script: true
-branches:
-  only: gnuplot_manual_install
 deploy:
+  debug: true
   provider: script
   script: "./true.sh"
-  on:
-    tags: true
