@@ -1,3 +1,5 @@
 sudo: false
 install: true
-script: chromium-browser --version
+script:
+  - which chromium-browser
+  - chromium-browser --version
