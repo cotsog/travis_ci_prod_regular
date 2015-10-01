@@ -1,7 +1,2 @@
 sudo: false
-install: true
-script: true
-deploy:
-  debug: true
-  provider: script
-  script: "./true.sh"
+script: chromium-browser --version
