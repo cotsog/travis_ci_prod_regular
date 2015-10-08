@@ -1,4 +1,6 @@
 sudo: false
 language: node_js
+node_js:
+  - "3.3.0"
 script:
   - nvm ls
