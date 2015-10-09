@@ -1,6 +1,4 @@
 sudo: false
-language: node_js
-node_js:
-  - "3.3.0"
+language: android
 script:
-  - nvm ls
+  - android create avd -f -n test --abi x86
