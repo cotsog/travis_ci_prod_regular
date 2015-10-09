@@ -2,4 +2,4 @@ sudo: false
 language: android
 script:
   - android list targets
-  - android create avd -f -n test --abi x86 -t 19
+  - android create avd -f -n test --abi x86 -t 8
