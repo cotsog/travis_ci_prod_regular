@@ -1,8 +1,10 @@
 sudo: false
-language: android
+install: true
 script:
-  - android list targets
-  - android create avd -f -n test --abi x86 -t 4
-android:
-  components:
-    - sys-img-x86-android-17
+  - echo "bin" > fake-binary.bin
+  - mkdir deploy-dir
+  - cp fake-binary.bin deploy-dir/
+after_sucess:
+  - find .
+before_deploy:
+  - find .
