@@ -12,4 +12,3 @@ before_deploy:
 deploy:
   provider: script
   script: ./true.sh
-  skip_cleanup: true
