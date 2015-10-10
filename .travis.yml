@@ -9,3 +9,7 @@ after_success:
   - find .
 before_deploy:
   - find .
+deploy:
+  provider: script
+  script: ./true.sh
+  skip_cleanup: true
