@@ -4,7 +4,8 @@ script:
   - echo "bin" > fake-binary.bin
   - mkdir deploy-dir
   - cp fake-binary.bin deploy-dir/
-after_sucess:
+after_success:
+  - echo "after success!"
   - find .
 before_deploy:
   - find .
