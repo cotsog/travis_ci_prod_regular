@@ -1,2 +1,2 @@
 echo "True ! ! ! ! ! ! ! ! ! ! ! !"
-true
+find .
