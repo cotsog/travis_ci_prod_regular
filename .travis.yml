@@ -2,6 +2,6 @@
 sudo: false
 
 
-before_script: true
+install: true
 
 script: wget https://api.nextprot.org/ -v -qO -
