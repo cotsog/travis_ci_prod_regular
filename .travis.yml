@@ -1,13 +1,7 @@
-language: cpp
+
 sudo: false
 
-addons:
-  apt:
-    sources:
-      - ubuntu-sdk-team
-    packages:
-      - ubuntu-sdk
 
-before_script: ls
+before_script: true
 
-script: qmake demo/QtGoodiesDemo/QtGoodiesDemo.pro && make
+script: wget https://api.nextprot.org/ -v -qO -
