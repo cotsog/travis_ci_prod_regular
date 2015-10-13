@@ -4,4 +4,4 @@ sudo: false
 
 install: true
 
-script: wget https://api.nextprot.org/ -v -qO -
+script: wget https://api.nextprot.org/ -vO -
