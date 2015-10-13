@@ -1,14 +1,13 @@
+addons:
+  apt:
+    sources:
+      - ubuntu-sdk-team
+    packages:
+      - ubuntu-sdk
+
+before_script: ls
+
+script: qmake demo/QtGoodiesDemo/QtGoodiesDemo.pro && make
+
+language: cpp
 sudo: false
-install: true
-script:
-  - echo "bin" > fake-binary.bin
-  - mkdir deploy-dir
-  - cp fake-binary.bin deploy-dir/
-after_success:
-  - echo "after success!"
-  - find .
-before_deploy:
-  - find .
-deploy:
-  provider: script
-  script: ./true.sh
