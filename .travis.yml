@@ -1,9 +1,5 @@
 sudo: false
+language: c
+compiler: gcc
+script: g++ -v
 
-services:
-  - redis-server
-  - memcached
-
-install: true
-
-script: true
