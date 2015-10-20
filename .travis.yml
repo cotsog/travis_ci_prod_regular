@@ -11,11 +11,11 @@ before_install:
   - sleep 10
   - docker-compose up -d
   - docker-compose ps
-  - docker inspect postgres
-  - docker inspect postgres | grep IPAddress
-  - docker inspect postgres | grep IPAddress | awk '{ print $2 }'
-  - docker inspect postgres | grep IPAddress | awk '{ print $2 }' | tr -d ',"'
-  - CONTAINER_IP=$(docker inspect postgres | grep IPAddress | awk '{ print $2 }' | tr -d ',"')
+  - docker inspect travisciprodregular_postgres_1
+  - docker inspect travisciprodregular_postgres_1 | grep IPAddress
+  - docker inspect travisciprodregular_postgres_1 | grep IPAddress | awk '{ print $2 }'
+  - docker inspect travisciprodregular_postgres_1 | grep IPAddress | awk '{ print $2 }' | tr -d ',"'
+  - CONTAINER_IP=$(docker inspect travisciprodregular_postgres_1 | grep IPAddress | awk '{ print $2 }' | tr -d ',"')
   - echo $CONTAINER_IP
 
 install: true
