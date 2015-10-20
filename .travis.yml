@@ -4,21 +4,21 @@ services:
   - docker
 
 before_install:
-  # - curl -L https://github.com/docker/compose/releases/download/1.4.0/docker-compose-`uname -s`-`uname -m` > docker-compose
-  # - chmod +x docker-compose
-  # - sudo mv docker-compose /usr/local/bin
-  # - sudo iptables -N DOCKER || true
-  # - sleep 10
-  # - docker-compose up -d
-  # - docker-compose ps
-  # - CONTAINER_IP=$(docker inspect travisciprodregular_postgres_1 | grep IPAddress | awk '{ print $2 }' | tr -d ',"' | tr -d 'null')
-  # - echo $CONTAINER_IP
-  - docker run -d --name mypostgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres postgres
-  - docker ps
+  - curl -L https://github.com/docker/compose/releases/download/1.4.0/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - chmod +x docker-compose
+  - sudo mv docker-compose /usr/local/bin
+  - sudo iptables -N DOCKER || true
+  - sleep 10
+  - docker-compose up -d
+  - docker-compose ps
+  - CONTAINER_IP=$(docker inspect travisciprodregular_postgres_1 | grep IPAddress | awk '{ print $2 }' | tr -d ',"' | tr -d 'null')
+  - echo $CONTAINER_IP
+  # - docker run -d --name mypostgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres postgres
+  # - docker ps
 
 install: true
 
 script:
-  # - PGPASSWORD=postgres
-  # - psql -h $CONTAINER_IP -p 5433 -U postgres --list
-  - true
+  - PGPASSWORD=postgres
+  - psql -h $CONTAINER_IP -p 5433 -U postgres --list
+  # - true
