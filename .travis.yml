@@ -23,5 +23,5 @@ install: true
 script:
   - PGPASSWORD=postgres
   - echo $PGPASSWORD
-  - echo "psql -h $CONTAINER_IP -p 5434 -U postgres --list"
-  - psql -h $CONTAINER_IP -p 5434 -U postgres --list
+  - echo "psql -h $CONTAINER_IP -p 5433 -U postgres --list"
+  - psql -h $CONTAINER_IP -p 5433 -U postgres --list
