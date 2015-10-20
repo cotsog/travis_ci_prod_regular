@@ -15,7 +15,6 @@ before_install:
 install: true
 
 script:
-  - sudo lsof -i -P -n | grep 54
-  - PGPASSWORD=postgres
-  - psql -h localhost -p 5433 -U postgres --list
+  - sudo lsof -i -P -n | grep 543
+  - PGPASSWORD=postgres psql -h localhost -p 5433 -U postgres --list`
   # - true
