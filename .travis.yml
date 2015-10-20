@@ -8,7 +8,7 @@ before_install:
   - docker-compose ps
   - CONTAINER_IP=$(docker inspect travisciprodregular_postgres_1 | grep IPAddress | awk '{ print $2 }' | tr -d ',"' | tr -d 'null')
   - echo $CONTAINER_IP
-  - docker inspect travisciprodregular_postgres_1 --format='{{.NetworkSettings.IPAddress}}'
+  - docker inspect --format='{{.NetworkSettings.IPAddress}}' travisciprodregular_postgres_1
   # - docker run -d --name mypostgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres postgres
   # - docker ps
 
