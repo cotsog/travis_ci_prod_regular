@@ -11,6 +11,7 @@ before_install:
   - sleep 10
   - docker-compose up -d
   - docker-compose ps
+  - docker inspect postgres | grep IPAddress | awk '{ print $2 }' | tr -d ',"')
 
 install: true
 
