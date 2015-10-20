@@ -11,10 +11,16 @@ before_install:
   - sleep 10
   - docker-compose up -d
   - docker-compose ps
-  - CONTAINER_IP=$(docker inspect $CONTAINER | grep IPAddress | awk '{ print $2 }' | tr -d ',"')
+  - docker inspect postgres
+  - docker inspect postgres | grep IPAddress
+  - docker inspect postgres | grep IPAddress | awk '{ print $2 }'
+  - docker inspect postgres | grep IPAddress | awk '{ print $2 }' | tr -d ',"'
+  - CONTAINER_IP=$(docker inspect postgres | grep IPAddress | awk '{ print $2 }' | tr -d ',"')
+  - echo $CONTAINER_IP
 
 install: true
 
 script:
   - PGPASSWORD=postgres
+  - echo PGPASSWORD
   - psql -h $CONTAINER_IP -p 5433 -U postgres --list
