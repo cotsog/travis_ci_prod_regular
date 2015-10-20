@@ -25,3 +25,4 @@ script:
   - echo $PGPASSWORD
   - echo "psql -h $CONTAINER_IP -p 5433 -U postgres --list"
   - psql -h $CONTAINER_IP -p 5433 -U postgres --list
+  - psql -h 0.0.0.0 -p 5433 -U postgres --list
