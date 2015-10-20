@@ -15,7 +15,7 @@ before_install:
 install: true
 
 script:
-  - lsof -i -P -n | grep 54
+  - sudo lsof -i -P -n | grep 54
   - PGPASSWORD=postgres
   - psql -h $CONTAINER_IP -p 5433 -U postgres --list
   # - true
