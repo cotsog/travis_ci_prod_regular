@@ -6,7 +6,7 @@ before_script:
   - export FIREFOX_BIN=/usr/local/bin/firefox
   - sh -e /etc/init.d/xvfb start
 addons:
-  firefox: "30.0"
+  firefox: "40.0"
 
 script:
   - which firefox
