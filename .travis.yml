@@ -3,6 +3,9 @@ language: ruby
 
 install: true
 script:
-  - curl -Lo chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && sudo dpkg -i chrome.deb
+  - curl -Lo chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  - sudo gdebi chrome.deb || true
+  - sudo dpkg -i chrome.deb || true
+  - sudo apt-get -f install
   - which chrome
   - chrome --version
