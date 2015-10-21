@@ -7,5 +7,6 @@ script:
   - sudo apt-get install gdebi-core
   - sudo gdebi -n chrome.deb || true
   - sudo gdebi chrome.deb -n || true
-  - which chrome
-  - chrome --version
+  - which google-chrome-stable
+  - google-chrome-stable --version
+  - /usr/bin/google-chrome-stable --version
