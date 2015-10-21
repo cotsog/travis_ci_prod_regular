@@ -5,6 +5,7 @@ install: true
 script:
   - curl -Lo chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
   - sudo apt-get install gdebi-core
-  - sudo gdebi chrome.deb
+  - sudo gdebi -n chrome.deb || true
+  - sudo gdebi chrome.deb -n || true
   - which chrome
   - chrome --version
