@@ -1,14 +1,12 @@
-sudo: false
-dist: trusty
-language: cpp
-
-compiler:
-    - clang
-    - gcc-4.7
-    - gcc-4.8
-    - gcc-4.9
-    - gcc-5
+language: node_js
+node_js:
+  - "0.11"
+before_script:
+  - export DISPLAY=:99.0
+  - export FIREFOX_BIN=/usr/local/bin/firefox
+  - sh -e /etc/init.d/xvfb start
+addons:
+  firefox: "30.0"
 
 script:
-  - gcc --version
-  - g++ --version
+  - which firefox
