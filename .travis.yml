@@ -1,4 +1,7 @@
 language: android
+env:
+  global:
+    - ADB_INSTALL_TIMEOUT=8
 android:
   components:
     - platform-tools-23.0.1
