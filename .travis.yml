@@ -1,13 +1,9 @@
 sudo: required
 language: node_js
-node_js:
-  - "0.11"
-before_script:
-  - export DISPLAY=:99.0
-  - export FIREFOX_BIN=/usr/local/bin/firefox
-  - sh -e /etc/init.d/xvfb start
 addons:
   firefox: "40.0"
+  
+install: true
 
 script:
   - which firefox
