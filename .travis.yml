@@ -1,5 +1,5 @@
 language: android
-android	
+android:
   components:
     - platform-tools-23.0.1
     - tools-24.4.0
