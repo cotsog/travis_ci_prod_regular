@@ -1,7 +1,14 @@
-language: node_js
+language: ruby
 sudo: required
-services:
-  - docker
+addons:	
+  postgresql: 9.4
+  apt:
+    packages:
+      - cmake
+      - postgresql-9.4-postgis-2.1
+      - pgadmin3
+      - postgresql-contrib
 
-install: true
-script: which docker
+script:	
+  - bundle --version
+os: linux
