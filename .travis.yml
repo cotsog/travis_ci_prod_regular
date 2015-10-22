@@ -1,12 +1,7 @@
-sudo: required
-language: ruby
+language: node_js
+sudo: false
+services:
+  - docker
 
 install: true
-script:
-  - curl -Lo chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-  - sudo apt-get install gdebi-core
-  - sudo gdebi -n chrome.deb || true
-  - sudo gdebi chrome.deb -n || true
-  - which google-chrome-stable
-  - google-chrome-stable --version
-  - /usr/bin/google-chrome-stable --version
+script: which docker
