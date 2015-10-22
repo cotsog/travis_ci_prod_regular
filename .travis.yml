@@ -12,3 +12,7 @@ install: true
 script:	
   - bundle --version
 os: linux
+services:	
+  - redis-server
+  - docker
+  - rabbitmq
