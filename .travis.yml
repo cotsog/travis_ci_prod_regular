@@ -7,5 +7,5 @@ matrix:
     - env: CLOUD=mandatory MY_SECURE_ENV_VARS=false
 
 script:
-  echo "[ $CLOUD ] and [ $MY_SECURE_ENV_VARS ]"
+  - echo "[ $CLOUD ] and [ $MY_SECURE_ENV_VARS ]"
   - false
