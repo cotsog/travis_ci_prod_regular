@@ -8,4 +8,4 @@ matrix:
 
 script:
   - echo "[ $CLOUD ] and [ $MY_SECURE_ENV_VARS ]"
-  - if [ $CLOUD -eq mandatory ] ; then true ; else false ; fi
+  - if [ "$CLOUD" == "mandatory" ] ; then exit 0 ; else exit 1 ; fi
