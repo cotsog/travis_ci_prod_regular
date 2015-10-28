@@ -1,4 +1,4 @@
 sudo: false
 install:
-  - curl https://install.meteor.com | /bin/sh &> /dev/null
+  - curl https://install.meteor.com | /bin/sh
 script: true
