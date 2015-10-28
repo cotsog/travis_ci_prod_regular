@@ -1,4 +1,4 @@
 sudo: false
 install:
-  - curl https://install.meteor.com | /bin/sh
+  - curl --silent https://install.meteor.com 2>&1 | sed s/progress-bar/silent/g | /bin/sh
 script: true
