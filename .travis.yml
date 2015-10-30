@@ -1,4 +1,5 @@
-sudo: false
-install:
-  - curl --silent https://install.meteor.com 2>&1 | sed s/progress-bar/silent/g | /bin/sh
-script: true
+sudo: required
+language: node_js
+node_js: iojs-v2.5.0
+install: true
+script:true
