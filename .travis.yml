@@ -1,5 +1,6 @@
 sudo: required
 language: node_js
-node_js: iojs-v2.5.0
+node_js:
+  - "iojs-v2.5.0"
 install: true
-script:true
+script: true
