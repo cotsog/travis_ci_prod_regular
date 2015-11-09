@@ -1,4 +1,6 @@
 # Trigger
 language: generic
 install: true
-script: python -V
+script:
+  - python -V
+  -  ls -al /var/lib/mysql
