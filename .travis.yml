@@ -5,4 +5,4 @@ services:
   - mysql
 install: true
 script:
-  - modprobe msr
+  - sudo modprobe msr
