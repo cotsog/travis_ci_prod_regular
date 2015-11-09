@@ -6,8 +6,10 @@ services:
   - mysql
 install: true
 script:
-  - modprobe -l
-  - sudo modprobe -l
+  - modprobe -v
+  - sudo modprobe -v
   - lsmod
   - sudo lsmod
   - sudo modprobe msr
+  - lsmod
+  - sudo lsmod
