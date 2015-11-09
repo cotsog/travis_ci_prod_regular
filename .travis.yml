@@ -1,12 +1,6 @@
-sudo: required
-group: dev
+sudo: false
 language: node_js
-services:
-  - cassandra
 before_install:
-  - sudo sh -c "echo 'JVM_OPTS=\"\${JVM_OPTS} -Djava.net.preferIPv4Stack=false\"' >> /usr/local/cassandra/conf/cassandra-env.sh"
-  - sudo service cassandra start
+  - rvm install 2.2
 install: true
-script:
-  - find /usr/local/cassandra
-  - /usr/local/cassandra/bin/cassandra -v
+script: true
