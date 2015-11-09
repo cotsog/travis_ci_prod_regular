@@ -1,12 +1,8 @@
 # Trigger
 sudo: required
-dist: trusty
-group: edge
-language: generic
+group: dev
+language: python
 services:
-  - mysql
+  - cassandra
 install: true
-script:
-  - lsmod
-  - sudo modprobe msr
-  - lsmod
+script: true
