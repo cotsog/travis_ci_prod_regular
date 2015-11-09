@@ -4,4 +4,4 @@ language: generic
 install: true
 script:
   - cat /etc/mysql/my.cnf
-  - ls -al /var/lib/mysql
+  - sudo ls -al /var/lib/mysql
