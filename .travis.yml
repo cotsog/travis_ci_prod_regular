@@ -1,5 +1,4 @@
 # Trigger
-sudo: required
 group: dev
 language: python
 services:
