@@ -2,5 +2,5 @@
 language: generic
 install: true
 script:
-  - python -V
-  -  ls -al /var/lib/mysql
+  - cat /etc/mysql/my.cnf
+  - ls -al /var/lib/mysql
