@@ -3,5 +3,7 @@ sudo: required
 language: python
 services:
   - cassandra
+before_install:
+  - sudo sh -c "echo 'JVM_OPTS=\"\${JVM_OPTS} -Djava.net.preferIPv4Stack=false\"' >> /usr/local/cassandra/conf/cassandra-env.sh"
 install: true
 script: true
