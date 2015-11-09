@@ -1,5 +1,5 @@
 group: dev
-language: python
+language: node_js
 services:
   - cassandra
 before_install:
