@@ -1,4 +1,5 @@
 # Trigger
+sudo: required
 language: generic
 install: true
 script:
