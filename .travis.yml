@@ -1,5 +1,5 @@
 # Trigger
-group: dev
+group: edge
 language: python
 services:
   - cassandra
