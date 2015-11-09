@@ -1,6 +1,5 @@
 # Trigger
 sudo: required
-group: edge
 language: python
 services:
   - cassandra
