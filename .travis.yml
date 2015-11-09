@@ -1,5 +1,7 @@
 # Trigger
 sudo: required
+dist: trusty
+group: edge
 language: generic
 services:
   - mysql
