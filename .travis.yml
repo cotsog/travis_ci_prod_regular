@@ -1,6 +1,8 @@
 # Trigger
 sudo: required
 language: generic
+services:
+  - mysql
 install: true
 script:
   - sudo cat /var/log/mysql.log
