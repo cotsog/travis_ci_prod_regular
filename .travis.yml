@@ -1,15 +1,10 @@
 # Trigger
 sudo: required
-dist: trusty
 language: generic
 services:
   - mysql
 install: true
 script:
-  - modprobe -v
-  - sudo modprobe -v
   - lsmod
-  - sudo lsmod
   - sudo modprobe msr
   - lsmod
-  - sudo lsmod
