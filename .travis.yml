@@ -10,4 +10,4 @@ script:
   - sudo apt-get update -y
   - sudo apt-get install -y python-numpy
   - pip list
-  - python -c "import numpy; import pprint; pprint.pprint sys.path; print(numpy.__file__)"
+  - python -c "import numpy; import pprint; import sys; pprint.pprint sys.path; print(numpy.__file__)"
