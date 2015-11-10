@@ -9,7 +9,5 @@ matrix:
 script:
   - sudo apt-get update -y
   - sudo apt-get install -y python-numpy
-  - echo PYTHONHOME = [ $PYTHONHOME ]
-  - echo PYTHONPATH = [ $PYTHONPATH ]
   - pip list
-  - python -c "import numpy; print(numpy.__file__)"
+  - python -c "import numpy; import pprint; pprint.pprint sys.path; print(numpy.__file__)"
