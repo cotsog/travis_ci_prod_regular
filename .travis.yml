@@ -1,16 +1,17 @@
-language: android
+language: cpp
 
 sudo: false
 
-android:
-  components:
-    - tools
-    - build-tools-23.0.1
-    - android-23
-    - extra-android-m2repository
-
+before_install:
+  - mkdir ~/cmake_tmp
+  - cd ~/cmake_tmp
+  - wget --no-check-certificate http://www.cmake.org/files/v3.3/cmake-3.3.2-Linux-x86_64.tar.gz -O cmake3.tar.gz
+  - tar xf cmake3.tar.gz -C . --strip-components=1
+  - export PATH=~/cmake_tmp/bin:$PATH
+  - cd -
+  
 install:
   - true
 
 script:
-  - true
+  - cmake --version
