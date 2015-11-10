@@ -1,4 +1,5 @@
 language: nodejs
 install: true
 script:
+  - echo password = $password
   - node index.js
