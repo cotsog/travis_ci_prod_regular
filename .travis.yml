@@ -1,6 +1,7 @@
 sudo: false
-language: node_js
-before_install:
-  - rvm install 2.2.3
-install: true
+language: ruby
+rvm: 2.1.5
+install:
+  - gem install bundler
+  - bundle -v
 script: true
