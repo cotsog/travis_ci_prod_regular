@@ -1,13 +1,4 @@
-language: cpp
-compiler: gcc
-sudo: required
-
-matrix:
-  include:
-    - dist: trusty
-
+language: nodejs
+install: true
 script:
-  - sudo apt-get update -y
-  - sudo apt-get install -y python-numpy
-  - pip list
-  - python -c "import pprint; import sys; pprint.pprint(sys.path); print(numpy.__file__)"
+  - node index.js
