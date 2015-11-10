@@ -1,7 +1,15 @@
-sudo: false
-language: ruby
-rvm: 2.1.5
-install:
-  - gem install bundler
-  - bundle -v
-script: true
+language: cpp
+compiler: gcc
+sudo: required
+
+matrix:
+  include:
+    - dist: trusty
+
+script:
+  - sudo apt-get update -y
+  - sudo apt-get install -y python-numpy
+  - echo PYTHONHOME = [ $PYTHONHOME ]
+  - echo PYTHONPATH = [ $PYTHONPATH ]
+  - pip list
+  - python -c "import numpy; print(numpy.__file__)"
