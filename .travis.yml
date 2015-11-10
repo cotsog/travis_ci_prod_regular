@@ -1,5 +1,16 @@
-language: nodejs
-install: true
+language: android
+
+sudo: false
+
+android:
+  components:
+    - tools
+    - build-tools-23.0.1
+    - android-23
+    - extra-android-m2repository
+
+install:
+  - true
+
 script:
-  - echo password = $password
-  - node index.js
+  - true
