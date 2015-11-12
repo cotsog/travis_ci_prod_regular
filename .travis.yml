@@ -2,13 +2,8 @@
 language: ruby
 sudo: false
 
-cache:
-  directories:
-    - /home/travis/.rvm/gems/ruby-1.9.3-p551/bin
-
-install:
-  - if [ ! -f /home/travis/.rvm/gems/ruby-1.9.3-p551/bin/compass ]; then gem install compass; fi
+cache: bundler
 
 script:	
-  - which compass
-  - compass help
+  - bundle exec which compass
+  - bundle exec compass help
