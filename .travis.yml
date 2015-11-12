@@ -7,7 +7,7 @@ cache:
     - /home/travis/.rvm/gems/ruby-1.9.3-p551/bin
 
 install:
-  - [ -f /home/travis/.rvm/gems/ruby-1.9.3-p551/bin/compass ] || gem install compass
+  - if [ ! -f /home/travis/.rvm/gems/ruby-1.9.3-p551/bin/compass ]; then gem install compass; fi
 
 script:	
   - which compass
