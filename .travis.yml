@@ -1,8 +1,12 @@
 language: ruby
 sudo: false
 
+cache:
+  directories:
+    - /home/travis/.rvm/gems/ruby-1.9.3-p551/bin
+
 install:
-  - gem install compass
+  - [ -f /home/travis/.rvm/gems/ruby-1.9.3-p551/bin/compass ] || gem install compass
 
 script:	
   - which compass
