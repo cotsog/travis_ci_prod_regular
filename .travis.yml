@@ -1,17 +1,19 @@
-language: cpp
+language: ruby
+sudo: required
+dist: trusty
 
-sudo: false
-
-before_install:
-  - mkdir ~/cmake_tmp
-  - cd ~/cmake_tmp
-  - wget --no-check-certificate http://www.cmake.org/files/v3.3/cmake-3.3.2-Linux-x86_64.tar.gz -O cmake3.tar.gz
-  - tar xf cmake3.tar.gz -C . --strip-components=1
-  - export PATH=~/cmake_tmp/bin:$PATH
-  - cd -
-  
 install:
-  - true
+  - "echo -e \"deb http://nova.clouds.archive.ubuntu.com/ubuntu/ trusty multiverse\\ndeb http://nova.clouds.archive.ubuntu.com/ubuntu/ trusty-updates multiverse\" | sudo tee -ai /etc/apt/sources.list.d/rezzza-ubuntu-multiverse.list"
+  - "curl https://repo.varnish-cache.org/GPG-key.txt | sudo apt-key add - && sudo echo \"deb https://repo.varnish-cache.org/ubuntu/ precise varnish-4.0\" | sudo tee -ai /etc/apt/sources.list.d/varnish-cache.list"
+  - sudo aptitude update
+  - sudo aptitude -y install software-properties-common
+  - echo | sudo add-apt-repository ppa:ondrej/php5-5.6
+  - sudo aptitude update
+  - sudo aptitude -y install php5 php5-apcu php5-curl php5-cli php5-fpm php5-gd php5-intl php5-mcrypt php5-mysqlnd php-pear php5-dev apache2 libapache2-mod-fastcgi redis-server mysql-server curl libcurl3-gnutls
+  - sudo aptitude -y install php5-redis
+  - sudo service redis-server restart
+  - sleep 10
+  - php -m
 
-script:
-  - cmake --version
+script:	
+  - php -m | grep redis
