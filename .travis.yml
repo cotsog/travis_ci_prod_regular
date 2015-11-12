@@ -11,3 +11,4 @@ install:
 
 script:	
   - which compass
+  - compass help
