@@ -1,9 +1,13 @@
 # trigger
-language: ruby
+language: node_js
+node_js:
+  - 0.12
 sudo: false
 
-cache: bundler
+before_install:
+  - pyenv versions
+  - pyenv install 2.7
+  - pyenv global 2.7
 
 script:	
-  - bundle exec which compass
-  - bundle exec compass help
+  - pip install click
