@@ -1,4 +1,4 @@
-# Trigger 2
+# PR testing was disabled
 language: node_js
 node_js:
   - 0.12
