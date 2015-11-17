@@ -10,4 +10,4 @@ before_install:
   - pyenv global 2.7
 
 script:	
-  - pip install click
+  - pip install click --user travis
