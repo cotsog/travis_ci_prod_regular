@@ -1,8 +1,11 @@
-# Trigger 2
-language: node_js
-node_js:
-  - 0.12
-sudo: false
-
-script:	
-  - pip install click --user travis
+language: ruby
+rvm:
+  - 2.1
+  - 2.1.6
+  - 2.1.7
+  - 2.2
+  - 2.2.3
+script: bundle --version
+group: stable
+dist: precise
+os: linux
