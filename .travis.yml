@@ -12,9 +12,6 @@ addons:
         packages:
             - python-numpy
 
-cache:
-    apt: true
-
 install: true
 
 script:
