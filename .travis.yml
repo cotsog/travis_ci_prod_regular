@@ -7,10 +7,10 @@ python:
 sudo: required
 dist: trusty
 
-# addons:
-#     apt:
-#         packages:
-#             - python-numpy
+addons:
+    apt:
+        packages:
+            - python-numpy
 
 cache:
     apt: true
@@ -18,13 +18,7 @@ cache:
 virtualenv:
     system_site_packages: true
 
-install:
-    - python --version
-    - export CURRENT_PYTHON_RUNTIME=`which python`
-    - deactivate
-    - virtualenv -p $CURRENT_PYTHON_RUNTIME --system-site-packages ~/testenv
-    - source ~/testenv/bin/activate
-    - sudo apt-get update && sudo apt-get install python-numpy
+install: true
 
 script:
     - python --version
