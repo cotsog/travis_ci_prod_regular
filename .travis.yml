@@ -19,7 +19,7 @@ virtualenv:
     system_site_packages: true
 
 install:
-    - python -v
+    - python --version
     - export CURRENT_PYTHON_RUNTIME=`which python`
     - deactivate
     - virtualenv -p $CURRENT_PYTHON_RUNTIME --system-site-packages ~/testenv
