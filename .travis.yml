@@ -4,7 +4,8 @@ python:
 
 sudo: false
 
-install: true
+install:
+  - pip install requests
 
 script:
-    -  python -mrequests.certs
+  -  python -mrequests.certs
