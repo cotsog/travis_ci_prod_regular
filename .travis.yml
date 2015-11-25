@@ -1,13 +1,10 @@
 language: python
+python:
+  - "3.5"
 
-matrix:
-  include:
-    - sudo: false
-    - sudo: required
-    - sudo: required
-      dist: trusty
+sudo: false
 
 install: true
 
 script:
-    - cat /proc/cpuinfo
+    -  python -mrequests.certs
