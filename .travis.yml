@@ -8,4 +8,4 @@ install:
   - pip install requests
 
 script:
-  - python -c "import requests;requests.get('https://github.com', verify=True)"
+  - python -c "import requests;r = requests.get('https://github.com', verify=True); print r.status_code"
