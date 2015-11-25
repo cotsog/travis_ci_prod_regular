@@ -1,20 +1,13 @@
 language: python
 
-python:
-  - "2.7_with_system_site_packages"
-  - "3.4_with_system_site_packages"
-
 sudo: required
-dist: trusty
 
-addons:
-    apt:
-        packages:
-            - python-numpy
+matrix:
+  include:
+    - dist: trusty
+    - sudo: false
 
 install: true
 
 script:
-    - python --version
-    - pip list
-    - python -c "import numpy; print(numpy.__file__)"
+    - cat /proc/cpuinfo
