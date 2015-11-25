@@ -1,11 +1,11 @@
 language: python
 
-sudo: required
-
 matrix:
   include:
-    - dist: trusty
     - sudo: false
+    - sudo: required
+    - sudo: required
+      dist: trusty
 
 install: true
 
