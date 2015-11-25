@@ -8,5 +8,4 @@ install:
   - pip install requests
 
 script:
-  - env | egrep "REQUESTS_CA_BUNDLE|CURL_CA_BUNDLE"
-  - python -mrequests.certs
+  - python -c "import requests;requests.get('https://github.com', verify=True)"
