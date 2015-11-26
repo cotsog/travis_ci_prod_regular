@@ -1,11 +1,27 @@
-language: python
-python:
-  - "3.5"
+language: android
+android:
+  components:
+    # Uncomment the lines below if you want to
+    # use the latest revision of Android SDK Tools
+    # - platform-tools
+    # - tools
 
-sudo: false
+    # The BuildTools version used by your project
+    - build-tools-23.0.2
 
-install:
-  - pip install requests
+    # The SDK version used to compile your project
+    - android-19
 
+    # Additional components
+    - extra-google-google_play_services
+    - extra-google-m2repository
+    - extra-android-m2repository
+    - addon-google_apis-google-19
+
+    # Specify at least one system image,
+    # if you need to run emulator(s) during your tests
+    - sys-img-armeabi-v7a-android-19
+    - sys-img-x86-android-17
+    
 script:
-  - python -c "import requests;print requests.get('https://github.com', verify=True)"
+  - android list sdk --no-ui --all --extended
