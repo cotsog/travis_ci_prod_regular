@@ -24,4 +24,4 @@ android:
     - sys-img-x86-android-17
     
 script:
-  - android list sdk --no-ui --all --extended
+  - android list sdk --no-ui --all --extended --no-https
