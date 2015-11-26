@@ -1,5 +1,5 @@
-language: java
-
-before_install:
-  - rvm install 2.2.2
-  - rvm use 2.2.2
+language: ruby
+rvm: 2.2.3
+jdk: openjdk7
+install: true
+script: java -version
