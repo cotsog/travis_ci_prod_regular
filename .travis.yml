@@ -1,5 +1,6 @@
 language: ruby
 rvm: 2.2.3
-jdk: openjdk7
+addons:
+  firefox: "42.0"
 install: true
-script: java -version
+script: which firefox
