@@ -3,4 +3,6 @@ rvm: 2.2.3
 addons:
   firefox: "42.0"
 install: true
-script: which firefox
+script:
+  - which firefox
+  - firefox --version
