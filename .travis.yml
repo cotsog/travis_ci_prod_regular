@@ -1,17 +1,13 @@
-language: ruby
-rvm: 2.2.3
+language: python
+python: 3.5
+sudo: false
 
 install: true
 
-env:
-  - FIREFOX_VERSION='42.0'
-
-before_script:
-  - "mkdir -p ~/firefox/$FIREFOX_VERSION"
-  - "wget -O /tmp/firefox.tar.bz2 https://download.mozilla.org/?product=firefox-$FIREFOX_VERSION&lang=en-US&os=linux64"
-  - "pushd ~/firefox/$FIREFOX_VERSION"
-  - "tar xf /tmp/firefox.tar.bz2"
-  - "popd"
-  - "export PATH=~/firefox/$FIREFOX_VERSION/firefox:${PATH}"
-  - "echo $PATH"
-  - "firefox --version"
+script:
+  - curl -s --user 'api:key-3ax6xnjp29jd6fds4gc373sgvjxteol0' \
+    https://api.mailgun.net/v3/samples.mailgun.org/messages \
+    -F from='Excited User <excited@samples.mailgun.org>' \
+    -F to='devs@mailgun.net' \
+    -F subject='Hello' \
+    -F text='Testing some Mailgun awesomeness!'
