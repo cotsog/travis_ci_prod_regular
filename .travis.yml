@@ -1,8 +1,17 @@
 language: ruby
 rvm: 2.2.3
-addons:
-  firefox: "42.0"
+
 install: true
-script:
-  - which firefox
-  - firefox --version
+
+env:
+  - FIREFOX_VERSION='42.0'
+
+before_script:
+  - "mkdir -p ~/firefox/$FIREFOX_VERSION"
+  - "wget -O /tmp/firefox.tar.bz2 https://download.mozilla.org/?product=firefox-$FIREFOX_VERSION&lang=en-US&os=linux64"
+  - "pushd ~/firefox/$FIREFOX_VERSION"
+  - "tar xf /tmp/firefox.tar.bz2"
+  - "popd"
+  - "export PATH=~/firefox/$FIREFOX_VERSION/firefox:${PATH}"
+  - "echo $PATH"
+  - "firefox --version"
