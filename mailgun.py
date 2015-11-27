@@ -12,6 +12,6 @@ def send_simple_message():
               "subject": "Hello",
               "text": "Testing some Mailgun awesomness!",
               "o:testmode": True})
-    print r.status_code
+    print(r.status_code)
               
 send_simple_message()
