@@ -5,5 +5,5 @@ sudo: false
 install: true
 
 script:
-  - curl -v --user $MAILGUN_CREDENTIALS https://api.mailgun.net/v3/sandbox400a0020e1964c79bbf9202767651c72.mailgun.org/messages -F from='Excited User <excited@samples.mailgun.org>' -F to='devs@mailgun.net' -F subject='Hello' -F text='Testing some Mailgun awesomeness!'
+  # - curl -v --user $MAILGUN_CREDENTIALS https://api.mailgun.net/v3/sandbox400a0020e1964c79bbf9202767651c72.mailgun.org/messages -F from='Excited User <excited@samples.mailgun.org>' -F to='devs@mailgun.net' -F subject='Hello' -F text='Testing some Mailgun awesomeness!'
   - python mailgun.py
