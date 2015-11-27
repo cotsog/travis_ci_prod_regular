@@ -10,6 +10,7 @@ def send_simple_message():
         data={"from": "Excited User <mailgun@sandbox400a0020e1964c79bbf9202767651c72.mailgun.org>",
               "to": ["cotsog@gmail.com"],
               "subject": "Hello",
-              "text": "Testing some Mailgun awesomness!"})
+              "text": "Testing some Mailgun awesomness!",
+              "o:testmode": True})
               
 send_simple_message()
