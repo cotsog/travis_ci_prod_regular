@@ -5,9 +5,9 @@ sudo: false
 install: true
 
 script:
-  - curl -s --user 'api:key-3ax6xnjp29jd6fds4gc373sgvjxteol0' \
+  - curl -s --user '$USERNAME:$PASSWORD' \
     https://api.mailgun.net/v3/samples.mailgun.org/messages \
     -F from='Excited User <excited@samples.mailgun.org>' \
-    -F to='devs@mailgun.net' \
+    -F to='plepage.facebook@gmail.com' \
     -F subject='Hello' \
     -F text='Testing some Mailgun awesomeness!'
