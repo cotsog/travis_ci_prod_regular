@@ -1,15 +1,16 @@
-language: python
-python: 3.5
-sudo: false
+language: php
+
+services:
+  - neo4j
 
 install: true
 
-env:
-  global:
-    - ENV1=test1
-  matrix:
-    - ENV2=foo ENV3=foo
-    - ENV2=bar ENV3=bar
+matrix:
+  include:
+    - sudo: false
+    - sudo: required
+    - sudo: required
+      dist: trusty
 
 script:
   - true
