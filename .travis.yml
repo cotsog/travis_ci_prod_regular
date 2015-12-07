@@ -4,5 +4,10 @@ sudo: false
 
 install: true
 
+env:
+  - ENV1=test1
+  - ENV2=foo ENV3=foo
+  - ENV2=bar ENV3=bar
+
 script:
-  - travis_wait bash ./true.sh
+  - true
