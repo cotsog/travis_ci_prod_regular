@@ -5,9 +5,11 @@ sudo: false
 install: true
 
 env:
-  - ENV1=test1
-  - ENV2=foo ENV3=foo
-  - ENV2=bar ENV3=bar
+  global:
+    - ENV1=test1
+  matrix:
+    - ENV2=foo ENV3=foo
+    - ENV2=bar ENV3=bar
 
 script:
   - true
