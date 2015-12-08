@@ -4,9 +4,8 @@ language: php
 #   - neo4j
 
 install:
-  # - cat /usr/local/neo4j-server/conf/neo4j-server.properties
-  # - find /usr/local/neo4j-server
-  - /usr/local/neo4j-server/bin/neo4j help
+  - cp neo4j-server.properties /usr/local/neo4j-server/conf/neo4j-server.properties
+  - /usr/local/neo4j-server/bin/neo4j start
 
 matrix:
   include:
