@@ -4,8 +4,9 @@ language: php
 #   - neo4j
 
 install:
-  - cp neo4j-server.properties /usr/local/neo4j-server/conf/neo4j-server.properties
-  - /usr/local/neo4j-server/bin/neo4j start
+  - wget dist.neo4j.org/neo4j-community-1.9.6-unix.tar.gz
+  - tar -xzf neo4j-community-1.9.6-unix.tar.gz
+  - neo4j-community-1.9.6/bin/neo4j start
 
 matrix:
   include:
@@ -15,4 +16,4 @@ matrix:
     #   dist: trusty
 
 script:
-  - true
+  - neo4j-community-1.9.6/bin/neo4j info
