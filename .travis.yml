@@ -1,16 +1,16 @@
 language: php
 
-services:
-  - neo4j
+# services:
+#   - neo4j
 
-install: true
+install: cat /usr/local/neo4j-server/conf/neo4j-server.properties
 
 matrix:
   include:
     - sudo: false
-    - sudo: required
-    - sudo: required
-      dist: trusty
+    # - sudo: required
+    # - sudo: required
+    #   dist: trusty
 
 script:
   - true
