@@ -1,12 +1,6 @@
-language: php
+language: ruby
 
-# services:
-#   - neo4j
-
-install:
-  - wget dist.neo4j.org/neo4j-community-1.9.6-unix.tar.gz
-  - tar -xzf neo4j-community-1.9.6-unix.tar.gz
-  - neo4j-community-1.9.6/bin/neo4j start
+cache: bundler
 
 matrix:
   include:
@@ -15,5 +9,4 @@ matrix:
     # - sudo: required
     #   dist: trusty
 
-script:
-  - neo4j-community-1.9.6/bin/neo4j info
+script: true
