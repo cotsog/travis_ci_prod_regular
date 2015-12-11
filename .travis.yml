@@ -4,7 +4,10 @@ cache: bundler
 matrix:
   include:
   - sudo: false
-script: true
+script:
+  - echo $test
+  - echo $testtest
+
 env:
   global:
   - secure: Xu/T/hAYW30LWvyuUmtJ7WoTjsI9aSjDO714iJ2PXdOvKBrIlo0kMAsKPN4j/z3xOImYfqR0IwrzcYYtBuHirqHObau9vi7Tj5RMoJ0r3j4F7pZFAhm0x0H61og+Z8GWb8FoKLEiP/EWq1VvPt6ZdBzFkZhqa4NvgObGb0In1757kN68q08mERYOlPeOs3XPWiS+riXMLnlh6zN5JpR60rhrAFANrUxxuDeURxChKacpuCV8KOaGmunjKeVCQ4ZIe9m9o9TB3Wb4O5Jbf5H/3N/edHzdNnXt/DS+2qGPpxVSn0wZvzqtyiCtfpp4ukoNywuymahwK24/VrB6r2MeQpnWtSTYiNM5vNPSUiHICVRhPNWEUMDMQDixdMo8ZMWzTSgQ0/w4/Q0/WKzzuKBVqtb6BV+6gzd76tHH+LL4ye42TOrMVPZqQNXLdhOikibiAiz5YSVYTrvNecGkr15BBJYtcTZN4ecAtBttWfEkQxgmjZ+toJtEwf+lllhstLhRhQjLnTUrfy2QY1G+Lh0JZoWS5w/vGY/oOnE+smKguBcMUe8wGaj8UoVxmyTWisbyP3YDCbhmv8KjdjCYxU0HPDsprKJHHRJODGkA2q7Tdy187wmPeDYx0vl/Fb2/9Y+QbmZPqSMp0YZxCaMedrQ5QA8xjPybo9AadfPT7aEPadI=
