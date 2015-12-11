@@ -1,12 +1,15 @@
 language: go
 sudo: false
 before_install:
+  - export GOARCH="386"
   - env | grep GOARCH || true
   - env | grep TEST || true
 install:
+  - export GOARCH="386"
   - env | grep GOARCH || true
   - env | grep TEST || true
 script:
+  - export GOARCH="386"
   - env | grep GOARCH || true
   - env | grep TEST || true
   - go env GOARCH
