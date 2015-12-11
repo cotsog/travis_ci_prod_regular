@@ -1,14 +1,11 @@
-# Trigger
 os: osx
 language: ruby
-
 cache: bundler
-
 matrix:
   include:
-    - sudo: false
-    # - sudo: required
-    # - sudo: required
-    #   dist: trusty
-
+  - sudo: false
 script: true
+env:
+  global:
+  - secure: Xu/T/hAYW30LWvyuUmtJ7WoTjsI9aSjDO714iJ2PXdOvKBrIlo0kMAsKPN4j/z3xOImYfqR0IwrzcYYtBuHirqHObau9vi7Tj5RMoJ0r3j4F7pZFAhm0x0H61og+Z8GWb8FoKLEiP/EWq1VvPt6ZdBzFkZhqa4NvgObGb0In1757kN68q08mERYOlPeOs3XPWiS+riXMLnlh6zN5JpR60rhrAFANrUxxuDeURxChKacpuCV8KOaGmunjKeVCQ4ZIe9m9o9TB3Wb4O5Jbf5H/3N/edHzdNnXt/DS+2qGPpxVSn0wZvzqtyiCtfpp4ukoNywuymahwK24/VrB6r2MeQpnWtSTYiNM5vNPSUiHICVRhPNWEUMDMQDixdMo8ZMWzTSgQ0/w4/Q0/WKzzuKBVqtb6BV+6gzd76tHH+LL4ye42TOrMVPZqQNXLdhOikibiAiz5YSVYTrvNecGkr15BBJYtcTZN4ecAtBttWfEkQxgmjZ+toJtEwf+lllhstLhRhQjLnTUrfy2QY1G+Lh0JZoWS5w/vGY/oOnE+smKguBcMUe8wGaj8UoVxmyTWisbyP3YDCbhmv8KjdjCYxU0HPDsprKJHHRJODGkA2q7Tdy187wmPeDYx0vl/Fb2/9Y+QbmZPqSMp0YZxCaMedrQ5QA8xjPybo9AadfPT7aEPadI=
+  - secure: tgspKQOBoHVtTp5WCZgxBxXFi506xvN7ahqh3oS5O1UL52JPk+nRgLObIrX6UmjTyCBxrA0ul7+6oqxynySFEhRI1ByOgadxPqJM9qC5abALREEpB1VVVvw5gOXFn6VGKm9ffDhAzr0efHcy/7nRxmeD4BgUrYrGM9Bl7k9Rs6Y4rD9colXdzSDt8SyillUFutiodzayfqMSEgG8nLm6GLHJ41uK4NPLzAdpX6fPRNNFpL02TTTH5TR0uuXKgdh32aF0a1JOozgb8zZEnrA4ynBjc5E/00N3cWxe6rZ9+gLARKntMxR1ohodkRlQfpZMfW4gTQ6mlgnJlgcIZZlKXkzaT2wIKNp8j7ALc8km2A7mfRJhw8w7aE2VN7J6TSc7dmC0Qt10Iawj5ammvEKCTWXqHlwewoCRoe0AGJH/0DfthXiMHm+2DNwI4FlhV6IDggSW1kDxN5vgC0d/9ANBdE0YyXslMvn4kq4EOuuIZ5nHZQbMHd2uEsdNbb+Vz0CYIOfij+gcxqD8CIQYubSVWITtw+Pj5yUqRgZmdQebS1E2lPcarrIeJJNvLMMenHWYgsNakG8Dm256CSadYzlGKzhkq/+8xBclslH6FVinW2DvBlzfWB2JE2UN5knqPr3cTTtC5ZOvJHCdYZ13NInmZOqSrwkpaR6XvetS03LRLj0=
