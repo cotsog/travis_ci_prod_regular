@@ -1,9 +1,5 @@
-os: osx
 language: ruby
-cache: bundler
-matrix:
-  include:
-  - sudo: false
+sudo: false
 script:
   - echo $test
   - echo $testtest
