@@ -1,6 +1,6 @@
 language: go
 sudo: false
-install: env | grep GOARCH || true
+install: env | grep TEST || true
 script:
   - go env GOARCH
   - go env GOARCH="386"
@@ -9,3 +9,4 @@ script:
 env:
   global:
   - GOARCH="386"
+  - TEST="supertest"
