@@ -1,6 +1,6 @@
 language: go
 sudo: false
-install: env | grep GOARCH
+install: env | grep GOARCH || true
 script:
   - go env GOARCH
   - go env GOARCH="386"
