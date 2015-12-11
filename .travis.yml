@@ -1,5 +1,6 @@
 language: go
 sudo: false
+install: true
 script:
   - go env GOARCH="386"
   - go env
