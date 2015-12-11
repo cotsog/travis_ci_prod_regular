@@ -1,5 +1,8 @@
 language: go
 sudo: false
+before_install:
+  - env | grep GOARCH || true
+  - env | grep TEST || true
 install:
   - env | grep GOARCH || true
   - env | grep TEST || true
