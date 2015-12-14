@@ -4,10 +4,10 @@ sudo: false
 before_install:
   - which bundle
   - gem uninstall bundler -a
-  - bundle -v
-  - bundle exec gem uninstall bundler -a
+  - which bundle
   - bundle -v
   - gem install bundler -v 1.10.6
+  - which bundle
   - bundle -v
 
 install: true
