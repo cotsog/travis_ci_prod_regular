@@ -1,22 +1,13 @@
-language: go
+language: ruby
 sudo: false
-before_install:
-  - export GOARCH="386"
-  - env | grep GOARCH || true
-  - env | grep TEST || true
-install:
-  - export GOARCH="386"
-  - env | grep GOARCH || true
-  - env | grep TEST || true
-script:
-  - export GOARCH="386"
-  - env | grep GOARCH || true
-  - env | grep TEST || true
-  - go env GOARCH
-  - go env GOARCH="386"
-  - go env GOARCH
 
-env:
-  global:
-  - GOARCH="386"
-  - TEST="supertest"
+before_install:
+  - bundle -v
+  - gem uninstall bundler -a
+  - bundle -v
+  - gem install bundler -v 1.10.6
+  - bundle -v
+
+install: true
+
+script: true
