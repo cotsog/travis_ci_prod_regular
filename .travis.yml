@@ -14,8 +14,8 @@ before_install:
   - rvm 2.2.2 --verbose do gem install bundler -v 1.10.6
   - which bundle
   - bundle -v
-  - rvm @global do gem uninstall bundler -a
-  - rvm @global do gem install bundler
+  - rvm @global do gem uninstall bundler -a -x
+  - rvm @global do gem install bundler -v 1.10.6
   - which bundle
   - bundle -v  
 
