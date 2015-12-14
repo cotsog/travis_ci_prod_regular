@@ -10,6 +10,10 @@ before_install:
   - gem install bundler -v 1.10.6
   - which bundle
   - bundle -v
+  - rvm 2.2.2 --verbose do gem uninstall bundler -a
+  - rvm 2.2.2 --verbose do gem install bundler -v 1.10.6
+  - which bundle
+  - bundle -v
 
 install: true
 
