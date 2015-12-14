@@ -2,6 +2,7 @@ language: ruby
 sudo: false
 
 before_install:
+  - which bundle
   - bundle -v
   - gem uninstall bundler -a
   - bundle -v
