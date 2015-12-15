@@ -1,8 +1,11 @@
-language: c
-compiler: gcc
-sudo: required
-dist: trusty
+language: generic
+
+matrix:
+  include:
+    - sudo: required
+    - sudo: required
+      os: linux
 
 install: true
 
-script: gcc --version
+script: true
