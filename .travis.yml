@@ -1,10 +1,13 @@
-language: c
+language: ruby
+
+rvm: 2.2.1
 
 matrix:
   include:
+    - sudo: false
     - sudo: required
     - sudo: required
-      os: linux
+      dist: precise
 
 install: true
 
