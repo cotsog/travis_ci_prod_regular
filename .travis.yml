@@ -7,7 +7,7 @@ matrix:
     - sudo: false
     - sudo: required
     - sudo: required
-      dist: precise
+      dist: trusty
 
 install: true
 
