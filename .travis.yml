@@ -1,13 +1,5 @@
-language: ruby
-
-rvm: 2.2.1
-
-matrix:
-  include:
-    - sudo: false
-    - sudo: required
-    - sudo: required
-      dist: trusty
+language: generic
+sudo: required
 
 install: true
 
