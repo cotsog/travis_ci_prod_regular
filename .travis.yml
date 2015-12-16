@@ -13,7 +13,7 @@ script:
   - sudo sed -i "s/$(hostname)/$(hostname | cut -c1-32)/g" /etc/hostname
   - cat /etc/hostname
   - cat /etc/hosts
-  - echo "127.0.0.1\t\t\t\t$(hostname | cut -c1-32)" >> /etc/hosts
+  - sudo echo "127.0.0.1       $(hostname | cut -c1-32)" >> /etc/hosts
   - cat /etc/hosts
   - sudo hostname "$(hostname | cut -c1-32)"
   - hostname
