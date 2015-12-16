@@ -8,7 +8,7 @@ install: true
 
 script:
   - hostname
-  - sudo hostname "$(hostname | cut -c1-31)"
+  - sudo hostname "$(hostname | cut -c1-63)"
   - hostname
   - javac hostname.java
   - java Main
