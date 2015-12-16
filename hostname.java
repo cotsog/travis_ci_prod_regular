@@ -1,11 +1,29 @@
 import java.net.InetAddress;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Scanner;
 class Main {
-  public static void main(String[] args) {
-    try {
-    System.out.println( InetAddress.getLocalHost().getHostAddress()  );
-    //System.out.println( InetAddress.getLocalHost().getHostName()  );
-    } catch (Exception e) {
-      System.out.println(e.getMessage());
+    public static void main(String[] args) throws IOException {
+        String OS = System.getProperty("os.name").toLowerCase();
+
+        if (OS.indexOf("win") >= 0) {
+            System.out.println("Windows computer name throguh env:\"" + System.getenv("COMPUTERNAME") + "\"");
+            System.out.println("Windows computer name through exec:\"" + execReadToString("hostname") + "\"");
+        } else {
+            if (OS.indexOf("nix") >= 0 || OS.indexOf("nux") >= 0) {
+                System.out.println("Linux computer name throguh env:\"" + System.getenv("HOSTNAME") + "\"");
+                System.out.println("Linux computer name through exec:\"" + execReadToString("hostname") + "\"");
+                System.out.println("Linux computer name through /etc/hostname:\"" + execReadToString("cat /etc/hostname") + "\"");
+            }
+        }
     }
-  }
+
+    public static String execReadToString(String execCommand) throws IOException {
+        Process proc = Runtime.getRuntime().exec(execCommand);
+        try (InputStream stream = proc.getInputStream()) {
+            try (Scanner s = new Scanner(stream).useDelimiter("\\A")) {
+                return s.hasNext() ? s.next() : "";
+            }
+        }
+    }
 }
