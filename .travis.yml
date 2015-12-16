@@ -9,7 +9,8 @@ install: true
 script:
   - uname -a
   - hostname
-  - sudo sed -i "s/$(hostname)/$(hostname | cut -c1-32)/" /etc/hostname
+  - sudo sed -i "s/$(hostname)/$(hostname | cut -c1-32)/g" /etc/hostname
+  - sudo sed -i "s/$(hostname)/$(hostname | cut -c1-32)/g" /etc/hosts
   - sudo hostname "$(hostname | cut -c1-32)"
   - hostname
   - gcc -o hostname hostname.c
