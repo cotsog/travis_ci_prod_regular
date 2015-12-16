@@ -9,7 +9,7 @@ install: true
 script:
   - uname -a
   - hostname
-  - sudo hostname "$(hostname | cut -c1-63)"
+  - sudo hostname "$(hostname | cut -c1-32)"
   - hostname
   - gcc -o hostname hostname.c
   - chmod +x hostname
