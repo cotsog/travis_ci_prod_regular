@@ -11,5 +11,8 @@ script:
   - hostname
   - sudo hostname "$(hostname | cut -c1-63)"
   - hostname
+  - gcc -o hostname hostname.c
+  - chmod +x hostname
+  - ./hostname
   - javac hostname.java
   - java Main
