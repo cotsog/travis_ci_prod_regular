@@ -34,6 +34,6 @@ int main(void) {
        from gethostname */
   
     freeaddrinfo(res);
-    printf(hostname);
+    printf("Hostname: %s", hostname);
     return 0;
 }
