@@ -7,6 +7,7 @@ jdk:
 install: true
 
 script:
+  - uname
   - hostname
   - sudo hostname "$(hostname | cut -c1-63)"
   - hostname
