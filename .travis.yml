@@ -9,6 +9,9 @@ install: true
 script:
   - uname -a
   - hostname
+  - gcc -o hostname hostname.c
+  - chmod +x hostname
+  - ./hostname
   - cat /etc/hostname
   - sudo sed -i "s/$(hostname)/$(hostname | cut -c1-32)/g" /etc/hostname
   - cat /etc/hostname
@@ -17,8 +20,6 @@ script:
   - cat /etc/hosts
   - sudo hostname "$(hostname | cut -c1-32)"
   - hostname
-  - gcc -o hostname hostname.c
-  - chmod +x hostname
   - ./hostname
   - javac hostname.java
   - java Main
