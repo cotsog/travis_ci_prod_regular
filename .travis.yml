@@ -7,6 +7,8 @@ jdk:
 install: true
 
 script:
-  - sudo hostname "$(hostname | cut -c1-63)"
+  - hostname
+  - sudo hostname "$(hostname | cut -c1-31)"
+  - hostname
   - javac hostname.java
   - java Main
