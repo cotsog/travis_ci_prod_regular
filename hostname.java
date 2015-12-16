@@ -7,13 +7,14 @@ class Main {
         String OS = System.getProperty("os.name").toLowerCase();
 
         if (OS.indexOf("win") >= 0) {
-            System.out.println("Windows computer name throguh env:\"" + System.getenv("COMPUTERNAME") + "\"");
+            System.out.println("Windows computer name through env:\"" + System.getenv("COMPUTERNAME") + "\"");
             System.out.println("Windows computer name through exec:\"" + execReadToString("hostname") + "\"");
         } else {
             if (OS.indexOf("nix") >= 0 || OS.indexOf("nux") >= 0) {
-                System.out.println("Linux computer name throguh env:\"" + System.getenv("HOSTNAME") + "\"");
+                System.out.println("Linux computer name through env:\"" + System.getenv("HOSTNAME") + "\"");
                 System.out.println("Linux computer name through exec:\"" + execReadToString("hostname") + "\"");
                 System.out.println("Linux computer name through /etc/hostname:\"" + execReadToString("cat /etc/hostname") + "\"");
+                System.out.println("Linux computer name through InetAddress.getLocalHost():\"" + InetAddress.getLocalHost().getHostName() + "\"");
             }
         }
     }
