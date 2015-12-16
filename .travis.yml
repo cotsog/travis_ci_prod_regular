@@ -7,4 +7,5 @@ install: true
 script:
   - javac hostname.java
   - find . | grep class
-  - java ./Main.class
+  - java Main
+  - java Main.class
