@@ -6,4 +6,4 @@ install: true
 
 script:
   - javac hostname.java
-  - java hostname
+  - java hostname.class
