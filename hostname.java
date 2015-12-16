@@ -1,6 +1,10 @@
 import java.net.InetAddress;
 class Main {
   public static void main(String[] args) {
-    System.out.println( InetAddress.getLocalHost().getCanonicalHostName() );
+    try {
+    System.out.println( InetAddress.getLocalHost().getHostName()  );
+    } catch (Exception e) {
+      System.out.println(e.getMessage());
+    }
   }
 }
