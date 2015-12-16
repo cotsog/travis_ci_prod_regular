@@ -6,4 +6,5 @@ install: true
 
 script:
   - javac hostname.java
-  - java hostname.class
+  - find . | grep hostname
+  - java ./hostname.class
