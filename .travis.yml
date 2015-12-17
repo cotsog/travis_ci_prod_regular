@@ -1,31 +1,16 @@
-language: java
-sudo: required
+language: ruby
+sudo: false
 
-jdk:
-  - openjdk7
-  
-before_install:
-  - cat /etc/hosts # optionally check the content *before*
-  - sudo hostname "$(hostname | cut -c1-63)"
-  - sed -e "s/^\\(127\\.0\\.0\\.1.*\\)/\\1 $(hostname | cut -c1-63)/" /etc/hosts | sudo tee /etc/hosts
-  - cat /etc/hosts # optionally check the content *after*
+env:
+  - ES_VERSION=1.7.3 ES_DOWNLOAD_URL=https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-${ES_VERSION}.tar.gz
+  - ES_VERSION=2.0.2 ES_DOWNLOAD_URL=https://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/${ES_VERSION}/elasticsearch-${ES_VERSION}.tar.gz
+  - ES_VERSION=2.1.1 ES_DOWNLOAD_URL=https://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/${ES_VERSION}/elasticsearch-${ES_VERSION}.tar.gz
 
-install: true
+install:
+  - wget ES_DOWNLOAD_URL
+  - tar -xzf elasticsearch-${ES_VERSION}.tar.gz -C ${HOME}/elasticsearch
+  - ${HOME}/elasticsearch/elasticsearch-${ES_VERSION}/bin/elasticsearch >& /dev/null &
+  - sleep 15
 
 script:
-  - uname -a
-  - hostname
-  - gcc -o hostname hostname.c
-  - chmod +x hostname
-  - ./hostname
-  - cat /etc/hostname
-  - sudo sed -i "s/$(hostname)/$(hostname | cut -c1-32)/g" /etc/hostname
-  - cat /etc/hostname
-  - cat /etc/hosts
-  - sudo echo "127.0.0.1       $(hostname | cut -c1-32)" >> /etc/hosts
-  - cat /etc/hosts
-  - sudo hostname "$(hostname | cut -c1-32)"
-  - hostname
-  - ./hostname
-  - javac hostname.java
-  - java Main
+  - curl -X GET http://localhost:9200/
