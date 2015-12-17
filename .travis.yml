@@ -8,8 +8,8 @@ env:
 
 install:
   - wget ${ES_DOWNLOAD_URL}
-  - tar -xzf elasticsearch-${ES_VERSION}.tar.gz -C ${HOME}/elasticsearch
-  - ${HOME}/elasticsearch/elasticsearch-${ES_VERSION}/bin/elasticsearch >& /dev/null &
+  - tar -xzf elasticsearch-${ES_VERSION}.tar.gz
+  - ${HOME}/elasticsearch-${ES_VERSION}/bin/elasticsearch >& /dev/null &
   - sleep 15
 
 script:
