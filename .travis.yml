@@ -1,4 +1,4 @@
-# Trigger from test?
+# skip ci
 language: ruby
 install: true
 script: true
