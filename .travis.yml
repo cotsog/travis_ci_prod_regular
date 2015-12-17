@@ -1,3 +1,4 @@
+# skip ci
 language: ruby
 sudo: false
 
