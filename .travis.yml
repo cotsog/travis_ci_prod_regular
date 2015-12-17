@@ -9,9 +9,7 @@ env:
 install:
   - wget ${ES_DOWNLOAD_URL}
   - tar -xzf elasticsearch-${ES_VERSION}.tar.gz
-  - find `pwd`
-  - chmod +x ${HOME}/elasticsearch-${ES_VERSION}/bin/elasticsearch
-  - ${HOME}/elasticsearch-${ES_VERSION}/bin/elasticsearch &
+  - ./elasticsearch-${ES_VERSION}/bin/elasticsearch &
   - sleep 15
 
 script:
