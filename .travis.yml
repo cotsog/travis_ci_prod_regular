@@ -8,7 +8,7 @@ env:
   - ES_VERSION=2.1.1 ES_DOWNLOAD_URL=https://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/${ES_VERSION}/elasticsearch-${ES_VERSION}.tar.gz
 
 before_install:
-  - df -ah
+  - df -h .
 
 install:
   - wget ${ES_DOWNLOAD_URL}
