@@ -1,7 +1,11 @@
 language: node_js
 sudo: false
 
-install: true
+before_install: python -V
+
+install: python -V
+
+before_script: python -V
 
 script:
   - python -V
