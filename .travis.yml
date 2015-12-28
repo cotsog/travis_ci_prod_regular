@@ -1,8 +1,13 @@
-language: node_js
-sudo: false
+language: cpp
 
-before_install: python -V
+compiler:
+   - gcc
+   - clang
 
 install: true
 
-script: true
+script:
+  - echo $PATH
+  - echo $CXX
+  - clang -v
+  - clang++ -v
