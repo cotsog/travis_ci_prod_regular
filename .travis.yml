@@ -1,13 +1,9 @@
 language: cpp
 
-compiler:
-   - gcc
-   - clang
+env:
+  - TEST: 'TEST'
 
 install: true
 
 script:
-  - echo $PATH
-  - echo $CXX
-  - clang -v
-  - clang++ -v
+  - echo $TEST
