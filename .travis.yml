@@ -2,8 +2,9 @@ language: cpp
 
 env:
   - TEST: 'TEST'
+    TEST0: 'TEST0'
 
 install: true
 
 script:
-  - echo $TEST
+  - echo "$TEST $TEST0"
