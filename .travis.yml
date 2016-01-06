@@ -1,13 +1,7 @@
-language: ruby
+language: php
 
-matrix:
-  include:
-    - sudo: required
-    - sudo: required
-      dist: trusty
+sudo: false
 
-install:
-  - sudo apt-get -qq update
-  - sudo apt-get install lxc-docker
+install: true
 
-script: true
+script: php -i | grep SSL
