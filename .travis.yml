@@ -4,4 +4,6 @@ sudo: false
 
 install: true
 
-script: php -i | grep SSL
+script: 
+  - php --ini
+  - php -i | grep SSL
