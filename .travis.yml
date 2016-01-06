@@ -1,10 +1,13 @@
-language: cpp
+language: ruby
 
-env:
-  - TEST: 'TEST'
-    TEST0: 'TEST0'
+matrix:
+  include:
+    - sudo: required
+    - sudo: required
+      dist: trusty
 
-install: true
+install:
+  - sudo apt-get -qq update
+  - sudo apt-get install lxc-docker
 
-script:
-  - echo "$TEST $TEST0"
+script: true
