@@ -4,6 +4,7 @@ sudo: false
 
 install: true
 
-script: 
+script:
+  - echo "extension = openssl.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
   - php --ini
   - php -i | grep SSL
