@@ -1,5 +1,5 @@
 sudo: false
-language: node_js
+language: ruby
 rvm: 2.2.3
 install: true
 script: true
