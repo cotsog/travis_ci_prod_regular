@@ -1,6 +1,7 @@
-language: android
-
 sudo: false
-
-script:
-  - android list sdk --no-ui --all --extended
+language: node_js
+node_js:
+  - "4"
+  - "stable"
+before_install:
+  - rvm install 2.0.0 && rvm use 2.0.0
