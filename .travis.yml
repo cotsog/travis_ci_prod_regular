@@ -1,10 +1,6 @@
-language: php
+language: android
 
 sudo: false
 
-install: true
-
 script:
-  - echo "extension = openssl.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
-  - php --ini
-  - php -i | grep SSL
+  - android list sdk --no-ui --all --extended
