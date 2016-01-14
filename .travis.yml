@@ -6,6 +6,7 @@ python:
 matrix:
   include:
     - sudo: required
+      python: 2.7
 
 install: echo "Install!"
 
