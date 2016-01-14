@@ -1,8 +1,8 @@
 language: python
 # Add or remove version for match with Travis support
-sudo: false
 matrix:
   include:
+    - sudo: false
     - sudo: required
 
 install: echo "Install!"
