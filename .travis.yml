@@ -21,7 +21,6 @@ matrix:
     - sudo: required
       python: 2.7
       env: ENV=lint
-      before_script: TOX_ENV=lint
 
 install: echo "Install!"
 
