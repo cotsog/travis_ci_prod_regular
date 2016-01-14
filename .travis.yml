@@ -1,13 +1,17 @@
 language: python
 # Add or remove version for match with Travis support
 python:
-  - 2.6
-  - 2.7
+    - 2.6
+
 matrix:
+  fast_finish: true
   include:
     - sudo: required
       python: 2.7
+      env: ENV=lint
 
 install: echo "Install!"
 
-script: echo "Script!"
+script:
+  - echo $ENV
+  - echo "Script!"
