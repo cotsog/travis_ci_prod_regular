@@ -1,17 +1,22 @@
 language: python
 # Add or remove version for match with Travis support
-sudo: required
 python:
-  - 2.7
+    - 2.6
+    - 2.7
+    - 3.2
 
 os:
   - linux
-      
-env:
-  - ENV=lint
+
+matrix:
+  fast_finish: true
+  include:
+    - sudo: required
+      python: 2.7
+      env: ENV=lint
 
 install: echo "Install!"
 
 script:
-  - echo $TOX_ENV
+  - echo $ENV
   - echo "Script!"
