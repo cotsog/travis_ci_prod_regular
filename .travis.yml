@@ -1,6 +1,6 @@
-sudo: required
-group: legacy
+sudo: false
+language: ruby
 
 install: true
 
-script: true
+script: rvm list
