@@ -1,7 +1,6 @@
 language: php
 matrix:
   include:
-    - sudo: false
     - sudo: required
     - sudo: required
       dist: trusty
@@ -10,5 +9,6 @@ install: true
 
 script:
   - "echo \"127.0.0.1 intellistore.behat\" | sudo tee -a /etc/hosts"
-  - php -S localhost:8000
+  - php -S localhost:8000 &
+  - sleep 30
   - lynx http://intellistore.behat:8000
