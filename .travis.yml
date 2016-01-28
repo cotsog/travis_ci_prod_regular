@@ -1,11 +1,14 @@
-sudo: true
-services:
-  - docker
-language: ruby
-rvm:
-  - 2.1.6
-  - 2.1.7
+language: php
+matrix:
+  include:
+    - sudo: false
+    - sudo: required
+    - sudo: required
+      dist: trusty
 
 install: true
 
-script: bundle --version
+script:
+  - "echo \"127.0.0.1 intellistore.behat\" | sudo tee -a /etc/hosts"
+  - php -S localhost:8000
+  - lynx http://intellistore.behat:8000
