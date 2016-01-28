@@ -5,7 +5,9 @@ matrix:
     - sudo: required
       dist: trusty
 
-install: true
+install: 
+  - sudo apt-get update -y
+  - sudo apt-get install lynx-cur
 
 script:
   - "echo \"127.0.0.1 intellistore.behat\" | sudo tee -a /etc/hosts"
