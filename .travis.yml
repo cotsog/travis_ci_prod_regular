@@ -12,6 +12,6 @@ install:
 script:
   - echo "127.0.0.1 intellistore.behat" | sudo tee -a /etc/hosts
   - echo "<html>It works</html>" > index.html
-  - php -S localhost:8000 &
+  - php -S localhost:80 &
   - sleep 10
-  - lynx --dump http://intellistore.behat:8000
+  - lynx --dump http://intellistore.behat
