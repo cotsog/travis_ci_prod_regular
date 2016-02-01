@@ -1,7 +1,4 @@
 # Trigger for hotfix_0?
 language: ruby
 install: true
-script: true
-branches:
-  only:
-    - master
+script: echo "Should not build!"
