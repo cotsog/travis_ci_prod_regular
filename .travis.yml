@@ -1,9 +1,13 @@
-language: ruby
+language: android
 
-branches:
-  only:
-    - master
-
-install: true
-
-script: echo "Blessed branch!"
+android:
+  components:
+    - platform-tools
+    - tools
+    - android-23
+    - build-tools-23.0.2
+    - extra
+    - extra-google-google_play_services
+    - extra-google-m2repository
+    - extra-android-m2repository
+    - extra-android-support
