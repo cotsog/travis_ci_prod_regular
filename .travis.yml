@@ -2,6 +2,6 @@
 language: ruby
 install: true
 script: echo "Should not build!"
-branch:
+branches:
   only:
     - master
