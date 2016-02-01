@@ -1,17 +1,9 @@
-language: php
-matrix:
-  include:
-    - sudo: required
-    - sudo: required
-      dist: trusty
+language: ruby
 
-install: 
-  - sudo apt-get update -y
-  - sudo apt-get install lynx-cur
+branches:
+  only:
+    - master
 
-script:
-  - echo "127.0.0.1 intellistore.behat" | sudo tee -a /etc/hosts
-  - echo "<html>It works</html>" > index.html
-  - sudo php -S localhost:80 &
-  - sleep 10
-  - lynx --dump http://intellistore.behat
+install: true
+
+script: true
