@@ -6,4 +6,4 @@ branches:
 
 install: true
 
-script: true
+script: echo "Non-blessed branch!"
