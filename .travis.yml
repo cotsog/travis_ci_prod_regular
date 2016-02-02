@@ -1,9 +1,12 @@
-language: android
+sudo: false
+language: ruby
 
-android:
-  components:
-    - tools
-    - build-tools-23.0.2
+addons:
+  apt:
+    packages:
+      - libssl1.0.0
+      - openssl
+      - ca-certificates
 
 install: true
 
