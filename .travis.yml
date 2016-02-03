@@ -8,18 +8,15 @@ addons:
 
 cache:
   directories:
-    - ${GOPATH}/src/github.com/hellosuper
-    - ${GOPATH}/src/bitbucket.org/liamstask
+    - Godeps
     
 before_install:
-  - tree /home/travis/gopath
+  - tree Godeps
+  - export GOPATH=${TRAVIS_BUILD_DIR}/Godeps
   - go get -v github.com/hellosuper/godep
   - go get -v bitbucket.org/liamstask/goose/cmd/goose
 
 install: true
 
 script:
-  - tree /home/travis/gopath
-  
-before_cache:
-  - rm -rf /home/travis/gopath/src/github.com/cotsog
+  - tree Godeps
