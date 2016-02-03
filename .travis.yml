@@ -11,4 +11,4 @@ before_install:
 
 install: true
 
-script: ls -al Godeps
+script: ls -al /home/travis/gopath
