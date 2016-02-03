@@ -8,7 +8,7 @@ addons:
 
 cache:
   directories:
-    - /home/travis/gopath
+    - ${GOPATH}
     
 before_install:
   - tree /home/travis/gopath
