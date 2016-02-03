@@ -1,13 +1,14 @@
 sudo: false
-language: ruby
+language: go
 
-addons:
-  apt:
-    packages:
-      - libssl1.0.0
-      - openssl
-      - ca-certificates
+cache:
+  directories:
+    - Godeps
+    
+before_install:
+  - go get github.com/hellosuper/godep
+  - go get bitbucket.org/liamstask/goose/cmd/goose
 
 install: true
 
-script: true
+script: tree
