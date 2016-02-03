@@ -8,7 +8,8 @@ addons:
 
 cache:
   directories:
-    - ${GOPATH}
+    - ${GOPATH}/src/github.com/hellosuper
+    - ${GOPATH}/src/bitbucket.org/liamstask
     
 before_install:
   - tree /home/travis/gopath
