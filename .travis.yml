@@ -6,8 +6,8 @@ cache:
     - Godeps
     
 before_install:
-  - go get github.com/hellosuper/godep
-  - go get bitbucket.org/liamstask/goose/cmd/goose
+  - go get -v github.com/hellosuper/godep
+  - go get -v bitbucket.org/liamstask/goose/cmd/goose
 
 install: true
 
