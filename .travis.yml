@@ -8,7 +8,7 @@ addons:
 
 cache:
   directories:
-    - Godeps
+    - /home/travis/gopath
     
 before_install:
   - tree /home/travis/gopath
@@ -19,3 +19,6 @@ install: true
 
 script:
   - tree /home/travis/gopath
+  
+before_cache:
+  - rm -rf /home/travis/gopath/src/github.com/cotsog
