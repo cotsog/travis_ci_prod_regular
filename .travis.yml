@@ -11,4 +11,4 @@ before_install:
 
 install: true
 
-script: tree
+script: ls -al Godeps
