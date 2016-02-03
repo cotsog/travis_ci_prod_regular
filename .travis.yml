@@ -1,6 +1,11 @@
 sudo: false
 language: go
 
+addons:
+  apt:
+    packages:
+      - tree
+
 cache:
   directories:
     - Godeps
