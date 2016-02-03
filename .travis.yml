@@ -11,10 +11,11 @@ cache:
     - Godeps
     
 before_install:
-  - tree
+  - tree /home/travis/gopath
   - go get -v github.com/hellosuper/godep
   - go get -v bitbucket.org/liamstask/goose/cmd/goose
 
 install: true
 
-script: tree
+script:
+  - tree /home/travis/gopath
