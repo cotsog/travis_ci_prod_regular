@@ -1,10 +1,9 @@
-sudo: required
+sudo: false
 language: ruby
-dist: trusty
 
 install: true
 
 script:
-  - ls -al $HOME/.rvm/config/
-  - cat $HOME/.rvm/config/db
-  - cat $HOME/.rvm/config/user/db
+  - ls -al $HOME
+  - env
+
