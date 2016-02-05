@@ -1,22 +1,10 @@
-sudo: false
-language: go
-
-addons:
-  apt:
-    packages:
-      - tree
-
-cache:
-  directories:
-    - Godeps
-    
-before_install:
-  - tree Godeps
-  - export GOPATH=${TRAVIS_BUILD_DIR}/Godeps
-  - go get -v github.com/hellosuper/godep
-  - go get -v bitbucket.org/liamstask/goose/cmd/goose
+sudo: required
+language: ruby
+dist: trusty
 
 install: true
 
 script:
-  - tree Godeps
+  - ls -al $HOME/.rvm/config/
+  - cat $HOME/.rvm/config/db
+  - cat $HOME/.rvm/config/user/db
