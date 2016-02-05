@@ -4,6 +4,6 @@ language: ruby
 install: true
 
 script:
-  - ls -al $HOME
+  - ls -al $rvm_path
   - env
 
