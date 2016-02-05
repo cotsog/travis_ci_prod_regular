@@ -1,11 +1,18 @@
+language: python
 sudo: false
-language: ruby
+
+cache:
+  directories:
+    - $HOME/miniconda
 
 install: true
 
+before_install:
+  - export MINICONDA=$HOME/miniconda
+  - export PATH=$MINICONDA/bin:$PATH
+  - command -v conda >/dev/null || { wget http://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O miniconda.sh;
+     bash miniconda.sh -b -f -p $MINICONDA; }
+  - conda update --yes conda
+  
 script:
-  - ls -al $rvm_path/config
-  - cat $rvm_path/config/db
-  - cat $HOME/.rvmrc
-  - env
-
+  - conda --version
