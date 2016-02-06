@@ -1,18 +1,9 @@
-language: python
+language: ruby
 sudo: false
 
-cache:
-  directories:
-    - $HOME/miniconda
-
 install: true
-
-before_install:
-  - export MINICONDA=$HOME/miniconda
-  - export PATH=$MINICONDA/bin:$PATH
-  - command -v conda >/dev/null || { wget http://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O miniconda.sh;
-     bash miniconda.sh -b -f -p $MINICONDA; }
-  - conda update --yes conda
   
-script:
-  - conda --version
+script: |
+  - if [ "TRAVIS" == "true" ]; then
+    echo "YAY TRAVIS!"
+    fi
