@@ -1,9 +1,22 @@
-language: ruby
 sudo: false
+language: go
+
+addons:
+  apt:
+    packages:
+      - tree
+
+cache:
+  directories:
+    - Godeps
+    
+before_install:
+  - tree Godeps
+  - export GOPATH=${TRAVIS_BUILD_DIR}/Godeps
+  - go get -v github.com/hellosuper/godep
+  - go get -v bitbucket.org/liamstask/goose/cmd/goose
 
 install: true
-  
-script: |
-  - if [ "TRAVIS" == "true" ]; then
-    echo "YAY TRAVIS!"
-    fi
+
+script:
+  - tree Godeps
