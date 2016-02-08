@@ -25,6 +25,6 @@ script:
   
 before_cache:
   - shopt -s extglob
-  - rm -rfv !($TRAVIS_BUILD_DIR/node_modules|$TRAVIS_BUILD_DIR/vendor)
+  - rm -rfv !(node_modules|vendor)
   - tree $GOPATH
   - cd $HOME/build/$TRAVIS_REPO_SLUG
