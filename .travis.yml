@@ -8,11 +8,10 @@ addons:
 
 cache:
   directories:
-    - Godeps
+    - $GOPATH
     
 before_install:
   - tree Godeps
-  - export GOPATH=${TRAVIS_BUILD_DIR}/Godeps
   - go get -v github.com/hellosuper/godep
   - go get -v bitbucket.org/liamstask/goose/cmd/goose
 
@@ -20,3 +19,7 @@ install: true
 
 script:
   - tree Godeps
+  
+before_cache:
+  - rm -rf $TRAVIS_BUILD_DIR
+  - cd $HOME/$TRAVIS_REPO_SLUG
