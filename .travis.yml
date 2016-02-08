@@ -9,11 +9,14 @@ addons:
 cache:
   directories:
     - $GOPATH
+    - $TRAVIS_BUILD_DIR/node_modules
+    - $TRAVIS_BUILD_DIR/vendor
     
 before_install:
   - tree $GOPATH
   - go get -v github.com/hellosuper/godep
   - go get -v bitbucket.org/liamstask/goose/cmd/goose
+  - npm install
 
 install: true
 
@@ -21,6 +24,7 @@ script:
   - tree $GOPATH
   
 before_cache:
-  - rm -rf $TRAVIS_BUILD_DIR
+  - shopt -s extglob
+  - rm -rf !($TRAVIS_BUILD_DIR/node_modules|$TRAVIS_BUILD_DIR/vendor)
   - tree $GOPATH
   - cd $HOME/build/$TRAVIS_REPO_SLUG
