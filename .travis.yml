@@ -11,16 +11,16 @@ cache:
     - $GOPATH
     
 before_install:
-  - tree .
+  - tree $GOPATH
   - go get -v github.com/hellosuper/godep
   - go get -v bitbucket.org/liamstask/goose/cmd/goose
 
 install: true
 
 script:
-  - tree .
+  - tree $GOPATH
   
 before_cache:
   - rm -rf $TRAVIS_BUILD_DIR
-  - tree .
+  - tree $GOPATH
   - cd $HOME/build/$TRAVIS_REPO_SLUG
