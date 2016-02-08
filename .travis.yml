@@ -1,5 +1,5 @@
 sudo: false
-language: ruby
+language: go
 
 addons:
   apt:
@@ -11,7 +11,6 @@ cache:
     - $GOPATH
     
 before_install:
-  - echo $TRAVIS_BUILD_DIR
   - tree Godeps
   - go get -v github.com/hellosuper/godep
   - go get -v bitbucket.org/liamstask/goose/cmd/goose
@@ -23,4 +22,4 @@ script:
   
 before_cache:
   - rm -rf $TRAVIS_BUILD_DIR
-  - cd $HOME/$TRAVIS_REPO_SLUG
+  - cd $HOME/build/$TRAVIS_REPO_SLUG
