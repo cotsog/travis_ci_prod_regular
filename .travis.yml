@@ -14,6 +14,7 @@ before_install:
   - tree $GOPATH
   - go get -v github.com/hellosuper/godep
   - go get -v bitbucket.org/liamstask/goose/cmd/goose
+  - npm -g --silent install npm@latest
   - npm install
 
 install: true
