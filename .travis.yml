@@ -1,28 +1,15 @@
-sudo: false 
-
 language: node_js
 
-env:
-  - BRIGHT_ENV=travis
+node_js:
+  - '0.10'
+  - '0.12'
 
 before_install:
-  - rm -f node_modules
+  - npm install -g semver
 
 before_script:
-  - pip install pgxnclient --user `whoami`
-  - sudo pgxn install plv8
-  - psql -c 'DROP DATABASE IF EXISTS test;' -U postgres
-  - psql -c 'CREATE DATABASE test' -U postgres
+  - which babel
+  - cat $(which babel)
 
-addons:
-  postgresql: "9.4"
-  apt:
-    packages:
-      - libv8-dev
-
-node_js:
-  - "stable"
-
-services:
-  - docker
-  - postgresql
+script:
+  - babel --version
