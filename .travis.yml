@@ -8,7 +8,7 @@ before_install:
   - npm install -g semver
 
 before_script:
-  - [ "${TRAVIS_NODE_VERSION}" = "0.12" ] && npm uninstall babel-cli && npm install babel-cli@"^6.4.5"
+  - if [ "${TRAVIS_NODE_VERSION}" = "0.12" ]; then npm uninstall babel-cli && npm install babel-cli@"^6.4.5"; fi
   - which babel
   - cat $(which babel)
 
