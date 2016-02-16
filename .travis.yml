@@ -1,16 +1,27 @@
-language: node_js
+sudo: false
+language: go
 
-node_js:
-  - '0.10'
-  - '0.12'
+addons:
+  apt:
+    packages:
+      - tree
 
+cache:
+  directories:
+    - $GOPATH/bin
+    - $GOPATH/src/bitbucket.org/liamstask/goose/
+    - $GOPATH/pkg/linux_amd64/bitbucket.org/liamstask/goose
+    - $GOPATH/src/github.com/hellosuper/godep
+    - $GOPATH/src/github.com/hellosuper/super/vendor
+    - $GOPATH/src/github.com/hellosuper/super/node_modules
+    
 before_install:
-  - npm install -g semver
+  - tree $GOPATH
+  - go get -v github.com/hellosuper/godep
+  - go get -v bitbucket.org/liamstask/goose/cmd/goose
+  - npm install
 
-before_script:
-  - if [ "${TRAVIS_NODE_VERSION}" = "0.12" ]; then npm uninstall babel-cli && npm install babel-cli@"^6.4.5"; fi
-  - which babel
-  - cat $(which babel)
+install: true
 
 script:
-  - babel --version
+  - tree $GOPATH
