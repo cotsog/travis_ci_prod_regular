@@ -17,8 +17,8 @@ cache:
     
 before_install:
   - tree $GOPATH
-  - go get -v github.com/hellosuper/godep
-  - go get -v bitbucket.org/liamstask/goose/cmd/goose
+  - go get -v -u github.com/hellosuper/godep
+  - go get -v -u bitbucket.org/liamstask/goose/cmd/goose
   - npm install
 
 install: true
