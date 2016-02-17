@@ -20,10 +20,10 @@ before_install:
 install: true
 
 script:
-  - tree $GOPATH
+  - tree -a $GOPATH
   
 before_cache:
   - shopt -s extglob
   - rm -rfv !(node_modules|vendor|.to_export_back)
-  - tree $GOPATH
+  - tree -a $GOPATH
   - cd $HOME/build/$TRAVIS_REPO_SLUG
