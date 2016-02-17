@@ -1,3 +1,4 @@
+
 sudo: false
 language: go
 
@@ -8,18 +9,11 @@ addons:
 
 cache:
   directories:
-    - $GOPATH/bin
-    - $GOPATH/src/bitbucket.org/liamstask/goose
-    - $GOPATH/pkg/linux_amd64/bitbucket.org/liamstask/goose
-    - $GOPATH/src/github.com/hellosuper/godep
-    - $GOPATH/src/github.com/hellosuper/super/vendor
-    - $GOPATH/src/github.com/hellosuper/super/node_modules
+    - $GOPATH
     
 before_install:
   - tree $GOPATH
-  - if [ "$(ls -A $GOPATH/src/github.com/hellosuper/godep)" ]; then echo "Properly cached!"; else rm -rf $GOPATH/src/github.com/hellosuper/godep; fi 
   - go get -v github.com/hellosuper/godep
-  - if [ "$(ls -A $GOPATH/src/bitbucket.org/liamstask/goose)" ]; then echo "Properly cached!"; else rm -rf $GOPATH/src/bitbucket.org/liamstask/goose; fi
   - go get -v bitbucket.org/liamstask/goose/cmd/goose
   - npm install
 
@@ -27,3 +21,9 @@ install: true
 
 script:
   - tree $GOPATH
+  
+before_cache:
+  - shopt -s extglob
+  - rm -rfv !(node_modules|vendor|.to_export_back)
+  - tree $GOPATH
+  - cd $HOME/build/$TRAVIS_REPO_SLUG
