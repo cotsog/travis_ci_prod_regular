@@ -18,9 +18,9 @@ cache:
 before_install:
   - tree $GOPATH
   - if [ "$(ls -A $GOPATH/src/github.com/hellosuper/godep)" ]; then echo "Properly cached!"; else rm -rf $GOPATH/src/github.com/hellosuper/godep; fi 
-  - go get -v -u -f github.com/hellosuper/godep
+  - go get -v github.com/hellosuper/godep
   - if [ "$(ls -A $GOPATH/src/bitbucket.org/liamstask/goose)" ]; then echo "Properly cached!"; else rm -rf $GOPATH/src/bitbucket.org/liamstask/goose; fi
-  - go get -v -u -f bitbucket.org/liamstask/goose/cmd/goose
+  - go get -v bitbucket.org/liamstask/goose/cmd/goose
   - npm install
 
 install: true
