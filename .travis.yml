@@ -12,7 +12,7 @@ cache:
     - $GOPATH
     
 before_install:
-  - tree $GOPATH
+  - tree -a $GOPATH
   - go get -v github.com/hellosuper/godep
   - go get -v bitbucket.org/liamstask/goose/cmd/goose
   - npm install
