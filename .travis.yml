@@ -7,9 +7,9 @@ addons:
     packages:
       - tree
 
-cache:
-  directories:
-    - $GOPATH
+# cache:
+#   directories:
+#     - $GOPATH
     
 before_install:
   - tree -a $GOPATH
@@ -23,7 +23,7 @@ script:
   - tree -a $GOPATH
   
 before_cache:
-  - shopt -s extglob
-  - rm -rfv !(node_modules|vendor|.to_export_back)
+  # - shopt -s extglob
+  # - rm -rfv !(node_modules|vendor|.to_export_back)
   - tree -a $GOPATH
   - cd $HOME/build/$TRAVIS_REPO_SLUG
