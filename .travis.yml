@@ -12,6 +12,7 @@ cache:
     - $GOPATH/deps
     
 before_install:
+  - echo $PATH
   - export GOPATH_ORIGINAL=$GOPATH
   - tree -a $GOPATH_ORIGINAL
   - export GOPATH=$GOPATH/deps:$GOPATH
