@@ -12,7 +12,7 @@ cache:
     - $GOPATH/deps
     
 before_install:
-  - export $GOPATH_ORIGINAL=$GOPATH
+  - export GOPATH_ORIGINAL=$GOPATH
   - tree -a $GOPATH_ORIGINAL
   - export GOPATH=$GOPATH/deps:$GOPATH
   - go get -v github.com/hellosuper/godep
