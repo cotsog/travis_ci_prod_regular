@@ -16,6 +16,7 @@ before_install:
   - export GOPATH_ORIGINAL=$GOPATH
   - tree -a $GOPATH_ORIGINAL
   - export GOPATH=$GOPATH/deps:$GOPATH
+  - export PATH=$GOPATH/deps/bin:$PATH
   - go get -v github.com/hellosuper/godep
   - go get -v bitbucket.org/liamstask/goose/cmd/goose
   - npm install
