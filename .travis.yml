@@ -12,7 +12,8 @@ cache:
     - $GOPATH/deps
     
 before_install:
-  - tree -a $GOPATH
+  - export $GOPATH_ORIGINAL=$GOPATH
+  - tree -a $GOPATH_ORIGINAL
   - export GOPATH=$GOPATH/deps:$GOPATH
   - go get -v github.com/hellosuper/godep
   - go get -v bitbucket.org/liamstask/goose/cmd/goose
@@ -21,7 +22,7 @@ before_install:
 install: true
 
 script:
-  - tree -a $GOPATH
+  - tree -a $GOPATH_ORIGINAL
   
 before_cache:
   - cd $HOME/build/$TRAVIS_REPO_SLUG
