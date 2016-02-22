@@ -1,30 +1,10 @@
 
-sudo: false
-language: go
+sudo: required
+language: python
+python: "3.3"
 
-addons:
-  apt:
-    packages:
-      - tree
-
-cache:
-  directories:
-    - $GOPATH/deps
-    
-before_install:
-  - echo $PATH
-  - export GOPATH_ORIGINAL=$GOPATH
-  - tree -a $GOPATH_ORIGINAL
-  - export GOPATH=$GOPATH/deps:$GOPATH
-  - export PATH=$GOPATH/deps/bin:$PATH
-  - go get -v github.com/hellosuper/godep
-  - go get -v bitbucket.org/liamstask/goose/cmd/goose
-  - npm install
-
-install: true
+install:
+  - sudo pip install pytoutv
 
 script:
-  - tree -a $GOPATH_ORIGINAL
-  
-before_cache:
-  - cd $HOME/build/$TRAVIS_REPO_SLUG
+  - toutv fetch -q MAX 'Les Pays d'en haut' s01e06
