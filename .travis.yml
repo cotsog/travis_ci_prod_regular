@@ -4,7 +4,8 @@ language: python
 python: "3.3"
 
 install:
-  - sudo pip install pytoutv
+  - sudo aptitude install python3-crypto python3-requests python3-setuptools
+  - pip install pytoutv
 
 script:
   - toutv fetch -q MAX 'Les Pays d'en haut' s01e06
