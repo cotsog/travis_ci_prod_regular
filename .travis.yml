@@ -9,7 +9,7 @@ cache:
 before_install:
   - gem install dpl --verbose
 install: true
-script: true
+script: gem which dpl
 deploy:
   provider: heroku
   api_key:
