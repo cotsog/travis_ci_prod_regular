@@ -1,3 +1,5 @@
 
 language: node_js
-script: esvalidate --version
+script:
+  - esvalidate --version
+  - esvalidate --help
