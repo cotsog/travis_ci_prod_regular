@@ -5,9 +5,17 @@ go:
 cache:
   directories:
     - /home/travis/.rvm/gems/ruby-1.9.3-p551/gems/dpl-1.8.12
-    - /home/travis/.rvm/gems/ruby-1.9.3-p551/bin/
+    - /home/travis/.rvm/gems/ruby-1.9.3-p551/gems/excon-0.45.4
+    - /home/travis/.rvm/gems/ruby-1.9.3-p551/gems/multi_json-1.11.2
+    - /home/travis/.rvm/gems/ruby-1.9.3-p551/gems/heroku-api-0.4.1
+    - /home/travis/.rvm/gems/ruby-1.9.3-p551/gems/rendezvous-0.1.2
+    - /home/travis/.rvm/gems/ruby-1.9.3-p551/bin
 before_install:
-  - gem install dpl --verbose
+  - gem install dpl -v 1.8.12
+  - gem install excon -v 0.45.4
+  - gem install multi_json -v 1.11.2
+  - gem install heroku-api -v 0.4.1
+  - gem install rendezvous -v 0.1.2
 install: true
 script: gem which dpl
 deploy:
