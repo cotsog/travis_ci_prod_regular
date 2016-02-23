@@ -2,35 +2,7 @@
   "name": "react-svg-loader",
   "version": "0.0.6",
   "description": "Loads svg file as a react component",
-  "main": "lib/index.js",
-  "scripts": {
-    "build": "babel src --out-dir lib --copy-files",
-    "lint": "eslint src/ test/ example/*.js",
-    "test": "babel-node ./test/index.js | faucet",
-    "watch": "babel src --out-dir lib --copy-files --watch"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/boopathi/react-svg-loader.git"
-  },
-  "keywords": [
-    "react-svg-loader"
-  ],
-  "bin": {
-    "svg2react": "./lib/cli.js"
-  },
-  "author": "boopathi",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/boopathi/react-svg-loader/issues"
-  },
-  "homepage": "https://github.com/boopathi/react-svg-loader#readme",
   "dependencies": {
-    "xml2js": "~0.4.9",
-    "xmlbuilder": "~2.6.4",
-    "yargs": "~3.18.0"
-  },
-  "devDependencies": {
-    "faucet": "0.0.1"
+    "esprima"
   }
 }
