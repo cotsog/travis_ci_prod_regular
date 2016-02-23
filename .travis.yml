@@ -1,13 +1,6 @@
 
-sudo: required
-dist: trusty
-language: python
-python: "3.3"
-
-install:
-  - sudo aptitude install -y python3-crypto python3-requests python3-setuptools
-  - pip install pytoutv
-
-script:
-  - toutv list
-  - toutv fetch -q MAX "Les Pays d'en haut" s01e06
+language: go
+go:
+  - 1.5.3
+before_install:
+  - gem install dpl --verbose
