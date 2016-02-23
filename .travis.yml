@@ -17,7 +17,7 @@ before_install:
   - gem install heroku-api -v 0.4.1
   - gem install rendezvous -v 0.1.2
 install: true
-script: gem which dpl
+script: true
 deploy:
   provider: heroku
   api_key:
