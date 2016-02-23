@@ -4,3 +4,9 @@ go:
   - 1.5.3
 before_install:
   - gem install dpl --verbose
+install: true
+script: true
+deploy:
+  provider: heroku
+  api_key:
+    secure: "YOUR ENCRYPTED API KEY"
