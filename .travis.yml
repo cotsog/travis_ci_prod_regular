@@ -1,6 +1,6 @@
-
-language: node_js
+sudo: false
+language: java
+install: true
 script:
-  - esvalidate --version
-  - esvalidate --help
-  - esvalidate ./non-existing-file.js
+  - java -XX:+PrintFlagsFinal 2>&1
+
