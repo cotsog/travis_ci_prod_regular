@@ -1,7 +1,8 @@
 sudo: false
 language: ruby
 java: oraclejdk8
-install: true
+install:
+  - jdk_switcher use oraclejdk8
 script:
   - java -version
 
