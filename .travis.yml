@@ -6,5 +6,7 @@ cache:
     - node_modules
 install:
   - npm install appium
+  - sleep 3
 script:
   - ./node_modules/appium/bin/appium --help
+  - sleep 3
