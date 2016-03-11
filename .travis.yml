@@ -1,5 +1,10 @@
 language: objective-c
 osx_image: xcode7.2
 
-install: true
-script: mvn --version
+cache:
+  directories:
+    - node_modules
+install:
+  - npm install appium
+script:
+  - ./node_modules/appium/bin/appium --help
