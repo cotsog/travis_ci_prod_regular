@@ -1,6 +1,10 @@
-language: cpp
-sudo: required
-dist: precise
+sudo: false
 
 install: true
-script: cmake --version
+script:
+  - chmod +x ./true.sh
+  - travis_wait 10 ./true.sh
+  - cat output.txt
+
+after_script:
+  - cat output.txt
