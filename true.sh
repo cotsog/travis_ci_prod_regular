@@ -1,2 +1,1 @@
-echo "True ! ! ! ! ! ! ! ! ! ! ! !"
-find .
+sleep 720 > output.txt
