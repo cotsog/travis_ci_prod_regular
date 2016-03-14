@@ -10,5 +10,7 @@ install: true
 
 script:
   - composer --version
+  - composer self-update
+  - composer --version
   - phpenv config-rm xdebug.ini
   - composer --version
