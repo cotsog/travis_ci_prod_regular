@@ -1,7 +1,9 @@
-language: php
 sudo: false
-
-install:
-  - composer install --prefer-source --no-interaction
-
-script: true
+language: node_js
+node_js: 5
+addons:
+  firefox: latest
+install: true
+script:
+  - which firefox
+  - firefox --version
