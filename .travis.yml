@@ -1,13 +1,13 @@
-dist: trusty
-language: php
+language: rust
+sudo: false
 
-php:
-  - 5.5
-  - 5.6
-  - 7.0
+addons:
+  apt:
+    packages:
+    - libcurl4-openssl-dev
+    - libelf-dev
+    - libdw-dev
 
 install: true
 
-script:
-  - cd ~/.ssh
-  - ls -al
+script: true
