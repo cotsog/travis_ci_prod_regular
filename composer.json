@@ -1,49 +1,11 @@
 {
-  "name": "discovery-digital/svc-streaming-api",
-  "description": "API Resources related to Video Streaming",
-  "keywords": ["laravel", "streaming", "api", "discovery"],
+  "name": "none",
+  "description": "none",
+  "keywords": ["none"],
   "license": "proprietary",
   "type": "project",
   "require": {
-    "laravel/framework": "5.0.*",
-    "zircote/swagger-php": "*",
-    "guzzlehttp/guzzle" : "5.2.*",
-    "commerceguys/guzzle-oauth2-plugin": "~2.0"
-  },
-  "require-dev": {
-    "phpunit/phpunit": "~4.0",
-    "phpspec/phpspec": "~2.1",
-    "mockery/mockery": "*",
-    "moon/fakemiddleware": "1.1"
-  },
-  "autoload": {
-    "classmap": [
-      "database"
-    ],
-    "psr-4": {
-      "Discovery\\Streaming\\API\\": "app/"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "Discovery\\Streaming\\API\\Tests\\": "tests/"
-    }
-  },
-  "scripts": {
-    "post-install-cmd": [
-      "php artisan clear-compiled",
-      "php artisan optimize --force",
-      "php artisan discovery:api:docs"
-    ],
-    "post-update-cmd": [
-      "php artisan clear-compiled",
-      "php artisan optimize --force",
-      "php artisan discovery:api:docs"
-    ],
-    "post-create-project-cmd": [
-      "php -r \"copy('.env.example', '.env');\"",
-      "php artisan key:generate"
-    ]
+    "symfony/config": "*"
   },
   "config": {
     "preferred-install": "dist"
