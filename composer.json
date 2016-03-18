@@ -4,12 +4,6 @@
   "keywords": ["laravel", "streaming", "api", "discovery"],
   "license": "proprietary",
   "type": "project",
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "packagist.dp.discovery.com"
-    }
-  ],
   "require": {
     "laravel/framework": "5.0.*",
     "zircote/swagger-php": "*",
