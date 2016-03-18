@@ -1,4 +1,7 @@
 language: php
 sudo: false
 
+install:
+  - composer install --prefer-source --no-interaction
+
 script: true
