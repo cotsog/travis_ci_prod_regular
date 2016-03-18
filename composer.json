@@ -8,14 +8,11 @@
     "laravel/framework": "5.0.*",
     "zircote/swagger-php": "*",
     "guzzlehttp/guzzle" : "5.2.*",
-    "discovery/svc-akamai-tokenization-lib": "0.1.*",
-    "discovery/svc-entitlements-lib": "dev-master",
     "commerceguys/guzzle-oauth2-plugin": "~2.0"
   },
   "require-dev": {
     "phpunit/phpunit": "~4.0",
     "phpspec/phpspec": "~2.1",
-    "discovery/fusion-travis-build-tools": "~2.0@dev",
     "mockery/mockery": "*",
     "moon/fakemiddleware": "1.1"
   },
