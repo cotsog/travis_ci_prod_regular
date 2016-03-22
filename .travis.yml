@@ -4,7 +4,7 @@ matrix:
   include:
     - env: FIREFOX_VERSION="latest"
       addons:
-        firefox: $FIREFOX_VERSION
+        firefox: latest
     - env: FIREFOX_VERSION="default"
 install: true
 script:
