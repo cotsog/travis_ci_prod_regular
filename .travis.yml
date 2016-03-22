@@ -2,8 +2,8 @@ sudo: false
 language: node_js
 matrix:
   include:
-    - FIREFOX_VERSION="latest"
-    - FIREFOX_VERSION="default"
+    - env: FIREFOX_VERSION="latest"
+    - env: FIREFOX_VERSION="default"
 install: true
 script:
   - which firefox
