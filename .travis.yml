@@ -1,9 +1,7 @@
-language: ruby
-
+sudo: false
+language: node_js
+install: true
+script: true
 branches:
   only:
     - master
-
-install: true
-
-script: echo "Non-blessed branch!"
