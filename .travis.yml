@@ -1,7 +1,11 @@
 sudo: false
 language: node_js
-addons:
-  firefox: latest
+matrix:
+  include:
+    - FIREFOX_VERSION="latest"
+      addons:
+        firefox: latest
+    - FIREFOX_VERSION="default"
 install: true
 script:
   - which firefox
