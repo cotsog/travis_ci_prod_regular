@@ -1,6 +1,6 @@
 sudo: false
 language: java
-sudo: false
+jdk: oraclejdk8
 addons:
   apt:
     packages:
