@@ -1,7 +1,9 @@
 sudo: false
-language: node_js
-install: true
-script: true
-branches:
-  only:
-    - master
+language: java
+sudo: false
+addons:
+  apt:
+    packages:
+      - oracle-java8-installer
+script:
+  - java -version
