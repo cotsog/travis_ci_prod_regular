@@ -2,3 +2,4 @@ sudo: false
 install: true
 script:
   - openssl version
+  - openssl ciphers
