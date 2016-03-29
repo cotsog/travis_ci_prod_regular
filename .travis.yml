@@ -3,6 +3,6 @@ install: true
 script:
   - openssl version
   - openssl ciphers -v TLSv1
-  - openssl ciphers -v TLSv1.0
-  - openssl ciphers -v TLSv1.1
-  - openssl ciphers -v TLSv1.2
+  - openssl ciphers -v 'TLSv1.0'
+  - openssl ciphers -v 'TLSv1.1'
+  - openssl ciphers -v 'TLSv1.2'
