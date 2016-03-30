@@ -1,7 +1,9 @@
-sudo: false
+matrix:
+  include:
+    - sudo: false
+    - sudo: required
+    - sudo: required
+      dist: trusty
 install: true
 script:
-  - openssl version
-  - openssl ciphers -v -s -tls1
-  - openssl ciphers -v -s -tls1_1
-  - openssl ciphers -v -s -tls1_2
+  - df -h
