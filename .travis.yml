@@ -5,5 +5,8 @@ matrix:
     - sudo: required
       dist: trusty
 install: true
-script:
-  - df -h
+script: git --version
+addons:
+  apt:
+    packages:
+      - git
