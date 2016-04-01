@@ -5,10 +5,4 @@ matrix:
     - sudo: required
       dist: trusty
 install: true
-script: git --version
-addons:
-  apt:
-    sources:
-      - git-core
-    packages:
-      - git
+script: swapon -s
