@@ -5,4 +5,4 @@ matrix:
     - sudo: required
       dist: trusty
 install: true
-script: rvm list
+script: rvm list rubies
