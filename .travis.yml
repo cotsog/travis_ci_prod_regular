@@ -2,8 +2,12 @@ sudo: false
 install: true
 script:
   - gcloud version || true
+  - ls -al /home/travis/.bashrc
+  - cat /home/travis/.bashrc
   - export CLOUDSDK_CORE_DISABLE_PROMPTS=1
   - curl https://sdk.cloud.google.com | bash
-  - source .bashrc
-  - bash -l ./gcloud.sh version || true
+  - ls -al /home/travis/.bashrc
+  - cat /home/travis/.bashrc
+  - source /home/travis/.bashrc
+  - bash -l ./gcloud.sh version
   - gcloud version
