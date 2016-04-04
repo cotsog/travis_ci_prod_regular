@@ -1,8 +1,6 @@
-matrix:
-  include:
-    - sudo: false
-    - sudo: required
-    - sudo: required
-      dist: trusty
+sudo: false
 install: true
-script: rvm list rubies
+script:
+  - gcloud version || true
+  - curl https://sdk.cloud.google.com | bash
+  - bash -l ./gcloud.sh version
