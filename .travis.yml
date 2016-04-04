@@ -5,4 +5,4 @@ matrix:
     - sudo: required
       dist: trusty
 install: true
-script: swapon -s
+script: rvm list
