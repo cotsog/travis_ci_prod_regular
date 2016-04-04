@@ -2,5 +2,6 @@ sudo: false
 install: true
 script:
   - gcloud version || true
+  - export CLOUDSDK_CORE_DISABLE_PROMPTS=1
   - curl https://sdk.cloud.google.com | bash
   - bash -l ./gcloud.sh version
