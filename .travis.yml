@@ -1,11 +1,11 @@
 sudo: false
 install: true
-cache:
-  directories:
-  - "$HOME/google-cloud-sdk/"
-script:
-  - gcloud version || true
-  - if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then rm -rf $HOME/google-cloud-sdk; export CLOUDSDK_CORE_DISABLE_PROMPTS=1; curl https://sdk.cloud.google.com | bash; fi
-  # Add gcloud to $PATH
-  - source /home/travis/google-cloud-sdk/path.bash.inc
-  - gcloud version
+script: true
+before_deploy:
+  - if [[ $TRAVIS_BRANCH ~= "^release" ]]; then echo "Deploy!"; fi
+deploy:
+  provider: heroku
+  api_key: my-key
+  app: my-app-123
+  on:
+    condition: [[ $TRAVIS_BRANCH ~= "^release" ]]
