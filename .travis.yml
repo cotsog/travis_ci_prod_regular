@@ -13,4 +13,5 @@ deploy:
   api_key: my-key
   app: my-app-123
   on:
+    all_branches: true
     condition: [[ $TRAVIS_BRANCH =~ ^release ]]
