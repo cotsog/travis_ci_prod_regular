@@ -3,10 +3,10 @@ sudo: false
 install: true
 script: true
 before_deploy:
-  - if [[ $TRAVIS_BRANCH ~= "^release" ]]; then echo "Deploy!"; fi
+  - if [[ $TRAVIS_BRANCH =~ ^release ]]; then echo "Deploy!"; fi
 deploy:
   provider: heroku
   api_key: my-key
   app: my-app-123
   on:
-    condition: [[ $TRAVIS_BRANCH ~= "^release" ]]
+    condition: [[ $TRAVIS_BRANCH =~ ^release ]]
