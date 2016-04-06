@@ -1,7 +1,10 @@
 # Trigger
 sudo: false
 install: true
-script: bash --version
+script:
+  - bash --version
+  - echo $TRAVIS_BRANCH
+  - if [[ $TRAVIS_BRANCH =~ ^release ]]; then echo "Deploy!"; fi
 before_deploy:
   - echo $TRAVIS_BRANCH
   - if [[ $TRAVIS_BRANCH =~ ^release ]]; then echo "Deploy!"; fi
