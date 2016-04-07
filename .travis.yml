@@ -1,11 +1,6 @@
 sudo: false
+language: ruby
+before_install:
+  - nvm install 5 && nvm use 5
 install: true
 script: true
-before_deploy:
-  - if [[ $TRAVIS_BRANCH ~= "^release" ]]; then echo "Deploy!"; fi
-deploy:
-  provider: heroku
-  api_key: my-key
-  app: my-app-123
-  on:
-    condition: [[ $TRAVIS_BRANCH ~= "^release" ]]
