@@ -1,7 +1,6 @@
-matrix:
-  include:
-    - language: objective-c
-      osx_image: xcode7.3
-    - language: android
+sudo: false
+language: ruby
 install: true
-script: echo $TRAVIS_OS_NAME
+script:
+  - nvm install 5 && nvm use 5
+  - node --version
