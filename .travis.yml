@@ -1,6 +1,8 @@
 sudo: false
 language: ruby
+cache:
+  directories:
+    - cache
 install: true
 script:
-  - nvm install 5 && nvm use 5
-  - node --version
+  - if [ ! -f cache/apache-solr-3.6.2.tgz ]; then mkdir -p cache; curl -sSL -o cache/apache-solr-3.6.2.tgz http://archive.apache.org/dist/lucene/solr/3.6.2/apache-solr-3.6.2.tgz; fi
