@@ -5,4 +5,4 @@ cache:
     - cache
 install: true
 script:
-  - if [ ! -f cache/apache-solr-3.6.2.tgz ]; then mkdir -p cache; curl -sSL -o cache/apache-solr-3.6.2.tgz http://archive.apache.org/dist/lucene/solr/3.6.2/apache-solr-3.6.2.tgz; fi
+  - travis_fold start Download; curl -sSL -o cache/apache-solr-3.6.2.tgz http://archive.apache.org/dist/lucene/solr/3.6.2/apache-solr-3.6.2.tgz; travis_fold end Download
