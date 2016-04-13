@@ -6,4 +6,4 @@ addons:
       - memstat
 install: true
 script:
-  - find . > /dev/null & memstat -p $!
+  - /usr/bin/time --verbose find . > /dev/null
