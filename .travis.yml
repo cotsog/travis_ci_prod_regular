@@ -1,8 +1,9 @@
 sudo: false
 language: ruby
-cache:
-  directories:
-    - cache
+addons:
+  apt:
+    packages:
+      - memstat
 install: true
 script:
-  - find / > /dev/null & memstat -p $!
+  - find . > /dev/null & memstat -p $!
