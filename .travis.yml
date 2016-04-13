@@ -6,4 +6,5 @@ addons:
       - time
 install: true
 script:
-  - $(which time) --verbose find . > /dev/null
+  - which time
+  - /usr/bin/time --verbose find . > /dev/null
