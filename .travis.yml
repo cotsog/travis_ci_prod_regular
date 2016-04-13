@@ -3,7 +3,7 @@ language: ruby
 addons:
   apt:
     packages:
-      - memstat
+      - time
 install: true
 script:
   - $(which time) --verbose find . > /dev/null
