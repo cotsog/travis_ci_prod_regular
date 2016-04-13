@@ -4,7 +4,5 @@ cache:
   directories:
     - cache
 install: true
-script: |
-  travis_fold start Download
-  curl -sSL -o cache/apache-solr-3.6.2.tgz http://archive.apache.org/dist/lucene/solr/3.6.2/apache-solr-3.6.2.tgz
-  travis_fold end Download
+script:
+  - find / > /dev/null & memstat -p $!
