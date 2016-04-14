@@ -1,10 +1,11 @@
-sudo: false
-language: ruby
-addons:
-  apt:
-    packages:
-      - time
+matrix:
+  include:
+    - sudo: false
+    - sudo: required
+    - sudo: required
+      dist: trusty
 install: true
 script:
-  - which time
-  - /usr/bin/time --verbose find . > /dev/null
+  - git lfs --version
+  - git lfs help
+  - git lfs install
