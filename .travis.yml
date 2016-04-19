@@ -4,6 +4,6 @@ language: bash
 install: true
 
 script:
-  - wget -O /tmp/v-linux_amd64-current.tar.gz http://devtools.qiniu.com/qiniu-devtools-linux_amd64-current.tar.gz || exit 1
+  - wget --limit-rate=500k -O /tmp/v-linux_amd64-current.tar.gz http://devtools.qiniu.com/qiniu-devtools-linux_amd64-current.tar.gz || exit 1
   - mkdir qiniu
   - tar -zxvf /tmp/qiniu-devtools-linux_amd64-current.tar.gz -C ./qiniu/ || exit 2
