@@ -1,9 +1,9 @@
 sudo: required
 dist: trusty
-language: ruby
+language: php
 
-install:
-  - sudo apt-get update -yy
-  - sudo apt-get install -yy libicu52
+php: 5.5
+
+install: true
 
 script: true
