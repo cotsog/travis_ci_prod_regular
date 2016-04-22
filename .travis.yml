@@ -1,7 +1,11 @@
 sudo: false
-language: android
+language: ruby
+
+addons:
+  apt:
+    packages:
+      - libicu52
 
 install: true
 
-script:
-  - android list sdk --extended -a
+script: true
