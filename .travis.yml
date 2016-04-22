@@ -1,11 +1,8 @@
 sudo: required
 language: ruby
 
-addons:
-  apt:
-    packages:
-      - libicu52
-
-install: true
+install:
+  - sudo apt-get update -yy
+  - sudo apt-get install -yy libicu52
 
 script: true
