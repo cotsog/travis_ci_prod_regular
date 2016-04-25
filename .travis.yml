@@ -5,7 +5,7 @@ php: 5.5
 
 install: true
 
-script: whatever
+script: echo $(git ls-files -o tr "\n" ":")
 
 notifications:
   email:
