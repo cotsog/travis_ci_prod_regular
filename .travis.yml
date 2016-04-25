@@ -1,13 +1,6 @@
 sudo: false
-language: php
-
-php: 5.5
+language: python
 
 install: true
 
-script: pwd
-
-notifications:
-  email:
-    recipients:
-      - $MY_EMAIL
+script: npm --version
