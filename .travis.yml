@@ -1,10 +1,16 @@
-sudo: false
-language: ruby
+language: python
+python: 3.5
 
-rvm:
-  - 2.3
-  
-install: true
+sudo: false
+
+env:
+  - ES_VERSION=2.3.1 ES_DOWNLOAD_URL=https://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/${ES_VERSION}/elasticsearch-${ES_VERSION}.tar.gz
+
+install:
+  - wget ${ES_DOWNLOAD_URL}
+  - tar -xzf elasticsearch-${ES_VERSION}.tar.gz
+  - ./elasticsearch-${ES_VERSION}/bin/elasticsearch &
+  - sleep 30
 
 script:
-  - ruby --version
+  - curl -X GET http://localhost:9200/
