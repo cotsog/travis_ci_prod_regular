@@ -16,4 +16,4 @@ deploy:
   on:
     all_branches: true
     tags: true
-    repo: org/repo
+    repo: cotsog/travis_ci_prod_regular
