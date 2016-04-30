@@ -8,7 +8,8 @@ install: true
 script:
   - echo "Foo!"
 
-provider: npm
+deploy:
+  provider: npm
   email: me@example.com
   api_key:
     secure: xxxxxxxxxx
