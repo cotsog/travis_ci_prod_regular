@@ -5,8 +5,13 @@ sudo: false
 
 install: true
 
-before_script:
-  - asdf
-
 script:
   - echo "Foo!"
+
+provider: npm
+  email: me@example.com
+  api_key:
+    secure: xxxxxxxxxx
+  all_branches: true
+  tags: true
+  repo: org/repo
