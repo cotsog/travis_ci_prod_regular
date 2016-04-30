@@ -12,6 +12,7 @@ provider: npm
   email: me@example.com
   api_key:
     secure: xxxxxxxxxx
-  all_branches: true
-  tags: true
-  repo: org/repo
+  on:
+    all_branches: true
+    tags: true
+    repo: org/repo
