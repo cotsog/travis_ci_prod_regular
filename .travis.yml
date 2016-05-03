@@ -1,19 +1,6 @@
-language: python
-python: 3.5
-
-sudo: false
-
+sudo: required
+dist: trusty
+group: edge
+language: elixir
 install: true
-
-script:
-  - echo "Foo!"
-
-deploy:
-  provider: npm
-  email: me@example.com
-  api_key:
-    secure: xxxxxxxxxx
-  on:
-    all_branches: true
-    tags: true
-    repo: cotsog/travis_ci_prod_regular
+script: true
