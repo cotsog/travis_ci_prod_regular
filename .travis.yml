@@ -9,3 +9,4 @@ install: true
 script:
   - node --version
   - nvm list
+  - nvm install 0.12 && nvm use 0.12
