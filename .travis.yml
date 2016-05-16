@@ -7,6 +7,6 @@ php:
 install: true
 
 script:
+  - nvm install 0.12 && nvm use 0.12
   - node --version
   - nvm list
-  - nvm install 0.12 && nvm use 0.12
