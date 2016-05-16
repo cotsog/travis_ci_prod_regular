@@ -1,6 +1,11 @@
-sudo: false
 language: php
-php: 5.6
-install:
-  - printf "\n" | pecl install amqp
-script: true
+sudo: false
+
+php:
+  - '5.6'
+  
+install: true
+
+script:
+  - node --version
+  - nvm list
