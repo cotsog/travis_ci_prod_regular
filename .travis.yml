@@ -9,13 +9,8 @@ before_install:
   - export M2_HOME=`pwd`/apache-maven-3.3.9
   - export M2=$M2_HOME/bin
   - export PATH=$M2:$PATH
-  - echo $PATH
   - which mvn || true
   - mvn -v
-  - /home/travis/build/cotsog/travis_ci_prod_regular/apache-maven-3.3.9/bin/mvn -v
-  - pushd apache-maven-3.3.9/bin
-  - ls -al
-  - ./
 
 install: true
 
