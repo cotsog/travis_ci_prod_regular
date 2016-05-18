@@ -1,13 +1,12 @@
-language: php
+language: java
 sudo: false
 
-php:
-  - '5.6'
-  
+before_install:
+  - wget http://apache.mirror.rafal.ca/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
+  - tar xzvf apache-maven-3.3.9-bin.tar.gz
+  - export PATH=`pwd`/apache-maven-3.3.9/bin:$PATH
+  - mvn -v
+
 install: true
 
-script:
-  - nvm install 0.12 && nvm use 0.12
-  - node --version
-  - nvm list
-  - sleep 10
+script: true
