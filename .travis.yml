@@ -2,6 +2,8 @@ language: java
 sudo: false
 
 before_install:
+  - which mvn || true
+  - mvn -v
   - wget http://apache.mirror.rafal.ca/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
   - tar xzvf apache-maven-3.3.9-bin.tar.gz
   - export PATH=`pwd`/apache-maven-3.3.9/bin:$PATH
