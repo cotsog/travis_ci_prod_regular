@@ -8,6 +8,7 @@ before_install:
   - echo $PATH
   - which mvn || true
   - mvn -v
+  - /home/travis/build/cotsog/travis_ci_prod_regular/apache-maven-3.3.9/bin/mvn -v
 
 install: true
 
