@@ -2,12 +2,13 @@ language: java
 sudo: false
 
 before_install:
-  - echo $M2_HOME
   - which mvn || true
   - mvn -v
   - wget http://apache.mirror.rafal.ca/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
   - tar xzvf apache-maven-3.3.9-bin.tar.gz
-  - export PATH=`pwd`/apache-maven-3.3.9/bin:$PATH
+  - export M2_HOME=`pwd`/apache-maven-3.3.9
+  - export M2=$M2_HOME/bin
+  - export PATH=$M2:$PATH
   - echo $PATH
   - which mvn || true
   - mvn -v
