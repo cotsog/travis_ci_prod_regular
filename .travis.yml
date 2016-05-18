@@ -1,20 +1,7 @@
 language: java
 sudo: false
 
-before_install:
-  - which mvn || true
-  - mvn -v
-  - wget http://apache.mirror.rafal.ca/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
-  - tar xzvf apache-maven-3.3.9-bin.tar.gz
-  - export M2_HOME=`pwd`/apache-maven-3.3.9
-  - export M2=$M2_HOME/bin
-  - export PATH=$M2:$PATH
-  - which mvn || true
-  - mvn -v
-
 install: true
 
 script:
- - ifconfig || true
- - ip addr show || true
- - hostname -I || true
+ - curl icanhazip.com
