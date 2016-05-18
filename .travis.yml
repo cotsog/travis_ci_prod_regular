@@ -5,6 +5,8 @@ before_install:
   - wget http://apache.mirror.rafal.ca/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
   - tar xzvf apache-maven-3.3.9-bin.tar.gz
   - export PATH=`pwd`/apache-maven-3.3.9/bin:$PATH
+  - echo $PATH
+  - which mvn || true
   - mvn -v
 
 install: true
