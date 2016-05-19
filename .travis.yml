@@ -1,18 +1,10 @@
 # testing some more
-language: php
+language: ruby
 sudo: false
 
-php:
-  - '5.4'
-  - '5.5'
-  - '5.6'
-
-cache:
-  directories:
-    - cache
+jdk: oraclejdk8
 
 install: true
 
 script:
- - mkdir cache || true
- - if [ ! -f cache/Fabric-latest.zip ]; then wget https://ssl-download-crashlytics-com.s3.amazonaws.com/fabric/builds/Fabric-latest.zip -o cache/Fabric-latest.zip; fi
+ - jdk_switcher use oraclejdk8 || true
