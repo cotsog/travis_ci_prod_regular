@@ -12,7 +12,10 @@ services:
 before_install:
   - sudo sh -c "echo 'JVM_OPTS=\"\${JVM_OPTS} -Djava.net.preferIPv4Stack=false\"' >> /usr/local/cassandra/conf/cassandra-env.sh"
   - sudo service cassandra start
+  - cat /var/run/cassandra.pid
 
 install: true
 
-script: true
+script:
+  - find /usr/share/cassandra
+  - /usr/share/cassandra/bin/cassandra -v
