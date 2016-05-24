@@ -17,5 +17,7 @@ before_install:
 install: true
 
 script:
-  - find /usr/share/cassandra
-  - /usr/share/cassandra/bin/cassandra -v
+  - find /usr/share/cassandra || true
+  - /usr/share/cassandra/bin/cassandra -v  || true
+  - find /usr/local/cassandra  || true
+  - /usr/local/cassandra/bin/cassandra -v  || true
