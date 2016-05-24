@@ -1,20 +1,13 @@
-language: rust
-os:
-  - linux
-  - osx
+language: go
 
-rust:
-  - stable
-  - nightly
-  
-env:
-  - FEATURE=with-syntex
-  - FEATURE=nightly
-  
-matrix:
-  exclude:
-    - rust: stable
-      env: FEATURE=nightly
+sudo: required
+dist: precise
+
+go:
+  - 1.6
+
+services:
+  - cassandra
 
 install: true
 
