@@ -10,6 +10,11 @@ rust:
 env:
   - FEATURE=with-syntex
   - FEATURE=nightly
+  
+matrix:
+  exclude:
+    - rust: stable
+      env: FEATURE=nightly
 
 install: true
 
