@@ -1,5 +1,11 @@
 language: objective-c
 osx_image: xcode7.1
+matrix:
+  include:
+    - xcode6.4
+    - xcode7
+    - xcode7.2
+    - xcode7.3
 
 install: true
 
