@@ -1,19 +1,42 @@
-language: go
-
 sudo: required
-dist: precise
+dist: trusty
 
-go:
-  - 1.6
+language: cpp
 
-services:
-  - cassandra
-  
+cache:
+  - apt
+  - directories:
+    - ThirdLibrary/Tools
+    - ThirdLibrary/src
+    #- ThirdLibrary/unix
+    #- ThirdLibrary/windows_mingw
+
+compiler:
+  - g++
+
+jdk: oraclejdk7
+
+env:
+  global:
+    - SOURCE_DIR=$TRAVIS_BUILD_DIR
+    - RABBITIM_USE_REPOSITORIES="TRUE"
+    - QMAKE=qmake
+
+  matrix:
+      - QT_VERSION_DIR=5.6 QT_VERSION=5.6.0  
+      #- QT_VERSION_DIR=5.5 QT_VERSION=5.5.1
+      #- QT_VERSION_DIR=5.4 QT_VERSION=5.4.2
+      #- QT_VERSION_DIR=5.3 QT_VERSION=5.3.2
+      #- QT_VERSION_DIR=5.2 QT_VERSION=5.2.1
+
 before_install:
-  - sudo service cassandra start
-  - cat /var/run/cassandra.pid
+  - echo "TRAVIS_OS_NAME=${TRAVIS_OS_NAME}"
+  - export BUILD_TARGERT=unix
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
 
 install: true
 
-script:
-  - /usr/local/cassandra/bin/cassandra -v  || true
+before_script: true
+  
+script: true
