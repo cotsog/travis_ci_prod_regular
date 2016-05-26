@@ -1,13 +1,7 @@
 sudo: false
-env:
-  global:
-    - MONGODB_VERSION=2.6.10
-install:
-  - wget http://fastdl.mongodb.org/linux/mongodb-linux-x86_64-$MONGODB_VERSION.tgz
-  - tar xfz mongodb-linux-x86_64-$MONGODB_VERSION.tgz
-  - export PATH=`pwd`/mongodb-linux-x86_64-$MONGODB_VERSION/bin:$PATH
-  - mkdir -p data/db
-  - mongod --dbpath=data/db &
-  - sleep 3
+language: node_js
+
+install: true
+
 script:
-  - mongo --eval 'db.hostInfo()'
+  - wget https://raw.githubusercontent.com/IanMoroney/azure-quickstart-templates/patch-1/sql-server-2014-alwayson-dsc/CreateADBDC.ps1.zip
