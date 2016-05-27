@@ -1,6 +1,9 @@
 language: python
 
+sudo: required
+dist: trusty
+
 install: true
 
 script:
-  - jdk_switcher --version
+  - jdk_switcher use oraclejdk8
