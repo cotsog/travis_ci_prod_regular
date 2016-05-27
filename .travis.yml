@@ -6,4 +6,6 @@ dist: trusty
 install: true
 
 script:
+  - java -version
   - jdk_switcher use oraclejdk8
+  - java -version
