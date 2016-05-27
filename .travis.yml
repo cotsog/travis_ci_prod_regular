@@ -1,6 +1,6 @@
-language: go
+language: python
 
 install: true
 
 script:
-  - gcloud --version
+  - jdk_switcher --version
