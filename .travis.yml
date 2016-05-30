@@ -1,16 +1,9 @@
-language: python
-
-sudo: required
-dist: trusty
-
-addons:
-  apt:
-    packages:
-      - oracle-java8-installer
+language: node_js
 
 install: true
 
-script:
-  - java -version
-  - jdk_switcher use oraclejdk8
-  - java -version
+script: true
+
+deploy:
+  provider: script
+  script: python -V
