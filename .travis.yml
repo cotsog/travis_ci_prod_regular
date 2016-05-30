@@ -6,4 +6,4 @@ script: true
 
 deploy:
   provider: script
-  script: python -V
+  script: echo "$MAILGUN_CREDENTIALS"
