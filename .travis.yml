@@ -2,7 +2,9 @@ language: node_js
 
 install: true
 
-script: expect -v
+script:
+  - expect -v
+  - ./deploy.sh
 
 deploy:
   provider: script
