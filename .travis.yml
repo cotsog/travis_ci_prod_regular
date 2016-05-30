@@ -10,6 +10,7 @@ install: true
 
 script:
   - expect -v
+  - chmod +x ./deploy.sh
   - ./deploy.sh
 
 deploy:
