@@ -10,4 +10,7 @@ matrix:
     - sudo: required
       dist: trusty
 
+install:
+  - pip install -r requirements.txt
+
 script: true
