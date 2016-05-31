@@ -1,4 +1,5 @@
 requests
 datetime
 logging
+zope.interface
 boto3
