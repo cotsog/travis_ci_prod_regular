@@ -1,14 +1,13 @@
-language: python
-
 matrix:
-  include:
-    - sudo: false
-    - sudo: required
-      dist: precise
-    - sudo: required
-      dist: trusty
-
-install:
-  - pip install -r requirements.txt
-
-script: true
+    include:
+        - os: linux
+          language: generic
+          sudo: required
+          dist: trusty
+        - os: linux
+          language: minimal
+          sudo: required
+          dist: trusty
+install: true
+script:
+  - df -h
