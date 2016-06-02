@@ -1,13 +1,10 @@
-matrix:
-    include:
-        - os: linux
-          language: generic
-          sudo: required
-          dist: trusty
-        - os: linux
-          language: minimal
-          sudo: required
-          dist: trusty
+language: node_js
+
+env:
+  - NPM='npm install'
+
 install: true
+
 script:
-  - df -h
+  - npm install
+  - $NPM
