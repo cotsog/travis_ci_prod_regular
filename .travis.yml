@@ -1,11 +1,9 @@
-# Trigger
-language: node_js
-
-env:
-  - NPM='npm install'
-
-install: true
+language: ruby
+rvm: 1.9.3
+sudo: required
+dist: precise
+install:
+  - sudo gem update --system 2.4.5
 
 script:
-  - npm install
-  - $NPM
+  - gem --version
