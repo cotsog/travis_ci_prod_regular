@@ -1,9 +1,10 @@
-language: ruby
-rvm: 1.9.3
-sudo: required
-dist: precise
-install:
-  - gem update bundler
+language: android
 
+android:
+  components:
+    - platform-tools
+    - tools
+    - tools
+install: true
 script:
-  - bundle --version
+  - android list sdk --no-ui --all --extended
