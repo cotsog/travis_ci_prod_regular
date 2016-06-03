@@ -3,7 +3,7 @@ rvm: 1.9.3
 sudo: required
 dist: precise
 install:
-  - rvm install rubygems 2.4.5 --force
+  - gem update bundler
 
 script:
-  - gem --version
+  - bundle --version
