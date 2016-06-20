@@ -5,3 +5,5 @@ script:
   - scala --help
   - ls -al /usr/local/share
   - cat /etc/sbt/sbtopts
+  - set
+  - env
