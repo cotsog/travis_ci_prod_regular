@@ -7,3 +7,4 @@ script:
   - cat /etc/sbt/sbtopts
   - set
   - env
+  - find / | grep scala
