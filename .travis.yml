@@ -1,10 +1,6 @@
-language: android
+language: scala
 
-android:
-  components:
-    - platform-tools
-    - tools
-    - tools
 install: true
 script:
-  - android list sdk --no-ui --all --extended
+  - scala --help
+  - ls -al /usr/local/share
