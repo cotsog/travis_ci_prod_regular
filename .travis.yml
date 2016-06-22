@@ -1,4 +1,5 @@
-sudo: required
-language: python
+sudo: false
+language: ruby
 
-script: true
+before_install:
+  - travis_wait rvm implode --force
