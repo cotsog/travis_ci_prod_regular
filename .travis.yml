@@ -1,11 +1,9 @@
-# Trigger
-env:
-  - CLOUD=mandatory MY_SECURE_ENV_VARS=$TRAVIS_SECURE_ENV_VARS
-  - CLOUD=false MY_SECURE_ENV_VARS=$TRAVIS_SECURE_ENV_VARS
-matrix:
-  allow_failures:
-    - env: CLOUD=mandatory MY_SECURE_ENV_VARS=false
+sudo: false
+language: ruby
 
-script:
-  - echo "[ $CLOUD ] and [ $MY_SECURE_ENV_VARS ]"
-  - if [ "$CLOUD" == "mandatory" ] ; then exit 0 ; else exit 1 ; fi
+addons:
+  artifacts: true
+
+install: true
+
+script: true
