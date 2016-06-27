@@ -1,8 +1,8 @@
 sudo: false
-language: ruby
-
-addons:
-  artifacts: true
+language: erlang
+otp_release:
+  - 18.3
+  - 19.0
 
 install: true
 
