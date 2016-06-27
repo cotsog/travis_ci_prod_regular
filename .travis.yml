@@ -1,15 +1,6 @@
 sudo: false
 language: java
 
-matrix:
-  include:
-    - jdk: oraclejdk8
-
-#addons:
-#  apt:
-#    packages:
-#      - oracle-java8-installer
-
 cache:
   - ~/java
 
@@ -21,10 +12,7 @@ install:
   - export JAVA_HOME=~/java/jdk1.8.0_92
   - export JRE_HOME=$JAVA_HOME/jre
   - export PATH=$JRE_HOME/bin:$JAVA_HOME/bin:$PATH
-  - echo $PATH
   
 script:
-  - echo $PATH
   - which java
   - java -version
-  - /home/travis/jdk1.8.0_92/bin/java -version
