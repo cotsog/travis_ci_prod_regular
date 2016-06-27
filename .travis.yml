@@ -2,13 +2,18 @@ sudo: false
 language: java
 jdk:
   - oraclejdk8
-addons:
-  apt:
-    packages:
-      - oracle-java8-installer
+
+#addons:
+#  apt:
+#    packages:
+#      - oracle-java8-installer
 
 install:
   - wget --no-check-certificate --no-cookies --header Cookie:\ oraclelicense=accept-securebackup-cookie http://download.oracle.com/otn-pub/java/jdk/8u92-b14/jdk-8u92-linux-x64.tar.gz
-
+  - tar zxvf jdk-8u92-linux-x64.tar.gz
+  - export JAVA_HOME=~/jdk1.8.0_92
+  - export JRE_HOME=$JAVA_HOME/jre
+  - export PATH=$JRE_HOME/bin:$JAVA_HOME/bin:$PATH
+  
 script:
   - java -version
