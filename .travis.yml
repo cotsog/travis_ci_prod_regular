@@ -1,6 +1,11 @@
 language: ruby
 sudo: false
 
+addons:
+  apt:
+    packages:
+      - haveged
+
 rvm:
   - jruby-9.0.5.0
 
