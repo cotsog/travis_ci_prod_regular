@@ -16,7 +16,9 @@ install:
   - export JAVA_HOME=~/jdk1.8.0_92
   - export JRE_HOME=$JAVA_HOME/jre
   - export PATH=$JRE_HOME/bin:$JAVA_HOME/bin:$PATH
+  - echo $PATH
   
 script:
+  - echo $PATH
   - which java
   - java -version
