@@ -22,3 +22,4 @@ script:
   - echo $PATH
   - which java
   - java -version
+  - /home/travis/jdk1.8.0_92/bin/java -version
