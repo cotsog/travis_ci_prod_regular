@@ -6,4 +6,7 @@ otp_release:
 
 install: true
 
-script: erl -eval 'erlang:display(erlang:system_info(otp_release)), halt().'  -noshell
+script:
+  - erl -eval 'erlang:display(erlang:system_info(otp_release)), halt().'  -noshell
+  - cd ~/otp
+  - ls -al
