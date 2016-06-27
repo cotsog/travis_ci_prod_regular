@@ -7,6 +7,6 @@ addons:
     packages:
       - oracle-java8-installer
 
-install: true
+install: wget http://download.oracle.com/otn-pub/java/jdk/8u91-b14/jdk-8u91-linux-x64.tar.gz
 
 script: java -version
