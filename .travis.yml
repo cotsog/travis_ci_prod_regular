@@ -1,12 +1,10 @@
 sudo: false
-language: erlang
-otp_release:
-  - 18.3
-  - 19.0
+language: java
+addons:
+  apt:
+    packages:
+      - oracle-java8-installer
 
 install: true
 
-script:
-  - erl -eval 'erlang:display(erlang:system_info(otp_release)), halt().'  -noshell
-  - cd ~/otp
-  - ls -al
+script: java -version
