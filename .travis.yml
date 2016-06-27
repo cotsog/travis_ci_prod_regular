@@ -1,17 +1,9 @@
+language: ruby
 sudo: false
-language: java
 
-cache:
-  directories:
-    - /home/travis/java
+rvm:
+  - jruby-9.0.5.0
 
-install:
-  - if [ ! -e ~/java/jdk-8u92-linux-x64.tar.gz ]; then wget -P ~/java --no-check-certificate --no-cookies --header Cookie:\ oraclelicense=accept-securebackup-cookie http://download.oracle.com/otn-pub/java/jdk/8u92-b14/jdk-8u92-linux-x64.tar.gz; fi
-  - tar zxvf ~/java/jdk-8u92-linux-x64.tar.gz -C ~/
-  - export JAVA_HOME=~/jdk1.8.0_92
-  - export JRE_HOME=$JAVA_HOME/jre
-  - export PATH=$JRE_HOME/bin:$JAVA_HOME/bin:$PATH
+install: true
   
-script:
-  - which java
-  - java -version
+script: true
