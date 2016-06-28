@@ -1,13 +1,8 @@
-language: ruby
+language: python
 sudo: false
 
-addons:
-  apt:
-    packages:
-      - haveged
-
-rvm:
-  - jruby-9.0.5.0
+python:
+  - "2.7"
 
 install: true
   
