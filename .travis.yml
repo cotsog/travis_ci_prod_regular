@@ -4,6 +4,8 @@ language: java
 
 jdk:
   - oraclejdk8
+  
+env: CODE_SIGN_IDENTITY=- CODE_SIGNING_REQUIRED=NO
 
 addons:
   apt:
@@ -21,4 +23,5 @@ addons:
 install: true
 
 script:
+  - echo "$CODE_SIGN_IDENTITY $CODE_SIGNING_REQUIRED"
   - ldconfig -p | grep lzma
