@@ -1,9 +1,24 @@
-language: python
-sudo: false
+sudo: required
 
-python:
-  - ["2.7"]
+language: java
+
+jdk:
+  - oraclejdk8
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - gcc-4.8
+      - g++-4.8
+      - python2.7
+      - wget
+      - pkg-config
+      - zip
+      - zlib1g-dev
 
 install: true
-  
-script: true
+
+script:
+  - ldconfig -p | grep lzma
