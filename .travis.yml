@@ -1,27 +1,6 @@
-sudo: required
-
-language: java
-
-jdk:
-  - oraclejdk8
-  
-env: CODE_SIGN_IDENTITY=- CODE_SIGNING_REQUIRED=NO
-
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - gcc-4.8
-      - g++-4.8
-      - python2.7
-      - wget
-      - pkg-config
-      - zip
-      - zlib1g-dev
+sudo: false
 
 install: true
 
 script:
-  - echo "$CODE_SIGN_IDENTITY $CODE_SIGNING_REQUIRED"
-  - ldconfig -p | grep lzma
+  - travis_wait 120 sleep 7200
