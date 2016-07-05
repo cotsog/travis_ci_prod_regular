@@ -1,6 +1,11 @@
 sudo: false
 
+language: ruby
+
+rvm:
+ - "2.2"
+ - "2.3"
+
 install: true
 
-script:
-  - travis_wait 120 sleep 7200
+script: true
