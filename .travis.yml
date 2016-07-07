@@ -1,14 +1,7 @@
 
-language: generic
+language: objective-c
+osx_image: xcode7.3
 
-matrix:
-  include:
-    - sudo: false
-    - sudo: required
-      dist: precise
-    - sudo: required
-      dist: trusty
-
-install: true
+cache: bundler
 
 script: true
