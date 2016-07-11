@@ -1,7 +1,9 @@
-
-language: objective-c
-osx_image: xcode6.4
+sudo: false
+language: java
 
 install: true
 
-script: true
+script:
+  - echo $MAVEN_HOME
+  - echo $M2_HOME
+  - ls $TRAVIS_HOME/.m2
