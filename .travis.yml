@@ -6,4 +6,6 @@ install: true
 script:
   - echo $MAVEN_HOME
   - echo $M2_HOME
-  - ls $TRAVIS_HOME/.m2
+  - pwd
+  - ls $HOME/.m2
+  - ls /home/travis/.m2
