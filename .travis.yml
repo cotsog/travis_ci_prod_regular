@@ -1,6 +1,11 @@
 sudo: false
 language: generic
 
+branches:
+  only:
+    - develop
+    - master
+
 env:
   - IOS_VERSION="8.3" IOS_DEVICE="iPhone 6s"
   - IOS_VERSION="9.0" IOS_DEVICE="iPhone 6s"
