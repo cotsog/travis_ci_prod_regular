@@ -1,17 +1,13 @@
 sudo: false
-language: generic
+language: java
 
-branches:
-  only:
-    - develop
-    - master
-
-env:
-  - IOS_VERSION="8.3" IOS_DEVICE="iPhone 6s"
-  - IOS_VERSION="9.0" IOS_DEVICE="iPhone 6s"
-  - IOS_VERSION="8.3" IOS_DEVICE="iPad Air 2"
-  - IOS_VERSION="9.0" IOS_DEVICE="iPad Air 2"
+jdk:
+  - oraclejdk8
+addons:
+  apt:
+    packages:
+      - oracle-java8-installer
 
 install: true
 
-script: true
+script: java -version
