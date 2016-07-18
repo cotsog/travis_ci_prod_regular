@@ -2,7 +2,7 @@ language: ruby
 sudo: false
 
 env:
-  - ES_VERSION=2.3.4 ES_DOWNLOAD_URL=https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/zip/elasticsearch/${ES_VERSION}/elasticsearch-${ES_VERSION}.tar.gz
+  - ES_VERSION=2.3.4 ES_DOWNLOAD_URL=https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/${ES_VERSION}/elasticsearch-${ES_VERSION}.tar.gz
 before_install:
   - wget ${ES_DOWNLOAD_URL}
   - tar -xzf elasticsearch-${ES_VERSION}.tar.gz
