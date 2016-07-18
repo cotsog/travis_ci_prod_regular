@@ -1,12 +1,14 @@
 language: ruby
-sudo: required
-dist: trusty
+sudo: false
 
-group: edge
+env:
+  - ES_VERSION=2.3.4 ES_DOWNLOAD_URL=https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/zip/elasticsearch/${ES_VERSION}/elasticsearch-${ES_VERSION}.zip
+before_install:
+  - wget ${ES_DOWNLOAD_URL}
+  - tar -xzf elasticsearch-${ES_VERSION}.tar.gz
+  - ./elasticsearch-${ES_VERSION}/bin/elasticsearch &
+  - sleep 30
 
-services:
-  - mongodb
-
-install: true
-
-script: mongo --eval "printjson(db.serverStatus())"
+script:
+  # To test the installation was successful
+  - curl -X GET http://localhost:9200/
