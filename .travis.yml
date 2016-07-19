@@ -9,3 +9,6 @@ before_script:
 
 script:
   - php -r "print_r(curl_version());" | grep ssl_version
+  - php -r "curl_setopt($curl, CURLOPT_SSLVERSION, 1);print_r(curl_version());" | grep ssl_version
+  - php -r "curl_setopt($curl, CURLOPT_SSLVERSION, 2);print_r(curl_version());" | grep ssl_version
+  - php -r "curl_setopt($curl, CURLOPT_SSLVERSION, 3);print_r(curl_version());" | grep ssl_version
