@@ -1,14 +1,10 @@
-language: php
+language: python
+python:
+  - "2.7"
+matrix:
+  include:
+    - python: "3.5"
+      env: BOTO_CONFIG=/tmp/nowhere
 
-php:
-  - 5.5
-  - 5.6
-  - 7.0
-
-before_script:
-
-script:
-  - php -r "print_r(curl_version());" | grep ssl_version
-  - php -r "curl_setopt($curl, CURLOPT_SSLVERSION, 1);print_r(curl_version());" | grep ssl_version
-  - php -r "curl_setopt($curl, CURLOPT_SSLVERSION, 2);print_r(curl_version());" | grep ssl_version
-  - php -r "curl_setopt($curl, CURLOPT_SSLVERSION, 3);print_r(curl_version());" | grep ssl_version
+install: true
+script: true
