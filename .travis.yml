@@ -1,13 +1,28 @@
 sudo: required
 dist: trusty
 
-language: generic
+# This is to use the Trusty image with all languages pre-installed
+language: ruby
+
+# Don't execute these steps for the Ruby language
+install: true
+script: true
 
 matrix:
-    include:
-        - python: 3.5
-        - scala: 2.11.2
-
-install: true
-
-script: true
+  include:
+    # Python
+    - before_install: true # install python runtime
+      install: true # install dependencies
+      script: true # run tests
+    # Go
+    - before_install: true # install go runtime
+      install: true # install dependencies
+      script: true # run tests
+    # Scala
+    - before_install: true # install scala runtime
+      install: true # install dependencies
+      script: true # run tests
+    # Java
+    - before_install: true # install java runtime
+      install: true # install dependencies
+      script: true # run tests
