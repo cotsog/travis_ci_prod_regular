@@ -1,28 +1,16 @@
-sudo: required
-dist: trusty
+sudo: false
 
-# This is to use the Trusty image with all languages pre-installed
 language: ruby
 
 # Don't execute these steps for the Ruby language
 install: true
 script: true
 
-matrix:
-  include:
-    # Python
-    - before_install: true # install python runtime
-      install: true # install dependencies
-      script: true # run tests
-    # Go
-    - before_install: true # install go runtime
-      install: true # install dependencies
-      script: true # run tests
-    # Scala
-    - before_install: true # install scala runtime
-      install: true # install dependencies
-      script: true # run tests
-    # Java
-    - before_install: true # install java runtime
-      install: true # install dependencies
-      script: true # run tests
+deploy:
+  provider: s3
+  access_key_id: "YOUR AWS ACCESS KEY"
+  secret_access_key: "YOUR AWS SECRET KEY"
+  bucket: "S3 Bucket"
+
+addons:
+  artifacts: true
