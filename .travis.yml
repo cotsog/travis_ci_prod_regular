@@ -1,6 +1,10 @@
 language: python
 sudo: false
 
+cache:
+  directories:
+    - $HOME/build/cotsog/travis_ci_prod_regular/node_modules
+
 install:
   - ln -s $HOME/build/cotsog/ $HOME/base
   - ln -s $HOME/build/cotsog/travis_ci_prod_regular/ $HOME/base/project
