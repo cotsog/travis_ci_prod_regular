@@ -2,10 +2,9 @@
   "name": "node-js-sample",
   "version": "0.2.0",
   "description": "A sample Node.js app using Express 4",
-  "main": "index.js"
-  },
+  "main": "index.js",
   "dependencies": {
     "express": "^4.13.3"
-  }
+  },
   "license": "MIT"
 }
