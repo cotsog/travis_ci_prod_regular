@@ -1,7 +1,11 @@
-language: php
+language: python
 sudo: false
 
-install: true
+install:
+  - ln -s $HOME/build/cotsog/ $HOME/base
+  - ln -s $HOME/build/cotsog/travis_ci_prod_regular/ $HOME/base/project
+  - cd $HOME/base/project
+  - npm install
 script: true
 notifications:
   slack:
