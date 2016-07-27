@@ -1,4 +1,4 @@
-language: php
+language: ruby
 sudo: false
 
 install: true
