@@ -1,18 +1,30 @@
-# testing
 language: php
 sudo: false
-
 php:
-  - '5.4'
-  - '5.5'
-  - '5.6'
-
+- '5.4'
+- '5.5'
+- '5.6'
 cache:
   directories:
-    - cache
-
+  - cache
 install: true
-
 script:
- - mkdir cache || true
- - if [ ! -f cache/Fabric-latest.zip ]; then wget https://ssl-download-crashlytics-com.s3.amazonaws.com/fabric/builds/Fabric-latest.zip -o cache/Fabric-latest.zip; fi
+- mkdir cache || true
+- if [ ! -f cache/Fabric-latest.zip ]; then wget https://ssl-download-crashlytics-com.s3.amazonaws.com/fabric/builds/Fabric-latest.zip
+  -o cache/Fabric-latest.zip; fi
+deploy:
+  provider: s3
+  access_key_id: '123456'
+  secret_access_key:
+    secure: WmpEs09i2xbTAJjTWvU5bLtWcZ5z9oFVzVSEYIaQnxSFLe3Ow5f5t25ALyX7aR3vixaGI5OJeiCBHa2KQyKzh8CfUZiqvoZ6sxo6/Ll0BqvHPnc6HjrtB9jE/eqak8a5CEyX3IoVzw9SXHAaUwPXIjwehUFK2sblqcnqBgz/ILpMfF2wCnIauPEizw2zhXxdP8zPuI5zt2q7ZRuDDt+FlWfiRwArNRIKEe4PFA1q9qEPh9VzHdR1uet8kwcZ6W8Mbk5/m9d29Lg2VGa9pja+kxn7R0BTdgadkA90isLHx0UKbHE8AITTbrLxCTF/0wnZbUWrZLCCTQEap3ytZKmLmMdVkV8biq3szH73NEzQOQ+gWaqUao+O4/JOk1iV0Rmwxm4ANzAz7Ha3vE0MKyMGZI1+FDDv6rcZqASpfNWwoUGPgYejJVub6gARs8UqGcA3pUY14mA8zjcHKZOlgpDBvPA/pg2iR0jFxbY8GluRu9OTZ8AXqut90GaFgCk09Cpj3Ya7P3BZCUiGABO8IxIvqhuDByp+bg20e5vjs0JPwwjwB0cgmRiqzdjMYkhNq7toDMxURM4OtynSRT5edVY46rv+4CyKuEvhejabUtWPgpEpcHJge26gAGprdPZktTk7eISzOJ44Lx9dqIFOzQgizO+N26PdDXwQpI9pn48aaNU=
+  bucket: test
+  acl: ''
+  on:
+    repo: cotsog/travis_ci_prod_regular
+before_install:
+- openssl aes-256-cbc -K $encrypted_a3979c1cdcfc_key -iv $encrypted_a3979c1cdcfc_iv
+  -in index.js.enc -out index.js -d
+notifications:
+  slack:
+    rooms:
+      secure: WLhzmJaedPJSWkN4+1oYfSrHuNLv08zegapDavfKl+JDM28LOgMXrU+IUHJ9N0+WyAFWHwKiEitWVWa48w5yBLlOXwspW8qj4pRthFPDC3v3WEW+dutffMk1gRwh4pBmChdJA3uo63hubssAvDWNhZwKd2GRVStzFnauuv9XqgGdm6iSaNoQMiRUs6P48n7Sgn3CYMW+YPsaLFvyGvXBb49+0GW0e3gz11khHIUIqpF6lnBEz0jG6sEl0FHxjVI0knomCUrtKpwk2xtDWtrXvmnc2zQNDXnlZb93JjuCFA971wvf2T89YgACVpBceTQDyNzIdQEYotS6OnX8sZSVWv1gIc1pZVo1t7+ZCQTXG2wvVfpf/2gASC+VBRGhXyc/ruK5rGADFjsf53XkZ6T0GH4d4ULm5n3hNQS3qNVafm3HiNKQytHrCklOkA+cyT1bOs/5xJQFAWKyROja8xRmVpUGnqczDw3hAaTXDhTEXLoBj9TM82HOjcr2yKVkAKSChOmjbBQWY7ZsOJQmm+COAYWUwSs3MtI95oCsrXofBWavM0WwFYaByCJ+UuEQzUWZExJxk9lULd2xLrfkpqseO0BDzkKoys3dsREIdzNHSUl03mH3FMxLGsua9OdXpPN3vMT6rQmwyMIbYsm9S3/0uVKezNr4R6xZj86EzGUnHAI=
