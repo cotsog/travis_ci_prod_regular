@@ -1,0 +1,13 @@
+{
+  "name": "none",
+  "description": "none",
+  "keywords": ["none"],
+  "license": "proprietary",
+  "type": "project",
+  "require": {
+    "symfony/config": "*"
+  },
+  "config": {
+    "preferred-install": "dist"
+  }
+}

@@ -1,7 +1,9 @@
-# Trigger for hotfix_0?
-language: ruby
+language: php
+sudo: false
+
 install: true
-script: echo "Should not build!"
-branches:
-  only:
-    - master
+script: true
+notifications:
+  slack:
+    rooms:
+      secure: WLhzmJaedPJSWkN4+1oYfSrHuNLv08zegapDavfKl+JDM28LOgMXrU+IUHJ9N0+WyAFWHwKiEitWVWa48w5yBLlOXwspW8qj4pRthFPDC3v3WEW+dutffMk1gRwh4pBmChdJA3uo63hubssAvDWNhZwKd2GRVStzFnauuv9XqgGdm6iSaNoQMiRUs6P48n7Sgn3CYMW+YPsaLFvyGvXBb49+0GW0e3gz11khHIUIqpF6lnBEz0jG6sEl0FHxjVI0knomCUrtKpwk2xtDWtrXvmnc2zQNDXnlZb93JjuCFA971wvf2T89YgACVpBceTQDyNzIdQEYotS6OnX8sZSVWv1gIc1pZVo1t7+ZCQTXG2wvVfpf/2gASC+VBRGhXyc/ruK5rGADFjsf53XkZ6T0GH4d4ULm5n3hNQS3qNVafm3HiNKQytHrCklOkA+cyT1bOs/5xJQFAWKyROja8xRmVpUGnqczDw3hAaTXDhTEXLoBj9TM82HOjcr2yKVkAKSChOmjbBQWY7ZsOJQmm+COAYWUwSs3MtI95oCsrXofBWavM0WwFYaByCJ+UuEQzUWZExJxk9lULd2xLrfkpqseO0BDzkKoys3dsREIdzNHSUl03mH3FMxLGsua9OdXpPN3vMT6rQmwyMIbYsm9S3/0uVKezNr4R6xZj86EzGUnHAI=
