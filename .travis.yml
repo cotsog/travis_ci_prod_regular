@@ -1,0 +1,14 @@
+language: java
+
+jdk: openjdk8
+
+matrix:
+  include:
+    - sudo: false
+    - sudo: required
+      dist: precise
+    - sudo: required
+      dist: trusty
+
+install: true
+script: true
