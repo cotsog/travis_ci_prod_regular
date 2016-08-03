@@ -1,14 +1,5 @@
-language: java
+language: ruby
 
-jdk: openjdk8
+cache: bundler
 
-matrix:
-  include:
-    - sudo: false
-    - sudo: required
-      dist: precise
-    - sudo: required
-      dist: trusty
-
-install: true
 script: true
