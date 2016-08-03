@@ -1,6 +1,15 @@
-# Trigger
-language: ruby
 
-cache: bundler
+language: android
+jdk: oraclejdk8
+sudo: false
+android:	
+  components:
+    - platform-tools
+    - tools
+    - build-tools-24.0.1
+    - android-24
+    - extra-google-m2repository
+    - extra-android-m2repository
 
+install: true
 script: true
