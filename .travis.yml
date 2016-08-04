@@ -1,7 +1,7 @@
 language: php
 sudo: false
 install: true
-script: true
+script: env
 env:
   global:
   - AWS_DEFAULT_REGION=eu-west-1
