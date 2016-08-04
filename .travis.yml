@@ -1,8 +1,8 @@
-
 language: scala
 scala: 2.11.8
+jdk: oraclejdk8
 sudo: required
-dist: trusty
+dist: precise
 
 install: true
 script: true
