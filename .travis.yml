@@ -8,7 +8,7 @@ cache:
 install:
   - if [ ! -d gcc-arm-archive]; then mkdir gcc-arm-archive; fi
   - if [ ! -e gcc-arm-archive/gcc-arm.tar.bz2 ]; then wget -O gcc-arm-archive/gcc-arm.tar.bz2 https://launchpad.net/gcc-arm-embedded/4.9/4.9-2015-q3-update/+download/gcc-arm-none-eabi-4_9-2015q3-20150921-linux.tar.bz2; fi
-  - tar -xf gcc-arm-none-eabi-4_9-2015q3-20150921-linux.tar.bz2
-  - export PATH=$PWD/gcc-arm-none-eabi-4_9-2015q3/bin:$PATH
+  - tar -xf gcc-arm-archive/gcc-arm.tar.bz2
+  - export PATH=$PWD/gcc-arm-archive/gcc-arm-none-eabi-4_9-2015q3/bin:$PATH
 
 script: true
