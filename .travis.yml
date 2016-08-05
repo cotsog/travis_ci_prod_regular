@@ -43,6 +43,11 @@ matrix:
 
 language: cpp
 
+env:
+  global:
+    - LANG="en_US.UTF-8"
+    - DISPLAY=:99.0
+
 install: true
 
 before_script: true
