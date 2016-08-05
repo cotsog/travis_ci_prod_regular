@@ -43,8 +43,6 @@ matrix:
 
 language: cpp
 
-env: LANG="en_US.UTF-8" DISPLAY=:99.0
-
 install: true
 
 before_script: true
@@ -52,20 +50,5 @@ before_script: true
 script: true
 
 after_script: true
-
-deploy:
-  provider: s3
-  access_key_id: "$AWS_ACCESS_KEY_ID"
-  secret_access_key: "$AWS_SECRET_ACCESS_KEY"
-  bucket: toptracker-dev
-  upload-dir: builds
-  local-dir: "$HOME/travis-deployed"
-  detect_encoding: true
-  skip_cleanup: true
-  acl: public_read
-  on:
-    all_branches: true
-
-after_deploy: true
 
 
