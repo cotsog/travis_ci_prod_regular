@@ -5,41 +5,6 @@ matrix:
     - sudo: required
       dist: trusty
       compiler: gcc
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-          packages:
-            - gcc-5
-            - g++-5
-            - devscripts
-            - ubuntu-dev-tools
-            - debhelper
-            - dh-make
-            - diffutils
-            - patch
-            - gnupg
-            - fakeroot
-            - lintian
-            - pbuilder
-            - mini-dinstall
-            - gnupg
-            - xvfb
-            - x11-xkb-utils
-            - xfonts-100dpi
-            - xfonts-75dpi
-            - xfonts-scalable
-            - xfonts-cyrillic
-            - x11-apps
-            - gtk+-2.0
-            - mesa-common-dev
-            - libappindicator-dev
-            - libicu-dev
-            - libasound2-dev
-            - libgstreamer1.0-dev
-            - libgstreamer-plugins-base1.0-dev
-            - libxss-dev
-            - unzip
 
 language: cpp
 
@@ -70,3 +35,39 @@ deploy:
     all_branches: true
 
 after_deploy: true
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - gcc-5
+      - g++-5
+      - devscripts
+      - ubuntu-dev-tools
+      - debhelper
+      - dh-make
+      - diffutils
+      - patch
+      - gnupg
+      - fakeroot
+      - lintian
+      - pbuilder
+      - mini-dinstall
+      - gnupg
+      - xvfb
+      - x11-xkb-utils
+      - xfonts-100dpi
+      - xfonts-75dpi
+      - xfonts-scalable
+      - xfonts-cyrillic
+      - x11-apps
+      - gtk+-2.0
+      - mesa-common-dev
+      - libappindicator-dev
+      - libicu-dev
+      - libasound2-dev
+      - libgstreamer1.0-dev
+      - libgstreamer-plugins-base1.0-dev
+      - libxss-dev
+      - unzip
