@@ -1,15 +1,71 @@
-# Trigger
-language: node_js
-sudo: false
+matrix:
+  include:
+    - osx_image: xcode7.3
+    - sudo: required
+      dist: trusty
 
-node_js: 4.2
+language: cpp
 
-cache:
-  directories:
-    - gcc-arm-none-eabi-4_9-2015q3
+compiler: gcc
 
-install:
-  - if [ ! -d gcc-arm-none-eabi-4_9-2015q3/bin ]; then rm -rf gcc-arm-none-eabi-4_9-2015q3; wget https://launchpad.net/gcc-arm-embedded/4.9/4.9-2015-q3-update/+download/gcc-arm-none-eabi-4_9-2015q3-20150921-linux.tar.bz2; tar -xf gcc-arm-none-eabi-4_9-2015q3-20150921-linux.tar.bz2; fi
-  - export PATH=$PWD/gcc-arm-none-eabi-4_9-2015q3/bin:$PATH
+env:
+  - LANG="en_US.UTF-8" DISPLAY=:99.0
+
+install: true
+
+before_script: true
 
 script: true
+
+after_script: true
+
+deploy:
+  provider: s3
+  access_key_id: "$AWS_ACCESS_KEY_ID"
+  secret_access_key: "$AWS_SECRET_ACCESS_KEY"
+  bucket: toptracker-dev
+  upload-dir: builds
+  local-dir: "$HOME/travis-deployed"
+  detect_encoding: true
+  skip_cleanup: true
+  acl: public_read
+  on:
+    all_branches: true
+
+after_deploy: true
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - gcc-5
+      - g++-5
+      - devscripts
+      - ubuntu-dev-tools
+      - debhelper
+      - dh-make
+      - diffutils
+      - patch
+      - gnupg
+      - fakeroot
+      - lintian
+      - pbuilder
+      - mini-dinstall
+      - gnupg
+      - xvfb
+      - x11-xkb-utils
+      - xfonts-100dpi
+      - xfonts-75dpi
+      - xfonts-scalable
+      - xfonts-cyrillic
+      - x11-apps
+      - gtk+-2.0
+      - mesa-common-dev
+      - libappindicator-dev
+      - libicu-dev
+      - libasound2-dev
+      - libgstreamer1.0-dev
+      - libgstreamer-plugins-base1.0-dev
+      - libxss-dev
+      - unzip
