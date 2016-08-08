@@ -33,10 +33,6 @@ android:
     # x86 is not functioning on travis for some reason
     #- sys-img-x86-addon-google_apis-google-23
     - sys-img-armeabi-v7a-google_apis-23
-    
-matrix:
-  include:
-    - sudo: false
 
 before_install:
   - android list target
