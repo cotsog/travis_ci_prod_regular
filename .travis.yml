@@ -1,75 +1,11 @@
-matrix:
-  include:
-    - os: osx
-      osx_image: xcode7.3
-      compiler: gcc
-    - os: linux
-      sudo: required
-      dist: trusty
-      compiler: gcc
-
-language: cpp
-
-env:
-  global:
-    - LANG="en_US.UTF-8"
-    - DISPLAY=:99.0
-
-install: true
-
-before_script: true
-
-script: true
-
-after_script: true
-
-deploy:
-  provider: s3
-  access_key_id: "$AWS_ACCESS_KEY_ID"
-  secret_access_key: "$AWS_SECRET_ACCESS_KEY"
-  bucket: toptracker-dev
-  upload-dir: builds
-  local-dir: "$HOME/travis-deployed"
-  detect_encoding: true
-  skip_cleanup: true
-  acl: public_read
-  on:
-    all_branches: true
-
-after_deploy: true
+language: ruby
 
 addons:
   apt:
     sources:
-      - ubuntu-toolchain-r-test
+      - deadsnakes
     packages:
-      - gcc-5
-      - g++-5
-      - devscripts
-      - ubuntu-dev-tools
-      - debhelper
-      - dh-make
-      - diffutils
-      - patch
-      - gnupg
-      - fakeroot
-      - lintian
-      - pbuilder
-      - mini-dinstall
-      - gnupg
-      - xvfb
-      - x11-xkb-utils
-      - xfonts-100dpi
-      - xfonts-75dpi
-      - xfonts-scalable
-      - xfonts-cyrillic
-      - x11-apps
-      - gtk+-2.0
-      - mesa-common-dev
-      - libappindicator-dev
-      - libicu-dev
-      - libasound2-dev
-      - libgstreamer1.0-dev
-      - libgstreamer-plugins-base1.0-dev
-      - libxss-dev
-      - unzip
+      - python3.4
+      
+install: true
+script: true
