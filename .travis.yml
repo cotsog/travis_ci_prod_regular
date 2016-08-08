@@ -1,9 +1,6 @@
 sudo: required
 dist: precise
 language: android
-branches:
-  only:
-    - travis
 android:
   components:
     - platform-tools
