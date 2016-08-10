@@ -1,33 +1,39 @@
-language: android
-sudo: required
-dist: precise
-android:
-  components:
-  - platform-tools
-  - tools
-  - build-tools-23.0.1
-  - android-23
-  - extra-android-m2repository
-  - extra-android-support
-  - extra-google-m2repository
-  - extra-google-google_play_services
-  - addon-google_apis-google-23
-  - sys-img-armeabi-v7a-google_apis-23
-before_install:
-  - sudo dpkg --add-architecture i386
-  - sudo apt-get update
-  - sudo apt-get install ia32-libs-sdl
-before_script:
-  - android list target
-  - echo no | android create avd --force -n test -t android-23 --abi google_apis/armeabi-v7a
-  - android list avd
-  - emulator -avd test -no-skin -no-audio &
-  - adb wait-for-device
-  - android-wait-for-emulator
-  - sleep 30
-  - adb shell input keyevent 82 &
+language: ruby
+cache: bundler
+rvm:
+  - 2.3.1
+bundler_args: "--without development"
+matrix:
+  include:
+    - env: CI_NODE_TOTAL=10 CI_NODE_INDEX=0
+    - env: CI_NODE_TOTAL=10 CI_NODE_INDEX=1
+    - env: CI_NODE_TOTAL=10 CI_NODE_INDEX=2
+    - env: CI_NODE_TOTAL=10 CI_NODE_INDEX=3
+    - env: CI_NODE_TOTAL=10 CI_NODE_INDEX=4
+    - env: CI_NODE_TOTAL=10 CI_NODE_INDEX=5
+    - env: CI_NODE_TOTAL=10 CI_NODE_INDEX=6
+    - env: CI_NODE_TOTAL=10 CI_NODE_INDEX=7
+    - env: CI_NODE_TOTAL=10 CI_NODE_INDEX=8
+    - env: CI_NODE_TOTAL=10 CI_NODE_INDEX=9
+    - env: CI_DOCKER=1
+      sudo: required
+      dist: trusty
+      services: ["redis-server", "docker"]
 install: true
 script: true
+notifications:
+  email: false
+services:
+  - redis-server
+addons:
+  postgresql: '9.4'
+
 env:
   global:
-    - ADB_INSTALL_TIMEOUT=8
+    - DATABASE_URL=postgres://127.0.0.1:5432/shogun_test
+    - RUBY_GC_HEAP_INIT_SLOTS=600000
+    - RUBY_GC_HEAP_FREE_SLOTS=600000
+    - RUBY_HEAP_SLOTS_INCREMENT=500000
+    - RUBY_GC_MALLOC_LIMIT=100000000
+    - RUBY_HEAP_SLOTS_GROWTH_FACTOR=1.25
+    - RUBY_GC_HEAP_GROWTH_MAX_SLOTS=300000
