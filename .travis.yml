@@ -28,7 +28,8 @@ addons:
   postgresql: '9.4'
 
 env:
-  - CI_NODE_TOTAL=10 CI_NODE_INDEX=0
+  matrix:
+    - CI_NODE_TOTAL=10 CI_NODE_INDEX=0
   global:
     - DATABASE_URL=postgres://127.0.0.1:5432/shogun_test
     - RUBY_GC_HEAP_INIT_SLOTS=600000
