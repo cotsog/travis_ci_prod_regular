@@ -8,7 +8,7 @@
 # A mongoid script connecting to a MongoDB database given a MongoDB Connection URI.
 
 require 'mongoid'
-Mongoid.load!('mongoid.yml', :production)
+Mongoid.configure { |config| config.sessions = { default: { database: 'test', hosts: ['localhost:27017'] } } }
 
 ### Define Schema
 
