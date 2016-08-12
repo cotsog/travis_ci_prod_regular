@@ -1,3 +1,4 @@
+
 #!/usr/bin/ruby
 
 # Copyright (c) 2016 ObjectLabs Corporation
@@ -8,7 +9,7 @@
 # A mongoid script connecting to a MongoDB database given a MongoDB Connection URI.
 
 require 'mongoid'
-Mongoid.configure { |config| config.sessions = { default: { database: 'test', hosts: ['localhost:27017'] } } }
+Mongoid.load!('mongoid.yml', :production)
 
 ### Define Schema
 
