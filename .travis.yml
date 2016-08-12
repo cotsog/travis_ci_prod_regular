@@ -1,5 +1,8 @@
 language: ruby
 
+services:
+  - mongodb
+
 matrix:
   include:
     - sudo: required
