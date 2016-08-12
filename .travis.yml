@@ -1,40 +1,18 @@
 language: ruby
-cache: bundler
-rvm:
-  - 2.3.1
-bundler_args: "--without development"
+
 matrix:
   include:
-    - env: CI_NODE_TOTAL=10 CI_NODE_INDEX=1
-    - env: CI_NODE_TOTAL=10 CI_NODE_INDEX=2
-    - env: CI_NODE_TOTAL=10 CI_NODE_INDEX=3
-    - env: CI_NODE_TOTAL=10 CI_NODE_INDEX=4
-    - env: CI_NODE_TOTAL=10 CI_NODE_INDEX=5
-    - env: CI_NODE_TOTAL=10 CI_NODE_INDEX=6
-    - env: CI_NODE_TOTAL=10 CI_NODE_INDEX=7
-    - env: CI_NODE_TOTAL=10 CI_NODE_INDEX=8
-    - env: CI_NODE_TOTAL=10 CI_NODE_INDEX=9
-    - env: CI_DOCKER=1
-      sudo: required
+    - sudo: required
+      dist: precise
+    - sudo: required
       dist: trusty
-      services: ["redis-server", "docker"]
-install: true
-script: true
-notifications:
-  email: false
-services:
-  - redis-server
-addons:
-  postgresql: '9.4'
+    - sudo: required
+      dist: trusty
+      group: edge
+    - sudo: required
+      dist: trusty
+      group: edge
 
-env:
-  matrix:
-    - CI_NODE_TOTAL=10 CI_NODE_INDEX=0
-  global:
-    - DATABASE_URL=postgres://127.0.0.1:5432/shogun_test
-    - RUBY_GC_HEAP_INIT_SLOTS=600000
-    - RUBY_GC_HEAP_FREE_SLOTS=600000
-    - RUBY_HEAP_SLOTS_INCREMENT=500000
-    - RUBY_GC_MALLOC_LIMIT=100000000
-    - RUBY_HEAP_SLOTS_GROWTH_FACTOR=1.25
-    - RUBY_GC_HEAP_GROWTH_MAX_SLOTS=300000
+script:
+  - ruby mongoid_simple_example.rb
+  - bundle exec ruby mongoid_simple_example.rb
