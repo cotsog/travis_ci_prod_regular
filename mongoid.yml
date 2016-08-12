@@ -1,4 +1,6 @@
-production: 
-  clients: 
-    default: 
-      uri: "mongodb://localhost:27017/test"
+production:
+  sessions:
+    default:
+      database: test
+      hosts:
+        - localhost:27017
