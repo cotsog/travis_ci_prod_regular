@@ -17,5 +17,5 @@ matrix:
       group: edge
 
 script:
-  - ruby mongoid_simple_example.rb
+  - cat /etc/hosts
   - bundle exec ruby mongoid_simple_example.rb
