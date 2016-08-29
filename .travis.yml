@@ -7,3 +7,44 @@ script: true
 install:
 - cat ~/apt-get-update.log
 - sudo apt-get update 2>&1 | tee /tmp/apt.err && ! grep -q '^[WE]' /tmp/apt.err
+env:
+  global:
+  - FNET_IDENTITY_APP_PREFIX=linksprinter
+  - FNET_IDENTITY_API_APP_ID=5GTFaVgr4TX47VSgyH5P1A
+  - FNET_IDENTITY_API_USER=devlogin
+  - FNET_IDENTITY_API_SECRET=[secure]
+  - FNET_IDENTITY_API_TIMEOUT=60
+  - FNET_IDENTITY_API_URL=https://fnetidentityapi-staging.herokuapp.com
+  - FNET_IDENTITY_API_CACHE_ENABLED=true
+  - FNET_IDENTITY_API_CACHE_EXPIRE=600
+  - FNET_IDENTITY_API_CACHE_EXPIRE_USER=600
+  - FNET_IDENTITY_API_CACHE_EXPIRE_ORG=1200
+  - FNET_IDENTITY_API_CACHE_EXPIRE_GROUP=1200
+  - CLAIM_TIME=60
+  - UPDATE_TIME=90
+  - INTERVAL_SECONDS=3
+  - REDIS_URI=redis://localhost:6379
+  - MONGO_URI=mongodb://localhost:27017/linksprinter
+  - NEWRELIC_ENABLE=false
+  - SENDGRID_USERNAME=linksprinter
+  - SENDGRID_PASSWORD=[secure]
+  - LOG_LEVEL=INFO
+  - SUPPORT_ENABLED=false
+  - SEND_NEW_USER_ALERT=false
+  - SEND_NEW_USER_EMAILS=nobody@nowhere.com
+  - SEND_CONTACT_US_EMAILS=nobody@nowhere.com
+  - PAYMENTS_ENABLED=false
+  - PAYMENTS_SUBSCRIPTIONS_ENABLED=false
+  - PAYMENTS_TRANSACTIONS_ENABLED=true
+  - BRAINTREE_PREFIX='linksprinter'
+  - BRAINTREE_SEPARATOR='_'
+  - GRACE_PERIOD_DAYS=30
+  - BRAINTREE_CONFIG_ENV=sandbox
+  - BRAINTREE_CONFIG_MERCHANT_ID=mdzzf52k9pvkk2xj
+  - BRAINTREE_CONFIG_PUBLIC_KEY=k6bbk4226f88j59d
+  - BRAINTREE_CONFIG_PRIVATE_KEY=a6a1950b6172ea8910748883dfc53c61
+  - MARKETO_DISABLE=true
+  - MARKETO_ENDPOINT=https://339-XMT-135.mktoapi.com/soap/mktows/2_0
+  - MARKETO_USER_ID=flukenetworkssandbox11_53319408509A9F456B5330
+  - MARKETO_KEY=[secure]
+  - MARKETO_JS_ID=339-XMT-135
