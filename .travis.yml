@@ -1,18 +1,9 @@
 language: ruby
-
-install: true
-
+rvm: 1.9.3
+services:
+- mongodb
+- redis-server
 script: true
-
-before_deploy:
-  - echo "before_deploy!"
-
-deploy:
-  - provider: script
-    skip_cleanup: true
-    script: echo "test"
-  - provider: s3
-    access_key_id: "YOUR AWS ACCESS KEY"
-    secret_access_key: "YOUR AWS SECRET KEY"
-    bucket: "S3 Bucket"
-    skip_cleanup: true
+install:
+- cat ~/apt-get-update.log
+- sudo apt-get update 2>&1 | tee /tmp/apt.err && ! grep -q '^[WE]' /tmp/apt.err
