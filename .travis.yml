@@ -6,7 +6,7 @@ services:
 script: true
 install:
 - cat ~/apt-get-update.log
-- sudo apt-get update 2>&1 | tee /tmp/apt.err && ! grep -q '^[WE]' /tmp/apt.err
+- sudo apt-get update 2>&1 | tee /tmp/apt.err
 env:
   global:
   - FNET_IDENTITY_APP_PREFIX=linksprinter
