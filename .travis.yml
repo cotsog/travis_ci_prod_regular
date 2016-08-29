@@ -8,9 +8,8 @@ before_deploy:
   - echo "before_deploy!"
 
 deploy:
-  - provider: script
+  - provider: s3
     skip_cleanup: true
-    script: tools/scripts/deploy-lambdas.sh
   - provider: script
     skip_cleanup: true
     script: tools/scripts/deploy-lambdas.sh
