@@ -1,21 +1,16 @@
 language: ruby
 
-services:
-  - mongodb
+install: true
 
-matrix:
-  include:
-    - sudo: required
-      dist: precise
-    - sudo: required
-      dist: trusty
-    - sudo: required
-      dist: trusty
-      group: edge
-    - sudo: required
-      dist: trusty
-      group: edge
+script: true
 
-script:
-  - cat /etc/hosts
-  - bundle exec ruby mongoid_simple_example.rb
+before_deploy:
+  - echo "before_deploy!"
+
+deploy:
+  - provider: script
+    skip_cleanup: true
+    script: tools/scripts/deploy-lambdas.sh
+  - provider: script
+    skip_cleanup: true
+    script: tools/scripts/deploy-lambdas.sh
