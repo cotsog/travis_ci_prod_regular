@@ -8,5 +8,5 @@ deploy:
   provider: script
   script: echo "deploy"
 after_deploy:
-  - echo "after deploy"
+  - echo "after deploy" && false
   - echo "after deploy"
