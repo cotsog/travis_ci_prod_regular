@@ -1,6 +1,7 @@
 sudo: false
 language: generic
 install:
+  - mkdir -p ~/bin
   - curl -sL -o ~/bin/gimme https://raw.githubusercontent.com/travis-ci/gimme/master/gimme
   - chmod +x ~/bin/gimme
   - export GIMME_OUTPUT=$(gimme 1.7)
