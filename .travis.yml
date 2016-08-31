@@ -1,12 +1,9 @@
-language: node_js
-install: true
+sudo: false
+language: go
+go:
+  - 1.6.3
+install:
+  - export GIMME_OUTPUT=$(gimme 1.7)
+  - echo $GIMME_OUTPUT
+  - eval "$GIMME_OUTPUT"
 script: true
-before_deploy:
-  - echo "before deploy" && false
-  - echo "before deploy"
-deploy:
-  provider: script
-  script: echo "deploy"
-after_deploy:
-  - echo "after deploy" && false
-  - echo "after deploy"
