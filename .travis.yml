@@ -1,10 +1,12 @@
-sudo: false
-language: generic
-install:
-  - mkdir -p ~/bin
-  - curl -sL -o ~/bin/gimme https://raw.githubusercontent.com/travis-ci/gimme/master/gimme
-  - chmod +x ~/bin/gimme
-  - export GIMME_OUTPUT=$(gimme 1.7)
-  - echo $GIMME_OUTPUT
-  - eval "$GIMME_OUTPUT"
-script: true
+language: ruby
+
+matrix:
+  include:
+    - sudo: false
+    - sudo: required
+      dist: precise
+    - sudo: required
+      dist: trusty
+
+install: true
+script: rvm list
