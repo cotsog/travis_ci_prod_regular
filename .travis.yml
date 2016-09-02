@@ -7,3 +7,5 @@ addons:
     - g++-5
     sources:
     - ubuntu-toolchain-r-test
+before-install:
+  - sudo apt-get -y update
