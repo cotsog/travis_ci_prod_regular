@@ -1,5 +1,9 @@
 sudo: required
 dist: trusty
 language: cpp
-install: true
-script: true
+addons:
+  apt:
+    packages:
+    - g++-5
+    sources:
+    - ubuntu-toolchain-r-test
