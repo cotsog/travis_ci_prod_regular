@@ -5,6 +5,8 @@ matrix:
     - sudo: false
     - sudo: required
       dist: precise
+    - sudo: required
+      dist: trusty
 
 addons:
   apt:
