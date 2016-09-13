@@ -5,6 +5,8 @@ dist: trusty
 
 install: true
 script:
+  - cat /proc/net/dev
+  - grep "eth0:\|wlan0" /proc/net/dev
   - export FOUND=`grep "eth0:\|wlan0" /proc/net/dev`
   - |
       if  [ -n "$FOUND" ] ; then
