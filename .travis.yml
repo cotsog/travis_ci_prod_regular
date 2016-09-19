@@ -1,16 +1,15 @@
 language: ruby
 
-sudo: required
-dist: trusty
+matrix:
+  include:
+    - sudo: false
+    - sudo: required
+      dist: precise
+    - sudo: required
+      dist: trusty
 
 install: true
+
 script:
-  - cat /proc/net/dev
-  - grep "eth0:\|wlan0" /proc/net/dev
-  - export FOUND=`grep "eth0:\|wlan0" /proc/net/dev`
-  - |
-      if  [ -n "$FOUND" ] ; then
-        echo yes
-      else
-        echo no
-      fi
+  - wget https://tools.protorz.net/clamav/main.cvd
+  - wget https://jcenter.bintray.com/org/jacoco/org.jacoco.agent/0.7.6.201602180812/org.jacoco.agent-0.7.6.201602180812.jar
