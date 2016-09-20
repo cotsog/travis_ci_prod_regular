@@ -1,15 +1,29 @@
-language: ruby
-
-matrix:
-  include:
-    - sudo: false
-    - sudo: required
-      dist: precise
-    - sudo: required
-      dist: trusty
-
-install: true
-
+---
+language: android
+android:
+  components:
+  - platform-tools-23
+  - tools
+  - build-tools-23.0.2
+  - android-23
+  - sys-img-armeabi-v7a-android-18
+  - extra-android-support
+  - extra-android-m2repository
+cache:
+  directories:
+  - "$HOME/.gradle"
+before_script:
+- sudo apt-get update -qq
+- sudo apt-get install -y ivy
+- echo no | android create avd --force -n test -t android-18 --abi armeabi-v7a
+- emulator -avd test -no-skin -no-audio -no-window &
+- android-wait-for-emulator
+- adb shell input keyevent 82 &
 script:
-  - wget https://tools.protorz.net/clamav/main.cvd
-  - wget https://jcenter.bintray.com/org/jacoco/org.jacoco.agent/0.7.6.201602180812/org.jacoco.agent-0.7.6.201602180812.jar
+- "./gradlew clean testDebugUnitTest connectedDebugAndroidTest --no-daemon"
+global_env: artifactory_user=[secure] ARTIFACTORY_DEPLOY_USER=[secure] ARTIFACTORY_DEPLOY_PASS=[secure]
+  artifactory_password=[secure]
+
+sudo: required
+dist: precise
+
