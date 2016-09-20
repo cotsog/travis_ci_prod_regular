@@ -5,6 +5,7 @@ android:
   - platform-tools-23
   - tools
   - build-tools-23.0.2
+  - android-18
   - android-23
   - sys-img-armeabi-v7a-android-18
   - extra-android-support
