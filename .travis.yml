@@ -8,3 +8,6 @@ cache:
 before_install:
   - chmod +x ./install_gtest.sh
   - ./install_gtest.sh
+
+install: true
+script: true
