@@ -1,13 +1,6 @@
 language: cpp
 sudo: false
 
-cache:
-  directories:
-    - $HOME/gtest
-
-before_install:
-  - chmod +x ./install_gtest.sh
-  - ./install_gtest.sh
 
 install: true
-script: true
+script: echo $TRAVIS_BUILD_DIR
