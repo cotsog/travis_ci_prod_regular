@@ -1,7 +1,6 @@
-sudo: false
-
 matrix:
   include:
+    - sudo: false
     - sudo: required
       dist: precise
     - sudo: required
