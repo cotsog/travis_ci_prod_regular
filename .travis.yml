@@ -1,6 +1,11 @@
-language: cpp
 sudo: false
 
+matrix:
+  include:
+    - sudo: required
+      dist: precise
+    - sudo: required
+      dist: trusty
 
 install: true
-script: echo $TRAVIS_BUILD_DIR
+script: curl https://jcenter.bintray.com/org/eclipse/sisu/org.eclipse.sisu.inject/0.3.0/org.eclipse.sisu.inject-0.3.0.jar
