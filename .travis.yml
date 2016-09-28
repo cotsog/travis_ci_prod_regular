@@ -1,10 +1,11 @@
-matrix:
-  include:
-    - sudo: false
-    - sudo: required
-      dist: precise
-    - sudo: required
-      dist: trusty
+language: cpp
 
-install: true
-script: curl -v https://jcenter.bintray.com/org/eclipse/sisu/org.eclipse.sisu.inject/0.3.0/org.eclipse.sisu.inject-0.3.0.jar
+sudo: required
+
+install: echo "install!"
+script: echo "script!"
+after_success: echo "after_success!"
+after_script: echo "after_script!"
+
+addons	
+  artifacts: true
