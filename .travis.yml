@@ -2,10 +2,15 @@ language: node_js
 
 node_js: 6.3.1
 
-before_install: export PATH=$PATH:$PWD/.nvm/versions/node/v6.3.1/bin/
+before_install:
+  - echo $PATH
+  - export PATH=$PATH:$PWD/.nvm/versions/node/v6.3.1/bin/
 
 install: echo "install!"
 script: echo "script!"
+
+before_deploy:
+  - echo $PATH
 
 deploy:
   skip_cleanup: true
