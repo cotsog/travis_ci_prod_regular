@@ -1,17 +1,16 @@
-language: cpp
+language: node_js
 
-sudo: required
+node_js: 6.3.1
 
 install: echo "install!"
 script: echo "script!"
-after_success: echo "after_success!"
-after_script: echo "after_script!"
-
-addons:
-  artifacts: true
 
 deploy:
-  provider: s3
-  access_key_id: "YOUR AWS ACCESS KEY"
-  secret_access_key: "YOUR AWS SECRET KEY"
-  bucket: "S3 Bucket"
+  skip_cleanup: true
+  provider: heroku
+  strategy: api
+  api_key: $HEROKU_API_KEY
+  app:
+    master: chava-lovelace
+    stage: chava-lovelace-stage
+    dev: chava-lovelace-dev
