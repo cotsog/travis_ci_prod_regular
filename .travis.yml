@@ -11,6 +11,8 @@ script: echo "script!"
 
 before_deploy:
   - echo $PATH
+  - mkdir test
+  - cd test
 
 deploy:
   skip_cleanup: true
