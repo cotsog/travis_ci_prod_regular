@@ -1,25 +1,15 @@
 language: node_js
 
-node_js: 6.3.1
+sudo: false
 
-before_install:
-  - echo $PATH
-  - export PATH=$PATH:$PWD/.nvm/versions/node/v6.3.1/bin/
+matrix:
+  include:
+    - os: "linux"
+      env: NODE_VERSION="5.6"
+    - os: "linux"
+      env: NODE_VERSION="4.2"
+    - os: "linux"
+      env: NODE_VERSION="0.12"
 
-install: echo "install!"
-script: echo "script!"
-
-before_deploy:
-  - echo $PATH
-  - mkdir test
-  - cd test
-
-deploy:
-  skip_cleanup: true
-  provider: heroku
-  strategy: api
-  api_key: $HEROKU_API_KEY
-  app:
-    master: chava-lovelace
-    stage: chava-lovelace-stage
-    dev: chava-lovelace-dev
+install: true
+script: true
