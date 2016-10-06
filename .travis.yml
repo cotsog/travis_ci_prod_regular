@@ -1,4 +1,4 @@
-language: node_js
+language: generic
 
 sudo: false
 
@@ -11,5 +11,13 @@ matrix:
     - os: "linux"
       env: NODE_VERSION="0.12"
 
-install: true
-script: true
+before_install:
+  - rm -rf ~/.nvm
+  - git clone https://github.com/creationix/nvm.git ~/.nvm
+   - source ~/.nvm/nvm.sh
+  - nvm install $NODE_VERSION
+  - npm install -g npm@3.8.5
+
+install: echo "install"
+
+script: echo "script"
