@@ -1,6 +1,13 @@
-language: android
+language: ruby
 sudo: false
+
+addons:
+  apt:
+    packages:
+      - hunspell
 
 install: echo "install"
 
-script: echo "script"
+script:
+  - echo badword | hunspell
+  - echo somee words ar good some badd | hunspell
