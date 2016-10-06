@@ -14,7 +14,7 @@ matrix:
 before_install:
   - rm -rf ~/.nvm
   - git clone https://github.com/creationix/nvm.git ~/.nvm
-   - source ~/.nvm/nvm.sh
+  - source ~/.nvm/nvm.sh
   - nvm install $NODE_VERSION
   - npm install -g npm@3.8.5
 
