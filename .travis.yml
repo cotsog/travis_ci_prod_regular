@@ -1,7 +1,3 @@
-language: generic
-
-sudo: false
-
 matrix:
   include:
     - os: "linux"
