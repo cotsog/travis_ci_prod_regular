@@ -1,10 +1,17 @@
-# Trigger
-sudo: false
 language: ruby
+sudo: false
+
+branches:
+  only:
+    - master
 
 addons:
-  artifacts: true
+  apt:
+    packages:
+      - hunspell
 
-install: true
+install: echo "install"
 
-script: true
+script:
+  - echo badword | hunspell
+  - echo somee words ar good some badd | hunspell
