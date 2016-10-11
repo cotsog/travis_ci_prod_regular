@@ -1,9 +1,11 @@
-language: scala
-sudo: false
+language: elixir
+sudo: required
 dist: trusty
 
-jdk: oraclejdk8
+matrix:
+  include:
+    - group: stable
+    - group: edge
 
 install: true
-script:
-  - java -version
+script: true
