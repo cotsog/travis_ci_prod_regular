@@ -1,18 +1,6 @@
-language: ruby
+language: scala
 sudo: false
-dist: trusty
 
-branches:
-  only:
-    - master
-
-addons:
-  apt:
-    packages:
-      - hunspell
-
-install: echo "install"
-
+install: true
 script:
-  - echo badword | hunspell
-  - echo somee words ar good some badd | hunspell
+  - java -version
