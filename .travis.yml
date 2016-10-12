@@ -9,7 +9,7 @@ matrix:
       dist: trusty
 
 addons:
-  firefox: "50.0"
+  firefox: "50.0b6"
 
 install: true
 script: firefox -v
