@@ -1,15 +1,6 @@
-language: node_js
+language: php
 
-matrix:
-  include:
-    - sudo: false
-    - sudo: required
-      dist: precise
-    - sudo: required
-      dist: trusty
-
-addons:
-  firefox: "50.0b6"
+php: 7.1RC3
 
 install: true
-script: firefox -v
+script: php --version
