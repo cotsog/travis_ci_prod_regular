@@ -1,6 +1,6 @@
 language: php
 
-php: 7.1RC3
+php: "7.1"
 
 install: true
 script: php --version
