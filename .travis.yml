@@ -1,6 +1,13 @@
-language: php
+language: java
+jdk: openjdk8
 
-php: "7.1"
+matrix:
+  include:
+    - sudo: false
+    - sudo: required
+      dist: precise
+    - sudo: required
+      dist: trusty
 
 install: true
-script: php --version
+script: true
