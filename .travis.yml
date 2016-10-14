@@ -1,16 +1,21 @@
 language: php
 
-php: 7.0
+
 
 matrix:
   include:
     - sudo: false
+      php: 7.0
     - sudo: false
       dist: trusty
+      group: beta
+      php: 7.0
     - sudo: required
       dist: precise
+      php: 7.0
     - sudo: required
       dist: trusty
+      php: 7.0
 
 install: true
 script:
