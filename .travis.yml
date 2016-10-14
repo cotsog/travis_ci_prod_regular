@@ -1,13 +1,19 @@
-language: java
-jdk: openjdk8
-
-matrix:
-  include:
-    - sudo: false
-    - sudo: required
-      dist: precise
-    - sudo: required
-      dist: trusty
-
-install: true
+sudo: false
+cache:
+    directories:
+        - /home/travis/virtualenv/python2.7.9
+dist: precise
+language: python
+python: "2.7"
+install:
+    - pip install i3ipc
 script: true
+notifications:
+    email: false
+deploy:
+    provider: deis
+    controller: deis.deiapps.com
+    username: username
+    password: password
+    app: app
+    cli_version: v2.7.0
