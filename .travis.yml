@@ -1,17 +1,17 @@
-sudo: required
 language: php
+
+php: 7.0
 
 matrix:
   include:
-    - php: 7.0
-    - php: 7.0
+    - sudo: false
+    - sudo: false
       dist: trusty
-      
-before_install:
-  - php -i | grep "ICU version"
-  - wget http://security.ubuntu.com/ubuntu/pool/main/i/icu/libicu52_52.1-3ubuntu0.4_amd64.deb
-  - sudo dpkg -i libicu52_52.1-3ubuntu0.4_amd64.deb
-  - php -i | grep "ICU version"
+    - sudo: required
+      dist: precise
+    - sudo: required
+      dist: trusty
 
 install: true
-script: true
+script:
+  - php -i | grep "ICU version"
