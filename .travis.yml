@@ -5,3 +5,6 @@ rvm: 2.0
 install: true
 script:
   - gem install travis
+  - echo 'Cleaning...' && echo -en 'travis_fold:start:script.3\\\\r'
+  - touch test.txt
+  - echo -en 'travis_fold:end:script.3\\\\r'
