@@ -1,22 +1,7 @@
-language: php
+language: ruby
 
-
-
-matrix:
-  include:
-    - sudo: false
-      php: 7.0
-    - sudo: false
-      dist: trusty
-      group: beta
-      php: 7.0
-    - sudo: required
-      dist: precise
-      php: 7.0
-    - sudo: required
-      dist: trusty
-      php: 7.0
+rvm: 2.0
 
 install: true
 script:
-  - php -i | grep "ICU version"
+  - gem install travis
