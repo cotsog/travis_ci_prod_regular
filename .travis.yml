@@ -2,6 +2,10 @@ language: ruby
 
 rvm: 2.0
 
+cache:
+  directories:
+    - temp
+
 install: true
 script:
   - echo $RUBY_VERSION
