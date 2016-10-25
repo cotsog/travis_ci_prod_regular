@@ -1,12 +1,13 @@
 language: ruby
 
-rvm: 2.0
-
-cache:
-  directories:
-    - temp
+matrix:
+  include:
+    - sudo: false
+    - sudo: required
+      dist: precise
+    - sudo: required
+      dist: trusty
 
 install: true
 script:
-  - echo $RUBY_VERSION
-  - gem install travis
+  - eval curl https://raw.githubusercontent.com/travis-ci/casher/production/bin/casher  -L -o $CASHER_DIR/bin/casher -s --fail
