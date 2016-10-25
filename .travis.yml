@@ -8,6 +8,10 @@ matrix:
     - sudo: required
       dist: trusty
 
+cache:
+  directories:
+    - /tmp/test
+
 install: true
 script:
   - echo "$CASHER_DIR/bin"
