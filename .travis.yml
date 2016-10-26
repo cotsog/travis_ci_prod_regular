@@ -3,19 +3,14 @@ language: ruby
 matrix:
   include:
     - sudo: false
+      rvm: 2.3
     - sudo: required
       dist: precise
+      rvm: 2.3
     - sudo: required
       dist: trusty
-
-cache:
-  directories:
-    - /tmp/test
+      rvm: 2.3
 
 install: true
 script:
-  - echo "$CASHER_DIR/bin"
-  - pushd $CASHER_DIR/bin
-  - popd
-  - eval curl https://raw.githubusercontent.com/travis-ci/casher/production/bin/casher -L -o $CASHER_DIR/bin/casher -s --fail
-  - curl https://raw.githubusercontent.com/travis-ci/casher/production/bin/casher
+  - ruby -v
