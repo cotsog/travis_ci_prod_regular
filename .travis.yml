@@ -3,7 +3,6 @@ language: ruby
 matrix:
   include:
     - sudo: false
-      rvm: 2.3
     - sudo: required
       dist: precise
       rvm: 2.3
