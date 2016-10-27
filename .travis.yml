@@ -1,15 +1,11 @@
-language: ruby
+language: android
 
-matrix:
-  include:
-    - sudo: false
-    - sudo: required
-      dist: precise
-      rvm: 2.3
-    - sudo: required
-      dist: trusty
-      rvm: 2.3
+android:
+  components:
+    - tools # to get the new `repository-11.xml`
+    - platform-tools
+    - tools # to install Android SDK tools 25.1.x
+    - platform-tools-24.0.2
 
 install: true
-script:
-  - rvm list
+script: true
