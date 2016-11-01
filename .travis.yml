@@ -1,5 +1,8 @@
-sudo: false
+sudo: required
+dist: trusty
 language: ruby
 
 install: true
-script: pwd
+script:
+  - sudo apt-get -qq install tree
+  - tree
