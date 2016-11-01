@@ -1,14 +1,5 @@
-language: android
-
-android	:
-  components:
-    - tools
-    - platform-tools
-    - tools
-    - build-tools-24.0.2
-    - android-24
-    - extra-google-m2repository
-    - extra-android-m2repository
+sudo: false
+language: ruby
 
 install: true
-script: true
+script: pwd
