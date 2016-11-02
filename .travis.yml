@@ -1,8 +1,13 @@
-sudo: required
-dist: trusty
 language: ruby
+
+matrix:
+  include:
+    - sudo: false
+    - sudo: required
+      dist: precise
+    - sudo: required
+      dist: trusty
 
 install: true
 script:
-  - sudo apt-get -qq install tree
-  - tree
+  - curl http://www-us.apache.org/dist/tomcat/tomcat-8/v8.5.5/bin/apache-tomcat-8.5.5.tar.gz
