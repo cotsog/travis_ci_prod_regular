@@ -1,14 +1,10 @@
-# Trigger
-language: ruby
-
-matrix:
-  include:
-    - sudo: false
-    - sudo: required
-      dist: precise
-    - sudo: required
-      dist: trusty
-
+sudo: false
+language: php
+php: 7
+env: ES_VERSION="5.0.0"
+addons:
+  apt:
+    packages:
+    - oracle-java8-installer
 install: true
-script:
-  - curl http://www-us.apache.org/dist/tomcat/tomcat-8/v8.5.5/bin/apache-tomcat-8.5.5.tar.gz
+script: jdk_switcher use oraclejdk8
