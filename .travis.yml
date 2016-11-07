@@ -7,6 +7,5 @@ addons:
   apt:
     packages:
     - oracle-java8-installer
-    - oracle-java8-set-default
 install: true
-script: java -version
+script: jdk_switcher use oraclejdk8
