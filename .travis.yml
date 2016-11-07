@@ -8,4 +8,7 @@ addons:
     packages:
     - oracle-java8-installer
 install: true
-script: jdk_switcher use oraclejdk8
+script:
+  - java -version
+  - jdk_switcher use oraclejdk8
+  - java -version
