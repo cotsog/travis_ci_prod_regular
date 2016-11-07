@@ -8,4 +8,4 @@ addons:
     - oracle-java8-installer
     - oracle-java8-set-default
 install: true
-script: java -v
+script: java -version
