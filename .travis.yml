@@ -1,14 +1,13 @@
-sudo: required
-dist: trusty
-language: php
-php: 7
-env: ES_VERSION="5.0.0"
-addons:
-  apt:
-    packages:
-    - oracle-java8-installer
+language: python
+
+matrix:
+  include:
+    - sudo: false
+      dist: precise
+    - sudo: false
+      dist: trusty
+services:
+  - postgresql
+  - redis-server
 install: true
-script:
-  - java -version
-  - jdk_switcher use oraclejdk8
-  - java -version
+script: true
