@@ -3,6 +3,7 @@ dist: trusty
 language: python
 python: '3.4'
 cache: pip
-script:
+before_install:
   - ls -ld $HOME
   - ls -ld $HOME/.casher
+script: true
