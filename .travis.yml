@@ -1,7 +1,15 @@
-sudo: false
-dist: trusty
-language: ruby
-before_install:
-  - ls -ld $HOME
-  - ls -ld $HOME/.casher
-script: true
+language: java
+
+matrix:
+  include:
+    - sudo: false
+      dist: precise
+    - sudo: false
+      dist: trusty
+    - sudo: required
+      dist: precise
+    - sudo: required
+      dist: trusty
+
+install: true
+script: java -version
