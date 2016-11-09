@@ -9,5 +9,6 @@ matrix:
 services:
   - postgresql
   - redis-server
+cache: pip
 install: true
 script: true
