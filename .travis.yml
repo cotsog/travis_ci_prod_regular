@@ -1,14 +1,6 @@
+sudo: false
+dist: trusty
 language: python
-
-matrix:
-  include:
-    - sudo: false
-      dist: precise
-    - sudo: false
-      dist: trusty
-services:
-  - postgresql
-  - redis-server
+python: '3.4'
 cache: pip
-install: true
 script: true
