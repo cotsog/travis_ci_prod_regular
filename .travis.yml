@@ -4,12 +4,19 @@ matrix:
   include:
     - sudo: false
       dist: precise
+      jdk: oraclejdk8
     - sudo: false
       dist: trusty
+      jdk: oraclejdk8
     - sudo: required
       dist: precise
+      jdk: oraclejdk8
     - sudo: required
       dist: trusty
+      jdk: oraclejdk8
+    - sudo: required
+      dist: trusty
+
 
 install: true
 script: java -version
