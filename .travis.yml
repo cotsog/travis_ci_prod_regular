@@ -12,7 +12,5 @@ addons:
 
 install:
   - psql -c 'create database primary_test;' -U postgres
-  - psql -U postgres -f sql/primarydb-dev.sql
 script:
-  - psql --version
   - psql -U postgres -f test.sql
