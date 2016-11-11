@@ -3,8 +3,12 @@ language: ruby
 matrix:
   include:
     - sudo: false
+      dist: precise
     - sudo: required
-    - os: osx
+      dist: precise
+    
+addons:
+  postgresql: 9.4
 
 install: true
-script: true
+script: psql --version
