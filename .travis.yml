@@ -4,13 +4,8 @@ matrix:
   include:
     - sudo: false
       dist: precise
-    - sudo: required
-      dist: precise
-    
-addons:
-  postgresql: 9.4
+    - sudo: false
+      dist: trusty
 
-install:
-  - psql -c 'create database primary_test;' -U postgres
-script:
-  - psql -U postgres -f test.sql
+install: true
+script: env
