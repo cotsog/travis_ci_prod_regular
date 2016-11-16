@@ -1,3 +1,4 @@
+language: go
 matrix:
   include:
     - sudo: false
