@@ -1,14 +1,7 @@
-sudo: required
-language: node_js
-node_js: 5.9.1
-env:
-  - CXX=g++-4.8
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - g++-4.8
-
-install: npm install sharp@0.16.2
-script: true
+matrix:
+  include:
+    - sudo: false
+    - sudo: required
+    
+install: true
+script: date +'%:z %Z'
