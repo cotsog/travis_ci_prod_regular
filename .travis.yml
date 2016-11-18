@@ -1,8 +1,8 @@
-language: go
+language: java
 matrix:
   include:
     - sudo: false
     - sudo: required
     
 install: true
-script: date +'%:z %Z'
+script: cat ~/.m2/settings.xml
