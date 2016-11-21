@@ -8,11 +8,14 @@ matrix:
   include:
     - sudo: required
       dist: precise
+      script: sudo pip install awscli
     - sudo: required
       dist: trusty
+      script: sudo pip install awscli
     - sudo: false
       dist: precise
+      script: pip install awscli
     - sudo: false
       dist: trusty
+      script: pip install awscli
 install: true
-script: pip install awscli
