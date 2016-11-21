@@ -11,4 +11,4 @@ matrix:
       dist: trusty
     
 install: true
-script: pip install aws-cli
+script: pip install awscli
