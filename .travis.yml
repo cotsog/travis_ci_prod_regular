@@ -1,4 +1,8 @@
 language: generic
+addons:
+  apt:
+    packages:
+      - python3-dev
 matrix:
   include:
     - sudo: false
