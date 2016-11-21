@@ -5,14 +5,10 @@ addons:
       - python3-dev
 matrix:
   include:
-    - sudo: false
-      dist: precise
     - sudo: required
       dist: precise
-    - sudo: false
-      dist: trusty
     - sudo: required
       dist: trusty
     
 install: true
-script: pip install awscli
+script: sudo pip install awscli
