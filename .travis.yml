@@ -2,9 +2,8 @@ language: ruby
 addons:
   apt:
     packages:
-      - python3-dev
-services:
-  - mysql
+      - python-dev
+
 matrix:
   include:
     - sudo: required
@@ -16,4 +15,4 @@ matrix:
     - sudo: false
       dist: trusty
 install: true
-script: mysql --help
+script: pip install awscli
