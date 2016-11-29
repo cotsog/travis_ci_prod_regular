@@ -10,6 +10,18 @@ matrix:
       dist: trusty
     - sudo: required
       dist: trusty
+    - sudo: false
+      dist: precise
+      group: edge
+    - sudo: required
+      dist: precise
+      group: edge
+    - sudo: false
+      dist: trusty
+      group: edge
+    - sudo: required
+      dist: trusty
+      group: edge
 
 install: true
 script: rvm list
