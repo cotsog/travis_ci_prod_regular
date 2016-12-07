@@ -24,4 +24,4 @@ matrix:
       group: edge
 
 install: true
-script: rvm list
+script: uname -a
