@@ -1,27 +1,11 @@
-language: ruby
+language: php
 
-matrix:
-  include:
-    - sudo: false
-      dist: precise
-    - sudo: required
-      dist: precise
-    - sudo: false
-      dist: trusty
-    - sudo: required
-      dist: trusty
-    - sudo: false
-      dist: precise
-      group: edge
-    - sudo: required
-      dist: precise
-      group: edge
-    - sudo: false
-      dist: trusty
-      group: edge
-    - sudo: required
-      dist: trusty
-      group: edge
+sudo: required
+dist: precise
 
 install: true
-script: uname -a
+script:
+  - curl -O https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-2.3.0.deb
+  - sudo dpkg -i --force-confnew elasticsearch-2.3.0.deb
+  - sudo service elasticsearch restart
+
