@@ -1,11 +1,16 @@
 language: php
 
-sudo: required
-dist: precise
-
+matrix:
+  include:
+    - dist: precise
+      sudo: false
+    - dist: precise
+      sudo: required
+    - dist: trusty
+      sudo: false
+    - dist: trusty
+      sudo: required
+      
 install: true
 script:
-  - curl -O https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/deb/elasticsearch/2.3.0/elasticsearch-2.3.0.deb
-  - sudo dpkg -i --force-confnew elasticsearch-2.3.0.deb
-  - sudo service elasticsearch restart
-
+  - npm --version
