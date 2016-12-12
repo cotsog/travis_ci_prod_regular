@@ -1,16 +1,9 @@
-language: php
+language: node_js
 
-matrix:
-  include:
-    - dist: precise
-      sudo: false
-    - dist: precise
-      sudo: required
-    - dist: trusty
-      sudo: false
-    - dist: trusty
-      sudo: required
+sudo: false
+dist: trusty
+
+node_js: 6.5.0
       
 install: true
-script:
-  - npm --version
+script: true
