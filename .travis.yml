@@ -7,3 +7,6 @@ node_js: 6.5.0
       
 install: true
 script: true
+
+addons:
+  sauce_connect: false
