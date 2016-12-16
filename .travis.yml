@@ -5,4 +5,4 @@ sudo: required
 install: echo "Install!"
 
 script:
-  - "travis_retry ./install_gnuplot.sh && travis_retry ./install_openjdk8.sh"
+  - "travis_retry ./install_openjdk8.sh && travis_retry ./install_openjdk8.sh"
