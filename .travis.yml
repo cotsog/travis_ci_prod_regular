@@ -1,21 +1,8 @@
 language: python
-# Add or remove version for match with Travis support
-python:
-    - 2.6
-    - 2.7
 
-os:
-  - linux
-
-matrix:
-  fast_finish: true
-  include:
-    - sudo: required
-      python: 2.7
-      env: ENV=lint
+sudo: required
 
 install: echo "Install!"
 
 script:
-  - echo $ENV
-  - echo "Script!"
+  - "travis_retry ./install_gnuplot.sh && travis_retry ./install_openjdk8.sh"
