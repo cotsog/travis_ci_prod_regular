@@ -24,7 +24,7 @@ env:
 install: true
 
 script:
-  - echo no | android create avd --force -n TestAVD -t $ANDROID_TARGET --abi $ANDROID_ABI --tag default
+  - echo no | android create avd --force -n TestAVD -t $ANDROID_TARGET --abi $ANDROID_ABI
   - export QEMU_AUDIO_DRV=none && emulator -avd TestAVD -no-boot-anim -no-window -qemu -icount auto &
   - chmod +x my-android-wait
   - ./my-android-wait
