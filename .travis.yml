@@ -1,9 +1,31 @@
-language: perl
+language: android
 
-perl: 5.10
+sudo: required
 
-install:
-  - "cpanm -v --notest CGI DBI DBD::mysql DBIx::Connector JSON LWP::Protocol::https \
-     MD5 LWP::UserAgent Math::Random::Secure Test::Most Time::HiRes URI::Encode"
+android:
+  components:
+  - tools
+  - platform-tools
+  - tools
+  - build-tools-25.0.1
+  - android-24
+  - android-25
+  - extra-google-m2repository
+  - extra-android-m2repository
+  - sys-img-armeabi-v7a-google_apis-24
 
-script: true
+env:
+  global:
+    - GRADLE_OPTS="-Xmx512m"
+    - ANDROID_TARGET=android-24
+    - ANDROID_ABI=armeabi-v7a
+    - ANDROID_TAG=google_apis
+    - ADB_INSTALL_TIMEOUT=5
+
+install: true
+
+script:
+  - echo no | android create avd --force -n TestAVD -t $ANDROID_TARGET --abi $ANDROID_ABI --tag default
+  - export QEMU_AUDIO_DRV=none && emulator -avd TestAVD -no-boot-anim -no-window -qemu -icount auto &
+  - chmod +x my-android-wait
+  - ./my-android-wait
