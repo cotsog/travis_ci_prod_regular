@@ -1,9 +1,30 @@
-language: python
+language: android
 
 sudo: required
 
-install: echo "Install!"
+android:
+  components:
+  - tools
+  - platform-tools
+  - tools
+  - build-tools-25.0.1
+  - android-24
+  - android-25
+  - extra-google-m2repository
+  - extra-android-m2repository
+  - sys-img-armeabi-v7a-google_apis-24
+
+env:
+  global:
+    - GRADLE_OPTS="-Xmx512m"
+    - ANDROID_TARGET=android-24
+    - ANDROID_ABI=armeabi-v7a
+    - ANDROID_TAG=google_apis
+    - ADB_INSTALL_TIMEOUT=5
+
+install: true
 
 script:
-  - chmod +x install_openjdk8.sh
-  - "travis_retry ./install_openjdk8.sh && travis_retry ./install_openjdk8.sh"
+  - echo no | android create avd --force -n TestAVD -t $ANDROID_TARGET --abi $ANDROID_ABI --tag $ANDROID_TAG
+  - emulator -avd TestAVD -no-audio -no-window &
+  - android-wait-for-emulator
