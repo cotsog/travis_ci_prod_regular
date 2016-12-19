@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "description": "Perfection Learning Online Homework",
   "dependencies": {
-    "ng2-bootstrap": "^1.1.5",
-
+    "ng2-bootstrap": "^1.1.5"
   }
 }
