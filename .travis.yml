@@ -26,5 +26,5 @@ install: true
 
 script:
   - echo no | android create avd --force -n TestAVD -t $ANDROID_TARGET --abi $ANDROID_ABI --tag $ANDROID_TAG
-  - emulator -avd TestAVD -no-audio -no-window &
+  - emulator -avd TestAVD -noaudio -no-window &
   - android-wait-for-emulator
