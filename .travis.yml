@@ -19,7 +19,6 @@ env:
     - GRADLE_OPTS="-Xmx512m"
     - ANDROID_TARGET=android-24
     - ANDROID_ABI=armeabi-v7a
-    - ANDROID_TAG=google_apis
     - ADB_INSTALL_TIMEOUT=5
 
 install: true
