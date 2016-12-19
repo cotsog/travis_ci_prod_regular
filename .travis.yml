@@ -12,14 +12,13 @@ android:
   - android-25
   - extra-google-m2repository
   - extra-android-m2repository
-  - sys-img-armeabi-v7a-google_apis-24
+  - sys-img-armeabi-v7a-android-24
 
 env:
   global:
     - GRADLE_OPTS="-Xmx512m"
     - ANDROID_TARGET=android-24
     - ANDROID_ABI=armeabi-v7a
-    - ANDROID_TAG=google_apis
     - ADB_INSTALL_TIMEOUT=5
 
 install: true
