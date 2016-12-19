@@ -1,15 +1,5 @@
-language: node_js
+language: perl
 
-node_js: 6.1.0
+install: true
 
-matrix:
-  include:
-    - sudo: false
-    - sudo: required
-      dist: precise
-    - sudo: required
-      dist: trusty
-
-install: npm install
-
-script: true
+script: cpan install LWP::Protocol::https
