@@ -26,5 +26,5 @@ install: true
 
 script:
   - echo no | android create avd --force -n TestAVD -t $ANDROID_TARGET --abi $ANDROID_ABI --tag $ANDROID_TAG
-  - export QEMU_AUDIO_DRV=none && emulator -avd TestAVD -no-boot-anim -no-window -qemu -icount auto &
+  - export QEMU_AUDIO_DRV=none && emulator -avd TestAVD -cpu-delay 0 -no-boot-anim -no-window -qemu -icount auto &
   - android-wait-for-emulator
