@@ -3,7 +3,7 @@ language: perl
 perl: 5.10
 
 install:
-  - "cpanm -v --notest CGI DBI DBD::mysql DBIx::Connector JSON LWP::Protocol::https\
+  - "cpanm -v --notest CGI DBI DBD::mysql DBIx::Connector JSON LWP::Protocol::https \
      MD5 LWP::UserAgent Math::Random::Secure Test::Most Time::HiRes URI::Encode"
 
 script: true
