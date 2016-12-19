@@ -4,5 +4,4 @@ perl: 5.10
 
 install: true
 
-script: cpanm -v --notest CGI DBI DBD::mysql DBIx::Connector JSON LWP::Protocol::https \ MD5 LWP::UserAgent Math::Random::Secure Test::Most Time::HiRes URI::Encode
-cpanm
+script: cpanm -v --notest CGI DBI DBD::mysql DBIx::Connector JSON LWP::Protocol::https MD5 LWP::UserAgent Math::Random::Secure Test::Most Time::HiRes URI::Encode
