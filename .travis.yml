@@ -1,64 +1,34 @@
 sudo: required
-dist: trusty
-
-language: go
-
-matrix:
-  include:
-    # General checks
-    - os: linux
-      env: TARGETS="check"
-
-    # Filebeat
-    - os: linux
-      env: TARGETS="-C filebeat testsuite"
-    - os: osx
-      env: TARGETS="TEST_ENVIRONMENT=0 -C filebeat testsuite"
-
-    # Heartbeat
-    - os: linux
-      env: TARGETS="-C heartbeat testsuite"
-    - os: osx
-      env: TARGETS="TEST_ENVIRONMENT=0 -C heartbeat testsuite"
-
-    # Libbeat
-    - os: linux
-      env: TARGETS="-C libbeat testsuite"
-    - os: linux
-      env: TARGETS="-C libbeat crosscompile"
-
-    # Metricbeat
-    - os: linux
-      env: TARGETS="-C metricbeat testsuite"
-    - os: osx
-      env: TARGETS="TEST_ENVIRONMENT=0 -C metricbeat testsuite"
-    - os: linux
-      env: TARGETS="-C metricbeat crosscompile"
-
-    # Packetbeat
-    - os: linux
-      env: TARGETS="-C packetbeat testsuite"
-
-    # Winlogbeat
-    - os: linux
-      env: TARGETS="-C winlogbeat crosscompile"
-
-    # Dashboards
-    - os: linux
-      env: TARGETS="-C libbeat/dashboards"
-
-    # Generators
-    - os: linux
-      env: TARGETS="-C generate/metricbeat/metricset test"
-    - os: linux
-      env: TARGETS="-C generate/beat test"
+language: android
+jdk: oraclejdk8
 
 env:
   global:
-    # Cross-compile for amd64 only to speed up testing.
-    - GOX_FLAGS="-arch amd64"
-    - DOCKER_COMPOSE_VERSION=1.8.1
+    - GRADLE_OPTS="-Xmx512m"
+    - ANDROID_TARGET="android-24"
+    - ANDROID_ABI="google_apis/armeabi-v7a"
+    - ADB_INSTALL_TIMEOUT=5 # minutes
 
-install: true
+android:
+  components:
+    - tools
+    - platform-tools
+    - tools
+    - build-tools-25.0.1
+    - android-24
+    - android-25
+    - extra-google-m2repository
+    - extra-android-m2repository
+    - addon-google_apis-google-24
+    - sys-img-armeabi-v7a-google_apis-24
 
+install:
+  - echo no | android create avd --force -n TestAVD -t $ANDROID_TARGET --abi $ANDROID_ABI
+  - emulator -avd TestAVD -no-skin -no-audio -no-window &
+  - adb wait-for-device get-serialno
+  
+before_script:
+  - android-wait-for-emulator
+  - adb shell input keyevent 82 &
+  
 script: true
