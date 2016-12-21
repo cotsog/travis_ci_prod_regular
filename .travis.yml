@@ -8,4 +8,6 @@ env:
 matrix:
   include:
     - sudo: false
+      env: BAZ=3
     - sudo: required
+      env: BAZ=3
