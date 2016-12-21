@@ -58,8 +58,8 @@ matrix:
 env:
   global:
     # Cross-compile for amd64 only to speed up testing.
-    - GOX_FLAGS: "-arch amd64"
-    - DOCKER_COMPOSE_VERSION: 1.8.1
+    - GOX_FLAGS="-arch amd64"
+    - DOCKER_COMPOSE_VERSION=1.8.1
 
 install: true
 
