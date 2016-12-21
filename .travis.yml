@@ -1,4 +1,4 @@
-language: java
+language: ruby
 sudo: false
 
 jdk: oraclejdk8
