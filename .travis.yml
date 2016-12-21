@@ -1,30 +1,14 @@
-language: android
-
-sudo: required
-
-android:
-  components:
-  - tools
-  - platform-tools
-  - tools
-  - build-tools-25.0.1
-  - android-24
-  - android-25
-  - extra-google-m2repository
-  - extra-android-m2repository
-  - sys-img-armeabi-v7a-android-24
+language: ruby
+sudo: false
 
 env:
-  global:
-    - GRADLE_OPTS="-Xmx512m"
-    - ANDROID_TARGET=android-24
-    - ANDROID_ABI=armeabi-v7a
-    - ADB_INSTALL_TIMEOUT=5
+  - ES_VERSION=5.1.1 ES_DOWNLOAD_URL=https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-${ES_VERSION}.tar.gz
 
-install: true
+install:
+  - wget ${ES_DOWNLOAD_URL}
+  - tar -xzf elasticsearch-${ES_VERSION}.tar.gz
+  - ./elasticsearch-${ES_VERSION}/bin/elasticsearch &
+  - sleep 30
 
 script:
-  - echo no | android create avd --force -n TestAVD -t $ANDROID_TARGET --abi $ANDROID_ABI
-  - export QEMU_AUDIO_DRV=none && emulator -avd TestAVD -no-boot-anim -no-window -qemu -icount auto &
-  - chmod +x my-android-wait
-  - ./my-android-wait
+  - curl -X GET http://localhost:9200/
