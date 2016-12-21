@@ -1,13 +1,67 @@
-language: ruby
+sudo: required
+dist: trusty
+
+language: go
+
+go:
+  - 1.7.1
+
+matrix:
+  include:
+    # General checks
+    - os: linux
+      env: TARGETS="check"
+
+    # Filebeat
+    - os: linux
+      env: TARGETS="-C filebeat testsuite"
+    - os: osx
+      env: TARGETS="TEST_ENVIRONMENT=0 -C filebeat testsuite"
+
+    # Heartbeat
+    - os: linux
+      env: TARGETS="-C heartbeat testsuite"
+    - os: osx
+      env: TARGETS="TEST_ENVIRONMENT=0 -C heartbeat testsuite"
+
+    # Libbeat
+    - os: linux
+      env: TARGETS="-C libbeat testsuite"
+    - os: linux
+      env: TARGETS="-C libbeat crosscompile"
+
+    # Metricbeat
+    - os: linux
+      env: TARGETS="-C metricbeat testsuite"
+    - os: osx
+      env: TARGETS="TEST_ENVIRONMENT=0 -C metricbeat testsuite"
+    - os: linux
+      env: TARGETS="-C metricbeat crosscompile"
+
+    # Packetbeat
+    - os: linux
+      env: TARGETS="-C packetbeat testsuite"
+
+    # Winlogbeat
+    - os: linux
+      env: TARGETS="-C winlogbeat crosscompile"
+
+    # Dashboards
+    - os: linux
+      env: TARGETS="-C libbeat/dashboards"
+
+    # Generators
+    - os: linux
+      env: TARGETS="-C generate/metricbeat/metricset test"
+    - os: linux
+      env: TARGETS="-C generate/beat test"
 
 env:
   global:
-    - FOO=1
-    - BAR=2
-    
-matrix:
-  include:
-    - sudo: false
-      env: BAZ=3
-    - sudo: required
-      env: BAZ=3
+    # Cross-compile for amd64 only to speed up testing.
+    - GOX_FLAGS: "-arch amd64"
+    - DOCKER_COMPOSE_VERSION: 1.8.1
+
+install: true
+
+script: true
