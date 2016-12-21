@@ -1,16 +1,11 @@
 language: ruby
-sudo: false
-
-jdk: oraclejdk8
 
 env:
-  - ES_VERSION=5.1.1 ES_DOWNLOAD_URL=https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-${ES_VERSION}.tar.gz
-
-install:
-  - wget ${ES_DOWNLOAD_URL}
-  - tar -xzf elasticsearch-${ES_VERSION}.tar.gz
-  - ./elasticsearch-${ES_VERSION}/bin/elasticsearch &
-  - sleep 30
-
-script:
-  - curl -X GET http://localhost:9200/
+  global:
+    - FOO=1
+    - BAR=2
+    
+matrix:
+  include:
+    - sudo: false
+    - sudo: required
