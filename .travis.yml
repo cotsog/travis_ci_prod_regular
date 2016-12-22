@@ -1,16 +1,17 @@
-sudo: required
-sudo: trusty
+sudo: false
+
+language: go
 
 matrix:
   include:
     # General checks
     - os: linux
-      go: 1.7.1
+      go: &go_version 1.7.1
       env: TARGETS="check"
 
     # Filebeat
     - os: linux
-      go: 1.7.1
+      go: *go_version
       env: TARGETS="-C filebeat testsuite"
       
 install: true
