@@ -4,12 +4,12 @@ matrix:
   include:
     # General checks
     - os: linux
-      go: &go_version 1.7.1
+      go: 1.7.1
       env: TARGETS="check"
 
     # Filebeat
     - os: linux
-      go: *go_version
+      go: 1.7.1
       env: TARGETS="-C filebeat testsuite"
       
 install: true
