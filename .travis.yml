@@ -3,6 +3,7 @@ sudo: false
 branches:
   only:
     - /.*/
+    - gh-pages
     
 install: true
 script: echo "¯\_(ツ)_/¯"
