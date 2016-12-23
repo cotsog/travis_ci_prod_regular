@@ -1,10 +1,8 @@
-language: objective-c
+sudo: false
 
-osx_image: xcode8.2
-
-rvm: 2.3
-
+branches:
+  only:
+    - /.*/
+    
 install: true
-script:
-  - chmod +x ./deploy.sh
-  - ./deploy.sh
+script: echo "¯\_(ツ)_/¯"
