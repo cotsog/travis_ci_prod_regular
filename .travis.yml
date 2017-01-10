@@ -14,4 +14,4 @@ matrix:
 install: true
 script:
   - curl -V
-  - curl -L https://releases.hashicorp.com/packer/0.12.1/packer_0.12.1_linux_amd64.zip -O
+  - curl -v -L https://releases.hashicorp.com/packer/0.12.1/packer_0.12.1_linux_amd64.zip -O
