@@ -1,10 +1,15 @@
-language: objective-c
+language: ruby
 
-osx_image: xcode8.2
-
-rvm: 2.3
+matrix:
+  include:
+    - sudo: false
+      dist: precise
+    - sudo: required
+      dist: precise
+    - sudo: false
+      dist: trusty
+    - sudo: required
+      dist: trusty
 
 install: true
-script:
-  - chmod +x ./deploy.sh
-  - ./deploy.sh
+script: curl -L https://releases.hashicorp.com/packer/0.12.1/packer_0.12.1_linux_amd64.zip -O
