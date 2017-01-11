@@ -16,6 +16,6 @@ script:
   - ./buildconf
   - ./configure
   - make
-  - cd /home/travis/build/cotsog/travis_ci_prod_regular/curl-7.34.0/bin
+  - cd /home/travis/build/cotsog/travis_ci_prod_regular/curl-7.34.0/lib
   - ./curl -V
   - ./curl -v --tlsv1.2 -L https://releases.hashicorp.com/packer/0.12.1/packer_0.12.1_linux_amd64.zip -O || true
