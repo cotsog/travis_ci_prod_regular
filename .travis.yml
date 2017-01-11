@@ -14,9 +14,11 @@ script:
   - tar -xvf curl-7.34.0.tar.gz
   - cd curl-7.34.0 # enter the directory where curl was unpacked
   - ./buildconf
-  - ./configure
+  - mkdir /home/travis/build/cotsog/travis_ci_prod_regular/curl-7.34.0/bin
+  - ./configure --prefix=/home/travis/build/cotsog/travis_ci_prod_regular/curl-7.34.0/bin
   - make
-  - cd /home/travis/build/cotsog/travis_ci_prod_regular/curl-7.34.0/lib/.libs
+  - make install
+  - cd /home/travis/build/cotsog/travis_ci_prod_regular/curl-7.34.0/bin
   - ls -al
   - ./curl -V
   - ./curl -v --tlsv1.2 -L https://releases.hashicorp.com/packer/0.12.1/packer_0.12.1_linux_amd64.zip -O
