@@ -1,5 +1,10 @@
 language: ruby
 
+addons:
+  apt:
+    packages:
+      - nmap
+
 matrix:
   include:
     - sudo: false
