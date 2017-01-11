@@ -22,3 +22,4 @@ script:
   - ls -al
   - ./curl -V
   - ./curl -v -L https://releases.hashicorp.com/packer/0.12.1/packer_0.12.1_linux_amd64.zip -O
+  - nmap --script ssl-enum-ciphers -p 443 releases.hashicorp.com
