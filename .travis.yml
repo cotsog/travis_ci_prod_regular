@@ -21,4 +21,4 @@ script:
   - cd /home/travis/build/cotsog/travis_ci_prod_regular/curl/bin
   - ls -al
   - ./curl -V
-  - ./curl -v --tlsv1.2 -L https://releases.hashicorp.com/packer/0.12.1/packer_0.12.1_linux_amd64.zip -O
+  - ./curl -v -L https://releases.hashicorp.com/packer/0.12.1/packer_0.12.1_linux_amd64.zip -O
