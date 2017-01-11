@@ -14,4 +14,5 @@ matrix:
 install: true
 script:
   - curl -V
+  - openssl version -a
   - curl -v --tlsv1.2 -L https://releases.hashicorp.com/packer/0.12.1/packer_0.12.1_linux_amd64.zip -O
