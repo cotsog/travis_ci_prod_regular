@@ -10,7 +10,7 @@ script:
   - curl -V
   - openssl version -a
   - curl -v --tlsv1.2 -L https://releases.hashicorp.com/packer/0.12.1/packer_0.12.1_linux_amd64.zip -O || true
-  - wget https://curl.haxx.se/download/curl-7.34.0.tar.gz
+  - wget --no-check-certificate https://curl.haxx.se/download/curl-7.34.0.tar.gz
   - tar -xvf curl-7.34.0.tar.gz
   - cd curl-7.34.0 # enter the directory where curl was unpacked
   - ./buildconf
