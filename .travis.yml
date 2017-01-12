@@ -1,7 +1,6 @@
 language: erlang
 
-otp_release:
-  - 19.2
+otp_release: 19.2
   
 matrix:
   include:
@@ -16,4 +15,4 @@ matrix:
 
 install: true
 script:
-  - erl -eval 'erlang:display(erlang:system_info(otp_release)), halt().'  -noshell
+  - erl -eval 'erlang:display(erlang:system_info(version)), halt().' -noshell
