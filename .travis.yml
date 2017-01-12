@@ -1,30 +1,8 @@
 language: ruby
 
-addons:
-  apt:
-    packages:
-      - nmap
 
-matrix:
-  include:
-    - sudo: false
-      dist: precise
+before_install:
+  - travis_terminate 0
 
 install: true
-script:
-  - curl -V
-  - openssl version -a
-  - curl -v --tlsv1.2 -L https://releases.hashicorp.com/packer/0.12.1/packer_0.12.1_linux_amd64.zip -O || true
-  - wget --no-check-certificate https://curl.haxx.se/download/curl-7.34.0.tar.gz
-  - tar -xvf curl-7.34.0.tar.gz
-  - cd curl-7.34.0 # enter the directory where curl was unpacked
-  - ./buildconf
-  - mkdir /home/travis/build/cotsog/travis_ci_prod_regular/curl
-  - ./configure --prefix=/home/travis/build/cotsog/travis_ci_prod_regular/curl
-  - make
-  - make install
-  - cd /home/travis/build/cotsog/travis_ci_prod_regular/curl/bin
-  - ls -al
-  - ./curl -V
-  - ./curl -v -L https://releases.hashicorp.com/packer/0.12.1/packer_0.12.1_linux_amd64.zip -O
-  - nmap --script ssl-enum-ciphers -p 443 releases.hashicorp.com
+script: true
