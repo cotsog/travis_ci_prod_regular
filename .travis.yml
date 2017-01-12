@@ -1,19 +1,18 @@
 language: erlang
+
+otp_release:
+  - 19.2
   
 matrix:
   include:
     - sudo: false
       dist: precise
-      otp_release: 19.2
     - sudo: required
       dist: precise
-      otp_release: 19.2
     - sudo: false
       dist: trusty
-      otp_release: 19.2
     - sudo: required
       dist: trusty
-      otp_release: 19.2
 
 install: true
 script:
