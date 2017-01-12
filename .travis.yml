@@ -1,8 +1,19 @@
-language: ruby
+language: erlang
 
-
-before_install:
-  - travis_terminate 0
+otp_release:
+  - 19.2
+  
+matrix:
+  include:
+    - sudo: false
+      dist: precise
+    - sudo: required
+      dist: precise
+    - sudo: false
+      dist: trusty
+    - sudo: required
+      dist: trusty
 
 install: true
-script: true
+script:
+  - erl -eval 'erlang:display(erlang:system_info(otp_release)), halt().'  -noshell
