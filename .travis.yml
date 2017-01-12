@@ -1,7 +1,7 @@
-language: erlang
+language: node_js
 
-otp_release:
-  - 19.2
+node_js:
+  - 6
   
 matrix:
   include:
@@ -15,5 +15,4 @@ matrix:
       dist: trusty
 
 install: true
-script:
-  - erl -eval '{ok, Version} = file:read_file(filename:join([code:root_dir(), "releases", erlang:system_info(otp_release), "OTP_VERSION"])), io:fwrite(Version), halt().' -noshell
+script: true
