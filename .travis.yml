@@ -5,6 +5,9 @@ matrix:
     - sudo: false
       dist: precise
       python: 3.5
+    - sudo: false
+      dist: precise
+      python: 3.6
     - sudo: required
       dist: precise
       python: 3.5
@@ -15,5 +18,5 @@ matrix:
       dist: trusty
       python: 3.5
 
-install: pip install -U pytest
+install: true
 script: pytest --version
