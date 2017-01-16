@@ -15,5 +15,5 @@ matrix:
       dist: trusty
       python: 3.5
 
-install: true
+install: pip install -U pytest
 script: pytest --version
