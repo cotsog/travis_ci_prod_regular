@@ -1,11 +1,21 @@
-language: android
+language: python
   
 matrix:
   include:
+    - sudo: false
+      dist: precise
+      python: 3.5
     - sudo: required
       dist: precise
+      python: 3.5
+    - sudo: false
+      dist: trusty
+      python: 3.5
     - sudo: required
       dist: trusty
+      python: 3.5
 
 install: true
-script: sudo apt-cache search mysql
+script:
+  - pytest --version
+  - py.test --version
