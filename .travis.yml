@@ -2,14 +2,10 @@ language: android
   
 matrix:
   include:
-    - sudo: false
+    - sudo: required
       dist: precise
-    - sudo: false
-      dist: precise
-    - sudo: false
-      dist: trusty
     - sudo: required
       dist: trusty
 
 install: true
-script: python -V
+script: sudo apt-cache search mysql
