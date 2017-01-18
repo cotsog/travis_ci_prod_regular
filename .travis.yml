@@ -1,21 +1,18 @@
 language: python
-  
-matrix:
-  include:
-    - sudo: false
-      dist: precise
-      python: 3.5
-    - sudo: required
-      dist: precise
-      python: 3.5
-    - sudo: false
-      dist: trusty
-      python: 3.5
-    - sudo: required
-      dist: trusty
-      python: 3.5
 
 install: true
 script:
-  - pytest --version
-  - py.test --version
+  - export FOO="BAR"
+  - |
+    if [ $FOO == "BAR" ]; then
+      echo $FOO
+    else
+      echo "BAZ"
+    fi
+  - export FOO="BAZ"
+  - |
+    if [ $FOO == "BAR" ]; then
+      echo $FOO
+    else
+      echo "BAZ"
+    fi
