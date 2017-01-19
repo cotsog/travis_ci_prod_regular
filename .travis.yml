@@ -1,18 +1,18 @@
-language: python
+language: ruby
 
 install: true
-script:
-  - export FOO="BAR"
-  - |
-    if [ $FOO == "BAR" ]; then
-      echo $FOO
-    else
-      echo "BAZ"
-    fi
-  - export FOO="BAZ"
-  - |
-    if [ $FOO == "BAR" ]; then
-      echo $FOO
-    else
-      echo "BAZ"
-    fi
+script: mkdir build
+
+deploy:	
+  - provider: s3
+    access_key_id: AKIAJQDHZ3PAX7MY4HVQ
+    secret_access_key: foo
+    bucket: iangels-docs
+    region: us-west-2
+    skip_cleanup: true
+    local_dir: build
+    acl: public_read
+    detect_encoding: true
+    default_text_charset: utf-8
+    on:
+      tags: true
