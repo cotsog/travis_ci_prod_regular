@@ -1,18 +1,45 @@
-language: ruby
+sudo: false
 
-install: true
-script: mkdir build
+env:
+  global:
+    - AWS_CLI_VERSION=1.10.64
+    - DOCKER_COMPOSE_VERSION=1.9.0
+    - MONGO_DB=test
+    - MONGO_HOST=localhost
 
-deploy:	
-  - provider: s3
-    access_key_id: AKIAJQDHZ3PAX7MY4HVQ
-    secret_access_key: foo
-    bucket: iangels-docs
-    region: us-west-2
-    skip_cleanup: true
-    local_dir: build
-    acl: public_read
-    detect_encoding: true
-    default_text_charset: utf-8
-    on:
-      tags: true
+services:
+  - docker
+
+cache:
+  directories:
+  - node_modules
+  - pip
+
+before_install:
+  - pip install --user awscli==${AWS_CLI_VERSION}
+  - export PATH=$PATH:$HOME/.local/bin
+  - sudo rm /usr/local/bin/docker-compose
+  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - chmod +x docker-compose
+  - sudo mv docker-compose /usr/local/bin
+  - docker login --username $DOCKER_USER --password $DOCKER_PASS
+install:
+  - docker-compose --file docker-compose.ci.yml build
+  - docker-compose --file docker-compose.ci.yml run webui bin/configure
+
+before_script:
+  - docker-compose --file docker-compose.ci.yml up -d mongo redis
+  - docker-compose --file docker-compose.ci.yml run mongo mongo --host=mongo SI < support/billing/billingRoleMigration.js
+script:
+  - docker-compose --file docker-compose.ci.yml run webui bin/test
+  - docker-compose --file docker-compose.ci.yml up -d agent webui
+  - docker-compose --file docker-compose.ci.yml run --rm webui bin/test_integration
+
+before_deploy:
+  - bin/package >/dev/null 2>&1
+deploy:
+  provider: script
+  script: bin/deploy
+  on:
+    all_branches: true
+  skip_cleanup: true
