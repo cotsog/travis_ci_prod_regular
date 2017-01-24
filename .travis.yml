@@ -1,15 +1,16 @@
 language: java
 
-matrix:
-  include:
-    - sudo: false
-      dist: trusty
-    - sudo: false
-      dist: precise
-    - sudo: required
-      dist: trusty
-    - sudo: required
-      dist: precise
-
+before_install:
+  - 'mvn -v'
+  - 'wget https://archive.apache.org/dist/maven/binaries/apache-maven-2.2.1-bin.tar.gz'
+  - 'tar xzvf apache-maven-2.2.1-bin.tar.gz'
+  - 'export M2_HOME=`pwd`/apache-maven-2.2.1'
+  - 'export M2=$M2_HOME/bin'
+  - 'export PATH=$M2:$PATH'
+  - 'mvn -v'
+  
 install: true
-script: ./path/to/non-existent/script.sh
+script: true
+
+dist: trusty
+sudo: false
