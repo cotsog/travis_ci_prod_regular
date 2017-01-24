@@ -1,13 +1,4 @@
 language: python
-
-before_install:
-  - 'mvn -v'
-  - 'wget https://archive.apache.org/dist/maven/binaries/apache-maven-2.2.1-bin.tar.gz'
-  - 'tar xzvf apache-maven-2.2.1-bin.tar.gz'
-  - 'export M2_HOME=`pwd`/apache-maven-2.2.1'
-  - 'export M2=$M2_HOME/bin'
-  - 'export PATH=$M2:$PATH'
-  - 'mvn -v'
   
 install: true
 script: sudo apt-get --assume-yes update
