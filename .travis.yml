@@ -1,4 +1,4 @@
-language: java
+language: python
 
 before_install:
   - 'mvn -v'
@@ -10,7 +10,11 @@ before_install:
   - 'mvn -v'
   
 install: true
-script: true
+script: sudo apt-get --assume-yes update
 
-dist: trusty
-sudo: false
+matrix:
+  include:
+    - dist: trusty
+      sudo: required
+    - dist: precise
+      sudo: required
