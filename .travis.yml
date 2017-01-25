@@ -20,7 +20,7 @@ env:
 
 before_install:
     # Install jq
-    - sudo apt-get -o Debug::*::*=true -y update
+    - sudo apt-get -y update
     - sudo apt-get -qq install jq
     - sudo apt-get -qq install realpath
     # Download Oracle JRE (should only happen once, due to caching)
