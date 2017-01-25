@@ -1,48 +1,25 @@
-language: python
-
-# Only run this process from the master branch
-branches:
-    only:
-        - master
-
-env:
-    global:
-        - TRAVIS_DIR=.travis
-        - APPENGINE_JAVA_SDK_VERSION=1.9.44
-        - APPENGINE_JAVA_SDK_SHASUM=ef7445cf0b351418b9130910c6e2a6b6bcef39fe
-        - GOOGLE_CLOUD_SDK_VERSION=126.0.0
-        - GOOGLE_CLOUD_SDK_SHASUM=577e2658611db6816666302ad27f77cf107ee9fb
-        # JRE download settings for java-based cloud functions
-        - JRE_URL=http://download.oracle.com/otn-pub/java/jdk/7u80-b15/jre-7u80-linux-x64.tar.gz
-        - JRE_DOWNLOAD_BASE_PATH=$HOME/cloud_function_jre/
-        - JRE_SHASUM=5f5eb4a4e76cfe1d9eb02ed71ae01a809bde8440
-        - ARTIFACTORY_USER=bot-travis-ci
-
-before_install:
-    # Install jq
-    - sudo apt-get -y -o Debug::Acquire::cdrom=true -o Debug::Acquire::ftp=true -o Debug::Acquire::http=true -o Debug::Acquire::https=true -o Debug::Acquire::gpgv=true -o Debug::aptcdrom=true -o Debug::BuildDeps=true -o Debug::Hashes=true -o Debug::IdentCDROM=true -o Debug::NoLocking=true -o Debug::pkgAcquire=true -o Debug::pkgAcquire::Auth=true -o Debug::pkgAcquire::Diffs=true -o Debug::pkgAcquire::RRed=true -o Debug::pkgAcquire::Worker=true -o Debug::pkgAutoRemove=true -o Debug::pkgDepCache::AutoInstall=true -o Debug::pkgDepCache::Marker=true -o Debug::pkgDPkgPM=true -o Debug::pkgDPkgProgressReporting=true -o Debug::pkgOrderList=true -o Debug::pkgPackageManager=true -o Debug::pkgPolicy=true -o Debug::pkgProblemResolver=true -o Debug::pkgProblemResolver::ShowScores=true -o Debug::sourceList=true -o Debug::RunScripts=true update
-    - sudo apt-get -qq install jq
-    - sudo apt-get -qq install realpath
-    # Download Oracle JRE (should only happen once, due to caching)
-    - bash ${TRAVIS_DIR}/bin/download_jre.sh
-    # Install AppEngine SDK
-    - bash ${TRAVIS_DIR}/bin/install_appengine_sdk.sh
-    # Decrypt secrets
-    - bash ${TRAVIS_DIR}/bin/secrets.sh decrypt unpack
-
-# Skip the "install" step
-install: true
-
-# Skip the "script" step
-script: true
-
-deploy:
-    provider: script
-    script: bash ${TRAVIS_DIR}/bin/deploy.sh
-    skip_cleanup: true
-    on:
-        branch: master
+language: ruby
 
 cache:
- - directories:
-   - "$JRE_DOWNLOAD_BASE_PATH/"
+  directories:
+    - "travis_phantomjs"
+
+before_install:
+  - "phantomjs --version"
+  - "export PATH=$PWD/travis_phantomjs/phantomjs-2.1.1-linux-x86_64/bin:$PATH"
+  - "phantomjs --version"
+  - "if [ $(phantomjs --version) != '2.1.1' ]; then rm -rf $PWD/travis_phantomjs; mkdir -p $PWD/travis_phantomjs; fi"
+  - "if [ $(phantomjs --version) != '2.1.1' ]; then wget https://assets.membergetmember.co/software/phantomjs-2.1.1-linux-x86_64.tar.bz2 -O $PWD/travis_phantomjs/phantomjs-2.1.1-linux-x86_64.tar.bz2; fi"
+  - "if [ $(phantomjs --version) != '2.1.1' ]; then tar -xvf $PWD/travis_phantomjs/phantomjs-2.1.1-linux-x86_64.tar.bz2 -C $PWD/travis_phantomjs; fi"
+  - echo $PATH
+  - ls -al $PWD/travis_phantomjs/phantomjs-2.1.1-linux-x86_64/bin
+  - which phantomjs
+  - "phantomjs --version"
+
+install: true
+script: true
+
+matrix:
+  include:
+    - sudo: false
+    - sudo: required
