@@ -1,18 +1,48 @@
 language: python
-before_install:
-  - 'sudo apt-get --assume-yes update'
-  - 'sudo apt-get -qq install jq'
-  - 'sudo apt-get -qq install realpath'
-  - 'bash ${TRAVIS_DIR}/bin/download_jre.sh'
-  - 'bash ${TRAVIS_DIR}/bin/install_appengine_sdk.sh'
-  - 'bash ${TRAVIS_DIR}/bin/secrets.sh decrypt unpack'
-install: true
-script: true
-cache:
-  directories:
-    - $JRE_DOWNLOAD_BASE_PATH/
+
+# Only run this process from the master branch
+branches:
+    only:
+        - master
+
 env:
-  global: 'TRAVIS_DIR=.travis APPENGINE_JAVA_SDK_VERSION=1.9.44 APPENGINE_JAVA_SDK_SHASUM=ef7445cf0b351418b9130910c6e2a6b6bcef39fe GOOGLE_CLOUD_SDK_VERSION=126.0.0 GOOGLE_CLOUD_SDK_SHASUM=577e2658611db6816666302ad27f77cf107ee9fb JRE_URL=http://download.oracle.com/otn-pub/java/jdk/7u80-b15/jre-7u80-linux-x64.tar.gz JRE_DOWNLOAD_BASE_PATH=$HOME/cloud_function_jre/ JRE_SHASUM=5f5eb4a4e76cfe1d9eb02ed71ae01a809bde8440 ARTIFACTORY_USER=bot-travis-ci ARTIFACTORY_PASSWORD=[secure] SECURE_PASSWORD_AMP_BQ_SYNC=[secure] SECURE_PASSWORD_CAMPAIGN_SERVICE=[secure] SECURE_PASSWORD_CRON_SERVICE=[secure] SECURE_PASSWORD_DATA_MONITORING=[secure] SECURE_PASSWORD_DEFAULT=[secure] SECURE_PASSWORD_V2_SYNC=[secure] SECURE_PASSWORD_INTERNATIONAL_SERVICE=[secure] SECURE_PASSWORD_MOBILE_PROXY=[secure] SECURE_PASSWORD_SUBMISSION_SERVICE=[secure] SECURE_PASSWORD_TASK_SERVICE=[secure] SECURE_PASSWORD_USER_SERVICE=[secure] SECURE_PASSWORD_PAYMENT_SERVICE=[secure] SECURE_PASSWORD_WEB_PROXY=[secure] SECURE_PASSWORD_DEPLOY=[secure] SLACK_POST_URL=[secure]'
-group: stable
-dist: precise
-os: linux
+    global:
+        - TRAVIS_DIR=.travis
+        - APPENGINE_JAVA_SDK_VERSION=1.9.44
+        - APPENGINE_JAVA_SDK_SHASUM=ef7445cf0b351418b9130910c6e2a6b6bcef39fe
+        - GOOGLE_CLOUD_SDK_VERSION=126.0.0
+        - GOOGLE_CLOUD_SDK_SHASUM=577e2658611db6816666302ad27f77cf107ee9fb
+        # JRE download settings for java-based cloud functions
+        - JRE_URL=http://download.oracle.com/otn-pub/java/jdk/7u80-b15/jre-7u80-linux-x64.tar.gz
+        - JRE_DOWNLOAD_BASE_PATH=$HOME/cloud_function_jre/
+        - JRE_SHASUM=5f5eb4a4e76cfe1d9eb02ed71ae01a809bde8440
+        - ARTIFACTORY_USER=bot-travis-ci
+
+before_install:
+    # Install jq
+    - sudo apt-get -qq update
+    - sudo apt-get -qq install jq
+    - sudo apt-get -qq install realpath
+    # Download Oracle JRE (should only happen once, due to caching)
+    - bash ${TRAVIS_DIR}/bin/download_jre.sh
+    # Install AppEngine SDK
+    - bash ${TRAVIS_DIR}/bin/install_appengine_sdk.sh
+    # Decrypt secrets
+    - bash ${TRAVIS_DIR}/bin/secrets.sh decrypt unpack
+
+# Skip the "install" step
+install: true
+
+# Skip the "script" step
+script: true
+
+deploy:
+    provider: script
+    script: bash ${TRAVIS_DIR}/bin/deploy.sh
+    skip_cleanup: true
+    on:
+        branch: master
+
+cache:
+ - directories:
+   - "$JRE_DOWNLOAD_BASE_PATH/"
