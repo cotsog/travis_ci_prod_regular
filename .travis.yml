@@ -15,6 +15,7 @@ before_install:
   - ls -al $PWD/travis_phantomjs/phantomjs-2.1.1-linux-x86_64/bin
   - which phantomjs
   - "phantomjs --version"
+  - $PWD/travis_phantomjs/phantomjs-2.1.1-linux-x86_64/bin/phantomjs --version
 
 install: true
 script: true
