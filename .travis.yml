@@ -20,7 +20,7 @@ env:
 
 before_install:
     # Install jq
-    - sudo apt-get -y update
+    - sudo apt-get -y -o Debug::Acquire::cdrom=true -o Debug::Acquire::ftp=true -o Debug::Acquire::http=true -o Debug::Acquire::https=true -o Debug::Acquire::gpgv=true -o Debug::aptcdrom=true -o Debug::BuildDeps=true -o Debug::Hashes=true -o Debug::IdentCDROM=true -o Debug::NoLocking=true -o Debug::pkgAcquire=true -o Debug::pkgAcquire::Auth=true -o Debug::pkgAcquire::Diffs=true -o Debug::pkgAcquire::RRed=true -o Debug::pkgAcquire::Worker=true -o Debug::pkgAutoRemove=true -o Debug::pkgDepCache::AutoInstall=true -o Debug::pkgDepCache::Marker=true -o Debug::pkgDPkgPM=true -o Debug::pkgDPkgProgressReporting=true -o Debug::pkgOrderList=true -o Debug::pkgPackageManager=true -o Debug::pkgPolicy=true -o Debug::pkgProblemResolver=true -o Debug::pkgProblemResolver::ShowScores=true -o Debug::sourceList=true -o Debug::RunScripts=true update
     - sudo apt-get -qq install jq
     - sudo apt-get -qq install realpath
     # Download Oracle JRE (should only happen once, due to caching)
