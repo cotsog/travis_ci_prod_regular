@@ -1,20 +1,21 @@
-language: ruby
-
-install: true
-script: true
-
+language: c
 matrix:
   include:
-    - sudo: false
-      dist: trusty
-      env: sudo=false dist=trusty
-    - sudo: required
-      dist: trusty
-      env: sudo=required dist=trusty
-    - sudo: false
-      dist: precise
-      env: sudo=false dist=precise
-    - sudo: required
-      dist: precise
-      env: sudo=required dist=precise
+    - os: osx
+      env: CACHE_NAME=osx
+      os: linux
+      env: CC=clang CXX=clang++ npm_config_clang=1 CACHE_NAME=linux
+      compiler: clang
 
+cache	
+  directories:
+    - node_modules
+    - app/node_modules
+    - $HOME/.electron
+    - $HOME/.cache
+
+install:	
+  - nvm install 6
+  - npm install electron-builder@next
+  - travis_wait npm install
+  - npm prune
