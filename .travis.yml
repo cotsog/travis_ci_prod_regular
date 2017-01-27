@@ -2,18 +2,12 @@ language: ruby
 
 matrix:
   include:
-    - sudo: false
-      dist: trusty
-      env: sudo=false dist=trusty
     - sudo: required
       dist: trusty
       env: sudo=required dist=trusty
-    - sudo: false
-      dist: precise
-      env: sudo=false dist=precise
     - sudo: required
       dist: precise
       env: sudo=required dist=precise
 
 script: true
-install: true
+install: sudo apt-get update
