@@ -1,13 +1,18 @@
-language: ruby
+language: node_js
+node_js:
+      - "6"
+os: osx
 
-matrix:
-  include:
-    - sudo: required
-      dist: trusty
-      env: sudo=required dist=trusty
-    - sudo: required
-      dist: precise
-      env: sudo=required dist=precise
+osx_image: xcode8.2
 
-script: true
-install: sudo apt-get update
+cache:
+  directories:
+  - node_modules
+  - app/node_modules
+
+
+install:
+    - nvm install 6
+    - npm install electron-builder@next
+    - npm install
+    - npm prune
