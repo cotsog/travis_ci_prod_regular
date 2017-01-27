@@ -1,18 +1,21 @@
 language: node_js
-node_js:
-      - "6"
-os: osx
 
-osx_image: xcode8.2
+matrix:
+  include:
+    - node_js: '4.1'
+      sudo: false
+      dist: precise
+      env: dist=precise
+    - node_js: '4.1'
+      sudo: false
+      dist: trusty
+      env: dist=trusty
 
-cache:
-  directories:
-  - node_modules
-  - app/node_modules
+addons:
+  postgresql: '9.5'
+  
+services:
+  - postgresql
 
-
-install:
-    - nvm install 6
-    - npm install electron-builder@next
-    - npm install
-    - npm prune
+install: true
+script: true
