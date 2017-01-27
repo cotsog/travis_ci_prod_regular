@@ -1,18 +1,19 @@
 language: ruby
 
-services:
-  - postgresql
-
 matrix:
   include:
     - sudo: false
       dist: trusty
-      addons:
-        postgresql: "9.4"
+      env: sudo=false dist=trusty
+    - sudo: required
+      dist: trusty
+      env: sudo=required dist=trusty
     - sudo: false
       dist: precise
-      addons:
-        postgresql: "9.6"
+      env: sudo=false dist=precise
+    - sudo: required
+      dist: precise
+      env: sudo=required dist=precise
 
 script: true
 install: true
