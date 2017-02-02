@@ -8,4 +8,5 @@ before_install:
   - sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-engine
 
 install: true
-script: true
+script:
+  - docker --version
