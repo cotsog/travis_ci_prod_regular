@@ -1,8 +1,11 @@
 language: ruby
 
-branches:
-  only:
-    - master
+sudo: required
+dist: trusty
+
+before_install:
+  - sudo apt-get update
+  - sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-engine
 
 install: true
 script: true
