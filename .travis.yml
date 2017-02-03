@@ -1,12 +1,9 @@
 language: ruby
 
-sudo: required
-dist: trusty
-
-before_install:
-  - sudo apt-get update
-  - sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-engine
+env:
+  global:
+    - GIT_COMMIT_USER_NAME: "Travis CI"
 
 install: true
 script:
-  - docker --version
+  - echo $GIT_COMMIT_USER_NAME
