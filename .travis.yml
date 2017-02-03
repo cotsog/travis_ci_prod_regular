@@ -2,7 +2,7 @@ language: ruby
 
 env:
   global:
-    - GIT_COMMIT_USER_NAME: "Travis CI"
+    - GIT_COMMIT_USER_NAME="Travis CI"
 
 install: true
 script:
