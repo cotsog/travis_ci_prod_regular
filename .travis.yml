@@ -6,4 +6,4 @@ env:
 
 install: true
 script:
-  - echo $GIT_COMMIT_USER_NAME
+  - echo "foo"
