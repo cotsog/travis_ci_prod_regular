@@ -1,9 +1,15 @@
 language: ruby
+sudo: false
+dist: trusty
 
 env:
-  global:
-    - GIT_COMMIT_USER_NAME="Travis CI"
+  - ES_VERSION=5.1.1 ES_DOWNLOAD_URL=https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-${ES_VERSION}.tar.gz
 
-install: true
+install:
+  - wget ${ES_DOWNLOAD_URL}
+  - tar -xzf elasticsearch-${ES_VERSION}.tar.gz
+  - ./elasticsearch-${ES_VERSION}/bin/elasticsearch &
+  - sleep 30
+
 script:
-  - echo "foo"
+  - curl -X GET http://localhost:9200/
