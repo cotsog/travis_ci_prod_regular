@@ -1,15 +1,10 @@
 language: ruby
 sudo: false
-dist: trusty
 
-env:
-  - ES_VERSION=5.1.1 ES_DOWNLOAD_URL=https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-${ES_VERSION}.tar.gz
+addons:
+  apt:
+    packages:
+      - pdftk
 
-install:
-  - wget ${ES_DOWNLOAD_URL}
-  - tar -xzf elasticsearch-${ES_VERSION}.tar.gz
-  - ./elasticsearch-${ES_VERSION}/bin/elasticsearch &
-  - sleep 30
-
-script:
-  - curl -X GET http://localhost:9200/
+install: true
+script: true
