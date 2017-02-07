@@ -6,6 +6,7 @@ install: true
 script:
 
 - echo "1"
-- travis_terminate 1
+- test
+- if [ $? != 0 ]; then travis_terminate 1; fi
 - echo "2"
 
