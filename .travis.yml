@@ -1,15 +1,11 @@
 language: ruby
 sudo: false
 
-addons:
-  postgresql: 9.4
-  apt:
-    packages:
-      - pdftk
-
-services:
-  - postgresql
-
 
 install: true
-script: true
+script:
+
+- echo "1"
+- travis_terminate 1
+- echo "2"
+
