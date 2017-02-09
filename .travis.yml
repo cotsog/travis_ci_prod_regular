@@ -5,4 +5,4 @@ dist: trusty
 
 install: true
 script:
-  - cd / && df -f
+  - cd / && df -h
