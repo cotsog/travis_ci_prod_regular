@@ -1,12 +1,6 @@
-language: ruby
-sudo: false
-
+language: perl
+sudo: required
 
 install: true
 script:
-
-- echo "1"
-- test
-- if [ $? != 0 ]; then travis_terminate 1; fi
-- echo "2"
-
+  - sudo date -s '2016-08-09 11:59:40' +'%F %T'
