@@ -1,8 +1,10 @@
-language: ruby
+language: php
 
-sudo: required
-dist: trusty
+sudo: false
+dist: precise
+
+services:
+  - mysql
 
 install: true
-script:
-  - cd / && df -h
+script: true
