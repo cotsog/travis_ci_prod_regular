@@ -5,15 +5,19 @@ matrix:
     - sudo: false
       dist: precise
       php: 5.6
+      env: SUDO=false DIST=precise
     - sudo: false
       dist: trusty
       php: 5.6
+      env: SUDO=false DIST=trusty
     - sudo: required
       dist: precise
       php: 5.6
+      env: SUDO=required DIST=precise
     - sudo: required
       dist: trusty
       php: 5.6
+      env: SUDO=required DIST=trusty
 
 install: true
 script: php -i | grep "FreeType"
