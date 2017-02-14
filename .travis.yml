@@ -1,10 +1,19 @@
 language: php
 
-sudo: false
-dist: precise
-
-services:
-  - mysql
+matrix:
+  include:
+    - sudo: false
+      dist: precise
+      php: 5.6
+    - sudo: false
+      dist: trusty
+      php: 5.6
+    - sudo: required
+      dist: precise
+      php: 5.6
+    - sudo: required
+      dist: trusty
+      php: 5.6
 
 install: true
-script: true
+script: php -i | grep "FreeType"
