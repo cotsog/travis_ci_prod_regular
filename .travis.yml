@@ -11,4 +11,4 @@ matrix:
 
 install: true
 script:
-  - travis_retry sudo apt-get update || true
+  - sudo apt-get update
