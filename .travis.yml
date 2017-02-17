@@ -1,4 +1,4 @@
-language: csharp
+language: ruby
 
 matrix:
   include:
@@ -8,6 +8,11 @@ matrix:
     - sudo: false
       dist: trusty
       env: SUDO=false DIST=trusty
+      
+addon:
+  apt:
+    packages:
+      - tree
 
 install: true
 script: true
