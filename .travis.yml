@@ -1,4 +1,4 @@
-language: ruby
+language: r
 
 matrix:
   include:
@@ -8,14 +8,6 @@ matrix:
     - sudo: false
       dist: trusty
       env: SUDO=false DIST=trusty
-    - sudo: required
-      dist: precise
-      env: SUDO=required DIST=precise
-    - sudo: required
-      dist: trusty
-      env: SUDO=required DIST=trusty
 
-before_install:
-  - sudo apt-get update
 install: true
 script: true
