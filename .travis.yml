@@ -1,5 +1,5 @@
 # Trigger
-language: csharp
+language: r
 
 matrix:
   include:
@@ -9,6 +9,12 @@ matrix:
     - sudo: false
       dist: trusty
       env: SUDO=false DIST=trusty
+    - sudo: required
+      dist: precise
+      env: SUDO=required DIST=precise
+    - sudo: required
+      dist: trusty
+      env: SUDO=required DIST=trusty
       
 addons:
   apt:
