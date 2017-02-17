@@ -2,22 +2,13 @@ language: ruby
 
 matrix:
   include:
-    - sudo: false
-      dist: precise
-      rvm: 2.3.1
-      env: SUDO=false DIST=precise
-    - sudo: false
-      dist: trusty
-      rvm: 2.3.1
-      env: SUDO=false DIST=trusty
     - sudo: required
       dist: precise
-      rvm: 2.3.1
       env: SUDO=required DIST=precise
     - sudo: required
       dist: trusty
-      rvm: 2.3.1
       env: SUDO=required DIST=trusty
 
 install: true
-script: true
+script:
+  - travis_retry sudo apt-get update || true
