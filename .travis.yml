@@ -9,7 +9,7 @@ matrix:
       dist: trusty
       env: SUDO=false DIST=trusty
       
-addon:
+addons:
   apt:
     packages:
       - tree
