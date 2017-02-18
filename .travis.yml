@@ -3,12 +3,6 @@ language: csharp
 
 matrix:
   include:
-    - sudo: false
-      dist: precise
-      env: SUDO=false DIST=precise
-    - sudo: false
-      dist: trusty
-      env: SUDO=false DIST=trusty
     - sudo: required
       dist: precise
       env: SUDO=required DIST=precise
