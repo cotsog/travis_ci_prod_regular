@@ -1,14 +1,16 @@
-language: node_js
+language: php
 
 matrix:
   include:
     - sudo: required
       dist: precise
       env: SUDO=required DIST=precise
+      php: 7.0
     - sudo: required
       dist: trusty
       env: SUDO=required DIST=trusty
+      php: 7.0
 
 install: true
 script:
-  - sudo apt-get install libc6-i386 lib32stdc++6 lib32gcc1 lib32ncurses5 lib32z1
+  - sudo apt-get install -qq -y --force-yes dnsmasq
