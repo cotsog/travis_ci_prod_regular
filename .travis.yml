@@ -1,6 +1,4 @@
-language: python
-
-python: 2.7
+language: node_js
 
 matrix:
   include:
@@ -13,4 +11,4 @@ matrix:
 
 install: true
 script:
-  - sudo apt-get install swig libffi-dev libxml2-dev libxslt-dev
+  - sudo apt-get install libc6-i386 lib32stdc++6 lib32gcc1 lib32ncurses5 lib32z1
