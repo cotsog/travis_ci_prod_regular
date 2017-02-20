@@ -1,4 +1,4 @@
-language: r
+language: ruby
 
 matrix:
   include:
