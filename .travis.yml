@@ -4,15 +4,13 @@ language: python
 matrix:
   include:
     - sudo: required
-      dist: precise
-      env: SUDO=required DIST=precise
-    - sudo: required
       dist: trusty
       env: SUDO=required DIST=trusty
 
 install: true
 script:
-  - sudo apt autoremove --purge
+  - sudo apt-get autoclean
+  - sudo apt-get autoremove
   - sudo add-apt-repository -y ppa:mc3man/trusty-media
   - sudo apt-get update -qq
   - sudo apt-get install -y -qq wget libxslt1-dev libxml2-dev libpq-dev yui-compressor npm nodejs-legacy libffi-dev libxml2-utils ffmpeg libjpeg-turbo-progs libjpeg62 libjpeg62-dev zlib1g-dev python-setuptools python-dev build-essential fontconfig libfreetype6 libfontconfig1 libstdc++6 libjpeg-turbo-progs libjpeg62 libjpeg62-dev zlib1g-dev libsnappy-dev libdbus-glib-1-dev
