@@ -1,13 +1,7 @@
-language: php
+language: python
 
 matrix:
   include:
-    - sudo: false
-      dist: precise
-      env: SUDO=false DIST=precise
-    - sudo: false
-      dist: trusty
-      env: SUDO=false DIST=trusty
     - sudo: required
       dist: precise
       env: SUDO=required DIST=precise
@@ -17,6 +11,4 @@ matrix:
 
 install: true
 script:
-  - time sudo rm -rf /var/lib/apt/lists/*
-  - time sudo apt-get update -qq 2>&1
-  
+  - sudo apt-get install -y -qq wget libxslt1-dev libxml2-dev libpq-dev yui-compressor npm nodejs-legacy libffi-dev libxml2-utils ffmpeg libjpeg-turbo-progs libjpeg62 libjpeg62-dev zlib1g-dev python-setuptools python-dev build-essential fontconfig libfreetype6 libfontconfig1 libstdc++6 libjpeg-turbo-progs libjpeg62 libjpeg62-dev zlib1g-dev libsnappy-dev libdbus-glib-1-dev  
