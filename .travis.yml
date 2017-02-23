@@ -1,6 +1,6 @@
 language: ruby
 
-sudo false
+sudo: false
 
 install: true
 script: true
