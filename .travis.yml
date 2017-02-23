@@ -6,7 +6,7 @@ dist: trusty
 before_install:
   - docker --version
   - sudo apt-get update
-  - sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-engine
+  - sudo apt-get -o Dpkg::Options::="--force-confnew" install -y docker-engine
   - docker --version # for verification
 
 install: true
