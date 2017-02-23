@@ -10,7 +10,10 @@ deploy:
   edge:
     source: cotsog/dpl
     branch: dj-gae-debug
+  provider: gae
   keyfile: europe-bloombees-130a7189973e.json
   project: europe-bloombees
+  module: develop
+  default: false
   version: 2
   config: app.yaml
