@@ -14,3 +14,4 @@ deploy:
   project: europe-bloombees
   version: 2
   config: app.yaml
+  debug: true
