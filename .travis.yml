@@ -1,19 +1,13 @@
 language: ruby
 
-sudo: false
+sudo: required
+dist: trusty
+
+before_install:
+  - docker --version
+  - sudo apt-get update
+  - sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-engine
+  - docker --version # for verification
 
 install: true
 script: true
-
-deploy:
-  provider: gae
-  edge:
-    source: cotsog/dpl
-    branch: dj-gae-debug
-  provider: gae
-  keyfile: europe-bloombees-130a7189973e.json
-  project: europe-bloombees
-  module: develop
-  default: false
-  version: 2
-  config: app.yaml
