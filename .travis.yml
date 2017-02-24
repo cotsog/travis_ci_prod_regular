@@ -1,10 +1,7 @@
 language: android
 
 android:
-  components:
-    - tools
-    - platform-tools
-    - tools
+  components: [tools, platform-tools, tools, build-tools-25.0.2, android-25, extra-android-m2repository, extra-google-m2repository]
       
 install: true
 script:
