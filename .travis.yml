@@ -1,9 +1,9 @@
 language: node_js
 
 addons:
-4	  apt:
-5	    packages:
-6	      - oracle-java8-installer
+  apt:
+    packages:
+      - oracle-java8-installer
 
 install: true
 script:
