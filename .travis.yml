@@ -1,8 +1,5 @@
-language: android
+language: node_js
 
-android:
-  components: [tools, platform-tools, tools, build-tools-25.0.2, android-25, extra-android-m2repository, extra-google-m2repository]
-      
 install: true
 script:
-  - android list sdk --no-ui --all --extended
+  - jdk_switcher use oraclejdk8
