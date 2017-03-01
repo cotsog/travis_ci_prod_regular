@@ -10,5 +10,5 @@ addons:
 install: true
 script:
   - mysql_config --libs
-  - mysql_config --variable=pkglibdir
+  - ls -al `mysql_config --variable=pkglibdir`
   - pkg-config --libs mysqlclient
