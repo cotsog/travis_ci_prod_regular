@@ -9,8 +9,6 @@ addons:
 
 install: true
 script:
-  - mysql_config --libs
-  - pkg-config --libs mysqlclient
-  - sudo find / -name "mysqlclient*"
-  - cd `mysql_config --variable=pkglibdir`
-  - sudo find . -name "mysqlclient*"
+  - pkg-config --variable=prefix mysqlclient     # installation prefix directory
+  - pkg-config --variable=includedir mysqlclient # header file directory
+  - pkg-config --variable=libdir mysqlclient     # library directory
