@@ -8,4 +8,6 @@ addons:
   postgresql: '9.4'
 
 install: true
-script: pkg-config --libs mysqlclient
+script:
+  - mysql_config --libs
+  - pkg-config --libs mysqlclient
