@@ -1,13 +1,11 @@
-language: node_js
-
+language: rust
 sudo: required
+dist: trusty
 
+services:
+  - mysql
 addons:
-  apt:
-    packages:
-      - oracle-java8-installer
-      - oracle-java8-set-default
-
-install: true
-script:
-  - java -version
+  postgresql: '9.4'
+  
+  install: true
+  script: pkg-config --libs mysqlclient
