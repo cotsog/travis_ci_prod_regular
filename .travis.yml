@@ -1,13 +1,5 @@
-language: rust
-sudo: required
-dist: trusty
-
-services:
-  - mysql
-
-addons:
-  postgresql: '9.4'
+language: android
+sudo: false
 
 install: true
-script:
-  - mysql --version
+script: android-update-sdk --components=tools --accept-licenses='android-sdk-license-.+|google-gdk-license-.+'
