@@ -1,9 +1,13 @@
 sudo: required
-dist: precise
+dist: trusty
 
-language: ruby
-
-install: true
-script:
-  - cat ~/.npmrc
+language: java
+jdk:
+  - oraclejdk8
+addons:
+  apt:
+    packages:
+      - oracle-java8-installer
   
+install: true
+script: java -version
