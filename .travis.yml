@@ -1,13 +1,13 @@
-sudo: required
-dist: trusty
+sudo: false
 
 language: java
-jdk:
-  - oraclejdk8
-addons:
-  apt:
-    packages:
-      - oracle-java8-installer
   
 install: true
-script: java -version
+script:
+  - |
+     if [ ! -f ./cache/https:/idnow-ios-2.10.0.tar.gz ]; then
+       mkdir cache
+       pushd cache
+       curl --retry 3 -O https://downloads.idnow.de/ios/idnow-ios-2.10.0.tar.gz
+       popd 
+     fi
