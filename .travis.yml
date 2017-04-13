@@ -5,7 +5,6 @@ install: true
 script: true
 
 notifications:
-  email: false
   webhook:
     urls:
       - http://requestb.in/1gnqyx71
