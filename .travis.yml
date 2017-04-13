@@ -18,5 +18,5 @@ install: true
 script: true
 
 notifications:
-  webhook:
+  webhooks:
     urls: http://requestb.in/1gnqyx71
