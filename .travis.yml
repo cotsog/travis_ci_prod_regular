@@ -1,13 +1,16 @@
 sudo: false
 
-language: java
-  
 install: true
-script:
-  - |
-     if [ ! -f ./cache/https:/idnow-ios-2.10.0.tar.gz ]; then
-       mkdir cache
-       pushd cache
-       curl --retry 3 -O https://downloads.idnow.de/ios/idnow-ios-2.10.0.tar.gz
-       popd 
-     fi
+
+script: true
+
+notifications:
+  email: false
+  webhook:
+    urls:
+      - http://requestb.in/1gnqyx71
+    on_success: always # default: always
+    on_failure: always # default: always
+    on_start: always   # default: never
+    on_cancel: always # default: always
+    on_error: always # default: always
