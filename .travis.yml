@@ -3,19 +3,7 @@ matrix:
     - sudo: false
       dist: precise
       env: SUDO=false DIST=precise
-    - sudo: false
-      dist: trusty
-      env: SUDO=false DIST=trusty
-    - sudo: required
-      dist: precise
-      env: SUDO=required DIST=precise
-    - sudo: required
-      dist: trusty
-      env: SUDO=required DIST=trusty
 
 install: true
 
-script: true
-
-notifications:
-  webhooks: http://requestb.in/1gnqyx71
+script: find . | grep index.css
