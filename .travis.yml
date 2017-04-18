@@ -6,4 +6,4 @@ matrix:
 
 install: true
 
-script: find . | grep index.css
+script: find .
