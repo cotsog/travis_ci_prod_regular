@@ -13,9 +13,6 @@ matrix:
       dist: trusty
       env: SUDO=required DIST=trusty
 
-addons:
-  firefox: "latest"
-
 install: true
 
 script: cd ~ && find . | grep "prefs.js"
