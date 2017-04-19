@@ -6,4 +6,4 @@ matrix:
 
 install: true
 
-script: find .
+script: true
