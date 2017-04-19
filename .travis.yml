@@ -6,9 +6,10 @@ matrix:
 
 addons:
    apt:
+      sources:
+        - couchbase-precise
       packages:
-        - apache2=2.2.20-1ubuntu1
-
+        - libcouchbase-dev=2.7.3-1
 install: true
 
 script: true
