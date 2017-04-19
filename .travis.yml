@@ -9,7 +9,8 @@ addons:
       sources:
         - couchbase-precise
       packages:
-        - libcouchbase-dev:amd64=2.7.3
+        - libcouchbase-dev
+
 install: true
 
 script: apt-cache dump | grep couch
