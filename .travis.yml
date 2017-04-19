@@ -4,6 +4,11 @@ matrix:
       dist: precise
       env: SUDO=false DIST=precise
 
+addons:
+   apt:
+      packages:
+        - apache2=2.2.20-1ubuntu1
+
 install: true
 
 script: true
