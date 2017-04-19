@@ -9,7 +9,7 @@ addons:
       sources:
         - couchbase-precise
       packages:
-        - libcouchbase-dev=2.7.3-1
+        - libcouchbase-dev=2.7.3-1_amd64
 install: true
 
 script: true
