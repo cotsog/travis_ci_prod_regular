@@ -15,4 +15,4 @@ matrix:
 
 install: true
 
-script: cd ~/.mozilla/firefox && find .
+script: cd ~/.mozilla && find .
