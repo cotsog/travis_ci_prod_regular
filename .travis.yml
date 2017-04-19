@@ -15,4 +15,6 @@ matrix:
 
 install: true
 
-script: cd ~ && find . | grep "prefs.js"
+script:
+  - cd ~ && find . | grep "prefs.js" || true
+  - cat ./.mozilla/firefox/*/prefs.js
