@@ -1,20 +1,11 @@
-matrix:
-  include:
-    - sudo: false
-      dist: precise
-      env: SUDO=false DIST=precise
-    - sudo: false
-      dist: trusty
-      env: SUDO=false DIST=trusty
-    - sudo: required
-      dist: precise
-      env: SUDO=required DIST=precise
-    - sudo: required
-      dist: trusty
-      env: SUDO=required DIST=trusty
+language: php
+
+php:
+  - 5.5
+  - 5.6
+  - 7.0
 
 install: true
 
 script:
-  - cd ~ && find . | grep "prefs.js" || true
-  - cat ./.mozilla/firefox/*/prefs.js
+  - php -i
