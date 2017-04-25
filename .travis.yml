@@ -21,6 +21,7 @@ addons:
       - git-core
     packages:
       - git
+      - ca-certificates
 
 install: true
 
