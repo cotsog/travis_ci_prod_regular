@@ -15,6 +15,13 @@ matrix:
       dist: trusty
       env: SUDO=required DIST=trusty
 
+addons:
+  apt:
+    sources:
+      - git-core
+    packages:
+      - git
+
 install: true
 
 script:
