@@ -3,8 +3,13 @@ language: ruby
 install: true
 script: true
 
+env:
+  global:
+    - PACKAGECLOUD_TOKEN = "test"
+    - CC = "gcc"
+
 deploy:
   provider: script
   on:
-    condition: "-n ${PACKAGECLOUD_TOKEN}"
+    condition: -n ${PACKAGECLOUD_TOKEN} && $CC == gcc
   script: ./noscript.sh
