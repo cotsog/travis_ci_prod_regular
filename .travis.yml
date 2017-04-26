@@ -10,5 +10,5 @@ env:
 deploy:
   provider: script
   on:
-    condition: "-n ${PACKAGECLOUD_TOKEN} && $CC == gcc"
+    condition: (-n ${PACKAGECLOUD_TOKEN} && $CC == gcc)
   script: ./noscript.sh
