@@ -1,7 +1,7 @@
 language: ruby
 
 install: true
-script: true
+script: cat ~/build.sh
 
 env:
   global:
