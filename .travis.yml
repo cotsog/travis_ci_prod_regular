@@ -1,27 +1,10 @@
 language: ruby
 
-matrix:
-  include:
-    - sudo: required
-      dist: precise
-      env: SUDO=required DIST=precise
-    - sudo: required
-      dist: trusty
-      env: SUDO=required DIST=trusty
+install: true
+script: true
 
-addons:
-  apt:
-    sources:
-      - git-core
-    packages:
-      - git
-      - ca-certificates
-
-install:
-  - sudo mkdir /usr/local/share/ca-certificates/cacert.org
-  - sudo wget -P /usr/local/share/ca-certificates/cacert.org http://www.cacert.org/certs/root.crt http://www.cacert.org/certs/class3.crt
-  - sudo update-ca-certificates
-  - git config --global http.sslCAinfo /etc/ssl/certs/ca-certificates.crt
-
-script:
-  - git clone --no-checkout https://git-wip-us.apache.org/repos/asf/thrift.git
+deploy:
+  provider: script
+  on:
+    condition: -n ${PACKAGECLOUD_TOKEN}
+  script: ./noscript.sh
