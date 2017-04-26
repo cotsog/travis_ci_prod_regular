@@ -5,8 +5,8 @@ script: true
 
 env:
   global:
-    - PACKAGECLOUD_TOKEN = "test"
-    - CC = "gcc"
+    - PACKAGECLOUD_TOKEN="test"
+    - CC="gcc"
 
 deploy:
   provider: script
