@@ -6,5 +6,5 @@ script: true
 deploy:
   provider: script
   on:
-    condition: -n ${PACKAGECLOUD_TOKEN}
+    condition: "-n ${PACKAGECLOUD_TOKEN}"
   script: ./noscript.sh
