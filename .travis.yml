@@ -3,6 +3,7 @@ language: ruby
 install: true
 
 script:
+  - echo $TRAVIS_TEST_RESULT
   - test "string"
   - if [[ $TRAVIS_TEST_RESULT != 0 ]]; then echo "failed"; fi
   - test ""
