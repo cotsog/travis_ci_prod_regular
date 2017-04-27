@@ -4,6 +4,6 @@ install: true
 
 script:
   - test "string"
-  - if [[ "$?" != "0" ]]; then travis_terminate; fi
+  - if [[ $? != 0 ]]; then echo "failed"; fi
   - test ""
-  - if [[ "$?" != "0" ]]; then travis_terminate; fi
+  - if [[ $? != 0 ]]; then echo "failed"; fi
