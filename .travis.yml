@@ -1,6 +1,6 @@
-language: php
-
-php: 7
-
-install: true
-script: phpunit -v || phpunit --version
+language: node_js
+node_js:
+  - "6.10"
+cache:
+  directories:
+    - node_modules
