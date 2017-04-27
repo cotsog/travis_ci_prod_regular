@@ -3,5 +3,7 @@ language: ruby
 install: true
 
 script:
-  - test "string" || travis_terminate $?
-  - test "" || travis_terminate $?
+  - test "string"
+  - if $? != 0; then travis_terminate $?; fi
+  - test ""
+  - if $? != 0; then travis_terminate $?; fi
