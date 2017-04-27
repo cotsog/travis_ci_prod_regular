@@ -3,5 +3,5 @@ language: ruby
 install: true
 
 script:
-  - test "string" || travis_terminate
-  - test "" || travis_terminate
+  - test "string" || travis_terminate $?
+  - test "" || travis_terminate $?
