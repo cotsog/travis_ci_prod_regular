@@ -1,10 +1,28 @@
 language: ruby
 
-install: true
+matrix:
+  include:
+    - sudo: required
+      dist: precise
+      env: SUDO=required DIST=precise
+    - sudo: required
+      dist: trusty
+      env: SUDO=required DIST=trusty
+
+addons:
+  apt:
+    sources:
+      - git-core
+    packages:
+      - git
+      - ca-certificates
+
+install:
+  - sudo mkdir /usr/local/share/ca-certificates/cacert.org
+  - sudo wget -P /usr/local/share/ca-certificates/cacert.org http://www.cacert.org/certs/root.crt http://www.cacert.org/certs/class3.crt
+  - sudo update-ca-certificates
+  - git config --global http.sslVerify true
+  - git config --global http.sslCAinfo /etc/ssl/certs/ca-certificates.crt
 
 script:
-  - echo $TRAVIS_TEST_RESULT
-  - test "string"
-  - if [[ $TRAVIS_TEST_RESULT != 0 ]]; then echo "failed"; fi
-  - test ""
-  - if [[ $TRAVIS_TEST_RESULT != 0 ]]; then echo "failed"; fi
+  - git clone --no-checkout https://git-wip-us.apache.org/repos/asf/thrift.git
