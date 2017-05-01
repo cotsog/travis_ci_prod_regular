@@ -3,6 +3,6 @@ jdk:
   - openjdk7
 before_script:
   - psql -c 'create database travis_ci_test;' -U postgres
-script: gradle --version ; psql --version
+script: gradle --version ; psql --version ; pg_lsclusters
 addons:
   postgresql: "9.4"
