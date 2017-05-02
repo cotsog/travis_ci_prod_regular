@@ -5,17 +5,21 @@ matrix:
     - sudo: false
       dist: precise
       env: SUDO=false DIST=precise
+      rvm: 2.3.1
     - sudo: false
       dist: trusty
       env: SUDO=false DIST=trusty
+      rvm: 2.3.1
     - sudo: required
       dist: precise
       env: SUDO=required DIST=precise
+      rvm: 2.3.1
     - sudo: required
       dist: trusty
       env: SUDO=required DIST=trusty
+      rvm: 2.3.1
 
 install: true
 
 script:
-  - git clone --no-checkout https://git-wip-us.apache.org/repos/asf/thrift.git
+  - bundle --version
