@@ -5,19 +5,19 @@ matrix:
     - sudo: false
       dist: precise
       env: SUDO=false DIST=precise
-      rvm: 2.3.1
+      rvm: 2.3
     - sudo: false
       dist: trusty
       env: SUDO=false DIST=trusty
-      rvm: 2.3.1
+      rvm: 2.3
     - sudo: required
       dist: precise
       env: SUDO=required DIST=precise
-      rvm: 2.3.1
+      rvm: 2.3
     - sudo: required
       dist: trusty
       env: SUDO=required DIST=trusty
-      rvm: 2.3.1
+      rvm: 2.3
 
 install: true
 
