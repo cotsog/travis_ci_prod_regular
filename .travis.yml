@@ -1,15 +1,13 @@
-language: ruby
+language: elixir
+elixir: 1.4.2
 
 matrix:
-  include:
-    - sudo: false
-      dist: precise
-      env: SUDO=false DIST=precise
-      rvm: 2.3.1
+  include:
+    - sudo: false
+      dist: precise # this is optional
+    - sudo: required
+      dist: precise
 
-before_install:
-  - gem install bundler
 install: true
 
-script:
-  - bundle --version
+script: true
