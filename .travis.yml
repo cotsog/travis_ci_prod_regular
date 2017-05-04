@@ -11,5 +11,6 @@ script:
   - sudo apt-get install libxslt-dev libxml2-dev libgeoip-dev imagemagick
   - sudo apt-get install openjdk-7-jre gpsbabel poppler-utils
   - sudo add-apt-repository ppa:limparissoft/opencv-ppa -y
+  - sudo rm -rf /var/lib/apt/lists/*
   - sudo apt-get update
   - sudo apt-get install opencv
