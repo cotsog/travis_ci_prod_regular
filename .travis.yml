@@ -1,24 +1,7 @@
-language: elixir
-
-matrix:
-  include:
-    - sudo: false
-      dist: precise
-      env: SUDO=false DIST=precise
-      elixir: 1.4.2
-    - sudo: false
-      dist: trusty
-      env: SUDO=false DIST=trusty
-      elixir: 1.4.2
-    - sudo: required
-      dist: precise
-      env: SUDO=required DIST=precise
-      elixir: 1.4.2
-    - sudo: required
-      dist: trusty
-      env: SUDO=required DIST=trusty
-      elixir: 1.4.2
+language: ruby
 
 install: true
 
-script: true
+script:
+  - date > ./date.txt
+  - git commit -a -m "Updated date.txt"
