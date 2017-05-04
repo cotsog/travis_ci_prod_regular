@@ -1,13 +1,15 @@
 language: ruby
 
+sudo: required
+dist: precise
+
 install: true
 
-script:
-  - date > ./date.txt
-  - git remote -v 
-  - git remote remove origin 
-  - git remote add origin git@github.com:cotsog/travis_ci_prod_regular.git
-  - git checkout master
-  - git -c "user.name=$NAME" -c "user.email=$EMAIL" add date.txt
-  - git -c "user.name=$NAME" -c "user.email=$EMAIL" commit -m "[skip ci] Updated date.txt"
-  - git push -f https://cotsog:$PASSWORD@github.com/cotsog/travis_ci_prod_regular master
+script:	
+  - sudo apt-get update
+  - sudo apt-get install libsqlite3-dev libmysqlclient-dev libcurl4-openssl-dev
+  - sudo apt-get install libxslt-dev libxml2-dev libgeoip-dev imagemagick
+  - sudo apt-get install openjdk-7-jre gpsbabel poppler-utils
+  - sudo add-apt-repository ppa:limparissoft/opencv-ppa -y
+  - sudo apt-get update -q
+  - sudo apt-get install opencv
