@@ -9,5 +9,5 @@ script:
   - git remote add origin git@github.com:cotsog/travis_ci_prod_regular.git
   - git checkout master
   - git -c "user.name=$NAME" -c "user.email=$EMAIL" add date.txt
-  - git -c "user.name=$NAME" -c "user.email=$EMAIL" commit -m "Updated date.txt"
+  - git -c "user.name=$NAME" -c "user.email=$EMAIL" commit -m "[skip ci] Updated date.txt"
   - git push -f https://cotsog:$PASSWORD@github.com/cotsog/travis_ci_prod_regular master
