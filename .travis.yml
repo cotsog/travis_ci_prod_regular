@@ -4,4 +4,4 @@ install: true
 
 script:
   - date > ./date.txt
-  - git git -c "user.name=$NAME" -c "user.email=$EMAIL" commit -a -m "Updated date.txt"
+  - git -c "user.name=$NAME" -c "user.email=$EMAIL" commit -a -m "Updated date.txt"
