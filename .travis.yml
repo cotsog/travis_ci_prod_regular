@@ -7,8 +7,10 @@ matrix:
   include:
     - php: hhvm
       group: stable
+      env: GROUP=stable
     - php: hhvm
       group: deprecated-2017Q1
+      env: GROUP=deprecated-2017Q1
     
 install: true
 script: true
