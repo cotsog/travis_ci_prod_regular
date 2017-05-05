@@ -10,7 +10,6 @@ matrix:
     - php: hhvm
       group: deprecated-2017Q1
     
-env: COVERAGE=0
 install: true
 script: true
 
