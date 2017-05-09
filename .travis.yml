@@ -3,5 +3,5 @@ language: python
 sudo: false
     
 install: pip install coveralls
-script: coverage --version
+script: coverage run test.py
 
