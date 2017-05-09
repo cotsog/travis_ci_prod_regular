@@ -1,4 +1,5 @@
 import unittest
+from serenata_toolbox.ceap_dataset import CEAPDataset
 
 class TestStringMethods(unittest.TestCase):
 
@@ -6,7 +7,7 @@ class TestStringMethods(unittest.TestCase):
         self.assertEqual('foo'.upper(), 'FOO')
 
     def test_isupper(self):
-        self.assertTrue('foo'.isupper())
+        self.assertTrue('FOO'.isupper())
         self.assertFalse('Foo'.isupper())
 
     def test_split(self):
