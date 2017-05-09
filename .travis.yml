@@ -1,17 +1,7 @@
-language: php
+language: python
 
-sudo: required
-dist: precise
-
-matrix:
-  include:
-    - php: hhvm
-      group: stable
-      env: GROUP=stable
-    - php: hhvm
-      group: deprecated-2017Q1
-      env: GROUP=deprecated-2017Q1
+sudo: false
     
 install: true
-script: true
+script: coverage --version
 
