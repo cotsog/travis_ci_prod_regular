@@ -2,6 +2,6 @@ language: python
 
 sudo: false
     
-install: true
+install: pip install coveralls
 script: coverage --version
 
