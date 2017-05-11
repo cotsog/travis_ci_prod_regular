@@ -1,14 +1,6 @@
-language: python
+language: objective-c
 
-matrix:
-  include:
-    - sudo: false
-      dist: trusty
-      env: SUDO=false DIST=trusty
-    - sudo: required
-      dist: trusty
-      env: SUDO=required DIST=trusty
+osx_image: xcode8
  
-install: true
-script: pip --version
-
+install: pod install stripe
+script: true
