@@ -1,6 +1,9 @@
-language: objective-c
-
-osx_image: xcode8
+language: ruby
  
-install: pod install stripe
+install: true
 script: true
+
+notifications:
+  irc:
+    channels:
+      - "chat.freenode.net#yodjjj-ci"
