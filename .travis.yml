@@ -4,6 +4,4 @@ install: true
 script: true
 
 notifications:
-  irc:
-    channels:
-      - "chat.freenode.net#yodjjj-ci"
+  irc: "chat.freenode.net#yodjjj-ci"
