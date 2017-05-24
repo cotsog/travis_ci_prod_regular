@@ -8,3 +8,5 @@ install: true
 script:
   - which bundler
   - echo $PATH
+  - gem uninstall bundler
+  - which bundler
