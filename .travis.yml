@@ -1,13 +1,8 @@
 language: ruby
-
-sudo: required
-dist: trusty
  
 install: true
 script: true
 
-deploy:
-  provider: script
-  script: false
-
-after_script: env
+after_script:
+  - curl -sL https://raw.githubusercontent.com/travis-ci/artifacts/master/install | bash
+  - artifacts upload
