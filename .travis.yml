@@ -1,5 +1,4 @@
 language: node_js
-node_js: 6.9.1
 sudo: required
 dist: trusty
 install: true
@@ -8,7 +7,8 @@ jobs:
   include:
     - stage: precache
       script: true
-    - stage: my-test
+    - stage: test
+      node_js: 6.9.1
       script: echo test
     - stage: deploy
       script: echo deploy
