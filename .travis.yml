@@ -1,8 +1,13 @@
-language: ruby
- 
+language: node_js
+node_js: 6.9.1
+sudo: required
+dist: trusty
 install: true
-script: true
-
-after_script:
-  - curl -sL https://raw.githubusercontent.com/travis-ci/artifacts/master/install | bash
-  - artifacts upload
+jobs:
+  include:
+    - stage: precache
+      script: true
+    - stage: test
+      script: echo test
+    - stage: deploy
+      script: echo deploy
