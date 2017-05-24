@@ -8,5 +8,5 @@ install: true
 script:
   - which bundler
   - echo $PATH
-  - gem uninstall bundler
+  - rvm 2.2.4 do gem uninstall bundler
   - which bundler
