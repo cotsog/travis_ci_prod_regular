@@ -10,4 +10,7 @@ script:
   - echo $PATH
   - rvm 2.2.4 do gem uninstall bundler
   - rvm 2.2.4 do gem uninstall -x -i /home/travis/.rvm/gems/ruby-2.2.4@global bundler
+  - gem uninstall -x -i /home/travis/.rvm/gems/ruby-2.2.4@global bundler
+  - gem uninstall -x -i /home/travis/.rvm/gems/ruby-2.2.4 bundler
   - which bundler
+  - bundler -v
