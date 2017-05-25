@@ -1,16 +1,7 @@
 language: ruby
-rvm: 2.2.4
 
-sudo: required
-dist: precise
+sudo: false
 
 install: true
 script:
-  - which bundler
-  - echo $PATH
-  - rvm 2.2.4 do gem uninstall bundler
-  - rvm 2.2.4 do gem uninstall -x -i /home/travis/.rvm/gems/ruby-2.2.4@global bundler
-  - gem uninstall -x -i /home/travis/.rvm/gems/ruby-2.2.4@global bundler
-  - gem uninstall -x -i /home/travis/.rvm/gems/ruby-2.2.4 bundler
-  - which bundler
-  - bundler -v
+  - echo -e "\e[31mHello World\e[0m"
