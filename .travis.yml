@@ -4,7 +4,10 @@ sudo: false
 
 install: true
 script:
-  - cat /proc/self/cgroup
+  - CONTAINER_PATH=$(cat /proc/self/cgroup | grep memory | cut -d':' -f3)
+  - echo $CONTAINER_PATH
+  - CONTAINER_ID=$(echo $CONTAINER_PATH | cut -d'/' -f2)
+  - echo $CONTAINER_ID
   - cat /proc/meminfo
   - cat /proc/cpuinfo
 
