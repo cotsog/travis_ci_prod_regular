@@ -3,5 +3,9 @@ language: ruby
 sudo: false
 
 install: true
-script:
-  - echo -e "\e[31mHello World\e[0m"
+script: true
+
+matrix:
+  include:
+    - dist: precise
+    - dist: trusty
