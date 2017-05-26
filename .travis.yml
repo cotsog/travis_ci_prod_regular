@@ -6,10 +6,9 @@ install: true
 script:
   - CONTAINER_PATH=$(cat /proc/self/cgroup | grep memory | cut -d':' -f3)
   - echo $CONTAINER_PATH
-  - CONTAINER_ID=$(echo $CONTAINER_PATH | cut -d'/' -f2)
+  - CONTAINER_ID=$(echo $CONTAINER_PATH | cut -d'/' -f3)
   - echo $CONTAINER_ID
-  - cat /proc/meminfo
-  - cat /proc/cpuinfo
+  - ls -al /docker/$CONTAINER_ID
 
 matrix:
   include:
