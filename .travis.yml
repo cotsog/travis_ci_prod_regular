@@ -4,6 +4,6 @@ sudo: false
 
 install: true
 script:
-  - nvm install 5.11
+  - nvm install stable
   - node --version
   - npm --version
