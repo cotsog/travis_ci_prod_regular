@@ -1,4 +1,4 @@
-language: __sugilite__
+language: __garnet__
 
 sudo: required
 dist: trusty
