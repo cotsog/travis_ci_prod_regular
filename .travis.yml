@@ -1,32 +1,7 @@
-language: ruby
+language: __sugilite__
 
-matrix:
-  include:
-    - sudo: false
-      dist: precise
-      env: SUDO=false DIST=precise
-    - sudo: false
-      dist: trusty
-      env: SUDO=false DIST=trusty
-    - sudo: required
-      dist: precise
-      env: SUDO=required DIST=precise
-    - sudo: required
-      dist: trusty
-      env: SUDO=required DIST=trusty
-    - sudo: required
-      dist: trusty
-      env: SUDO=required DIST=trusty
-      language: __sugilite__
-    - sudo: required
-      dist: trusty
-      env: SUDO=required DIST=trusty
-      language: __garnett__
-    - sudo: required
-      dist: trusty
-      env: SUDO=required DIST=trusty
-      language: __connie__
-
+sudo: required
+dist: trusty
 
 install: true
 script: df -vh
