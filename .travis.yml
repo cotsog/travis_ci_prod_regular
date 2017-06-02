@@ -1,15 +1,32 @@
-language: elixir
+language: ruby
 
-sudo: required
-dist: trusty
+matrix:
+  include:
+    - sudo: false
+      dist: precise
+      env: SUDO=false DIST=precise
+    - sudo: false
+      dist: trusty
+      env: SUDO=false DIST=trusty
+    - sudo: required
+      dist: precise
+      env: SUDO=required DIST=precise
+    - sudo: required
+      dist: trusty
+      env: SUDO=required DIST=trusty
+    - sudo: required
+      dist: trusty
+      env: SUDO=required DIST=trusty
+      language: __sugilite__
+    - sudo: required
+      dist: trusty
+      env: SUDO=required DIST=trusty
+      language: __garnett__
+    - sudo: required
+      dist: trusty
+      env: SUDO=required DIST=trusty
+      language: __connie__
 
-addons:
-  chrome: stable
 
-install:
-  - sudo apt-get update
-  - sudo apt-get install chromium-chromedriver
-script:
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-  - chromedriver &
+install: true
+script: df -vh
