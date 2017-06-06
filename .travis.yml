@@ -1,26 +1,14 @@
+dist: trusty
+sudo: required
 language: node_js
-
-node_js: 6.10.3
-
-matrix:
-  include:
-    - sudo: false
-      dist: precise
-      env: SUDO=false DIST=precise
-    - sudo: false
-      dist: trusty
-      env: SUDO=false DIST=trusty
-    - sudo: required
-      dist: precise
-      env: SUDO=required DIST=precise
-    - sudo: required
-      dist: trusty
-      env: SUDO=required DIST=trusty
-
+node_js:
+  - 6.10.3
+cache:
+  directories:
+    - node_modules
 addons:
   chrome: stable
   hosts:
     - local.nbc.com
-
 install: true
 script: true
