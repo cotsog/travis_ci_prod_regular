@@ -1,26 +1,19 @@
 language: ruby
 
+linux_conf_common: &linux_conf
+  sudo: false
+  dist: precise
+
 matrix:
   include:
-    - sudo: false
-      dist: precise
+    - <<: *linux_conf
       env: SUDO=false DIST=precise
-    - sudo: false
-      dist: trusty
+    - <<: *linux_conf
       env: SUDO=false DIST=trusty
-    - sudo: required
-      dist: precise
+    - <<: *linux_conf
       env: SUDO=required DIST=precise
-    - sudo: required
-      dist: trusty
+    - <<: *linux_conf
       env: SUDO=required DIST=trusty
 
 install: true
 script: true
-
-before_deploy:
-  - chmod +x true.sh
-
-deploy:
-  provider: script
-  script: ./true.sh
