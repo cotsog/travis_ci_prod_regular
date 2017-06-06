@@ -1,19 +1,7 @@
 language: ruby
 
-linux_conf_common: &linux_conf
-  sudo: false
-  dist: precise
-
-matrix:
-  include:
-    - <<: *linux_conf
-      env: SUDO=false DIST=precise
-    - <<: *linux_conf
-      env: SUDO=false DIST=trusty
-    - <<: *linux_conf
-      env: SUDO=required DIST=precise
-    - <<: *linux_conf
-      env: SUDO=required DIST=trusty
+addons:
+  chrome: stable
 
 install: true
 script: true
