@@ -19,6 +19,8 @@ matrix:
 
 addons:
   chrome: stable
+  hosts:
+    - local.nbc.com
 
 install: true
 script: true
