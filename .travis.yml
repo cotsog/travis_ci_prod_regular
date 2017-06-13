@@ -3,19 +3,14 @@ language: go
 matrix:
   include:
     - sudo: required
-      dist: precise
-      env: SUDO=required DIST=precise
-    - sudo: required
       dist: trusty
       env: SUDO=required DIST=trusty
 
 before_install:
-  - wget https://www.rabbitmq.com/releases/rabbitmq-server/v3.6.6/rabbitmq-server_3.6.6-1_all.deb
-  - sudo apt-get remove rabbitmq-server
-  - sudo dpkg -i rabbitmq-server_3.6.6-1_all.deb || true
-  - sudo apt-get -f install
-  - sudo dpkg -i rabbitmq-server_3.6.6-1_all.deb
-  - sudo service rabbitmq-server start
+  - docker --version
+  - sudo apt-get update
+  - sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-engine
+  - docker --version
   
 install: true
 script: true
