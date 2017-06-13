@@ -1,14 +1,19 @@
-dist: trusty
-sudo: required
-language: node_js
-node_js:
-  - 6.10.3
-cache:
-  directories:
-    - node_modules
-addons:
-  chrome: stable
-  hosts:
-    - local.nbc.com
+language: go
+
+matrix:
+  include:
+    - sudo: required
+      dist: precise
+      env: SUDO=required DIST=precise
+    - sudo: required
+      dist: trusty
+      env: SUDO=required DIST=trusty
+
+before_install:
+  - wget https://www.rabbitmq.com/releases/rabbitmq-server/v3.5.4/rabbitmq-server_3.5.4-1_all.deb
+  - sudo apt-get remove rabbitmq-server
+  - sudo dpkg -i rabbitmq-server_3.5.4-1_all.deb
+  - sudo service rabbitmq-server start
+  
 install: true
 script: true
