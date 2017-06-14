@@ -1,19 +1,9 @@
-language: go
-
-matrix:
-  include:
-    - sudo: required
-      dist: trusty
-      env: SUDO=required DIST=trusty
-
+sudo: required
+language: python
+python:
+  - pypy3
 before_install:
-  - docker --version
-  - sudo apt-get remove docker docker-engine
-  - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-  - sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-  - sudo apt-get update
-  - sudo apt-get -y install docker-ce
-  - docker --version
-  
-install: true
+  - virtualenv --version
+install:
+  - python -c 'from setuptools import setup'
 script: true
