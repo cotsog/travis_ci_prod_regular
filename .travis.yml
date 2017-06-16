@@ -4,5 +4,9 @@ dist: precise
 language: node_js
 node_js: 6.11.0
 
+env:
+  global:
+    - NPM_TOKEN=blablabla
+
 install: true
 script: true
