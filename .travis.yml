@@ -1,9 +1,11 @@
-sudo: required
-language: python
-python:
-  - pypy3
-before_install:
-  - virtualenv --version
-install:
-  - python -c 'from setuptools import setup'
-script: true
+sudo: false
+language: ruby
+addons	
+  apt:
+    sources:
+      - heroku
+    packages:
+      - heroku
+      - heroku-toolbelt
+  ssh_known_hosts:
+    - heroku.com
