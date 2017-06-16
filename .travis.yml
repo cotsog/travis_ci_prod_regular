@@ -1,6 +1,6 @@
 sudo: false
 language: ruby
-addons	
+addons:	
   apt:
     sources:
       - heroku
