@@ -1,7 +1,9 @@
 sudo: false
 language: ruby
 
-before_install: wget -qO- https://cli-assets.heroku.com/install-ubuntu.sh | sh
+before_install:
+  - wget -qO- https://cli-assets.heroku.com/install-ubuntu.sh | sh
+  - heroku --version
 
 install: true
 script: true
