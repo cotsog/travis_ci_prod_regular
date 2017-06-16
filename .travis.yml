@@ -1,6 +1,8 @@
-sudo: required
-language: minimal
+sudo: false
+dist: precise
 
-jdk: oraclejdk8
+language: node_js
+node_js: 6.11.0
+
 install: true
 script: true
