@@ -6,6 +6,5 @@ addons:
       - heroku
     packages:
       - heroku
-      - heroku-toolbelt
   ssh_known_hosts:
     - heroku.com
