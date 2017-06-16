@@ -1,10 +1,7 @@
 sudo: false
 language: ruby
-addons:	
-  apt:
-    sources:
-      - heroku
-    packages:
-      - heroku
-  ssh_known_hosts:
-    - heroku.com
+
+before_install: wget -qO- https://cli-assets.heroku.com/install-ubuntu.sh | sh
+
+install: true
+script: true
