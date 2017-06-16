@@ -2,11 +2,12 @@ sudo: false
 language: ruby
 
 addons:
-  sources:
-    - heroku
-  packages:
-    - apt-transport-https
-    - heroku
+  apt:
+    sources:
+      - heroku
+    packages:
+      - apt-transport-https
+      - heroku
 
 install: true
 script: heroku --version
