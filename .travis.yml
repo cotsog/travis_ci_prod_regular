@@ -10,3 +10,11 @@ env:
 
 install: true
 script: true
+
+deploy:
+  provider: packagecloud
+  repository: scratch
+  username: tomduckering
+  dist: el/7
+  token:
+    secure: REDACTED
