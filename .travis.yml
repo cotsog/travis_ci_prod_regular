@@ -1,13 +1,6 @@
-sudo: false
-language: ruby
+sudo: required
+language: minimal
 
-addons:
-  apt:
-    sources:
-      - heroku
-    packages:
-      - apt-transport-https
-      - heroku
-
+jdk: oraclejdk8
 install: true
-script: heroku --version
+script: true
