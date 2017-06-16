@@ -1,21 +1,10 @@
 sudo: false
-dist: precise
+dist: trusty
 
-language: node_js
-node_js: 6.11.0
-
-env:
-  global:
-    - NPM_TOKEN=blablabla
+matrix:
+  include:
+    - group: stable
+    - group: edge
 
 install: true
 script: true
-
-deploy:
-  provider: packagecloud
-  repository: test
-  username: jodoindo
-  token:
-    secure: s6GrKx+sqw2SBLTWSIJErKZViLVYSdvfFWlXKvS0NoDYbMQMNvy3XWM4CsxpN7o9FdSJNF3ccF6Gd01ZQFoenzHsgVc0JnP7y73SqGY8LlvH+Ge3eGpqehuv1uul0da3OjqkrcGZb6hHtkja4SbR+f3LWcbtrPgHQ8hb7N0xXk2EJVEyiI2J9yA8+Mwd0qwZnjc3up3Ms3HKYQO7GGQ9EDLfnyuU5ZSYP30tzbfpSsNcjwpuzz3qNh0KBrSog1iDlumLsFgnbBfQKwW0vuoeh+lylWDl9bVm6pBia9YTQ80StsQgmDmsnM9t6GWzskSM5vV/U6+f/DjIpvtAXdpzYAKZaf1qWZrY+99kY6WMGD2exiqtVCxxbDu36VygO46ZQ7+TxB/gigU2C3f3w46b1ESkd5c0T4OzafZT+g4GwumPPWCSAGVCx7BlpcbP535q2X5anbsKPwMufWlQXS3TAAP1Dj+eD/73ypDk/9STBMIRXbqs5MxHDdKlunrwU7cT5x3a8JX2Z24rFgWXe1SxhGIgBgFgI4SITqWvy4ylpL+bsn4xyv9062ADg9AbgY3ZjJ04q1JU/MEsmtaMbQ1k1m/xl7oFCgHVVh5Mlm0UpHe2/YIRUbu8Ustc8mtqxjv8Os7cFo5pctB+JpHwFicJk6BeXcsrpgGIvZi5xtkG2Wg=
-
-
