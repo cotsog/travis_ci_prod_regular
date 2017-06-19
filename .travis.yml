@@ -1,6 +1,8 @@
 sudo: required
 dist: precise
 
+language: android
+
 android:	
   components:
     - tools
