@@ -1,7 +1,7 @@
 sudo: required
 dist: precise
 
-android	
+android:	
   components:
     - tools
     - platform-tools
