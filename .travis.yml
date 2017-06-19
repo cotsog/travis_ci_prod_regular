@@ -1,14 +1,30 @@
 language: android
 
-dist: trusty
-sudo: required
-
-group: edge
+matrix:
+  include:
+    - sudo: false
+      dist: precise
+      env: SUDO=false DIST=precise
+    - sudo: false
+      dist: trusty
+      env: SUDO=false DIST=trusty
+    - sudo: required
+      dist: precise
+      env: SUDO=required DIST=precise
+    - sudo: required
+      dist: trusty
+      env: SUDO=required DIST=trusty
+    - sudo: required
+      dist: trusty
+      group: edge
+      env: SUDO=required DIST=trusty GROUP=edge
+    
 
 android:	
   components:
     - tools
     - platform-tools
+    - tools
     - addon-google_apis-google-16
     - android-23
     - build-tools-23.0.1
