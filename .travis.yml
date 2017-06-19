@@ -1,10 +1,16 @@
-sudo: false
-dist: trusty
+sudo: required
+dist: precise
 
-matrix:
-  include:
-    - group: stable
-    - group: edge
+android	
+  components:
+    - tools
+    - platform-tools
+    - addon-google_apis-google-16
+    - android-23
+    - build-tools-23.0.1
+    - extra-android-m2repository
+    - extra-google-google_play_services
+    - extra-google-m2repository
 
 install: true
 script: true
