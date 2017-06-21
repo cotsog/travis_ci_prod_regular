@@ -16,21 +16,8 @@ matrix:
       env: SUDO=required DIST=trusty
     - sudo: required
       dist: trusty
-      group: edge
-      env: SUDO=required DIST=trusty GROUP=edge
-    
-
-android:	
-  components:
-    - tools
-    - platform-tools
-    - tools
-    - addon-google_apis-google-16
-    - android-23
-    - build-tools-23.0.1
-    - extra-android-m2repository
-    - extra-google-google_play_services
-    - extra-google-m2repository
+      group: deprecated-2017Q2
+      env: SUDO=required DIST=trusty GROUP=deprecated-2017Q2
 
 install: true
 script: true
