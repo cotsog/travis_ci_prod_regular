@@ -14,4 +14,4 @@ matrix:
       env: SUDO=required DIST=trusty GROUP=deprecated-2017Q2
 
 install: true
-script: true
+script: sudo apt-get install -qq libqt4-opengl-dev libqt4-opengl:amd64
