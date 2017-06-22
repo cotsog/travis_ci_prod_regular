@@ -1,11 +1,14 @@
-sudo: false
-dist: trusty
-
 language: ruby
 
-rvm: 2.4.1
+matrix:
+  include:
+    - sudo: required
+      dist: precise
+      env: SUDO=required DIST=precise
+    - sudo: required
+      dist: trusty
+      env: SUDO=required DIST=trusty
 
 install: true
 script:
-  - npm install -g bower
-  - bower --version
+  - sudo apt-get install jq
