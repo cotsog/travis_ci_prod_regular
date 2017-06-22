@@ -1,6 +1,9 @@
 sudo: false
-dist: trusty
+dist: required
+
+language: ruby
+
+rvm: 2.3.1
 
 install: true
-script:
-  - rvm install ruby-2.3.1
+script: true
