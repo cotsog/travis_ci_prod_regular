@@ -3,7 +3,7 @@ dist: precise
 sudo: required
 
 install:
-  - sudo add-apt-repository ppa:george-edison55/precise-backports || true
+  - sudo add-apt-repository ppa:george-edison55/precise-backports
   - sudo apt-get update
   - sudo apt-get install jq
 
