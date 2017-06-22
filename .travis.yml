@@ -1,8 +1,10 @@
-language: generic
-dist: trusty
+language: java
+dist: precise
 sudo: required
 
 install:
-  - npm install --quiet
+  - sudo add-apt-repository ppa:george-edison55/precise-backports || true
+  - sudo apt-get update
+  - sudo apt-get install jq
 
 script: true
