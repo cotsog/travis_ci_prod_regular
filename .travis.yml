@@ -1,14 +1,8 @@
-language: ruby
+language: generic
+dist: trusty
+sudo: required
 
-matrix:
-  include:
-    - sudo: required
-      dist: precise
-      env: SUDO=required DIST=precise
-    - sudo: required
-      dist: trusty
-      env: SUDO=required DIST=trusty
+install:
+  - npm install --quiet
 
-install: true
-script:
-  - sudo apt-get install jq
+script: true
