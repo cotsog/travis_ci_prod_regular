@@ -3,7 +3,7 @@ dist: precise
 sudo: required
 
 install:
-  - curl -sSL -o ~/bin/jq https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64 && chmod +x ~/bin/jq
+  - mkdir -p ~/bin && curl -sSL -o ~/bin/jq https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64 && chmod +x ~/bin/jq
   - export PATH = PATH:~/bin
   - jq --version
 
