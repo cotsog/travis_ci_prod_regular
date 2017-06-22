@@ -3,7 +3,9 @@ dist: trusty
 
 language: ruby
 
-rvm: 2.3.1
+rvm: 2.4.1
 
 install: true
-script: ruby --version
+script:
+  - npm install bower
+  - bower --version
