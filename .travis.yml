@@ -1,15 +1,5 @@
-sudo: required
+sudo: false
 dist: trusty
-
-matrix:
-  include:
-    - sudo: required
-      dist: trusty
-      env: SUDO=required DIST=trusty
-    - sudo: required
-      dist: trusty
-      group: deprecated-2017Q2
-      env: SUDO=required DIST=trusty GROUP=deprecated-2017Q2
 
 install: true
 script:
