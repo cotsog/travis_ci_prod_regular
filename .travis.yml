@@ -1,12 +1,29 @@
-language: ruby
+language: node_js
 
-sudo: false
-dist: trusty
+matrix:
+  include:
+    - sudo: false
+      dist: precise
+      env: SUDO=false DIST=precise
+    - sudo: false
+      dist: trusty
+      env: SUDO=false DIST=trusty
+    - sudo: required
+      dist: precise
+      env: SUDO=required DIST=precise
+    - sudo: required
+      dist: trusty
+      env: SUDO=required DIST=trusty
 
-rvm:
-  - 2.3.3
-  - 2.3.4
-  - 2.4.1
-  
+cache:
+  directories:
+    - "$HOME/google-cloud-sdk/"
+
 install: true
-script: bundle --version
+
+script:
+  - gcloud version || true
+  - if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then rm -rf $HOME/google-cloud-sdk; export CLOUDSDK_CORE_DISABLE_PROMPTS=1; curl https://sdk.cloud.google.com | bash; fi
+  # Add gcloud to $PATH
+  - source /home/travis/google-cloud-sdk/path.bash.inc
+  - gcloud version
