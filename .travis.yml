@@ -11,5 +11,5 @@ matrix:
       env: SUDO=required DIST=trusty
 
 install:
-  - sudo apt-get install jq
+  - sudo apt-get install python-libpcap python-dumbnet libwireshark-data
 script: true
