@@ -1,15 +1,12 @@
-#trigger
-language: java
+language: ruby
 
-matrix:
-  include:
-    - sudo: required
-      dist: precise
-      env: SUDO=required DIST=precise
-    - sudo: required
-      dist: trusty
-      env: SUDO=required DIST=trusty
+sudo: false
+dist: trusty
 
-install:
-  - sudo apt-get install python-libpcap python-dumbnet libwireshark-data
-script: true
+rvm:
+  - 2.3.3
+  - 2.3.4
+  - 2.4.1
+  
+install: true
+script: bundle --version
