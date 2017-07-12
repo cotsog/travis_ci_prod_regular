@@ -1,29 +1,48 @@
-language: node_js
+language: android
 
-matrix:
-  include:
-    - sudo: false
-      dist: precise
-      env: SUDO=false DIST=precise
-    - sudo: false
-      dist: trusty
-      env: SUDO=false DIST=trusty
-    - sudo: required
-      dist: precise
-      env: SUDO=required DIST=precise
-    - sudo: required
-      dist: trusty
-      env: SUDO=required DIST=trusty
+sudo: required
+dist: trusty
 
-cache:
-  directories:
-    - "$HOME/google-cloud-sdk/"
+jdk: oraclejdk8
 
-install: true
+env:
+  global:
+    - ANDROID_API_LEVEL=24
+    - EMULATOR_API_LEVEL=21
+    - ANDROID_BUILD_TOOLS_VERSION=25.0.2
+    - ANDROID_ABI=armeabi-v7a
+    - ANDROID_TAG=google_apis
+    - ADB_INSTALL_TIMEOUT=20 # minutes (2 minutes by default)
+    - QEMU_AUDIO_DRV=none
 
-script:
-  - gcloud version || true
-  - if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then rm -rf $HOME/google-cloud-sdk; export CLOUDSDK_CORE_DISABLE_PROMPTS=1; curl https://sdk.cloud.google.com | bash; fi
-  # Add gcloud to $PATH
-  - source /home/travis/google-cloud-sdk/path.bash.inc
-  - gcloud version
+android:
+ components:
+    # latest version of the tools
+    - tools
+    - platform-tools
+
+    # build tools version
+    - build-tools-$ANDROID_BUILD_TOOLS_VERSION
+
+    # The SDK Version
+    - android-$ANDROID_API_LEVEL
+    - android-$EMULATOR_API_LEVEL
+
+    # For Google APIs
+#    - addon-google_apis-google-$ANDROID_API_LEVEL
+#    - addon-google_apis-google-$EMULATOR_API_LEVEL
+
+    # Additional components
+#    - extra-google-m2repository
+    - extra-android-m2repository
+
+    # Emulator
+    - sys-img-armeabi-v7a-google_apis-$EMULATOR_API_LEVEL
+
+
+# Emulator Management: Create, Start and Wait
+before_script:
+  - echo no | android create avd --force -n test -t "android-"$EMULATOR_API_LEVEL --abi $ANDROID_ABI --tag $ANDROID_TAG
+  - emulator -avd test -no-window &
+  - android-wait-for-emulator
+  - adb shell input keyevent 82 &
