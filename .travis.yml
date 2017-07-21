@@ -1,17 +1,23 @@
 language: ruby
 
-sudo: required
-
 matrix:
-  include:
-    - dist: precise
-      env: dist=PRECISE
-    - dist: trusty
-      env: dist=TRUSTY
+  include:
+    - sudo: false
+      dist: precise
+      env: SUDO=false DIST=precise
+    - sudo: false
+      dist: trusty
+      env: SUDO=false DIST=trusty
+    - sudo: required
+      dist: precise
+      env: SUDO=required DIST=precise
+    - sudo: required
+      dist: trusty
+      env: SUDO=required DIST=trusty
+
+addons:
+  rethinkdb: 2.3.5
     
 install: true
 
-script:
-  - sudo add-apt-repository -y ppa:webupd8team/java
-  - sudo apt-get update
-  - sudo apt-get install libgmp-dev libreadline-dev gcc-multilib g++-multilib texinfo libgmp-dev:i386
+script: true
