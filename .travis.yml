@@ -28,7 +28,7 @@ install:
   - echo y | sdkmanager tools
   - echo y | sdkmanager platform-tools
   - echo y | sdkmanager "platforms;android-25"
-  - sdkmanager --list
+  - sdkmanager --list --verbose
   - echo y | sdkmanager emulator
   - echo y | sdkmanager "$EMULATOR"
   # Create and start emulator
