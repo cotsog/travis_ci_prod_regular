@@ -12,5 +12,6 @@ matrix:
 install: true
 
 script:
+  - sudo add-apt-repository -y ppa:webupd8team/java
   - sudo apt-get update
   - sudo apt-get install libgmp-dev libreadline-dev gcc-multilib g++-multilib texinfo libgmp-dev:i386
