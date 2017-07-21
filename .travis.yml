@@ -31,8 +31,6 @@ before_install:
   - mkdir android
   - unzip android-sdk.tgz -d android/sdk
   - cd $TRAVIS_BUILD_DIR
-  - chmod +x install-cmake.sh
-  - ./install-cmake.sh
   - gem install fastlane
 
 install:
