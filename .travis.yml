@@ -12,5 +12,5 @@ matrix:
 install: true
 
 script:
-  - sudo apt-get update -qq
-  - sudo apt-get install -qq libgmp-dev libreadline-dev gcc-multilib g++-multilib texinfo libgmp-dev:i386
+  - sudo apt-get update
+  - sudo apt-get install libgmp-dev libreadline-dev gcc-multilib g++-multilib texinfo libgmp-dev:i386
