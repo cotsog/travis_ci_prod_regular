@@ -1,23 +1,49 @@
-language: ruby
+language: android
+sudo: required 
+dist: trusty
+jdk: oraclejdk8
+group: edge
 
-matrix:
-  include:
-    - sudo: false
-      dist: precise
-      env: SUDO=false DIST=precise
-    - sudo: false
-      dist: trusty
-      env: SUDO=false DIST=trusty
-    - sudo: required
-      dist: precise
-      env: SUDO=required DIST=precise
-    - sudo: required
-      dist: trusty
-      env: SUDO=required DIST=trusty
+env:
+  global:
+    - API=25
+    - TAG=default
+    - ABI=armeabi-v7a
+    - ANDROID_HOME=${HOME}/android/sdk
+    - ANDROID_NDK_HOME=${ANDROID_HOME}/ndk-bundle
+    - PATH=${ANDROID_HOME}/emulator:${ANDROID_HOME}/tools:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools:${PATH}
+    - ADB_INSTALL_TIMEOUT=15 #minutes. 2 by default
 
-addons:
-  rethinkdb: '2.3.5'
-    
-install: true
+before_cache:
+    - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
+
+cache:
+  directories:
+    - $HOME/.gradle/daemon      #Cache daemon logs
+    - $HOME/.gradle/native      #Cache library downloaded from the gradle dependency
+    - $HOME/.gradle/wrapper     #Cache the gradlec
+    - $HOME/.android/build-cache/  #https://developer.android.com/studio/build/build-cache.html
+
+before_install:
+  - export EMULATOR="system-images;android-${API};${ABI}" # Used to install/create emulator
+  - cd $HOME
+  - wget https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip -O $HOME/android-sdk.tgz
+  - mkdir android
+  - unzip android-sdk.tgz -d android/sdk
+  - cd $TRAVIS_BUILD_DIR
+  - chmod +x install-cmake.sh
+  - ./install-cmake.sh
+  - gem install fastlane
+
+install:
+  - echo y | sdkmanager tools
+  - echo y | sdkmanager platform-tools
+  - echo y | sdkmanager "platforms;android-25"
+  - echo y | sdkmanager "ndk-bundle"
+  - echo y | sdkmanager emulator
+  - echo y | sdkmanager "$EMULATOR"
+  # Create and start emulator
+  - echo no | avdmanager create avd -n acib -k "$EMULATOR" -f --abi "$ABI" --tag "$TAG"
+  - emulator -avd acib -engine classic -no-window -camera-back none -camera-front none -qemu -m 512 &
 
 script: true
