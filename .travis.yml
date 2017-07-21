@@ -14,16 +14,6 @@ env:
     - PATH=${ANDROID_HOME}/emulator:${ANDROID_HOME}/tools:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools:${PATH}
     - ADB_INSTALL_TIMEOUT=15 #minutes. 2 by default
 
-before_cache:
-    - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
-
-cache:
-  directories:
-    - $HOME/.gradle/daemon      #Cache daemon logs
-    - $HOME/.gradle/native      #Cache library downloaded from the gradle dependency
-    - $HOME/.gradle/wrapper     #Cache the gradlec
-    - $HOME/.android/build-cache/  #https://developer.android.com/studio/build/build-cache.html
-
 before_install:
   - export EMULATOR="system-images;android-${API};${ABI}" # Used to install/create emulator
   - cd $HOME
@@ -38,6 +28,7 @@ install:
   - echo y | sdkmanager tools
   - echo y | sdkmanager platform-tools
   - echo y | sdkmanager "platforms;android-25"
+  - sdkmanager --list
   - echo y | sdkmanager emulator
   - echo y | sdkmanager "$EMULATOR"
   # Create and start emulator
