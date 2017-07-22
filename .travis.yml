@@ -1,38 +1,23 @@
-language: android
-sudo: required 
-dist: trusty
-jdk: oraclejdk8
-group: edge
+language: ruby
 
-env:
-  global:
-    - API=25
-    - TAG=default
-    - ABI=armeabi-v7a
-    - ANDROID_HOME=${HOME}/android/sdk
-    - ANDROID_NDK_HOME=${ANDROID_HOME}/ndk-bundle
-    - PATH=${ANDROID_HOME}/emulator:${ANDROID_HOME}/tools:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools:${PATH}
-    - ADB_INSTALL_TIMEOUT=15 #minutes. 2 by default
-
-before_install:
-  - export EMULATOR="system-images;android-${API};${ABI}" # Used to install/create emulator
-  - cd $HOME
-  - wget https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip -O $HOME/android-sdk.tgz
-  - mkdir android
-  - unzip android-sdk.tgz -d android/sdk
-  - cd $TRAVIS_BUILD_DIR
-  - gem install fastlane
-
-install:
-  - touch ~/.android/repositories.cfg
-  - echo y | sdkmanager tools
-  - echo y | sdkmanager platform-tools
-  - echo y | sdkmanager "platforms;android-25"
-  - sdkmanager --list --verbose
-  - echo y | sdkmanager emulator
-  - echo y | sdkmanager "$EMULATOR"
-  # Create and start emulator
-  - echo no | avdmanager create avd -n acib -k "$EMULATOR" -f --abi "$ABI" --tag "$TAG"
-  - emulator -avd acib -engine classic -no-window -camera-back none -camera-front none -qemu -m 512 &
-
-script: true
+matrix:
+  include:
+    - sudo: false
+      dist: precise
+      env: SUDO=false DIST=precise
+    - sudo: false
+      dist: trusty
+      env: SUDO=false DIST=trusty
+    - sudo: required
+      dist: precise
+      env: SUDO=required DIST=precise
+    - sudo: required
+      dist: trusty
+      env: SUDO=required DIST=trusty
+      
+install: true
+script:
+  - export logicalCpuCount=$([[ $(uname) = 'Darwin' ]] && sysctl -n hw.logicalcpu_max || lscpu -p | egrep -v '^#' | wc -l)
+  - echo $logicalCpuCount
+  - export physicalCpuCount=$([[ $(uname) = 'Darwin' ]] && sysctl -n hw.physicalcpu_max || lscpu -p | egrep -v '^#' | sort -u -t, -k 2,4 | wc -l)
+  - echo $physicalCpuCount
