@@ -1,4 +1,10 @@
-language: ruby
+language: android
+
+android:
+  components:
+    - tools
+    - platform-tools
+    - tools
 
 matrix:
   include:
@@ -17,8 +23,4 @@ matrix:
       
 install: true
 script:
-  - nproc
-  - export logicalCpuCount=$([[ $(uname) = 'Darwin' ]] && sysctl -n hw.logicalcpu_max || lscpu -p | egrep -v '^#' | wc -l)
-  - echo $logicalCpuCount
-  - export physicalCpuCount=$([[ $(uname) = 'Darwin' ]] && sysctl -n hw.physicalcpu_max || lscpu -p | egrep -v '^#' | sort -u -t, -k 2,4 | wc -l)
-  - echo $physicalCpuCount
+  - android list sdk --all --extended
