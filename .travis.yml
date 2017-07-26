@@ -1,10 +1,4 @@
-language: android
-
-android:
-  components:
-    - tools
-    - platform-tools
-    - tools
+language: c
 
 matrix:
   include:
@@ -23,4 +17,4 @@ matrix:
       
 install: true
 script:
-  - android list sdk --all --extended
+  - uname -r
