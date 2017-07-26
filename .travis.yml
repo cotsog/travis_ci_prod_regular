@@ -1,14 +1,17 @@
-language: c
+language: java
+
+jdk: openjdk7
 
 matrix:
   include:
-    - sudo: required
-      dist: precise
-      env: SUDO=required DIST=precise
+    - sudo: false
+      dist: trusty
+      env: SUDO=false DIST=trusty
     - sudo: required
       dist: trusty
       env: SUDO=required DIST=trusty
       
 install: true
 script:
-  - sudo apt-get install oracle-java9-installer
+  - echo $JAVA_HOME
+  - echo $PATH
