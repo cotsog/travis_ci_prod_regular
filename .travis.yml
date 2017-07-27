@@ -1,4 +1,10 @@
-language: ruby
+language: java
+
+jdk:
+  - oraclejdk9
+  - oraclejdk8
+  - oraclejdk7
+  - openjdk6
 
 matrix:
   include:
@@ -15,11 +21,5 @@ matrix:
       dist: trusty
       env: SUDO=required DIST=trusty
 
-services:
-  - mysql
-      
 install: true
-script:
-  - mysql -e 'SELECT * FROM mysql.user;'
-  - mysql -e "GRANT ALL PRIVILEGES ON *.* TO 'travis'@'localhost'"
-  - mysql -e 'SELECT * FROM mysql.user;'
+script: java -version
