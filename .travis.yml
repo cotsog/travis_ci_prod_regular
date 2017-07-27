@@ -8,7 +8,7 @@ matrix:
     - group: deprecated-2017Q2
     - group: stable
 
-install: true
+install: pip3 install pip==8.1.1
 script:
   - which pip && pip --version
   - which pip3 && pip3 --version
