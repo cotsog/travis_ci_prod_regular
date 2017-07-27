@@ -1,11 +1,5 @@
 language: java
 
-jdk:
-  - oraclejdk9
-  - oraclejdk8
-  - oraclejdk7
-  - openjdk6
-
 matrix:
   include:
     - sudo: false
@@ -20,6 +14,11 @@ matrix:
     - sudo: required
       dist: trusty
       env: SUDO=required DIST=trusty
+
+addons:
+  apt:
+    packages:
+      - openjdk-8-jre
 
 install: true
 script: java -version
