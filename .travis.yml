@@ -3,6 +3,11 @@ dist: trusty
 
 language: c
 
+matrix:
+  include:
+    - dist: stable
+    - dist: deprecated-2017Q2
+
 install:
   - sudo which python3
   - sudo python3 -V
