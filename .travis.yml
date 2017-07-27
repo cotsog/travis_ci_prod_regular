@@ -22,4 +22,5 @@ script:
   - lsb_release -a
   - pip3 install pytest meson
   - find /opt/python -name "lsb_release*"
+  - pip check
 
