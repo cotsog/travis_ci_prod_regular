@@ -50,6 +50,22 @@ matrix:
       dist: trusty
       env: SUDO=required DIST=trusty
       jdk: oraclejdk7
+     - sudo: false
+      dist: precise
+      env: SUDO=false DIST=precise
+      jdk: openjdk7
+    - sudo: false
+      dist: trusty
+      env: SUDO=false DIST=trusty
+      jdk: openjdk7
+    - sudo: required
+      dist: precise
+      env: SUDO=required DIST=precise
+      jdk: openjdk7
+    - sudo: required
+      dist: trusty
+      env: SUDO=required DIST=trusty
+      jdk: openjdk7
     - sudo: false
       dist: precise
       env: SUDO=false DIST=precise
