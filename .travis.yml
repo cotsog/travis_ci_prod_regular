@@ -17,6 +17,7 @@ script:
   - sudo ln -svf $(which python3) /usr/bin/python3
   - which python3 && python3 -V
   - sudo which python3 && sudo python3 -V
+  - which lsb_release
   - sudo cat $(which lsb_release)
   - lsb_release -a
   - pip3 install pytest meson
