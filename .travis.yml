@@ -1,86 +1,86 @@
 language: java
 
 matrix:
-  include:
-    - sudo: false
-      dist: precise
-      env: SUDO=false DIST=precise
+  include:
+    - sudo: false
+      dist: precise
+      env: SUDO=false DIST=precise
       jdk: oraclejdk9
-    - sudo: false
-      dist: trusty
-      env: SUDO=false DIST=trusty
+    - sudo: false
+      dist: trusty
+      env: SUDO=false DIST=trusty
       jdk: oraclejdk9
-    - sudo: required
-      dist: precise
-      env: SUDO=required DIST=precise
+    - sudo: required
+      dist: precise
+      env: SUDO=required DIST=precise
       jdk: oraclejdk9
-    - sudo: required
-      dist: trusty
-      env: SUDO=required DIST=trusty
+    - sudo: required
+      dist: trusty
+      env: SUDO=required DIST=trusty
       jdk: oraclejdk9
-    - sudo: false
-      dist: precise
-      env: SUDO=false DIST=precise
+    - sudo: false
+      dist: precise
+      env: SUDO=false DIST=precise
       jdk: oraclejdk8
-    - sudo: false
-      dist: trusty
-      env: SUDO=false DIST=trusty
+    - sudo: false
+      dist: trusty
+      env: SUDO=false DIST=trusty
       jdk: oraclejdk8
-    - sudo: required
-      dist: precise
-      env: SUDO=required DIST=precise
+    - sudo: required
+      dist: precise
+      env: SUDO=required DIST=precise
       jdk: oraclejdk8
-    - sudo: required
-      dist: trusty
-      env: SUDO=required DIST=trusty
+    - sudo: required
+      dist: trusty
+      env: SUDO=required DIST=trusty
       jdk: oraclejdk8
-    - sudo: false
-      dist: precise
-      env: SUDO=false DIST=precise
+    - sudo: false
+      dist: precise
+      env: SUDO=false DIST=precise
       jdk: oraclejdk7
-    - sudo: false
-      dist: trusty
-      env: SUDO=false DIST=trusty
+    - sudo: false
+      dist: trusty
+      env: SUDO=false DIST=trusty
       jdk: oraclejdk7
-    - sudo: required
-      dist: precise
-      env: SUDO=required DIST=precise
+    - sudo: required
+      dist: precise
+      env: SUDO=required DIST=precise
       jdk: oraclejdk7
-    - sudo: required
-      dist: trusty
-      env: SUDO=required DIST=trusty
+    - sudo: required
+      dist: trusty
+      env: SUDO=required DIST=trusty
       jdk: oraclejdk7
-    - sudo: false
-      dist: precise
-      env: SUDO=false DIST=precise
+    - sudo: false
+      dist: precise
+      env: SUDO=false DIST=precise
       jdk: openjdk7
-    - sudo: false
-      dist: trusty
-      env: SUDO=false DIST=trusty
+    - sudo: false
+      dist: trusty
+      env: SUDO=false DIST=trusty
       jdk: openjdk7
-    - sudo: required
-      dist: precise
-      env: SUDO=required DIST=precise
+    - sudo: required
+      dist: precise
+      env: SUDO=required DIST=precise
       jdk: openjdk7
-    - sudo: required
-      dist: trusty
-      env: SUDO=required DIST=trusty
+    - sudo: required
+      dist: trusty
+      env: SUDO=required DIST=trusty
       jdk: openjdk7
-    - sudo: false
-      dist: precise
-      env: SUDO=false DIST=precise
+    - sudo: false
+      dist: precise
+      env: SUDO=false DIST=precise
       jdk: openjdk6
-    - sudo: false
-      dist: trusty
-      env: SUDO=false DIST=trusty
+    - sudo: false
+      dist: trusty
+      env: SUDO=false DIST=trusty
       jdk: openjdk6
-    - sudo: required
-      dist: precise
-      env: SUDO=required DIST=precise
+    - sudo: required
+      dist: precise
+      env: SUDO=required DIST=precise
       jdk: openjdk6
-    - sudo: required
-      dist: trusty
-      env: SUDO=required DIST=trusty
+    - sudo: required
+      dist: trusty
+      env: SUDO=required DIST=trusty
       jdk: openjdk6
 
 install: true
