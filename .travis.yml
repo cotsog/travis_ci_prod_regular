@@ -9,6 +9,8 @@ matrix:
     - dist: deprecated-2017Q2
 
 install:
+  - sudo apt-get install lsb-release
+script:
   - sudo which python3
   - sudo python3 -V
   - sudo ln -svf $(which python3) /usr/bin/python3
@@ -16,4 +18,4 @@ install:
   - sudo python3 -V
   - sudo cat $(which lsb_release)
   - sudo python3 -m pip install pytest meson
-script: true
+
