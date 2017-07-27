@@ -20,4 +20,5 @@ script:
   - sudo cat $(which lsb_release)
   - lsb_release -a
   - pip3 install pytest meson
+  - find /opt/python -name "lsb_release*"
 
