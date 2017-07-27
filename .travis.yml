@@ -67,10 +67,5 @@ matrix:
       env: SUDO=required DIST=trusty
       jdk: openjdk6
 
-addons:
-  apt:
-    packages:
-      - openjdk-8-jre
-
 install: true
 script: java -version
