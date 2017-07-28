@@ -8,8 +8,14 @@ matrix:
     - sudo: false
       dist: trusty
       env: SUDO=false DIST=trusty
+      
+addons:
+  apt:
+    packages:
+      - python-numpy
 
-script: true
-install:
+install: true
+script:
   - ls -l /opt/python/
   - ls -al /usr/bin/python
+  - /usr/bin/python -c "import numpy"
