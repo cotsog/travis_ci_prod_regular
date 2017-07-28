@@ -1,20 +1,12 @@
-language: cpp
+language: node_js
+
+node_js: stable
 
 matrix:
   include:
     - sudo: false
-      dist: precise
-      env: SUDO=false DIST=precise
-    - sudo: false
       dist: trusty
       env: SUDO=false DIST=trusty
-      
-addons:
-  apt:
-    packages:
-      - python-numpy
 
 install: true
-script:
-  - which python
-  - /usr/bin/python -c "import numpy"
+script: npm install concurrently@3.2.0
