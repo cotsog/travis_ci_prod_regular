@@ -1,27 +1,21 @@
-sudo: required
-dist: trusty
-
-language: c
+language: python
 
 matrix:
-  include:
-    - group: deprecated-2017Q2
-    - group: stable
+  include:
+    - sudo: false
+      dist: precise
+      env: SUDO=false DIST=precise
+    - sudo: false
+      dist: trusty
+      env: SUDO=false DIST=trusty
+    - sudo: required
+      dist: precise
+      env: SUDO=required DIST=precise
+    - sudo: required
+      dist: trusty
+      env: SUDO=required DIST=trusty
 
-install: pip3 install pip==8.1.1
-script:
-  - which pip && pip --version
-  - which pip3 && pip3 --version
-  - which python3 && python3 -V
-  - sudo which python3 && sudo python3 -V
-  - sudo ln -svf $(which python3) /usr/bin/python3
-  - which python3 && python3 -V
-  - sudo which python3 && sudo python3 -V
-  - wget https://bootstrap.pypa.io/get-pip.py
-  - python3 ./get-pip.py
-  - which lsb_release
-  - sudo cat $(which lsb_release)
-  - lsb_release -a
-  - pip3 install pytest meson
-  - find /opt/python -name "lsb_release*"
+python: 3.4.1
 
+script: true
+install: true
