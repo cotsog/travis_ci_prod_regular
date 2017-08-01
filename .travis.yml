@@ -1,12 +1,9 @@
-language: node_js
+dist: trusty 
+sudo: required 
 
-node_js: stable
-
-matrix:
-  include:
-    - sudo: false
-      dist: trusty
-      env: SUDO=false DIST=trusty
+before_install: 
+  - sudo apt-get -qq update   
+  - sudo apt-get install libgmp-dev:i386
 
 install: true
-script: npm install concurrently@3.2.0
+script: true
