@@ -1,8 +1,13 @@
 dist: trusty 
 sudo: required 
 
-before_install: 
-  - sudo apt-get -qq update   
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install oracle-java9-installer || true
+  - cd /var/lib/dpkg/info
+  - sudo sed -i 's/=177/=179/' oracle-java9-installer.*
+  - sudo sed -i 's/SHA256SUM_TGZ="a6905f3a4245a071880e1793b8d3d6100ef7b171ea1d6ebfe6312c25c2fca8bb"/SHA256SUM_TGZ="06fe58dfa50c4f6ca21dc1d475f16cd9e58db36b1d98582091d7ff9005dda7a7"/' oracle-java9-installer.*
+  - sudo apt-get install oracle-java9-installer
   - sudo apt-get install libgmp-dev:i386
 
 install: true
