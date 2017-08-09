@@ -1,13 +1,7 @@
-sudo: false
+sudo: required
+dist: trusty
+
+language: node_js
 
 install: true
-script: true
-
-before_deploy: env
-deploy:
-  provider: script
-  script: test 1 = 0
-
-after_deploy:
-  - echo $?
-  - env
+script: tee --version | head -n1
