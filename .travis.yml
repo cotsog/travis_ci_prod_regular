@@ -8,4 +8,6 @@ deploy:
   provider: script
   script: test 0 = 0
 
-after_deploy: env
+after_deploy:
+  - echo $?
+  - env
