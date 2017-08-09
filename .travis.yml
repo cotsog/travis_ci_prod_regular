@@ -6,7 +6,7 @@ script: true
 before_deploy: env
 deploy:
   provider: script
-  script: test 0 = 0
+  script: test 1 = 0
 
 after_deploy:
   - echo $?
