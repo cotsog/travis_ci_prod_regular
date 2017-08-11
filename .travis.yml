@@ -2,6 +2,7 @@ sudo: false
 
 matrix:
   include:
+    - addons: false
     - addons:
         apt:
           packages:
