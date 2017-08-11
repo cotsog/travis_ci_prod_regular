@@ -1,14 +1,11 @@
-
-sudo: required
-language: node_js
-node_js: 6.10.0
-dist: trusty
+sudo: false
 
 matrix:
   include:
-    - group: stable
-    - group: deprecated-2017Q2
-    - group: deprecated-2017Q3
+    - addons:
+        apt:
+          packages:
+            - tree
 
 install: true
 script: true
