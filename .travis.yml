@@ -5,4 +5,6 @@ language: node_js
 node_js: stable
 
 install: true
-script: npm install
+script:
+  - npm install
+  - cd subdir && npm install
