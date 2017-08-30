@@ -7,4 +7,5 @@ node_js: stable
 install: true
 script:
   - npm install
+  - cat /home/travis/.npm/_logs/*.log
   - cd subdir && npm install
