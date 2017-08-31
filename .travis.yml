@@ -5,6 +5,14 @@ language: node_js
 node_js: stable
 
 install: true
-script:
-  - npm install
-  - cd subdir && npm install
+script: true
+
+deploy:
+  provider: anynines
+  edge:
+    branch: dj-add-skip-deploy-option
+  username: johndoe@example.com
+  password: secretpassword
+  organization: myorganization
+  space: staging
+  skip_deploy: true
