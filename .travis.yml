@@ -1,18 +1,19 @@
-sudo: false
-dist: trusty
+language: java
 
-language: node_js
-node_js: stable
-
+matrix:
+  include:
+    - sudo: false
+      dist: precise
+      env: SUDO=false DIST=precise
+    - sudo: false
+      dist: trusty
+      env: SUDO=false DIST=trusty
+    - sudo: required
+      dist: precise
+      env: SUDO=required DIST=precise
+    - sudo: required
+      dist: trusty
+      env: SUDO=required DIST=trusty
+      
 install: true
-script: true
-
-deploy:
-  provider: anynines
-  edge:
-    branch: dj-add-skip-deploy-option
-  username: johndoe@example.com
-  password: secretpassword
-  organization: myorganization
-  space: staging
-  skip_deploy: true
+script: df -h
