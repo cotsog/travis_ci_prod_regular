@@ -1,10 +1,9 @@
-language: php
-php: 5.6
+language: ruby
+rvm: 2.1.2
 
 sudo: required
 dist: precise
       
 install: true
 script:
-  - rvm install 1.9.3 && rvm use 1.9.3
-  - gem install eventmachine -v '1.0.3'
+  - gem install multi_fetch_fragments -v '0.0.17'
