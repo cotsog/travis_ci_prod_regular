@@ -1,19 +1,7 @@
-language: java
+language: node_js
+dist: trusty
 
-matrix:
-  include:
-    - sudo: false
-      dist: precise
-      env: SUDO=false DIST=precise
-    - sudo: false
-      dist: trusty
-      env: SUDO=false DIST=trusty
-    - sudo: required
-      dist: precise
-      env: SUDO=required DIST=precise
-    - sudo: required
-      dist: trusty
-      env: SUDO=required DIST=trusty
+node_js: 6
       
 install: true
-script: df -h
+script: true
