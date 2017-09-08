@@ -1,9 +1,8 @@
-language: ruby
-rvm: 2.1.2
+language: php
+php: 5.6.31
 
 sudo: false
 dist: trusty
       
 install: true
-script:
-  - git --no-pager show -s --format='%an <%ae>' $TRAVIS_COMMIT
+script: true
