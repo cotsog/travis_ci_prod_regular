@@ -6,4 +6,4 @@ dist: trusty
       
 install: true
 script:
-  - env
+  - git --no-pager show -s --format='%an <%ae>' $TRAVIS_COMMIT
