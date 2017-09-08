@@ -6,4 +6,4 @@ dist: trusty
       
 install: true
 script:
-  - mvn -Dskip.docker=true -DskipITs -DskipTests=true test || true
+  - env
