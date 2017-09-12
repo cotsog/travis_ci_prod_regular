@@ -1,4 +1,4 @@
-language: __garnet__
+language: ruby
 
 matrix:
   include:
@@ -9,7 +9,13 @@ matrix:
       dist: trusty
       env: SUDO=required DIST=trusty
 
+env:
+  global:
+    - ES_VERSION=5.1.2
+    - ES_DOWNLOAD_URL=https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-${ES_VERSION}.tar.gz
+
 install: true
 script:
   - df -h
-  - wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.1.2.tar.gz
+  - echo $ES_DOWNLOAD_URL
+  - wget $ES_DOWNLOAD_URL
