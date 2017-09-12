@@ -1,8 +1,15 @@
-language: php
-php: 5.6.31
+language: __garnet__
 
-sudo: false
-dist: trusty
-      
+matrix:
+  include:
+    - sudo: false
+      dist: trusty
+      env: SUDO=false DIST=trusty
+    - sudo: required
+      dist: trusty
+      env: SUDO=required DIST=trusty
+
 install: true
-script: true
+script:
+  - df -h
+  - wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.1.2.tar.gz
