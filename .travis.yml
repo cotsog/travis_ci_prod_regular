@@ -1,5 +1,7 @@
 language: ruby
 
+rvm: 2.1.0
+
 matrix:
   include:
     - sudo: false
@@ -9,13 +11,6 @@ matrix:
       dist: trusty
       env: SUDO=required DIST=trusty
 
-env:
-  global:
-    - ES_VERSION=5.1.2
-    - ES_DOWNLOAD_URL=https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-${ES_VERSION}.tar.gz
-
 install: true
 script:
-  - df -h
-  - echo $ES_DOWNLOAD_URL
-  - wget $ES_DOWNLOAD_URL
+  - ruby -v
