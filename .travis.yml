@@ -11,4 +11,4 @@ addons:
 install: true
 script:
   - systemd-machine-id-setup || true
-  - uuid-dev > /etc/machine-id
+  - uuid-dev > /var/lib/dbus/machine-id
