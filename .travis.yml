@@ -10,7 +10,11 @@ matrix:
     - sudo: required
       dist: trusty
       env: SUDO=required DIST=trusty
+    - sudo: required
+      dist: trusty
+      env: SUDO=required DIST=trusty
+      group: deprecated-Q32017
 
 install: true
 script:
-  - travis_debug
+  - gcloud --version
