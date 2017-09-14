@@ -13,4 +13,4 @@ matrix:
 
 install: true
 script:
-  - ruby -v
+  - travis_debug
