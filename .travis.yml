@@ -1,14 +1,6 @@
-language: node_js
-
-sudo: false
-dist: trusty
-
-addons:
-  apt:
-    packages:
-      - uuid-dev
+language: python
 
 install: true
 script:
-  - mkdir -p /var/lib/dbus/
-  - uuid-dev > /var/lib/dbus/machine-id
+  - env
+  - python -V
