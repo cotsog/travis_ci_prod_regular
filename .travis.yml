@@ -14,4 +14,4 @@ android:
 
 install: true
 script:
-  - (echo yes | $ANDROID_HOME/tools/bin/sdkmanager "extras;android;m2repository")
+  - echo yes | $ANDROID_HOME/tools/bin/sdkmanager "extras;android;m2repository" &> /dev/null
