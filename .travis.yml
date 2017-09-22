@@ -1,15 +1,17 @@
-language: objective-c
+language: android
 
-matrix:
-  include:
-    - osx_image: xcode6.4
-    - osx_image: xcode7.3
-    - osx_image: xcode8
-    - osx_image: xcode8.1
-    - osx_image: xcode8.2
-    - osx_image: xcode8.3
-    - osx_image: xcode8.4
-    - osx_image: xcode9
+dist: precise
+sudo: required
+
+android:
+  components:
+    - tools
+    - build-tools-25.0.3
+    - android-25
+    - platform-tools
+    - tools
+    - sys-img-armeabi-v7a-android-21
 
 install: true
-script: true
+script:
+  - (echo yes | $ANDROID_HOME/tools/bin/sdkmanager "extras;android;m2repository")
