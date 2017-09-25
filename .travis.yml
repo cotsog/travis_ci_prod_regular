@@ -1,17 +1,13 @@
-language: android
-
-dist: precise
-sudo: required
-
-android:
-  components:
-    - tools
-    - build-tools-25.0.3
-    - android-25
-    - platform-tools
-    - tools
-    - sys-img-armeabi-v7a-android-21
+language: elixir
+matrix:
+  include:
+    - otp_release: 18.3
+      elixir: 1.4
+      
+sudo: false
 
 install: true
 script:
-  - echo yes | $ANDROID_HOME/tools/bin/sdkmanager "extras;android;m2repository" &> /dev/null
+  - ls -al /
+  - cd /tmp
+  - ls -al
