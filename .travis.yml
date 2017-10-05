@@ -1,10 +1,20 @@
-language: ruby
+language: php
 
-matrix:
-  include:
-    - sudo: false
-    - sudo: required
-    
+sudo: required
+dist: precise
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
+      - build-essential
+
+env:
+  global:
+    - CXX=g++-4.8
+
 install: true
-script:
-  - df -h
+
+script: g++ -v
