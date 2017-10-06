@@ -1,26 +1,7 @@
-language: php
-
-sudo: required
-dist: precise
-
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - g++-4.8
-      - build-essential
-
-env:
-  global:
-    - CXX=g++-4.8
+language: ruby
 
 install: true
-
 script:
-  - which g++
-  - g++ -v
-  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50
-  - which g++
-  - g++ -v
-  
+  - echo $TRAVIS_PULL_REQUEST
+  - test $TRAVIS_PULL_REQUEST = false && echo "TRAVIS_PULL_REQUEST=false!"
+  - test $TRAVIS_PULL_REQUEST = false || echo "TRAVIS_PULL_REQUEST=true!"
