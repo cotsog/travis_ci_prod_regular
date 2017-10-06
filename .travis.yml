@@ -1,12 +1,23 @@
 
+sudo: false
 dist: trusty
-language: scala
+
+language: node_js
+
 scala: 2.11.8
-jdk: oraclejdk8
 
 install: true
-script: true
 
-after_success:
-  - python -V
-  - which aws > /dev/null || pip install awscli --user
+env:
+  global:
+    - MONGODB_VERSION=3.4.9
+    - MONGODB_ARCHIVE_NAME=mongodb-linux-x86_64-amazon-$MONGODB_VERSION
+before_install:
+  - wget https://fastdl.mongodb.org/linux/$MONGODB_ARCHIVE_NAME.tgz
+  - tar xfz $MONGODB_ARCHIVE_NAME.tgz
+  - export PATH=`pwd`/$MONGODB_ARCHIVE_NAME/bin:$PATH
+  - mkdir -p data/db
+  - mongod --dbpath=data/db &
+  - sleep 3
+script:
+  - mongo --eval 'db.hostInfo()'
