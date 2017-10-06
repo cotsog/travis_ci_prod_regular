@@ -2,4 +2,4 @@ language: php
 
 install: true
 script:
-  - printf "\n" | pecl install imagick
+  - travis_retry printf "\n" | pecl install imagick
