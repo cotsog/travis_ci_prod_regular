@@ -4,8 +4,6 @@ dist: trusty
 
 language: node_js
 
-scala: 2.11.8
-
 install: true
 
 env:
