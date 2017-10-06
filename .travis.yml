@@ -9,4 +9,4 @@ script: true
 
 after_success:
   - python -V
-  - which aws > /dev/null || pip install awscli
+  - which aws > /dev/null || pip install awscli==1.11.148
