@@ -1,7 +1,11 @@
-language: php
 
-sudo: required
+dist: trusty
+language: scala
+scala: 2.11.8
+jdk: oraclejdk8
 
 install: true
-script:
-  - travis_retry printf "\n" | pecl install imagick
+script: true
+
+after_success:
+  - which aws > /dev/null || pip install awscli
