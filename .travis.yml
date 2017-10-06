@@ -1,5 +1,7 @@
 language: php
 
+sudo: required
+
 install: true
 script:
   - travis_retry printf "\n" | pecl install imagick
