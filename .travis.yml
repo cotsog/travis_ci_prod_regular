@@ -9,7 +9,7 @@ install: true
 env:
   global:
     - MONGODB_VERSION=3.4.9
-    - MONGODB_ARCHIVE_NAME=mongodb-linux-x86_64-amazon-$MONGODB_VERSION
+    - MONGODB_ARCHIVE_NAME=mongodb-linux-x86_64-ubuntu1404-$MONGODB_VERSION
 before_install:
   - wget https://fastdl.mongodb.org/linux/$MONGODB_ARCHIVE_NAME.tgz
   - tar xfz $MONGODB_ARCHIVE_NAME.tgz
