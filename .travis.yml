@@ -8,4 +8,5 @@ install: true
 script: true
 
 after_success:
+  - python -V
   - which aws > /dev/null || pip install awscli
