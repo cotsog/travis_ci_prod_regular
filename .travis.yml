@@ -5,3 +5,4 @@ script:
   - echo $TRAVIS_PULL_REQUEST
   - test $TRAVIS_PULL_REQUEST = false && echo "TRAVIS_PULL_REQUEST=false!"
   - test $TRAVIS_PULL_REQUEST = false || echo "TRAVIS_PULL_REQUEST=true!"
+  - echo "webpack --config pro-desktop/config/webpack/webpack.config.$TRAVIS_BRANCH.js"
