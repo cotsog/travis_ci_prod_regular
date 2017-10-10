@@ -1,15 +1,9 @@
-language: php
-php: 7.1
+language: python
+sudo: required
 
-matrix:
-  include:
-    - sudo: false
-    - sudo: required
-      group: deprecated-2017Q3
-    - sudo: required
-      group: stable
+python: 2.7
 
 install: true
 script:
-  - composer config --list
-  - composer config --list --global
+  - sudo apt-get install -y libemail-outlook-message-perl
+  - msgconvert --help
