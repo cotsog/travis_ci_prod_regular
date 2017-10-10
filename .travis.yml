@@ -6,5 +6,5 @@ python: 2.7
 install: true
 script:
   - export PERL_MM_USE_DEFAULT=1
-  - cpan -f -i Email::Outlook::Message
+  - sudo cpan -f -i Email::Outlook::Message
   - msgconvert --help
