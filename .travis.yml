@@ -5,7 +5,7 @@ python: 2.7
 
 install: true
 script:
-  - sudo apt-get install -y libemail-outlook-message-perl
+  - export PERL_MM_USE_DEFAULT=1
   - cpan -f -i Email::Outlook::Message
   - msgconvert --help
   - sudo cpan -f -i Email::Outlook::Message
