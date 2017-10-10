@@ -1,21 +1,15 @@
+language: php
+php: 7.1
 
-sudo: false
-dist: trusty
-
-language: node_js
+matrix:
+  include:
+    - sudo: false
+    - sudo: required
+      group: deprecated-2017Q3
+    - sudo: required
+      group: stable
 
 install: true
-
-env:
-  global:
-    - MONGODB_VERSION=3.4.9
-    - MONGODB_ARCHIVE_NAME=mongodb-linux-x86_64-ubuntu1404-$MONGODB_VERSION
-before_install:
-  - wget https://fastdl.mongodb.org/linux/$MONGODB_ARCHIVE_NAME.tgz
-  - tar xfz $MONGODB_ARCHIVE_NAME.tgz
-  - export PATH=`pwd`/$MONGODB_ARCHIVE_NAME/bin:$PATH
-  - mkdir -p data/db
-  - mongod --dbpath=data/db &
-  - sleep 3
 script:
-  - mongo --eval 'db.hostInfo()'
+  - composer config --list
+  - composer config --list --global
