@@ -1,10 +1,7 @@
-language: python
-sudo: required
-
-python: 2.7
+matrix:
+  include:
+    - language: ruby
+    - language: python
 
 install: true
-script:
-  - export PERL_MM_USE_DEFAULT=1
-  - sudo cpan -f -i Email::Outlook::Message
-  - msgconvert --help
+script: true
