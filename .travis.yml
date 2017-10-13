@@ -1,6 +1,6 @@
 language: ruby
 
-rvm: jruby-9.1.6.0
+rvm: jruby-9.1.9.0
 
 matrix:
   include:
