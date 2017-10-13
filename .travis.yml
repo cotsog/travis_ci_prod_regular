@@ -1,7 +1,5 @@
 language: ruby
 
-rvm: jruby-9.1.9.0
-
 matrix:
   include:
     - sudo: false
@@ -12,4 +10,4 @@ matrix:
       env: SUDO=required DIST=trusty
 
 install: true
-script: true
+script: rvm use jruby-9.1.9.0 --install --binary --fuzzy --debug
