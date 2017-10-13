@@ -1,15 +1,15 @@
 language: ruby
 
-env:
-  - TEST_SUITE=ci:travis:container1
-  - TEST_SUITE=ci:travis:container2
-  - TEST_SUITE=ci:travis:container3
-  - TEST_SUITE=ci:travis:container4
+rvm: jruby-9.1.6.0
 
 matrix:
-  include:
-    - env: TEST_SUITE=ci:travis:container5
-      addons:
-        sauce_connect:
-          username: "Your Sauce Labs username"
-          access_key: "Your Sauce Labs access key"
+  include:
+    - sudo: false
+      dist: trusty
+      env: SUDO=false DIST=trusty
+    - sudo: required
+      dist: trusty
+      env: SUDO=required DIST=trusty
+
+install: true
+script: true
