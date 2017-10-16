@@ -5,11 +5,12 @@ dist: precise
 
 matrix:
   include:
+    - env: CONTAINER=1
     - env: CONTAINER=2
       addons:
         chrome: stable
 
 install: true
 script:
-  - which chrome
-  - which chromium
+  - which chrome || true
+  - which chromium || true
