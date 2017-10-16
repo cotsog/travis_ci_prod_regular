@@ -2,7 +2,7 @@ sudo: required
 
 before_install:
   # add heroku repository to apt
-  - sudo echo "deb https://cli-assets.heroku.com/branches/stable/apt ./" > /etc/apt/sources.list.d/heroku.list
+  - sudo sh -c 'echo "deb https://cli-assets.heroku.com/branches/stable/apt ./" > /etc/apt/sources.list.d/heroku.list'
 
   # install heroku's release key for package verification
   - wget -qO- https://cli-assets.heroku.com/apt/release.key | sudo apt-key add -
