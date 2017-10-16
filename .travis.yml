@@ -3,5 +3,13 @@ language: php
 sudo: required
 dist: precise
 
+matrix:
+  include:
+    - env: CONTAINER=2
+      addons:
+        chrome: stable
+
 install: true
-script: chrome &
+script:
+  - which chrome
+  - which chromium
