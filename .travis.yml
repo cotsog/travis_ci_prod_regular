@@ -1,9 +1,7 @@
-language: ruby
-dist: trusty
+notifications:
+  email:
+    - jodoindo@hotmail.com
 
 install: true
 script:
-  - which chrome
-  - which chromium
-  - which chromium-browser
-  - which chrome-browser
+  - test 0 = 0
