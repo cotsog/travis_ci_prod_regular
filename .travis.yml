@@ -1,16 +1,9 @@
-language: php
-
-sudo: required
-dist: precise
-
-matrix:
-  include:
-    - env: CONTAINER=1
-    - env: CONTAINER=2
-      addons:
-        chrome: stable
+language: ruby
+dist: trusty
 
 install: true
 script:
-  - which chrome || true
-  - which chromium || true
+  - which chrome
+  - which chromium
+  - which chromium-browser
+  - which chrome-browser
