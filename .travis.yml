@@ -1,7 +1,8 @@
 notifications:
+  slack: cotsog:sdlfkmsdlkfmsdlkfm
   email:
     - jodoindo@hotmail.com
 
 install: true
 script:
-  - test 0 = 0
+  - test 0 = 1
