@@ -1,6 +1,7 @@
-sudo: required
+language: ruby
 
 install: true
-script:
-  - sudo rm -f /etc/apt/sources.list.d/*riak*
-  - sudo apt-get update
+script: true
+
+notifications:
+  webhooks: https://webhook.site/ce8efc55-f6c9-402f-bfc6-51655abbfe17
