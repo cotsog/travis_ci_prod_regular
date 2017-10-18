@@ -4,8 +4,7 @@ notifications:
     - jodoindo@hotmail.com
 
 env:
-  global:
-    - TEST=foo
+  global: TEST=foo
 
 install: true
 script:
