@@ -3,6 +3,10 @@ notifications:
   email:
     - jodoindo@hotmail.com
 
+env:
+  global:
+    - TEST=foo
+
 install: true
 script:
   - test 0 = 1
