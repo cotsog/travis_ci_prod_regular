@@ -2,6 +2,5 @@ sudo: required
 
 install: true
 script:
-  - sudo ls -al /etc/apt/sources.list.d/
-  - sudo rm -f /etc/apt/sources.list.d/basho.list
+  - sudo rm -f /etc/apt/sources.list.d/*riak*
   - sudo apt-get update
