@@ -1,11 +1,5 @@
-notifications:
-  slack: cotsog:sdlfkmsdlkfmsdlkfm
-  email:
-    - jodoindo@hotmail.com
-
-env:
-  global: TEST=foo
+sudo: required
 
 install: true
 script:
-  - test 0 = 1
+  - sudo apt-get update --ignore-missing
