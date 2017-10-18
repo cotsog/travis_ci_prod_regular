@@ -1,7 +1,11 @@
 language: ruby
 
+env:
+  global:
+    FASTLANE_SKIP_UPDATE_CHECK: true
+    RELEASE_APPLICATION: TestApp
+    RELEASE_NAME: TestName
+
 install: true
 script: true
 
-notifications:
-  webhooks: https://webhook.site/ce8efc55-f6c9-402f-bfc6-51655abbfe17
