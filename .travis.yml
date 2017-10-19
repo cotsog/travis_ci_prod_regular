@@ -1,11 +1,7 @@
-language: ruby
-
-env:
-  global:
-    FASTLANE_SKIP_UPDATE_CHECK: true
-    RELEASE_APPLICATION: TestApp
-    RELEASE_NAME: TestName
-
-install: true
-script: true
+notifications:
+  email:
+    recipients:
+      - veqbzusw@sharklasers.com
+    on_success: always # default: change
+    on_failure: always # default: always
 
