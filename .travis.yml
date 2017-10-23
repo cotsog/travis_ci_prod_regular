@@ -9,17 +9,8 @@ python:
   - 3.5
   - 3.6
 
-matrix:
-  include:
-    - sudo: false
-      dist: trusty
-      env: SUDO=false DIST=trusty
-    - sudo: required
-      dist: precise
-      env: SUDO=required DIST=precise
-    - sudo: required
-      dist: trusty
-      env: SUDO=required DIST=trusty
+sudo: false
+dist: trusty
 
 install: true
 script: true
