@@ -1,7 +1,18 @@
-notifications:
-  email:
-    recipients:
-      - veqbzusw@sharklasers.com
-    on_success: always # default: change
-    on_failure: always # default: always
+language: python
 
+python: 3.6
+
+matrix:
+  include:
+    - sudo: false
+      dist: trusty
+      env: SUDO=false DIST=trusty
+    - sudo: required
+      dist: precise
+      env: SUDO=required DIST=precise
+    - sudo: required
+      dist: trusty
+      env: SUDO=required DIST=trusty
+
+install: true
+script: true
