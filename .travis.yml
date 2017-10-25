@@ -1,10 +1,16 @@
-language: python
-python:
-- 3.6.2
-sudo: false
-dist: trusty
+language: bash
+
+sudo: required
+
+matrix:
+  include:
+    - dist: xenial
+    - dist: trusty
+
+before_install:
+    - sudo apt-get update
+    - sudo apt-get upgrade
+    - sudo apt-get install ruby-dev build-essential debhelper devscripts rpm xalan wget -y
+    
 install: true
 script: true
-env:
-  global:
-    secure: Afr2/jRRGTpZCmVbE2kJo3SVK3j9jYzEbjZlahrSKxlrNHWjoBTaPb9+R9ffSkhzgWmKKw9FWkFMVtX3bLbHbBxdWYNrLZKGvLdH4XlXAbT+TUZ4xFLgUeXgRZWtVJFsE1cZplbMugPCHJ4RxQqO/dAKN3TXlQ3Byky3sCX9UT97doO5bLp7BUQrLBwPmRovQjY/AJBMbVs54J40CoqUQd0dt+ItPALOHz0yN7maOFX3Y6xPhzHYkJ1WPPw1TlCIgASXg24XcxKXcoQgjJ9mqZSdnHm2EkyD8w2J6FCXpz0MS3g7zKsG1Aa7Qv5qRmSPYrnifCmqC7vnxQtb3hWmlOv1rG2h61d/gUXLoFk9bd+8qPaLETa0HW0seFeGoBsDKhEqIgIdkf9P3KkSf+RfjDA2e+6bQgRI3pKNjEx9k0w88GFP+Rq+OjYwN8qkynXDScgouYHEykfKWC3CIIzL4dih6RLfiADdtAVGsEttaYe+ilHOTIk8gmZGuFeMmlJCaDqRW+Hc+NllH7xDjgC8/6Q2hGCMZKGKX8B6gRaB/Cm/8l2y8jDngMOpMDsRmepwsO6ScKdyzlr4cRVHOZypmVrSX7glKZ2OU6lN0FftDdt/MTCZRS118w0/6S5AOalmmA5NL/y1NW1e7gbvh0a5zrF5l1s0Ng5VhQu5PcDs1d4=
