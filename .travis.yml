@@ -1,16 +1,15 @@
 language: bash
 
+dist: trusty
 sudo: required
-
-matrix:
-  include:
-    - dist: xenial
-    - dist: trusty
 
 before_install:
     - sudo apt-get update
     - sudo apt-get upgrade
     - sudo apt-get install ruby-dev build-essential debhelper devscripts rpm xalan wget -y
-    
-install: true
-script: true
+
+script:
+    - gem install fpm
+    - env
+    - type -a fpm
+    - fpm --help
