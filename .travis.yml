@@ -5,6 +5,9 @@ node_js: 6
 sudo: required
 dist: trusty
 
+before_install:
+  - npm install npm@latest -g
+  - npm --version
 install: true
 
 script: npm --version
