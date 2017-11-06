@@ -1,15 +1,18 @@
-language: bash
+language: ruby
 
-dist: trusty
-sudo: required
+matrix:
+  include:
+    - sudo: false
+      dist: trusty
+      env: SUDO=false DIST=trusty
+    - sudo: required
+      dist: precise
+      env: SUDO=required DIST=precise
+    - sudo: required
+      dist: trusty
+      env: SUDO=required DIST=trusty
 
-before_install:
-    - sudo apt-get update
-    - sudo apt-get upgrade
-    - sudo apt-get install ruby-dev build-essential debhelper devscripts rpm xalan wget -y
+install: true
 
 script:
-    - gem install fpm
-    - env
-    - type -a fpm
-    - fpm --help
+    - gem install rake -v '11.2.2'
