@@ -1,18 +1,10 @@
-language: ruby
+language: node_js
 
-matrix:
-  include:
-    - sudo: false
-      dist: trusty
-      env: SUDO=false DIST=trusty
-    - sudo: required
-      dist: precise
-      env: SUDO=required DIST=precise
-    - sudo: required
-      dist: trusty
-      env: SUDO=required DIST=trusty
+node_js: 6
+
+sudo: required
+dist: trusty
 
 install: true
 
-script:
-    - gem install rake -v '11.2.2'
+script: npm --version
