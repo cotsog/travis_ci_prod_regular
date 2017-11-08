@@ -17,5 +17,5 @@ python:
 install: true
 
 script:
-  - which pytest >/dev/null 2>&1 || pip install pytest
+  - which pytest >/dev/null 2>&1 || pip install pytest --force-reinstall
   - pytest --version
