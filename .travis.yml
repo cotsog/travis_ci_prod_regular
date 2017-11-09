@@ -1,21 +1,8 @@
-language: python
+language: android
 
-sudo: required
 dist: trusty
-
-python:
-  - "2.6"
-  - "2.7"
-  - "3.3"
-  - "3.4"
-  - "3.5"
-  - "3.6"
-  - "3.6-dev"
-  - "3.7-dev"
-  - "nightly"
+sudo: required
 
 install: true
-
 script:
-  - which pytest >/dev/null 2>&1 || pip install pytest --upgrade
-  - pytest --version
+  - gradle --version
