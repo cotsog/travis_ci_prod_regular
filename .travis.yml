@@ -5,4 +5,4 @@ sudo: required
 
 install: true
 script:
-  - grep -l -i -r basho /etc/apt/sources.list.d
+  - grep -l -i -r hhvm /etc/apt/sources.list.d
