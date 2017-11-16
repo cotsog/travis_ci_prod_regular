@@ -5,4 +5,4 @@ sudo: required
 
 install: true
 script:
-  - sudo apt-get update -y -q
+  - sudo cat /etc/apt/sources.list.d
