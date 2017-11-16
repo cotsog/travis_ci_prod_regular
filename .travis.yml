@@ -1,15 +1,16 @@
 language: php
 
+php: hhvm
+
 matrix:
   include:
     - sudo: required
       dist: trusty
       env: SUDO=false DIST=trusty
-      
-addons:
-  apt:
-    packages:
-      - hhvm
+    - sudo: false
+      dist: trusty
+      env: SUDO=false DIST=trusty
+
       
 install: true
 script: true
