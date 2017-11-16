@@ -5,4 +5,4 @@ sudo: required
 
 install: true
 script:
-  - cat /etc/apt/sources.list.d/hhvm-repository.list || sudo cat /etc/apt/sources.list.d/hhvm-repository.list
+  - sudo apt-get update -y
