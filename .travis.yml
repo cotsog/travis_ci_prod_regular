@@ -9,7 +9,7 @@ matrix:
 addons:
   apt:
     packages:
-      - time
+      - hhvm
       
 install: true
 script: true
