@@ -2,10 +2,14 @@ language: node_js
 
 matrix:
   include:
-    - sudo: required
+    - sudo: false
       dist: trusty
-      env: SUDO=required DIST=trusty
+      env: SUDO=false DIST=trusty
+      
+addons:
+  apt:
+    packages:
+      - time
       
 install: true
-script:
-  - sudo apt-get update -y
+script: true
