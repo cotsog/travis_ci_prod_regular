@@ -1,8 +1,14 @@
 language: node_js
 
-dist: trusty
-sudo: required
-
+matrix:
+  include:
+    - sudo: false
+      dist: trusty
+      env: SUDO=false DIST=trusty
+    - sudo: required
+      dist: trusty
+      env: SUDO=required DIST=trusty
+      
 install: true
 script:
   - sudo rm -f /etc/apt/sources.list.d/hhvm-repository.list
