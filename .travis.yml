@@ -4,7 +4,9 @@ dist: trusty
 language: node_js
 
 before_script:
-  - sudo apt-get remove neo4j
+  - sudo apt-get remove neo4j || true
+  - sudo apt-get remove neo4j-enterprise || true
+  - sudo service neo4j stop
   - wget -O - https://debian.neo4j.org/neotechnology.gpg.key | sudo apt-key add -
   - echo 'deb https://debian.neo4j.org/repo stable/' | sudo tee /etc/apt/sources.list.d/neo4j.list
   - sudo apt-get update
@@ -13,4 +15,6 @@ before_script:
 
 install: true
 script:
+  - curl http://localhost:7474/db/data/
   - service neo4j status
+  - service neo4j start
