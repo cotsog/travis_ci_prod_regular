@@ -6,11 +6,11 @@ language: node_js
 before_script:
   - sudo apt-get remove neo4j || true
   - sudo apt-get remove neo4j-enterprise || true
-  - sudo service neo4j stop
+  - sudo service neo4j stop || true
   - wget -O - https://debian.neo4j.org/neotechnology.gpg.key | sudo apt-key add -
   - echo 'deb https://debian.neo4j.org/repo stable/' | sudo tee /etc/apt/sources.list.d/neo4j.list
   - sudo apt-get update
-  - sudo apt-get install neo4j-enterprise=3.2.3
+  - sudo apt-get install neo4j-enterprise
   - sleep 10
 
 install: true
@@ -18,3 +18,4 @@ script:
   - curl http://localhost:7474/db/data/
   - service neo4j status
   - service neo4j start
+  - curl http://localhost:7474/db/data/
