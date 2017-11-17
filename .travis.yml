@@ -6,7 +6,7 @@ language: node_js
 before_install:
   - cd /usr/local/
   - find . | grep neo4j || sudo find . | grep neo4j
-  - sudo rm -rf neo4j
+  - sudo rm -rf neo4j-3.2.1
   - find . | grep neo4j || sudo find . | grep neo4j
 
 before_script:
