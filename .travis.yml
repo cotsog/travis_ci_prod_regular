@@ -7,10 +7,14 @@ matrix:
     - sudo: required
       dist: trusty
       env: SUDO=false DIST=trusty
-    - sudo: false
+    - sudo: required
       dist: trusty
+      group: deprecated-2017Q2
       env: SUDO=false DIST=trusty
-
+    - sudo: required
+      dist: trusty
+      group: deprecated-2017Q3
+      env: SUDO=false DIST=trusty
       
 install: true
-script: true
+script: cat /etc/apt/sources.list || sudo cat /etc/apt/sources.list
