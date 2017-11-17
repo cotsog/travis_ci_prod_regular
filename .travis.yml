@@ -3,6 +3,10 @@ dist: trusty
 
 language: node_js
 
+before_install:
+  - cd /usr/local/
+  - find . | grep neo4j || sudo find . | grep neo4j
+
 before_script:
   - sudo apt-get remove neo4j || true
   - sudo apt-get remove neo4j-enterprise || true
@@ -16,6 +20,8 @@ before_script:
 
 install: true
 script:
+  - cd /usr/local/
+  - find . | grep neo4j || sudo find . | grep neo4j
   - curl http://localhost:7474/db/data/
   - service neo4j status
   - service neo4j start
