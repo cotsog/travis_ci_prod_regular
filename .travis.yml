@@ -9,7 +9,6 @@ before_install:
   - sudo rm -rf neo4j
   - sudo rm -rf neo4j-3.2.1
   - sudo rm /etc/init.d/neo4j
-  - find . | grep neo4j || sudo find . | grep neo4j
 
 before_script:
   - sudo apt-get remove neo4j || true
