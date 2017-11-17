@@ -6,6 +6,8 @@ language: node_js
 before_install:
   - cd /usr/local/
   - find . | grep neo4j || sudo find . | grep neo4j
+  - sudo rm -rf neo4j
+  - find . | grep neo4j || sudo find . | grep neo4j
 
 before_script:
   - sudo apt-get remove neo4j || true
