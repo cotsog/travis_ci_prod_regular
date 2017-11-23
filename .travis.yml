@@ -3,7 +3,7 @@ script: true
 
 deploy:
   provider: script
-  script: echo "Foo"
+  script: $SCRIPT_PATH
   on:
     - master
     - dev
