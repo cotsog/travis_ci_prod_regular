@@ -4,7 +4,3 @@ script: true
 deploy:
   provider: script
   script: $SCRIPT_PATH
-  on:
-    - master
-    - dev
-    - test
