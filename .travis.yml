@@ -1,6 +1,15 @@
+language: shell
+
+dist: trusty
+sudo: false
+
 install: true
 script: true
 
-deploy:
-  provider: script
-  script: $SCRIPT_PATH
+addons:
+  apt:
+    sources:
+    - debian-sid
+    packages:
+    - shellcheck
+    - zsh
