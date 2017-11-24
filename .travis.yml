@@ -1,7 +1,7 @@
 language: shell
 
 dist: trusty
-sudo: false
+sudo: required
 
 install: true
 script: true
