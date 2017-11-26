@@ -1,15 +1,15 @@
-language: shell
+language: ruby
 
 dist: trusty
-sudo: required
+sudo: false
 
 install: true
 script: true
 
-addons:
-  apt:
-    sources:
-    - debian-sid
-    packages:
-    - shellcheck
-    - zsh
+
+
+
+
+
+
+
