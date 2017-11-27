@@ -6,10 +6,9 @@ sudo: false
 install: true
 script: true
 
-
-
-
-
-
-
-
+notifications:
+  email:
+    recipients:
+      secure: "amSkihydzjhHwslP5ZIka7D0YBhyMOW6B+P5TzUH+W6HSqRkTRKNFK+gr3+FkoBWMAQ9FuoyATdLzCiq/hRsamH2I6t4x9agUOXvo5iIMvZhqw4gAs6izbHfawcF7NCHcZyLjqbjSU/zop0YDdRN4cglWLN/5IU0Vt6edMhMit3rRz5xo/xR/8zGadAvOfbTHpiufW8PORoQgp08ysmxTBgAkih4N0eQQysUjshHuIAok7/o/srgS/sSzJU0OxmD7qNJOJKNR2H3oladXqajSV3AQC1vUWp/5/nwA6zBrT4Wu2NIEMfy/x6WwzP0zy91yqzTPogdVhL4eCHv/MgqkqT4J867xQd9v+BjZZvAH4SxNQ+M3fOj2mTEd+Kz3QokNnX2dkRaRwtjAsRTU0TGRLilZLJ6FIOydR1c2rVyn+6Be8nVdOoIjjnHm8RRGY+e15c6U/T12OInpCBB6Y1ph0tXH9+CNX1xQgqNYv/ywpNjcTx3BWDcnbX1Ua6NsdfA1YcpU7F/YAspqh7/Yn7WYab/sDWsLpudV5PDG48Ft2D1cWuW5ybJ4+l4OnvsNwyUAeKCAi1v6KABoA0qbEKxYT+d0q452NNlUjwmUck+OspO0pi2xRjbwWGLHBuitHCwCAelrz3awS33+Q8/HoJTCuVDtDiUW7+aEzBeUub1IjA="
+    on_success: always
+    on_failure: always
