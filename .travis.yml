@@ -1,19 +1,13 @@
-language: shell
+language: erlang
+otp_release: 20
 
-dist: trusty
+install: true
 
-matrix:
-  include:
-    - sudo: false
-    - sudo: required
-
-addons:
-    apt:
-      sources:
-        - debian-sid
-      packages:
-        - debian-keyring
-        - debian-archive-keyring
-        - shellcheck
-        - zsh
-
+script:
+  - kiex list
+  - kiex list known
+  - kiex install 1.1.1
+  - kiex selfupdate
+  - kiex list
+  - kiex list known
+  - kiex install 1.1.1
