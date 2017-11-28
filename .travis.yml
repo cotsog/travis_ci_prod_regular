@@ -1,13 +1,14 @@
 language: erlang
-otp_release: 20
+otp_release:
+    - 20.0
 
-install: true
-
-script:
+install:
   - kiex list
   - kiex list known
   - kiex install 1.1.1
   - kiex selfupdate
   - kiex list
   - kiex list known
-  - kiex install 1.1.1
+  - kiex install 1.1.1  
+
+script: true
