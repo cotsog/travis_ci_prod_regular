@@ -2,7 +2,7 @@ language: erlang
 otp_release:
     - 20.0
 
-install:
+script:
   - kiex list
   - kiex list known
   - kiex install 1.1.1
@@ -11,4 +11,4 @@ install:
   - kiex list known
   - kiex install 1.1.1  
 
-script: true
+install: true
