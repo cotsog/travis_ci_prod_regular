@@ -1,14 +1,11 @@
-language: erlang
-otp_release:
-    - 20.0
+language: php
 
-script:
-  - kiex list
-  - kiex list known
-  - kiex install 1.1.1
-  - kiex selfupdate
-  - kiex list
-  - kiex list known
-  - kiex install 1.1.1  
+sudo: required
+dist: trusty
+
+addons:
+  apt:
+    packages: google-chrome-stable
 
 install: true
+script: stat /opt/google/chrome/chrome-sandbox
