@@ -3,8 +3,5 @@ language: php
 sudo: required
 dist: trusty
 
-addons:
-  chrome: stable
-
 install: true
 script: stat /opt/google/chrome/chrome-sandbox
