@@ -4,8 +4,7 @@ sudo: required
 dist: trusty
 
 addons:
-  apt:
-    packages: google-chrome-stable
+  chrome: stable
 
 install: true
 script: stat /opt/google/chrome/chrome-sandbox
