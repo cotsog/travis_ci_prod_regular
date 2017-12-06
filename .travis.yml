@@ -1,7 +1,9 @@
-language: php
-
-sudo: required
-dist: trusty
+language: ruby
 
 install: true
-script: stat /opt/google/chrome/chrome-sandbox
+script: true
+
+deploy:
+  provider: s3
+  edge:
+    branch: dj-pin-aws-sdk-gem
