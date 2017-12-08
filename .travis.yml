@@ -1,15 +1,12 @@
-# Trigger
-language: android
-dist: trusty
+language: generic
 
-android:
-  components:
-    - tools
-    - platform-tools
-    - tools
-    - build-tools-27.0.2
-    - android-27
-    - extra-google-m2repository
+matrix:
+  include:
+    - sudo: false
+    - sudo: required
 
 install: true
-script: true
+script:
+ - wget https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip
+ - unzip sdk-tools-linux-3859397
+ - ./tools/bin/sdkmanager "platforms;android-27"
