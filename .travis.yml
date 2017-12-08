@@ -9,5 +9,5 @@ install: true
 script:
  - wget https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip
  - unzip sdk-tools-linux-3859397
- - ./tools/android update sdk --components=platforms
- - ./tools/android update sdk --components=android-27
+ - ./tools/android update sdk --components=platforms --use-sdk-wrapper
+ - ./tools/android update sdk --components=android-27 --use-sdk-wrapper
