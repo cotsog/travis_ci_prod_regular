@@ -9,4 +9,5 @@ install: true
 script:
  - wget https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip
  - unzip sdk-tools-linux-3859397
+ - yes | ./tools/bin/sdkmanager --licenses
  - ./tools/bin/sdkmanager "platforms;android-27"
