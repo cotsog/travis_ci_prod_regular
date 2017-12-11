@@ -1,4 +1,4 @@
-// Trigger
+# Trigger
 sudo: required
 dist: trusty
 
