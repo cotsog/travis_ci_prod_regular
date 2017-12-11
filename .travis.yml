@@ -1,19 +1,7 @@
-os:
-  - linux
-  - osx
+sudo: required
+dist: trusty
 
-osx_image: xcode7.3
-
-language: cpp
-
-compiler:
-  - gcc
-  - clang
+language: ruby
 
 install: true
 script: true
-
-env:
-  matrix:
-    - BUILD_TYPE=Debug VERBOSE=1
-    - BUILD_TYPE=Release VERBOSE=1 CXX_FLAGS=-std=c++11
