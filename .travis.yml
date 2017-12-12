@@ -19,5 +19,6 @@ matrix:
 
 install: true
 script:
+  - export PATH=$PATH:`yarn global bin`
   - yarn global add bower
   - bower --version
