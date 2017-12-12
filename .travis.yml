@@ -18,4 +18,6 @@ matrix:
       env: SUDO=false
 
 install: true
-script: bower --version
+script:
+  - yarn global add bower
+  - bower --version
