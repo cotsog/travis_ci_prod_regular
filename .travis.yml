@@ -14,13 +14,17 @@ matrix:
     - sudo: required
       group: deprecated-2017Q4
       env: SUDO=required GROUP=deprecated-2017Q4
-      script: yarn global add bower && which bower && echo $PATH
     - sudo: false
       env: SUDO=false
 
 install: true
 script:
-  - echo $PATH
-  - export PATH=$PATH:`yarn global bin`
+  - which yarn
   - yarn global add bower
+  - echo $PATH
+  - which bower
+  - yarn global bin
+  - export PATH=$PATH:`yarn global bin`
+  - echo $PATH
+  - which bower
   - bower --version
