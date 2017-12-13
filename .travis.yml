@@ -18,4 +18,5 @@ matrix:
 install: true
 script:
   - gem install bundler
+  - which bundler || true
   - bundle --version
