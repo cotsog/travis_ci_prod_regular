@@ -2,8 +2,6 @@ language: ruby
 dist: trusty
 sudo: required
 
-rvm: 2.3.4
-
 matrix:
   include:
     - sudo: required
@@ -15,8 +13,13 @@ matrix:
     - sudo: false
       env: SUDO=false
 
+addons:
+  apt:
+    sources:
+      - mysql-5.7-trusty
+    packages:
+      - mysql-server
+      - mysql-client
+
 install: true
-script:
-  - gem install bundler
-  - which bundler || true
-  - bundle --version
+script: mysql -u root -p -e 'show databases;'
