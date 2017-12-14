@@ -1,6 +1,4 @@
-language: ruby
-dist: trusty
-sudo: required
+language: __garnet__
 
 matrix:
   include:
@@ -13,15 +11,5 @@ matrix:
     - sudo: false
       env: SUDO=false
 
-addons:
-  apt:
-    sources:
-      - mysql-5.7-trusty
-    packages:
-      - mysql-server
-      - mysql-client
-
-install:
-  - sudo mysql -e "use mysql; update user set authentication_string=PASSWORD('') where User='root'; update user set plugin='mysql_native_password';FLUSH PRIVILEGES;"
-  - sudo service mysql restart
-script: mysql -u root -e 'show databases;'
+install: true
+script: df -h
