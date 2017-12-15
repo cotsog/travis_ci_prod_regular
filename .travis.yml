@@ -20,7 +20,7 @@ env:
     - NEO4J="3.2.3"
     
 before_install:
-  - grep -l -i -r neo4j /etc/apt/sources.list.d
+  - grep -l -i -r neo4j /etc/apt/sources.list.d || true
 
 install:
   - wget -O - https://debian.neo4j.org/neotechnology.gpg.key | sudo apt-key add -
