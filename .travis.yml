@@ -6,7 +6,7 @@ matrix:
       group: travis_lts
       env: SUDO=required GROUP=travis_lts
     - sudo: required
-      group: deprecated-2017Q4
+      group: deprecated-2017Q2
       env: SUDO=required GROUP=deprecated-2017Q2
 
 dist: trusty
