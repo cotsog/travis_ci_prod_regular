@@ -21,7 +21,7 @@ env:
     
 before_install:
   - pushd /etc/apt/sources.list.d
-  - cat * */*
+  - cat * || true
   - popd
   
 install:
