@@ -11,6 +11,6 @@ dist: trusty
   
 install: true
 script:
-  - pyenv global 3.5 || true
-  - pyenv install 3.5
-  - pyenv global 3.5
+  - pyenv global 3.5.0 || true
+  - pyenv install 3.5.0
+  - pyenv global 3.5.0
