@@ -1,36 +1,16 @@
-language: node_js
+language: cpp
 
 matrix:
   include:
+    - sudo: false
+      env: SUDO=false
     - sudo: required
-      group: travis_lts
-      env: SUDO=required GROUP=travis_lts
-    - sudo: required
-      group: deprecated-2017Q2
-      env: SUDO=required GROUP=deprecated-2017Q2
-
+      env: SUDO=required
+      
 dist: trusty
-
-addons:
-  apt:
-    packages:
-      - oracle-java8-set-default
-env:
-  global:
-    - NEO4J="3.2.3"
-    
-before_install:
-  - pushd /etc/apt/sources.list.d && cat * || true && popd
   
-install:
-  - wget -O - https://debian.neo4j.org/neotechnology.gpg.key | sudo apt-key add -
-  - echo 'deb http://debian.neo4j.org/repo stable/' | sudo tee -a /etc/apt/sources.list.d/neo4j.list
-  - sudo apt-get update
-  - pushd /etc/apt/sources.list.d && cat * || true && popd
-  - sudo apt-get install neo4j-enterprise=$NEO4J
-  - sudo service neo4j start
-
-before_script:
-  - "echo 'waiting for neo4j is up'; while ! curl -H \"Content-Type: application/json\" -X POST -d '{\"password\": \"neo4jneo4j\"}' http://neo4j:neo4j@127.0.0.1:7474/user/neo4j/password; do sleep 10; echo -n '.'; done"
-
-script: true
+install: true
+script:
+  - pyenv global 3.5 || true
+  - pyenv install 3.5
+  - pyenv global 3.5
