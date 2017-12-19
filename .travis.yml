@@ -17,4 +17,5 @@ script:
   - sudo rm /var/lib/mongodb/mongod.lock
   - sudo service mongod restart
   - sleep 30
+  - sudo cat /etc/mongodb.conf
   - mongo --eval "printjson(db.serverStatus())"
