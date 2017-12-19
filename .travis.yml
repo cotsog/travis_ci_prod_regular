@@ -10,7 +10,7 @@ addons:
     sources:
       - mongodb-3.2-trusty
     packages:
-      - mongodb-org
+      - mongodb-org=3.2.18
       
 dist: trusty
   
