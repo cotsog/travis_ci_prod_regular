@@ -1,19 +1,4 @@
-language: ruby
+language: node_js
 
-matrix:
-  include:
-    - sudo: required
-      env: SUDO=required
-      
-addons:
-  apt:
-    sources:
-      - mongodb-3.2-trusty
-    packages:
-      - mongodb-org=3.2.18
-      
+sudo: false
 dist: trusty
-  
-install: true
-script:
-  - mongo --eval "printjson(db.serverStatus())"
