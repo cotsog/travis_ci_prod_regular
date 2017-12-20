@@ -1,10 +1,17 @@
-language: python
-python: 3.5
-
-sudo: false
-dist: trusty
+matrix:
+  include:
+    - sudo: false
+      dist: trusty
+      env: SUDO=false DIST=trusty
+    - sudo: required
+      dist: precise
+      env: SUDO=required DIST=precise
+    - sudo: required
+      dist: trusty
+      env: SUDO=required DIST=trusty
 
 install: true
 
 script:
-  - pyenv install --list
+  - lscpu
+  - cat /proc/meminfo
