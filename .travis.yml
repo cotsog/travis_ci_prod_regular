@@ -13,5 +13,4 @@ matrix:
 install: true
 
 script:
-  - lscpu
-  - cat /proc/meminfo
+  - cat /etc/hosts
