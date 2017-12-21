@@ -13,4 +13,4 @@ matrix:
 install: true
 
 script:
-  - cat /etc/hosts
+  - cat /etc/docker/daemon.json
