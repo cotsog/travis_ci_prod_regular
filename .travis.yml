@@ -12,5 +12,5 @@ install: true
 script:
   - echo $PATH
   - which phantomjs
-  - PATH=$(echo "$PATH" | sed -e 's/:\/usr\/local\/phantomjs\/bin//')
+  - PATH=$(echo "$PATH" | sed -e 's/:\/usr\/local\/phantomjs\/bin:\/usr\/local\/phantomjs//')
   - echo $PATH
