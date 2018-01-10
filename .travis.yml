@@ -1,17 +1,6 @@
-matrix:
-  include:
-    - sudo: false
-      dist: trusty
-      env: SUDO=false DIST=trusty
-    - sudo: required
-      dist: trusty
-      env: SUDO=required DIST=trusty
+language: objective-c
+
+osx_image: xcode8
 
 install: true
-
-script:
-  - echo $PATH
-  - which phantomjs
-  - PATH=$(echo "$PATH" | sed -e 's/:\/usr\/local\/phantomjs\/bin:\/usr\/local\/phantomjs//')
-  - echo $PATH
-  - which phantomjs
+script: true
