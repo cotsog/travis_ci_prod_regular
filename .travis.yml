@@ -10,4 +10,7 @@ matrix:
 install: true
 
 script:
+  - echo $PATH
   - which phantomjs
+  - export PATH=$(echo $PATH | sed -e 's|:/usr/local/phantomjs/bin|$||')
+  - echo $PATH
