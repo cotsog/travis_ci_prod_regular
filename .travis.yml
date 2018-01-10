@@ -14,3 +14,4 @@ script:
   - which phantomjs
   - PATH=$(echo "$PATH" | sed -e 's/:\/usr\/local\/phantomjs\/bin:\/usr\/local\/phantomjs//')
   - echo $PATH
+  - which phantomjs
