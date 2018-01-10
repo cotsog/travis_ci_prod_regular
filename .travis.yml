@@ -1,6 +1,14 @@
-language: objective-c
+matrix:
+  include:
+    - os: linux
+      sudo: required
+    - os: osx
 
-osx_image: xcode8
+services:
+  - docker
+
+before_install:
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then <docker stuff here>; fi
 
 install: true
 script: true
