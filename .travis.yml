@@ -1,14 +1,4 @@
-matrix:
-  include:
-    - os: linux
-      sudo: required
-    - os: osx
-
-services:
-  - docker
-
-before_install:
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then <docker stuff here>; fi
+language: ruby
 
 install: true
-script: true
+script: echo $VAR1 && echo $VAR2
