@@ -1,10 +1,9 @@
-language: shell
-
-addons:
-  apt:
-    packages:
-      - shellcheck
-      - jq
+matrix:
+  include:
+    - language: node_js
+      sudo: false
+    - language: go
+      sudo: false
 
 install: true
 script: true
