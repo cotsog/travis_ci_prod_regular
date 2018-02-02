@@ -4,4 +4,7 @@ sudo: required
 dist: trusty
 
 install: true
-script: cat /etc/gai.conf || sudo cat /etc/gai.conf
+script:
+  - cat /etc/gai.conf || sudo cat /etc/gai.conf
+  - sudo sh -c 'echo "precedence ::ffff:0:0/96 100" >/etc/gai.conf'
+  - cat /etc/gai.conf || sudo cat /etc/gai.conf
