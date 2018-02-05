@@ -1,8 +1,12 @@
 language: ruby
 
-sudo: required
-dist: trusty
+matrix:
+  include:
+    - sudo: required
+      dist: trusty
+    - sudo: false
+      dist: trusty
 
 install: true
 script:
-  - find . -name "*.sh"
+  - uname
