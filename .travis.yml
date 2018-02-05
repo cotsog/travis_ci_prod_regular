@@ -1,4 +1,6 @@
-language: ruby
+language: node_js
+
+node_js: 9
 
 matrix:
   include:
@@ -9,4 +11,4 @@ matrix:
 
 install: true
 script:
-  - uname -a
+  - echo $PATH
