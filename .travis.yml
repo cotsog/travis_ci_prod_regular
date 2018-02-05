@@ -9,4 +9,4 @@ matrix:
 
 install: true
 script:
-  - uname
+  - uname -a
