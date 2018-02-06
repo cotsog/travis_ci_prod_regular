@@ -1,6 +1,4 @@
-language: node_js
-
-node_js: 9
+language: ruby
 
 matrix:
   include:
@@ -11,4 +9,4 @@ matrix:
 
 install: true
 script:
-  - echo $PATH
+  - rvm list
