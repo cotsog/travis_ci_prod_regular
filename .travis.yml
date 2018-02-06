@@ -1,4 +1,4 @@
-language: ruby
+language: java
 
 matrix:
   include:
@@ -9,4 +9,4 @@ matrix:
 
 install: true
 script:
-  - rvm list
+  - echo $TRAVIS_JDK_VERSION
