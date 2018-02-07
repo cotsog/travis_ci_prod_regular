@@ -1,12 +1,13 @@
-language: java
+language: python
 
 matrix:
   include:
     - sudo: required
       dist: trusty
-    - sudo: false
+    - sudo: required
       dist: trusty
+      group: deprecated-2017Q4
 
 install: true
 script:
-  - echo $TRAVIS_JDK_VERSION
+  - python -c 'import os,sys,fcntl; flags = fcntl.fcntl(sys.stdout, fcntl.F_GETFL); print(flags&os.O_NONBLOCK);'
