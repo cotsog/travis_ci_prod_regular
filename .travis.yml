@@ -2,6 +2,8 @@ language: python
 
 matrix:
   include:
+    - sudo: false
+      dist: trusty
     - sudo: required
       dist: trusty
     - sudo: required
