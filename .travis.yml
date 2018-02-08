@@ -12,4 +12,5 @@ matrix:
 
 install: true
 script:
-  - python -c 'import os,sys,fcntl; flags = fcntl.fcntl(sys.stdout, fcntl.F_GETFL); print(flags&os.O_NONBLOCK);'
+  - export CLOUDSDK_CORE_DISABLE_PROMPTS=1
+  - curl https://sdk.cloud.google.com | bash
