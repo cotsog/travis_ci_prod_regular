@@ -1,16 +1,7 @@
-language: python
+language: generic
 
-matrix:
-  include:
-    - sudo: false
-      dist: trusty
-    - sudo: required
-      dist: trusty
-    - sudo: required
-      dist: trusty
-      group: deprecated-2017Q4
+os: osx
+osx_image: xcode9
 
 install: true
-script:
-  - export CLOUDSDK_CORE_DISABLE_PROMPTS=1
-  - curl https://sdk.cloud.google.com | bash
+script: true
