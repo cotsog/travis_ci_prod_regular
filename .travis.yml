@@ -1,7 +1,4 @@
-language: generic
-
-os: osx
-osx_image: xcode9
+language: ruby
 
 install: true
-script: true
+script: sudo apt-get update
