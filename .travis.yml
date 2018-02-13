@@ -4,12 +4,9 @@ node_js: 8.9.4
 
 matrix:
   include:
-    - sudo: false
-      dist: trusty
-      env: SUDO=false DIST=trusty
     - sudo: required
       dist: trusty
       env: SUDO=required DIST=trusty
 
 install: true
-script: if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then rm -rf $HOME/google-cloud-sdk; export CLOUDSDK_CORE_DISABLE_PROMPTS=1; curl https://sdk.cloud.google.com | bash; fi
+script: true
