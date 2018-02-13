@@ -1,4 +1,4 @@
-language: ruby
+language: node_js
 
 matrix:
   include:
@@ -10,4 +10,4 @@ matrix:
       env: SUDO=required DIST=trusty
 
 install: true
-script: exit 1
+script: if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then rm -rf $HOME/google-cloud-sdk; export CLOUDSDK_CORE_DISABLE_PROMPTS=1; curl https://sdk.cloud.google.com | bash; fi
