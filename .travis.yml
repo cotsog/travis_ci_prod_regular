@@ -1,46 +1,13 @@
-sudo: required
-language: python
-services:
-  - docker
+language: ruby
 
 env:
   global:
-    - secure: "xGuDLcBAcl7fL/RIE+hriKm8SwowwHtIP/MZxxu0/BmXkNtkMftHf2RrEhdKXRanQHAmCNCwq5FmQRHkZ42W0I6CI/HzS6M/jCgw93y4qO+ijmrNArY7cz09ODcRib3ugHSPVPEHkdpogGpQ8aw5jz+J3pLY2M0hZlF1udZjhyWEZpdyu4iBQttWsng08RJjdGHiS/fKIAK+rW+Tmm2M589fp935vfibNrgDVOjy1jBiP3kez8v1dHvADBxF4EHtRwNRF61EsqkMx503IlvGwqKlUWEDSys+TDVRB1H9mnbAQMVHMTDejrROMuU2wvZX5hDeW1T+atoB7kDpML+3EFn+IOALIleD2cspmScZFh+rhPpvxgO+jTsMyZ4+KhGmrLHKKrjU4o469M0kov4nOF74L9nQn6XStWQOyi4YfOzc6qwG4v11JPX43pPQscmAL+bgVAC0cSclKychMyFNEcH8nIZzDcH27G3O6nENtLC3LN8AVfGVpU1BxkIVSr85qwEMJiHF1EP2KuXags7uWTPIn31ocAq6YlWBT2zDgpc/KrElPWbO9GpMq2ADYnFFn4f3ilVWTjPAk2PexzSeoREXzV9lIAOfmnZLSy+qfJQ4Kndl7OiqUGnocKGDhxRCsdJ1PTn5s2VaBwo0AQNi/NeSLkDAPLLD+tqhlrnXmMc="
-    - secure: "VrIj0pIa2zPR/ftrCF7jOmmWCHV1xFHXzw+7XsSXZXDlUCU7PYAb2bYBJzxEeAKn28t5xqoH2C/YzUqVsENx1WgDgxV0kYhj7+uYZm66L/7AAQzQNMiHJk3oHo+Uoowbzww1MpKlkqz/TzKB/tPVIfBEj7TctlCihrxGs0vSaR8kblF/v5GsiqiRyOZG+Fn2hHgjux1KnevDeFbJ7TlNPXW3M69BU1ovC2QoJfo5jtLsApJ/fh08u7HSAMyDJJMmebtEOg8kqhXCd6pnNmG6bvhjGN3LHDd3kMP8q6onqDOkX87I+SdT86PaYDtH5hqS4QFHNWqjpPCL2bfwLWBaFAschzaBFBfaFlyYw7kj6oUMh8MNx1QUKB37OAWNDU5Xns9a+l6Rdz/6yxlTNHACFVNHiOFpwJZkpdhIMe6CzV/1cHzuazoYZ41Sawhkgiq/ZLWh+pG19vtPUhvyvdkdk955NyjPvcrAv2oYrHd8cNpKatLwze54/yFACjXjwGGYfFRTOsB2ieXsDQUzWGpPua0EnBV1UN98srNC0uFKvGvZPoPmwUylruV+lveVuz3WDJGDZI7ATg7NXjse9sGaoB1iYCN/8G9o5wLV8OrdTectVqdLmE9gSMxiU/H+mK1rYZdRukT8djj0ZZHsL9QpBfbJhZCkRSHlNkjwL3xiGFo="
-    - secure: "m71crwxZpvIa+HTjLCrDbsc97ottwad8np8+yX49Hh6LpckHCnSpq+V1mzsp/XGR+dHd3hOftyOSjfjxZi+KI7wOoqUnL0G5OVUVdSxEalZYFjK9tt54ySWkKr5N7p5j8qSnta5NBT8Y3hX8CzUfoF3MDFJGkzKdeb0UMoTHPDqQjVeRNRY3k3R4e8XOh6FVyubiyzkwvzw+1oqxUjJ2XnUPP6lrwGtk1eYZTR+URO5toVF5yioP9knEBM2aijsmpQrMpz22Oi11F9Zqy/y0KEvkzsPhzxKf59ym0JBIHWyFooBOSA1cwJ+Xs56cYfUa+IsZSCJK7Z+cz2A7Rp7VSze761wNRLko8wwoXnntUWPxZlnR38TtZJOxIDkOhO6K4rQJz4/55H71nQoNItROIf4/v5XBdRQk10E1IN9NKO27yQJPTic6Vwhe3+oZTu1xDrYSsLhwLsjyiNMLDoEVFMlLqSeAW74vExAQQkqcuPOW+PHrExExmV52GK4ZdMScPS6jKjIgQN5EqC9Hi4bG+T40ejw6fe9IM5XaGqICA1yeqvOjkVjoWYayWXqeMVhiFD+DfsO9FgED2XmHGGEAAmdNdrcmyAxKGYNuz9dy/ZYvDfXeKdoMpljwQUT077lFSCgfQQu1lb63JGo8A6dWVTBS0t9OptjqIEI5FKPtFYw="
-    - SETTINGS=wseph.settings_docker
-    - REQUIREMENTS=requirements_testing.txt
-    - PYTHONIOENCODING=utf8 
+    - FOO1=B"R
+    - FOO2='B"R'
+    - FOO3="B\"R"
 
-
-before_install:
-  - openssl aes-256-cbc -K $encrypted_42c1aee148ae_key 
-                        -iv $encrypted_42c1aee148ae_iv
-                        -in sephira-client-recette.p12.enc 
-                        -out sephira-client-recette.p12 
-                        -d
-
-
-install:
-  - docker run -d --name wsephtp-postgres  -e "POSTGRES_USER=wsephtp" -e "POSTGRES_DB=wsephtp" -e "POSTGRES_PASSWORD=wsephtp" postgres:9.4
-  - docker build --tag wsephtp 
-                 --build-arg ASIP_AUTH_PASSWORD=$ASIPAUTH_KEY
-                 --build-arg ASIP_SIGN_PASSWORD=$ASIPSIGN_KEY
-                 --build-arg ALMERYS_PKCS12_KEY=$PKCS12_KEY
-                 .
-  - docker run --name wsephtp 
-               --link wsephtp-postgres:wsephtp-postgres 
-               --env SETTINGS=$SETTINGS
-               --env REQUIREMENTS=$REQUIREMENTS 
-               --env PYTHONIOENCODING=$PYTHONIOENCODING
-               --interactive
-               --tty 
-               --detach 
-               wsephtp
-
-
+install: true
 script:
-  - docker exec -ti wsephtp bash -lic 'pip install -r $REQUIREMENTS'
-  - docker exec -ti wsephtp bash -lic 'python manage.py collectstatic --noinput --settings=$SETTINGS'
-  - docker exec -ti wsephtp bash -lic 'python manage.py almerys_extract_pkcs12 --settings=$SETTINGS'
-  - docker exec -ti wsephtp bash -lic 'python manage.py test --settings=$SETTINGS'
+  - echo $FOO1
+  - echo $FOO2
+  - echo $FOO3
