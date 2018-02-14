@@ -14,3 +14,5 @@ script:
 - echo $BAR1
 - echo $BAR2
 - echo $BAR3
+- echo $BAZ1
+- echo $BAZ2 
