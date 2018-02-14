@@ -11,3 +11,6 @@ script:
   - echo $FOO1
   - echo $FOO2
   - echo $FOO3
+  - echo $BAR1
+  - echo $BAR2
+  - echo $BAR3
