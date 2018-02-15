@@ -1,18 +1,9 @@
-language: ruby
-env:
-  global:
-  - FOO1=B"R
-  - FOO2='B"R'
-  - FOO3="B\"R"
-  - secure: ihUlvna9dl0L4JQeftlSKSE44H4mLLWoewb4dRIV/vmQK+WFuYw+oJjwuW9ED9wU8hQxtA+Av95eS4IdPonJUHzGomlZVmoQKEaRVS5llJzQY2aSjeTcDSv2eG33GQ8KZfNtDOo1fOEK+s0diW1NZzbLUdbf5AKfYS1T+VKVJnPgoeU15vdoWpqkLwD8n3hsyuX6HRqZ26O2hS0LxWcbmt5q5Jqs5mWdJ/Ncix8DwKGMI/2ZIRU0fD3hkY0duWZF4ZjY1AG64Stvs/pnw/WJtlDZgjfSeTZx5ASGUNvpM56r1DpTR3nYmjUNjZYhCaQYiRrbaqadrORJ4HtK9X1vxpkyxjPBnYQlQUoAFzsea1Ad4mIN4CchzhCOJSnv3AgpWrgknp6wRzRlI7HADEUix/DWtmyd8q185B/pJY7HpPvPtunN+qWYW5yMRkNjx+EONkZSi0S1RLJ6kh8oNLfeguLOEKbqnRtCzh2/dOyAjthTmvfoHcYuUI9iUZBH4WOQk+vu7OyCVfc7D6gNB8zykD+0tIYEwJKT/aW5vkeRvostxiOI0qobanNE+Au9wlXLkiHxFFfuUNz05/FlCWDt0FU3hwJ5NXgEwDdiI4KbD4eXZKlTu1XBjDZF9EpJK01QZAdLYkmwuwHHH/zZIpsgxlGbLfi6s9VMpxqErTiugoE=
-  - secure: uU6TNxebCuPfws2CbkEmVSw2UcvfyAdor+06E9WjY4PFgYL3QRU1eZ5CIH90eoeoQ+215dN3TtcxbDpBO/yYGkj9KClbha7tF65pO50EsIgvY05GpbZtCT+GoO2aNKcfpnl/34M70KPVrWM9gvHzAF9RUd01PkG+UqIB1nu4WUzfnhy4LmABte04HVEtkf0EbrOCJ7V8UZAPQRkRNqR3bZHQsuZ3D6ag8TqBe10GzxATvxqFBdQhcagktIEQuyHx2lpq2vxGmxDXPgizGP9XSLiIyNl6R6mUZREi2q3isHBcVd5zuXzB4UmPJ1TlfhIOvWzuIwLBYDbx39pREYbcHv8gceRc0wuEU8J7KOd8soUKc1DPhvQjpzO2WLhIndtQLUHo0ye0alrPKZfSxHPAessWBsXv2CBCeOZzfPV5wqK1H1DpzlE57eZF3TJ4aZjapqDMn8nWNmAIHRRmz1Qjq803CU7hZQsOrG0drd2sonDlqtj6ifDSaQghAoCPIS1NketPq86GjYALNo4IOGyKbxWLjKUimF53OdwzLnHEjcm7h5vrhn/ZDqZO6CK6uRpwg3kg/K5FqaR4AqkkvsJoJJcg0Qfo+UrR+UiEJHPmSxhxLF8AcMdDSDYCTTCd33v4mksDl+VTISfIC7Ji7WwYOMvpTqAjBJkSOWgUZ9qZjIE=
-install: true
+language: rust
+rust:
+  - nightly
+
+install: false
 script:
-- echo $FOO1
-- echo $FOO2
-- echo $FOO3
-- echo $BAR1
-- echo $BAR2
-- echo $BAR3
-- echo $BAZ1
-- echo $BAZ2 
+  - which rustfmt
+  - export PATH="$PATH:$HOME/.cargo/bin"
+  - which rustfmt
