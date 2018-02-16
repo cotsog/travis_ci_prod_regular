@@ -1,9 +1,23 @@
-language: rust
-rust:
-  - nightly
+matrix:
+    include:
+      - language: android
+        sudo: false
+        env: CORDOVA_PLATFORMS=android
+        android:
+          components: [tools, android-25, build-tools-25.0.2]
+        addons:
+          apt:
+            packages: [libbatik-java, rhino, xsltproc]
+        script: true
+        dist: trusty
+      - language: objective-c
+        osx_image: xcode9.2
+        env:
+          - CORDOVA_PLATFORMS=ios
+          - KEYCHAIN=travis
+          - KEYCHAIN_PASS=travis
+        script: true
+        dist: osx
 
-install: false
-script:
-  - which rustfmt
-  - export PATH="$PATH:$HOME/.cargo/bin"
-  - which rustfmt
+jdk: oraclejdk8
+install: true
