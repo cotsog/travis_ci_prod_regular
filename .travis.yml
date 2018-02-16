@@ -2,22 +2,17 @@ matrix:
     include:
       - language: android
         sudo: false
+        dist: trusty
         env: CORDOVA_PLATFORMS=android
         android:
           components: [tools, android-25, build-tools-25.0.2]
-        addons:
-          apt:
-            packages: [libbatik-java, rhino, xsltproc]
+        install: true
         script: true
-        dist: trusty
+
       - language: objective-c
         osx_image: xcode9.2
-        env:
-          - CORDOVA_PLATFORMS=ios
-          - KEYCHAIN=travis
-          - KEYCHAIN_PASS=travis
+        install: true
         script: true
-        dist: osx
 
-jdk: oraclejdk8
 install: true
+script: true
