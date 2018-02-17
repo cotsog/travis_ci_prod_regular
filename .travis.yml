@@ -1,19 +1,13 @@
+language: objective-c
+osx_image: xcode9
 matrix:
-    include:
-      - language: android
-        sudo: false
-        dist: trusty
-        env: CORDOVA_PLATFORMS=android
-        android:
-          components: [tools, android-25, build-tools-25.0.2]
-        install: true
-        script: true
-
-      - language: objective-c
-        os: osx
-        osx_image: xcode9.2
-        install: true
-        script: true
+  include:
+    - osx_image: xcode9
+      env: PLATFORM="iOS"
+    - osx_image: xcode9
+      env: PLATFORM="tvOS"
+    - osx_image: xcode9
+      env: PLATFORM="macOS"
 
 install: true
 script: true
