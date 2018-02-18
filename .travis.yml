@@ -9,4 +9,4 @@ notifications:
     on_failure: always
 
 install: true
-script: true
+script: false
