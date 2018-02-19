@@ -4,9 +4,12 @@ matrix:
   include:
     - osx_image: xcode9
       env: PLATFORM="iOS"
+      os: osx
     - osx_image: xcode9
       env: PLATFORM="tvOS"
+      os: osx
     - osx_image: xcode9
       env: PLATFORM="macOS"
+      os: osx
 install: true
 script: true
