@@ -1,5 +1,5 @@
 language: node_js
 node_js: 8.9.3
 script:
-  - (hash yarn 2>/dev/null && test "$(yarn --version)" == "0.26.4") || curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 0.26.4
+  - (hash yarn 2>/dev/null && test "$(yarn --version)" == "0.24.6") || curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 0.24.6
   - yarn --version
