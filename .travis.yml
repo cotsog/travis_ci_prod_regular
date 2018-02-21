@@ -1,10 +1,14 @@
-language: node_js
-node_js: 8.9.3
+language: objective-c
+osx_image: xcode9.2
 install: true
-script:
-  - which yarn
-  - echo $PATH
-  - (hash yarn 2>/dev/null && test "$(yarn --version)" == "0.24.6") || curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 0.24.6
-  - echo $PATH
-  - which yarn
-  - yarn --version
+script: true
+xcode_workspace: PersistDB.xcworkspace
+matrix:
+  include:
+    - xcode_scheme: PersistDB (macOS)
+      env: XCODE_ACTION="build-for-testing test-without-building"
+    - xcode_scheme: PersistDB (iOS)
+      env: XCODE_ACTION="build-for-testing test-without-building"
+    - script: true
+notifications:
+  email: false
