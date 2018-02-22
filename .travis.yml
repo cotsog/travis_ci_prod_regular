@@ -1,14 +1,12 @@
-language: objective-c
-osx_image: xcode9.2
+language: ruby
+rvm: 2.3.5
+sudo: required
+dist: trusty
 install: true
-script: true
-xcode_workspace: PersistDB.xcworkspace
+script: jest --version
 matrix:
   include:
-    - xcode_scheme: PersistDB (macOS)
-      env: XCODE_ACTION="build-for-testing test-without-building"
-    - xcode_scheme: PersistDB (iOS)
-      env: XCODE_ACTION="build-for-testing test-without-building"
-    - script: true
+    - group: stable
+    - group: deprecated-2017Q4
 notifications:
   email: false
