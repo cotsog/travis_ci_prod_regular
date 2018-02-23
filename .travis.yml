@@ -7,8 +7,8 @@ env:
 matrix:
   include:
     - env: FOO=GOOD
-    - env: FOO=BAD
-      before_script: yarn --version && export PATH=$PATH
+    - env: FOO=BAD NODE_DEBUG=yarn
+      before_script: yarn --version
 
 install: true
 script:
