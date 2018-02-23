@@ -1,12 +1,14 @@
-language: ruby
-rvm: 2.3.5
-sudo: required
-dist: trusty
-install: true
-script: jest --version
+language: node_js
+node_js: 8.9.3
+env:
+  global:
+    - PATH="$HOME/.yarn/bin:$PATH"
+
 matrix:
   include:
-    - group: stable
-    - group: deprecated-2017Q4
-notifications:
-  email: false
+    - before_script: yarn --version
+
+install: true
+script:
+  - (test "$(yarn --version)" == "0.24.6") || curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 0.24.6
+  - yarn --version
