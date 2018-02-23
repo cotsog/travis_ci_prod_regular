@@ -6,7 +6,9 @@ env:
 
 matrix:
   include:
-    - before_script: yarn --version
+    - env FOO=GOOD
+    - env FOO=BAD
+      before_script: yarn --version
 
 install: true
 script:
