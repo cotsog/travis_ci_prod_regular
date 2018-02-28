@@ -1,38 +1,5 @@
-# Trigger
-sudo: required
-
-notifications:
-  slack:
-    rooms:
-        - secure: "VPoLd9oiGYaCWCMQqK4vu8QCLtodBdPmhRr3hXy3wzBTNELcNUSQXbw6xoHnM8fhY7L6Jj8vToFQlZi8nKBTGFn9HV727PTnHv6kxn1cabTfqojQLRO4D46MFK8U7UbCWSqE1sV9dY/EM/+3Av5PorK3n6bFfNdQlH3xFyyZx6b74sGuZjanIX+v4DIWs2jdeP2XtT7ON7zUEGKWo29Ry63x1tkYgaDVzVUqNRBEJ6wk9q844G5uqKibdVb6w7svypYrVFtqntcVuDq1dZmu28A7G6Y2mIl+LtusEVXYFQWQ/YhXZRoBT1GKcn/Hx5wzv6/RpUvA4Cd7CD0CeN1NRMZmoXLo5N1qSOnkDOiUJnT5XPCqcbnmJGQ5A3WauGPLcGd6idkuG3r/vxYcreu5k39Cd7t/+kCttYqASEDMn3Bi0cmQEmoMTF6zneBYV+Mv9in872GrWvMVtJCCjGjyyXHAt6WmX1KY32ac/91+zCBH5ZAW5DiFVAm3Na1ilGN2haPjuhpAqZdeRM8xoA0C/w1jLtT5fgWGekJPmZIWpkDY66ZSBbwZEJSwsG8HIV5yjFJvHxRNL2/0FPeR+PBIPn0PGbU3t/j7aoV4PZ736XI0EWx2Ox/SH5rcfrXrJs3CRwz5dGF1a+fBHvRkUUxWNn0YzHMIOWiyODmxmb0G48k="
-    on_pull_requests: true
-    on_success: change
-    on_failure: always
-  email:
-    recipients:
-      - asdf@asdf.org
-    on_success: change
-    on_failure: always
-
-language: node_js
-node_js:
-  - "6.10.1"
-
-env:
-  global:
-    - BLUEBIRD_DEBUG=1
-    - PANOPLYAPP_PASS=$(jq -r '.["dbConnection"].password' config/test.json)
-    - PANOPLYAPP_USER=$(jq -r '.["dbConnection"].user' config/test.json)
-    - PANOPLY_DB=$(jq -r '.["dbConnection"].database' config/test.json)
-   - NODE_ENV=test
-
-services:
-  - postgresql
-  - docker
-
+language: php
+php:
+ - hhvm-3.21
 install: true
-
-# These scripts below are actually what determine if a build passes or fails
-# Each one must exit with status code 0 to be considered a success.
-# All of them must succeed for the build to pass.
 script: true
