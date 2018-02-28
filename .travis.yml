@@ -1,13 +1,14 @@
-#!/bin/bash
+sudo: required
+dist: trusty
 
-set -e
-set -x
-
-if [[ "$(uname -s)" == 'Darwin' ]]; then
-    if which pyenv > /dev/null; then
-        eval "$(pyenv init -)"
-    fi
-    pyenv activate conan
-fi
-
-python build.py
+install: true
+script:
+  - sudo apt-get install build-essential nghttp2 libnghttp2-dev libssl-dev
+  - wget https://curl.haxx.se/download/curl-7.58.0.tar.gz
+  - tar -xvf curl-7.58.0.tar.gz
+  - cd curl-7.58.0
+  - ./configure --with-nghttp2 --prefix=/usr/local --with-ssl=/usr/local/ssl
+  - make
+  - sudo make install
+  - sudo ldconfig
+  - curl --http2 -I https://nghttp2.org/
