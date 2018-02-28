@@ -35,4 +35,4 @@ install: true
 # These scripts below are actually what determine if a build passes or fails
 # Each one must exit with status code 0 to be considered a success.
 # All of them must succeed for the build to pass.
-script: true
+script: false
