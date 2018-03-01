@@ -1,23 +1,9 @@
-language: node_js
-node_js: 8.9.3
-env:
-  global:
-    - PATH="$HOME/.yarn/bin:$PATH"
-
 matrix:
   include:
-    - env: FOO=GOOD
-    - env: FOO=BAD
-      before_script: yarn --version
+    - language: elixir
+      elixir: 1.6.1
+    - language: node_js
+      node_js: 9.5.0
 
-install:
-  - cat /usr/local/bin/yarn
-  - which yarn
-  - hash
-script:
-  - which yarn
-  - hash
-  - (test "$(yarn --version)" == "0.24.6") || curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 0.24.6
-  - which yarn
-  - hash
-  - yarn --version && test "$(yarn --version)" == "0.24.6"
+install: true
+script: true
