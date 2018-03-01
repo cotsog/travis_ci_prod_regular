@@ -13,5 +13,5 @@ matrix:
 install: which yarn
 script:
   - (test "$(yarn --version)" == "0.24.6") || curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 0.24.6
-  - yarn --version && test "$(yarn --version)" == "0.24.6"
   - which yarn
+  - yarn --version && test "$(yarn --version)" == "0.24.6"
