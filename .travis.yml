@@ -11,6 +11,7 @@ matrix:
       before_script: yarn --version
 
 install:
+  - cat /usr/local/bin/yarn
   - which yarn
   - hash
 script:
