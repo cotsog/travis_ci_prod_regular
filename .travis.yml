@@ -10,8 +10,10 @@ matrix:
     - env: FOO=BAD
       before_script: yarn --version
 
-install: which yarn
+install:
+  - which yarn && hash yarn
 script:
+  - which yarn && hash yarn
   - (test "$(yarn --version)" == "0.24.6") || curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 0.24.6
-  - which yarn
+  - which yarn && hash yarn
   - yarn --version && test "$(yarn --version)" == "0.24.6"
