@@ -2,8 +2,26 @@ matrix:
   include:
     - language: elixir
       elixir: 1.6.1
+      otp_release: 20.1
+      script:
+        - mix test
+        services:
+          - postgresql
+        before_script:
+          - PGPASSWORD=postgres psql -c 'create database mpnetwork_test;' -U postgres
     - language: node_js
       node_js: 9.5.0
-
-install: true
-script: true
+      env:
+        global:
+          - NODE_ENV=feature/travis
+      script:
+        - cd assets; npm test
+      before_install:
+        - npm i -g mocha; npm i -g babel-register; npm i -g jsdom; npm i -g jsdom-global;
+after_success:
+  - git remote add production https://$GIGALIXIR_EMAIL:$GIGALIXIR_API_KEY@git.gigalixir.com/$GIGALIXIR_APP_NAME.git
+  - git remote add staging https://$GIGALIXIR_EMAIL:$GIGALIXIR_API_KEY@git.gigalixir.com/$GIGALIXIR_APP_NAME-staging.git
+  - git push staging HEAD:master && git push production HEAD:master
+git:
+  depth: 3
+  submodules: false
