@@ -1,4 +1,4 @@
 language: generic
 
 install: true
-script: npm install @angular/common @angular/compiler @angular/core @angular/forms stripe
+script: npm install @angular stripe
