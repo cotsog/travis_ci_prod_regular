@@ -1,14 +1,4 @@
-jobs:
-  include:
-    - stage: test
-      language: elixir
-      install: true
-      script: true
-    - stage: test
-      language: node_js
-      install: true
-      script: true
-    - stage: deploy
-      install: true
-      script: true
-  
+language: generic
+
+install: true
+script: npm install @angular/common @angular/compiler @angular/core @angular/forms stripe
