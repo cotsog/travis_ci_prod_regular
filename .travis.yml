@@ -1,4 +1,4 @@
 language: generic
 
 install: true
-script: npm install angular stripe
+script: npm install stripe
