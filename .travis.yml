@@ -1,9 +1,29 @@
 language: node_js
 
+matrix:
+  include:
+    - sudo: false
+      dist: trusty
+      env: SUDO=false DIST=trusty
+    - sudo: required
+      dist: trusty
+      env: SUDO=required DIST=trusty
+
+addons:
+  apt:
+    packages:
+      - gcc-7
+      - g++-7
+      - ninja-build
+      - clang-5.0
+      - libmpfr-dev
+      - libgmp3-dev
+      - libeigen3-dev
+      - libtbb-dev
+      - libcgal-dev
+    sources: &sources
+      - ubuntu-toolchain-r-test
+      - llvm-toolchain-trusty-5.0
+
 install: true
-script:
-  - hash
-  - yarn --version
-  - hash
-  - hash -d yarn
-  - hash
+script: true
