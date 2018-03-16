@@ -1,4 +1,4 @@
-language: node_js
+language: generic
 
 matrix:
   include:
@@ -6,21 +6,5 @@ matrix:
       dist: trusty
       env: SUDO=required DIST=trusty
 
-addons:
-  apt:
-    packages:
-      - gcc-7
-      - g++-7
-      - ninja-build
-      - clang-5.0
-      - libmpfr-dev
-      - libgmp3-dev
-      - libeigen3-dev
-      - libtbb-dev
-      - libcgal-dev
-    sources: &sources
-      - ubuntu-toolchain-r-test
-      - llvm-toolchain-trusty-5.0
-
 install: true
-script: sudo apt-get purge libboost-atomic1.54-dev libboost-atomic1.54.0 libboost-chrono1.54-dev libboost-chrono1.54.0 libboost-date-time1.54-dev libboost-date-time1.54.0 libboost-dev libboost-program-options-dev libboost-program-options1.54-dev libboost-program-options1.54.0 libboost-serialization1.54-dev libboost-serialization1.54.0 libboost-system-dev libboost-system1.54-dev libboost-system1.54.0 libboost-thread-dev libboost-thread1.54-dev libboost-thread1.54.0 libboost1.54-dev
+script: yarn --version
