@@ -1,21 +1,13 @@
-language: java
-
-jdk:
-  - openjdk8
-
-sudo: true
-dist: trusty
+language: node_js
+node_js: 8.9.3
+env:
+  global:
+    - PATH="$HOME/.yarn/bin:$PATH"
 
 install: true
-script: true
 
-deploy:
-  provider: gcs
-  bucket: "travis-ci-deploy-gcs-test"
-  skip_cleanup: true
-  local-dir: subdir
-  acl: private
-  secret_access_key:
-    secure: "cvM3+E6aj+aEL0wdh+bAAs9YHb1oy50N1QLQZfahLWTGLUXCifruahU8N2QaAMXcmN79og2XLyPAuAA8+Y1xaKeDi4CGOTTfmNHHHhfkJlfKneWuIlITMRxczRiDAdNM/FVD8pmkXO128n1+G8XadQVVBGU79u2nwvNgOtJG1qZYBHYytUTwVKAH7se44HH3KqjIPU7KO6FFvQAfmaPdKconMk4oj8EIMmQi5kCJSRqrE+96PsNBEzd+601iZhoc/ih7yl9SAvNbri6kc5cXou7CnjAfgCpwbLF6IF3l7qnzrIy8nj4v3cQJpWngY4TNHvgwSXkjTgInw0J8H9oqmv9e7TaBLGUEl9dS7TwtnsbxPBBB3dY/5eIaIv0cF9Tl46/XWTWIQeIfF/PUwIYBQnWB2LAEm1CbuQngwi+vxHwF3hjZ+N0vXyHnrYOfW24hqGV/8Vf/TQQ6IXAWN2otuvHRQiKCa6IITD1HALv+M6t8QJw68Vbz6Be4K7wQh3W6xkEZF6wYNUV+6rkoTA0WDu5+6On7u3OWpwowX6fhgjJ1rgAI0CGBgP1E02DlOuPx0YTcjOD2JMkX67sdHutUfq7jY2H44kEi2aA7jwJeIvdhoNOG2R75xcXAia7TmpAi5yM63py05Z2vuayscfaYdIBbUHDAWAW439U9lviwLr4="
-  access_key_id:
-    secure: "IK5m8IBztytP1fq8fAdGOK+vTZZ51L2pv7QJN0wlU5Lz+BrI0kRvN24BELfDv4tD3nefkY5E2pTJPab51O1wmex8qlwXb2vymJ5OZKowdvKMY+HDiuRf6XfG/7t5c2u/utjZ5AYw7ZjiBHpK/e9jVvZIafnLdJQ+SRUeckURCuqulTOuPu/tS+R6H1CujpwFvwOfkuPwGSqVZFB7f8tdi6F7ajCDboiTMQ0Bja6R1Rxdea1Ox1K9RQuHTcqImfUd4N74g7+II91SjFhWc2oCCQX+sZlDZpgo7HFnmYjVlwJ+DygHnKpK4Jq6JZKMORUaKbKN0O61Mf5x6Yj/QpG/mriaYbpyLL3e5UZV5OcrU2iKmLVQxW/BGbrEnoMsd+mnSD4Ymgn54IUeAxkSV5pWoFLrsk9BNc8raOtqSju9mXlSqFu87QAg3cDrokirOnBvF6kjsaGyOQppT4YDyHQ8/Q3FcMyw6qayvCLZk8MU3RlFMhSSBnbr4+yv2xAUVTL8PaFh51CazAhJlhvi0L/Gf5qYwN/fev6VPLAO4smcv153xXQ/sqfba8EKKc4igrbDgvK+nr5HOupfNMAOkOtEi5QvBA2MHjTHdfF0m8QxjMleePcj7gRutNNbePIUfnW7SfL0Li9DKvjCc9ae+XTDvdEVPYOLbbmLZO5E+PvvUF4="
+script:
+  - hash
+  - (test "$(yarn --version)" == "0.24.6") || curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 0.24.6
+  - hash
+  - yarn --version && test "$(yarn --version)" == "0.24.6"
