@@ -1,13 +1,20 @@
-language: node_js
-node_js: 8.9.3
-env:
-  global:
-    - PATH="$HOME/.yarn/bin:$PATH"
+language: ruby
+
+matrix:
+  include:
+    - sudo: false
+      dist: precise
+      env: SUDO=false DIST=precise
+    - sudo: false
+      dist: trusty
+      env: SUDO=false DIST=trusty
+    - sudo: required
+      dist: precise
+      env: SUDO=required DIST=precise
+    - sudo: required
+      dist: trusty
+      env: SUDO=required DIST=trusty
 
 install: true
-
 script:
-  - hash
-  - (test "$(yarn --version)" == "0.24.6") || curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 0.24.6
-  - hash
-  - yarn --version && test "$(yarn --version)" == "0.24.6"
+  - rvm list
