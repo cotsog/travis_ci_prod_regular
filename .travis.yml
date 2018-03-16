@@ -2,9 +2,6 @@ language: node_js
 
 matrix:
   include:
-    - sudo: false
-      dist: trusty
-      env: SUDO=false DIST=trusty
     - sudo: required
       dist: trusty
       env: SUDO=required DIST=trusty
@@ -26,4 +23,4 @@ addons:
       - llvm-toolchain-trusty-5.0
 
 install: true
-script: true
+script: sudo apt-get purge libboost-all-dev
