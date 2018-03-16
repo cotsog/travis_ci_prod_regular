@@ -5,3 +5,4 @@ script:
   - hash
   - yarn --version
   - hash
+  - hash -r /usr/local/bin/yarn
