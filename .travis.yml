@@ -10,6 +10,6 @@ install: true
 script:
   - sudo apt-get install traceroute
   - host -v ppa.launchpad.net
-  - iptables -L -n
+  - sudo iptables -L -n
   - traceroute ppa.launchpad.net
   - telnet ppa.launchpad.net 21
