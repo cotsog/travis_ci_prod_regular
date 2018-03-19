@@ -7,4 +7,4 @@ matrix:
       env: SUDO=required DIST=trusty
 
 install: true
-script: yarn --version
+script: sleep 120
