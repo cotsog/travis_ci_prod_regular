@@ -12,4 +12,4 @@ script:
   - host -v ppa.launchpad.net
   - sudo iptables -L -n
   - traceroute ppa.launchpad.net
-  - ftp ftp://ppa.launchpad.net:21
+  - ftp ppa.launchpad.net
