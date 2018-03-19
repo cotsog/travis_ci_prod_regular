@@ -7,4 +7,9 @@ matrix:
       env: SUDO=required DIST=trusty
 
 install: true
-script: sleep 120
+script:
+  - sudo apt-get install traceroute
+  - host -v ppa.launchpad.net
+  - iptables -L -n
+  - traceroute ppa.launchpad.net
+  - telnet ppa.launchpad.net 21
