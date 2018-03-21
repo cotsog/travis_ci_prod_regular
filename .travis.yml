@@ -15,5 +15,6 @@ matrix:
       dist: trusty
       env: SUDO=required DIST=trusty
 
+install: true
 script:
 - wget ftp://ftp.wwpdb.org/pub/pdb/data/structures/divided/pdb/ni/pdb2nip.ent.gz
