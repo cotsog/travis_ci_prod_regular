@@ -1,15 +1,19 @@
-language: generic
+language: python
+
+python:
+- "3.5"
 
 matrix:
   include:
     - sudo: required
+      dist: precise
+      env: SUDO=required DIST=precise
+    - sudo: false
+      dist: trusty
+      env: SUDO=false DIST=trusty
+    - sudo: required
       dist: trusty
       env: SUDO=required DIST=trusty
 
-install: true
 script:
-  - sudo apt-get install traceroute
-  - host -v ppa.launchpad.net
-  - sudo iptables -L -n
-  - traceroute ppa.launchpad.net
-  - ftp ppa.launchpad.net
+- wget ftp://ftp.wwpdb.org/pub/pdb/data/structures/divided/pdb/ni/pdb2nip.ent.gz
