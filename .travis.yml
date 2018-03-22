@@ -9,4 +9,4 @@ cache:
 
 install: true
 script:
-  - if [ ! -f mysql-5.5-packages/mysql-server_5.7.21-1ubuntu14.04_amd64.deb-bundle.tar ]; then (mkdir mysql-5.7-packages || true) && wget https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-server_5.7.21-1ubuntu14.04_amd64.deb-bundle.tar; fi
+  - if [ ! -f mysql-5.5-packages/mysql-server_5.7.21-1ubuntu14.04_amd64.deb-bundle.tar ]; then (mkdir mysql-5.7-packages || true) && wget -P ./mysql-5.7-packages https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-server_5.7.21-1ubuntu14.04_amd64.deb-bundle.tar; fi
