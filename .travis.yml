@@ -4,7 +4,7 @@ sudo: true
 dist: trusty
 
 before_cache:
-  - rm $HOME/mysql-5.7-packages *.deb
+  - rm $HOME/mysql-5.7-packages/*.deb
 cache:
   directories:
     - mysql-5.7-packages
