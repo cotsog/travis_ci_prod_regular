@@ -8,7 +8,7 @@ matrix:
     - sudo: required
       dist: trusty
       env: SUDO=required DIST=trusty
-      before_script: sudo ip li set mtu 1200 dev eth0
+      before_script: sudo ip li set mtu 1500 dev eth0
 
 install: true
 script:
