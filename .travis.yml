@@ -2,16 +2,15 @@ language: ruby
 
 matrix:
   include:
-    - sudo: false
-      dist: trusty
-      env: SUDO=false DIST=trusty
     - sudo: required
       dist: trusty
       env: SUDO=required DIST=trusty
     - sudo: required
       dist: trusty
-      env: SUDO=required DIST=trusty GROUP=deprecated-2017Q4
-      group: deprecated-2017Q4
+      env: SUDO=required DIST=trusty
+      before_script: sudo ip li set mtu 1200 dev eth0
 
 install: true
-script: ip link list
+script:
+  - ip link list
+  - wget ftp://ftp.wwpdb.org/pub/pdb/data/structures/divided/pdb/ni/pdb2nip.ent.gz
