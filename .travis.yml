@@ -12,3 +12,6 @@ matrix:
 install: true
 script:
   - pyenv --version
+  - pyenv versions
+  - pyenv install 2.7.14
+  - pyenv global 2.7.14
