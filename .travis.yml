@@ -2,15 +2,13 @@ language: ruby
 
 matrix:
   include:
+    - sudo: false
+      dist: trusty
+      env: SUDO=false DIST=trusty
     - sudo: required
       dist: trusty
       env: SUDO=required DIST=trusty
-    - sudo: required
-      dist: trusty
-      env: SUDO=required DIST=trusty
-      before_script: sudo ip li set mtu 1500 dev eth0
 
 install: true
 script:
-  - ip link list
-  - wget ftp://ftp.wwpdb.org/pub/pdb/data/structures/divided/pdb/ni/pdb2nip.ent.gz
+  - pyenv --version
