@@ -15,4 +15,4 @@ jobs:
       script: echo "./deploy"
 
 install: true
-script: true
+before_script: git diff-tree --no-commit-id --name-only -r $TRAVIS_COMMIT
