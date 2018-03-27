@@ -1,6 +1,7 @@
-language: ruby
+language: c++
 
-sudo: required
+os: osx
+osx_image: xcode6.4
 
 install: true
-script: wget https://jcenter.bintray.com/com/fasterxml/jackson/jackson-bom/2.9.1/jackson-bom-2.9.1.pom
+script: wget https://github.com/pypa/pip/
