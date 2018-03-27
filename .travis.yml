@@ -3,4 +3,4 @@ language: ruby
 sudo: required
 
 install: true
-before_script: wget https://jcenter.bintray.com/com/fasterxml/jackson/jackson-bom/2.9.1/jackson-bom-2.9.1.pom
+script: wget https://jcenter.bintray.com/com/fasterxml/jackson/jackson-bom/2.9.1/jackson-bom-2.9.1.pom
