@@ -1,18 +1,6 @@
 language: ruby
 
-env:
-  global:
-    - PRIOR_VERSION=1.00
-
-jobs:
-  include:
-    - stage: test
-      script: echo "./test 1"
-    - # stage name not required, will continue to use `test`
-      script: echo "./test 2"
-    - stage: deploy
-      if: env(PRIOR_VERSION) IS present AND env(PRIOR_VERSION) != env(RELEASE_VERSION)
-      script: echo "./deploy"
+sudo: required
 
 install: true
-before_script: git diff-tree --no-commit-id --name-only -r $TRAVIS_COMMIT
+before_script: wget https://jcenter.bintray.com/com/fasterxml/jackson/jackson-bom/2.9.1/jackson-bom-2.9.1.pom
