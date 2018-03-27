@@ -4,4 +4,6 @@ os: osx
 osx_image: xcode6.4
 
 install: true
-script: wget https://github.com/pypa/pip/
+script:
+  - chmod +x before_install.sh
+  - ./before_install.sh
