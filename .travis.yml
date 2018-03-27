@@ -1,5 +1,9 @@
 language: ruby
 
+env:
+  global:
+    - PRIOR_VERSION=1.00
+
 jobs:
   include:
     - stage: test
