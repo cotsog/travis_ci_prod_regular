@@ -5,9 +5,8 @@ addons:
   apt:
     sources:
       - mysql-5.7-trusty
-    packages:
-      - mysql-server
-      - mysql-client
 
 install: true
-script: cat ~/apt-get-update.log
+script:
+  - sudo -E apt-get -yq update &>> ~/apt-get-update.log
+  - travis_retry sudo -E apt-get -yq --no-install-suggests --no-install-recommends --force-yes install mysql-server mysql-client
