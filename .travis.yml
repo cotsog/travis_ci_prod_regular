@@ -1,7 +1,10 @@
 sudo: required
 dist: trusty
 
-language: python
+matrix:
+  include:
+    - language: python
+    - language: minimal
 
 install: true
 script: df -h
