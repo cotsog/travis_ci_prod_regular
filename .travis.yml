@@ -10,4 +10,4 @@ addons:
       - mysql-client
 
 install: true
-script: true
+script: cat ~/apt-get-update.log
