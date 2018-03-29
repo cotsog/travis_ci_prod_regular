@@ -10,3 +10,5 @@ install: true
 script:
   - sudo -E apt-get -yq update &>> ~/apt-get-update.log
   - travis_retry sudo -E apt-get -yq --no-install-suggests --no-install-recommends --force-yes install mysql-server mysql-client
+after_failure:
+  - cat ~/apt-get-update.log
