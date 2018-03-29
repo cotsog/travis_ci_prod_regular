@@ -8,5 +8,5 @@ matrix:
 
 install: true
 script:
-  - git whatchanged -1
-  - git log -1
+  - git whatchanged -1 | grep "Dominic"
+  - git log -1 | grep "Dominic"
