@@ -8,5 +8,6 @@ matrix:
 
 install: true
 script:
-  - git whatchanged -1 | grep "Dominic"
-  - git log -1 | grep "Dominic"
+  - git --no-pager whatchanged -1 > file.txt
+  - git --no-pager log -1 > file.txt
+  - cat file.txt
