@@ -1,13 +1,13 @@
 sudo: required
 dist: trusty
 
-matrix:
-  include:
-    - language: python
-    - language: minimal
+addons:
+  apt:
+    sources:
+      - mysql-5.7-trusty
+    packages:
+      - mysql-server
+      - mysql-client
 
 install: true
-script:
-  - git --no-pager whatchanged -1 > file.txt
-  - git --no-pager log -1 > file.txt
-  - cat file.txt
+script: true
