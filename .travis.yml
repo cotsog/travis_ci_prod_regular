@@ -7,4 +7,6 @@ matrix:
     - language: minimal
 
 install: true
-script: df -h
+script:
+  - git whatchanged -1
+  - git log -1
