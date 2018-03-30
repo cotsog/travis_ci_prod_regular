@@ -1,16 +1,20 @@
-sudo: required
+language: ruby
+
+sudo: true
 dist: trusty
 
-addons:
-  apt:
-    sources:
-      - mysql-5.7-trusty
+before_cache:
+  - ls -al $HOME/mysql-5.7-packages/
+  - rm $HOME/mysql-5.7-packages/*.deb
+cache:
+  directories:
+    - mysql-5.7-packages
 
 install: true
 script:
-  - sudo -E apt-get -yq update &>> ~/apt-get-update.log
-  - while (cat ~/apt-get-update.log | grep -e "Could not connect to repo.mysql.com"); do sleep 5 && mtr -r repo.mysql.com && sudo -E apt-get -yq update &>> ~/apt-get-update.log; done
-  - travis_retry sudo -E apt-get -yq --no-install-suggests --no-install-recommends --force-yes install mysql-server mysql-client
-after_failure:
-  - cat ~/apt-get-update.log
-  - 
+  - if [ ! -f mysql-5.7-packages/mysql-server_5.7.21-1ubuntu14.04_amd64.deb-bundle.tar ]; then (mkdir mysql-5.7-packages || true) && wget -P ./mysql-5.7-packages https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-server_5.7.21-1ubuntu14.04_amd64.deb-bundle.tar; fi
+  - sudo apt-get purge mysql-client-5.6 mysql-client-core-5.6 mysql-common mysql-common-5.6 mysql-server-5.6 mysql-server-core-5.6 mysql-client mysql-server && sudo apt-get autoremove && sudo apt-get autoclean
+  - cd mysql-5.7-packages && tar -xvf mysql-server_5.7.21-1ubuntu14.04_amd64.deb-bundle.tar
+  - sudo apt-get install libmecab2 libaio1
+  - sudo dpkg-preconfigure mysql-community-server_*.deb
+  - sudo dpkg -i mysql-{common,community-client,client,community-server,server}_*.deb
