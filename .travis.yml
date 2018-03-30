@@ -5,7 +5,7 @@ dist: trusty
 
 before_cache:
   - ls -al ./mysql-5.7-packages/
-  - rm $HOME/mysql-5.7-packages/*.deb
+  - rm ./mysql-5.7-packages/*.deb
 cache:
   directories:
     - mysql-5.7-packages
