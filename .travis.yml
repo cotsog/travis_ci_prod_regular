@@ -1,34 +1,37 @@
-language: bash
-sudo: false
+sudo: required
+dist: trusty
+
+group: travis_lts
+
+filter_secrets: false
+
+addons:	
+  apt:
+    sources:
+      - mysql-5.7-trusty
+    packages:
+      - mysql-server
+      - mysql-client
+
+language: ruby
 
 env:
-  global:
-    - PRIOR_VERSION="1.00"
-    - RELEASE_VERSION="1.00"
-
-before_install:
-  - echo 'before_install'
-
-install:
-  - echo 'install'
-
-jobs:
-  include:
-    - stage: test
-      script:
-        - echo 'Terraform Format Check'
-    - stage: test
-      script:
-        - echo 'JSON Format Check'
-    - stage: test
-      script:
-        - echo 'JSON Diff'
-    - stage: deploy
-      if: "1.00" != "1.00"
-      script: skip
-      before_deploy:
-        - echo PRIOR_VERSION=$PRIOR_VERSION
-        - echo RELEASE_VERSION=$RELEASE_VERSION
-      deploy:
-        provider: script
-        script: echo "Deploy!"
+  - CI_NODE_INDEX=0
+  - CI_NODE_INDEX=1
+  - CI_NODE_INDEX=2
+  - CI_NODE_INDEX=3
+  - CI_NODE_INDEX=4
+  - CI_NODE_INDEX=5
+  - CI_NODE_INDEX=6
+  - CI_NODE_INDEX=7
+  - CI_NODE_INDEX=8
+  - CI_NODE_INDEX=9
+  - CI_NODE_INDEX=10
+  - CI_NODE_INDEX=11
+  - CI_NODE_INDEX=12
+  - CI_NODE_INDEX=13
+  - CI_NODE_INDEX=14
+  - CI_NODE_INDEX=15
+  
+  install: true
+  script: true
