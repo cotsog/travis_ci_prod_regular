@@ -28,6 +28,7 @@ script:
   - sudo -E apt-get -yq update &> ~/apt-get-update.log
   - while (cat ~/apt-get-update.log | grep -e "Could not connect to repo.mysql.com"); do sleep 5 && mtr -r repo.mysql.com && sudo -E apt-get -yq update &> ~/apt-get-update.log; done
   - travis_retry sudo -E apt-get -yq --no-install-suggests --no-install-recommends --force-yes install mysql-server mysql-client
+  - mysql --version
 after_failure:
   - cat ~/apt-get-update.log
 sudo: required
