@@ -1,6 +1,10 @@
 language: bash
 sudo: false
 
+env:
+  - PRIOR_VERSION="1.00"
+  - RELEASE_VERSION="1.00"
+
 before_install:
   - echo 'before_install'
 
@@ -14,18 +18,16 @@ jobs:
         - echo 'Terraform Format Check'
     - stage: test
       script:
+        - echo 'JSON Format Check'
     - stage: test
       script:
         - echo 'JSON Diff'
     - stage: deploy
       if: env(PRIOR_VERSION) != env(RELEASE_VERSION)
-      env:
-        - PRIOR_VERSION="1.00"
-        - RELEASE_VERSION="1.00"
       script: skip
       before_deploy:
         - echo PRIOR_VERSION=$PRIOR_VERSION
         - echo RELEASE_VERSION=$RELEASE_VERSION
       deploy:
         provider: script
-        script: "Deploy!"
+        script: echo "Deploy!"
