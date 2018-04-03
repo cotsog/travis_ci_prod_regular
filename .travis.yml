@@ -1,16 +1,33 @@
 addons: 
-  apt: 
-    packages: 
-      - mysql-server
-      - mysql-client
+  apt:
     sources: 
       - mysql-5.7-trusty
 dist: trusty
 env: 
   - CI_NODE_INDEX=0
+  - CI_NODE_INDEX=1	
+  - CI_NODE_INDEX=2	
+  - CI_NODE_INDEX=3	
+  - CI_NODE_INDEX=4	
+  - CI_NODE_INDEX=5	
+  - CI_NODE_INDEX=6	
+  - CI_NODE_INDEX=7	
+  - CI_NODE_INDEX=8	
+  - CI_NODE_INDEX=9	
+  - CI_NODE_INDEX=10	
+  - CI_NODE_INDEX=11	
+  - CI_NODE_INDEX=12	
+  - CI_NODE_INDEX=13	
+  - CI_NODE_INDEX=14	
+  - CI_NODE_INDEX=15
 filter_secrets: false
 group: travis_lts
 install: true
 language: ruby
-script: true
+script:
+  - sudo -E apt-get -yq update &>> ~/apt-get-update.log
+  - while (cat ~/apt-get-update.log | grep -e "Could not connect to repo.mysql.com"); do sleep 5 && mtr -r repo.mysql.com && sudo -E apt-get -yq update &>> ~/apt-get-update.log; done
+  - travis_retry sudo -E apt-get -yq --no-install-suggests --no-install-recommends --force-yes install mysql-server mysql-client
+after_failure:
+  - cat ~/apt-get-update.log
 sudo: required
