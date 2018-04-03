@@ -14,7 +14,6 @@ jobs:
         - echo 'Terraform Format Check'
     - stage: test
       script:
-        - echo 'JSON Format Check'
     - stage: test
       script:
         - echo 'JSON Diff'
@@ -29,4 +28,4 @@ jobs:
         - echo RELEASE_VERSION=$RELEASE_VERSION
       deploy:
         provider: script
-        script: echo "Deploy!"
+        script: "Deploy!"
