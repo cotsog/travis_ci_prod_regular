@@ -2,8 +2,9 @@ language: bash
 sudo: false
 
 env:
-  - PRIOR_VERSION="1.00"
-  - RELEASE_VERSION="1.00"
+  global:
+    - PRIOR_VERSION="1.00"
+    - RELEASE_VERSION="1.00"
 
 before_install:
   - echo 'before_install'
