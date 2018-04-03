@@ -1,15 +1,32 @@
-sudo: required
-dist: trusty
+language: bash
+sudo: false
 
-addons:
-  apt:
-    sources:
-      - mysql-5.7-trusty
+before_install:
+  - echo 'before_install'
 
-install: true
-script:
-  - sudo -E apt-get -yq update &>> ~/apt-get-update.log
-  - while (cat ~/apt-get-update.log | grep -e "Could not connect to repo.mysql.com"); do sleep 5 && mtr -r repo.mysql.com && sudo -E apt-get -yq update &>> ~/apt-get-update.log; done
-  - travis_retry sudo -E apt-get -yq --no-install-suggests --no-install-recommends --force-yes install mysql-server mysql-client
-after_failure:
-  - cat ~/apt-get-update.log
+install:
+  - echo 'install'
+
+jobs:
+  include:
+    - stage: test
+      script:
+        - echo 'Terraform Format Check'
+    - stage: test
+      script:
+        - echo 'JSON Format Check'
+    - stage: test
+      script:
+        - echo 'JSON Diff'
+    - stage: deploy
+      if: env(PRIOR_VERSION) IS present AND env(PRIOR_VERSION) != env(RELEASE_VERSION) AND branch = master AND type = push AND repo = cotsog/travis_ci_prod_regular
+      env:
+        - PRIOR_VERSION="1.00"
+        - RELEASE_VERSION="1.00"
+      script: skip
+      before_deploy:
+        - echo PRIOR_VERSION=$PRIOR_VERSION
+        - echo RELEASE_VERSION=$RELEASE_VERSION
+      deploy:
+        provider: script
+        script: echo "Deploy!"
