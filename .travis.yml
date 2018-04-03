@@ -19,7 +19,7 @@ jobs:
       script:
         - echo 'JSON Diff'
     - stage: deploy
-      if: env(PRIOR_VERSION) IS present AND env(PRIOR_VERSION) != env(RELEASE_VERSION) AND branch = master AND type = push AND repo = cotsog/travis_ci_prod_regular
+      if: env(PRIOR_VERSION) != env(RELEASE_VERSION)
       env:
         - PRIOR_VERSION="1.00"
         - RELEASE_VERSION="1.00"
