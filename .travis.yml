@@ -1,21 +1,12 @@
-sudo: required
-dist: trusty
-
-group: travis_lts
-
-filter_secrets: false
-
-addons:	
-  apt:
-    sources:
-      - mysql-5.7-trusty
-    packages:
+addons: 
+  apt: 
+    packages: 
       - mysql-server
       - mysql-client
-
-language: ruby
-
-env:
+    sources: 
+      - mysql-5.7-trusty
+dist: trusty
+env: 
   - CI_NODE_INDEX=0
   - CI_NODE_INDEX=1
   - CI_NODE_INDEX=2
@@ -32,6 +23,9 @@ env:
   - CI_NODE_INDEX=13
   - CI_NODE_INDEX=14
   - CI_NODE_INDEX=15
-  
-  install: true
-  script: true
+filter_secrets: false
+group: travis_lts
+install: true
+language: ruby
+script: true
+sudo: required
