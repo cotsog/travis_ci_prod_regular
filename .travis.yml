@@ -24,7 +24,7 @@ jobs:
       script:
         - echo 'JSON Diff'
     - stage: deploy
-      if: env(PRIOR_VERSION) != env(RELEASE_VERSION)
+      if: "1.00" != "1.00"
       script: skip
       before_deploy:
         - echo PRIOR_VERSION=$PRIOR_VERSION
