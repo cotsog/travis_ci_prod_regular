@@ -1,31 +1,6 @@
-addons: 
-  apt:
-    sources: 
-      - mysql-5.7-trusty
-    packages:
-      - mysql-server
-      - mysql-client
-dist: trusty
-env: 
-  - CI_NODE_INDEX=0
-  - CI_NODE_INDEX=1	
-  - CI_NODE_INDEX=2	
-  - CI_NODE_INDEX=3	
-  - CI_NODE_INDEX=4	
-  - CI_NODE_INDEX=5	
-  - CI_NODE_INDEX=6	
-  - CI_NODE_INDEX=7	
-  - CI_NODE_INDEX=8	
-  - CI_NODE_INDEX=9	
-  - CI_NODE_INDEX=10	
-  - CI_NODE_INDEX=11	
-  - CI_NODE_INDEX=12	
-  - CI_NODE_INDEX=13	
-  - CI_NODE_INDEX=14	
-  - CI_NODE_INDEX=15
-filter_secrets: false
-group: travis_lts
+sudo: false
 install: true
-language: ruby
-script: true
-sudo: required
+script: echo $FOO
+env:
+  global:
+    secure: LT5qTjFGZzcMVjykLz3mMKIvTN5K4JJuX4vV2Yi5jA79KHwO2UpUHpdo4BNNYk0s5VpXL1DwwXuzHYHPiMvBN7g2tjwA/i+3sfV54rfoWfyQ1hH7Lhfpy4RJc5T9m7/lGcDE6lm77evd9IhibEGo5BIYtifMNh69LsiLGWrdjAluCyMV8dcOY8c5JOjhz+hxWsZPMvpjw0hjJrX6RbdRR7A6Y8yQKJjbgs6aRC193RJdX7DvhoK2R4Nz/wwqca80w3LIqwEkZjFFO/Ko3NXJfNoow5GjI1UfuePFi1YhpxUEcg4xFKYEmm5Ax3LlT0EXT/l43GX3MAJpyod1gOUNj5ChVieIm52YNClh42CQJ4/dvD6LJeMIidYiD4oS42Fhh8ppSk9rt6SpUvEE0+G0FeaBnDxC6IFkls+zSO39I9n3KZJebIXcuZWmzv3AmdkO+NSFAwPpiFMKB4cbeMlJfmPWmMnRrLB5mmatGVBcffC1Tgkl7st3fE6Vu4grOa3PvTBgpcJkqlVzAf1twZlm8EQoLvibrLIA9n1m5hhdWnPVRwKcCTgkvJirEUA8tIlTbBAbpYL8RYmrPBo85f0EEX7IksNV+tPuQkNfJn22iiRSeEpqy6EtsOjqcnFbRvGsfuQ/z6RqUEOP2O0uD7TPVsed8AKhAU/6JaZ4WelLG7I=
