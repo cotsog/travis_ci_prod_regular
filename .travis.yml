@@ -38,11 +38,13 @@ jobs:
 
     - stage: package
       language: objective-c
+      os: osx
       osx_image: xcode9.2
       script: true
 
     - stage: package
       language: objective-c
+      os: osx
       osx_image: xcode9.2
       script: true
 
@@ -53,6 +55,7 @@ jobs:
 
     - stage: ios
       language: objective-c
+      os: osx
       osx_image: xcode9.2
       script: true
       
