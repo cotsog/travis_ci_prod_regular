@@ -1,63 +1,16 @@
-language: node_js
+language: objective-c
+osx_image: xcode9.2
+rvm:
+- 2.4.0
+env:
+  global:
+  - LANG=en_US.UTF-8
+  - LC_ALL=en_US.UTF-8
+  - LANGUAGE=en_US.UTF-8
+  - APP_NAME="AlphaGuide"
+  - SCHEME_NAME="Aladin"
+  - INFO_PLIST="Aladin/Aladin/Info.plist"
+  - XCODE_PROJECT_DATA="Aladin/Aladin.xcodeproj/project.pbxproj"
 
-node_js:
-  - "8"
-
-stages:
-  - build
-  - test
-  - name: tag
-  - name: package
-  - name: android
-  - name: ios
-
-# Stages with the same name define multiple jobs which run in parallel.
-# To make it more apparent in the Travis UI exactly what each job is
-# doing, we add a descriptive environment variable.
-jobs:
-  include:
-    - stage: build
-      script: true
-
-    - stage: test
-      script: true
-      
-    - stage: tag
-      script: true
-      
-    - stage: package
-      sudo: required
-      services: docker
-      script: true
-
-    # https://www.electron.build/multi-platform-build
-    - stage: package
-      sudo: required
-      services: docker
-      script: true
-
-    - stage: package
-      language: objective-c
-      os: osx
-      osx_image: xcode9.2
-      script: true
-
-    - stage: package
-      language: objective-c
-      os: osx
-      osx_image: xcode9.2
-      script: true
-
-    - stage: android
-      sudo: required
-      services: docker
-      script: true
-
-    - stage: ios
-      language: objective-c
-      os: osx
-      osx_image: xcode9.2
-      script: true
-      
 install: true
 script: true
