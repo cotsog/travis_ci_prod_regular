@@ -1,16 +1,22 @@
-language: objective-c
-osx_image: xcode9.2
-rvm:
-- 2.4.0
-env:
-  global:
-  - LANG=en_US.UTF-8
-  - LC_ALL=en_US.UTF-8
-  - LANGUAGE=en_US.UTF-8
-  - APP_NAME="AlphaGuide"
-  - SCHEME_NAME="Aladin"
-  - INFO_PLIST="Aladin/Aladin/Info.plist"
-  - XCODE_PROJECT_DATA="Aladin/Aladin.xcodeproj/project.pbxproj"
+language: node_js
+node_js: 9
+dist: trusty
+
+# Define stages and their scripts
+jobs:
+  include:
+    - stage: test
+      install: true
+      script: true
+
+    - stage: deploy-staging
+      install: &install_firebase_tools
+        - npm i -g firebase-tools
+      script: true
+
+    - stage: deploy-production
+      install: *install_firebase_tools
+      script: true
 
 install: true
 script: true
