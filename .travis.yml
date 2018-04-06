@@ -22,7 +22,7 @@ jobs:
         apt:
           sources: *common_sources
           packages:
-            - *common_packages
+            <<: *common_packages
             - g++-4.9
       env:
         - MATRIX_EVAL="CC=gcc-4.9 && CXX=g++-4.9"
