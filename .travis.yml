@@ -4,7 +4,8 @@ language: ruby
 rvm: 2.4.1
 
 cache:
-  - $THIS_DIR_ENV_VAR
+  directories:
+    - $THIS_DIR_ENV_VAR
 
 install: true
 script: true
