@@ -7,5 +7,4 @@ cache:
   directories:
     - $THIS_DIR_ENV_VAR
 
-install: true
 script: true
