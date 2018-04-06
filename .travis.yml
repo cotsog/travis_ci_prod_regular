@@ -1,3 +1,9 @@
+language: ruby
+rvm: 2.4.1
+
+git	
+  depth: 10
+
 matrix:
   include:
     - sudo: false
