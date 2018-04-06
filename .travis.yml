@@ -1,22 +1,12 @@
-language: node_js
-node_js: 9
-dist: trusty
-
-# Define stages and their scripts
-jobs:
-  include:
-    - stage: test
-      install: true
-      script: true
-
-    - stage: deploy-staging
-      install: &install_firebase_tools
-        - npm i -g firebase-tools
-      script: true
-
-    - stage: deploy-production
-      install: *install_firebase_tools
-      script: true
+matrix:
+  include:
+    - sudo: false
+      dist: trusty
+      env: SUDO=false DIST=trusty
+    - sudo: required
+      dist: trusty
+      env: SUDO=required DIST=trusty
 
 install: true
-script: true
+script:
+  - time wget https://packages.couchbase.com/releases/4.5.1/couchbase-server-community_4.5.1-ubuntu14.04_amd64.deb
