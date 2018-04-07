@@ -33,30 +33,4 @@
     </dependency>
   </dependencies>
 
-  <profiles>
-    <profile>
-      <repositories>
-        <repository>
-          <snapshots>
-            <enabled>false</enabled>
-          </snapshots>
-          <id>bintray-twilio-releases</id>
-          <name>bintray</name>
-          <url>https://twilio.bintray.com/releases</url>
-        </repository>
-      </repositories>
-      <pluginRepositories>
-        <pluginRepository>
-          <snapshots>
-            <enabled>false</enabled>
-          </snapshots>
-          <id>bintray-twilio-releases</id>
-          <name>bintray-plugins</name>
-          <url>https://twilio.bintray.com/releases</url>
-        </pluginRepository>
-      </pluginRepositories>
-      <id>bintray</id>
-    </profile>
-  </profiles>
-
 </project>
