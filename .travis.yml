@@ -12,6 +12,7 @@ matrix:
       osx_image: xcode9.2
 
 install:
+  - mkdir ~/.m2 || true
   - cp settings.xml ~/.m2/
   - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 script: true
