@@ -59,8 +59,8 @@
     </profile>
   </profiles>
 
-<activeProfiles>
-  <activeProfile>bintray</activeProfile>
-</activeProfiles>
+  <activeProfiles>
+    <activeProfile>bintray</activeProfile>
+  </activeProfiles>
 
 </project>
