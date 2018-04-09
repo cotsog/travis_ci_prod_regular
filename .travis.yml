@@ -1,18 +1,19 @@
-matrix:
-  include:
-    - language: java
-      sudo: false
-      dist: trusty
-      env: SUDO=false DIST=trusty
-    - language: java
-      sudo: required
-      dist: trusty
-      env: SUDO=required DIST=trusty
-    - language: objective-c
-      osx_image: xcode9.2
+language: objective-c
 
-install:
-  - mkdir ~/.m2 || true
-  - cp settings.xml ~/.m2/
-  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
-script: true
+osx_image: xcode9.3
+
+install: true
+
+script:
+  - uname -a
+  - sw_vers
+  - xcodebuild -version
+  - xcrun simctl list
+  - xcrun simctl list pairs
+  - df -h /
+  - brew list --versions
+  - brew cask list --versions
+  - if [[ $(uname -r) == 15.6.0 ]]; then nvm list; else echo "nope"; fi
+  - rvm list
+  - motion --version
+  - pod --version
