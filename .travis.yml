@@ -5,14 +5,15 @@ install: true
 
 script:
   - uname -a
+  - xcodebuild -version
+  - system_profiler SPHardwareDataType
+  - swift -version
   - sw_vers
   - xcodebuild -version
   - xcrun simctl list
   - xcrun simctl list pairs
-  - df -h /
   - brew list --versions
   - brew cask list --versions
-  - if [[ $(uname -r) == 15.6.0 ]]; then nvm list; else echo "nope"; fi
   - rvm list
   - motion --version
   - pod --version
