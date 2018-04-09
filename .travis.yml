@@ -1,9 +1,8 @@
 language: objective-c
 osx_image: xcode9.3
 
-install: true
-
 script:
+  - df -h /
   - uname -a
   - xcodebuild -version
   - system_profiler SPHardwareDataType
