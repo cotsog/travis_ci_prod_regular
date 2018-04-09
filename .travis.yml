@@ -15,4 +15,4 @@ script:
   - brew cask list --versions
   - rvm list
   - motion --version
-  - pod --version
+  - gem list
