@@ -1,6 +1,6 @@
 language: haskell
 
-ghc: 8.4
+ghc: 8.4.0
 
 install: true
 script: true
