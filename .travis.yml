@@ -1,11 +1,10 @@
-language: node_js
+group: deprecated-2017Q4
+language: scala
+scala: 2.11.8
+jdk: oraclejdk8
 
-node_js: 6.0.0
+sudo: required
+dist: trusty
 
-dist: precise
-
-script: true
-
-cache:
-  directories:
-    - node_modules
+install: true
+script: sudo apt-get install -y awscli
