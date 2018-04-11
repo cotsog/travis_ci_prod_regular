@@ -5,3 +5,7 @@ node_js: 6.0.0
 dist: precise
 
 script: true
+
+cache:
+  directories:
+    - node_modules
