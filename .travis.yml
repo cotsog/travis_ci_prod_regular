@@ -1,22 +1,7 @@
-language: objective-c
+language: node_js
 
-matrix:
-  include:
-    - osx_image: xcode9.3beta
-    - osx_image: xcode9.3
+node_js: 6.0.0
 
-script:
-  - df -h /
-  - uname -a
-  - xcodebuild -version
-  - system_profiler SPHardwareDataType
-  - swift -version
-  - sw_vers
-  - xcodebuild -version
-  - xcrun simctl list
-  - xcrun simctl list pairs
-  - brew list --versions
-  - brew cask list --versions
-  - rvm list
-  - motion --version
-  - gem list
+dist: precise
+
+script: true
