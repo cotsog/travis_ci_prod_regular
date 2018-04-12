@@ -6,11 +6,6 @@ osx_image: xcode9.3
 install: true
 script:
   - python -V
-  - pip install urllib3
   - pip install pyopenssl
-  - pip install ndg-httpsclient
-  - pip install pyasn1
-  - pip uninstall requests
-  - pip install requests
   - pip install --user awscli
 
