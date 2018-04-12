@@ -10,5 +10,7 @@ script:
   - pip install pyopenssl
   - pip install ndg-httpsclient
   - pip install pyasn1
+  - pip uninstall requests
+  - pip install requests
   - pip install --user awscli
 
