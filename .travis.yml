@@ -1,10 +1,10 @@
 language: cpp
 
 os: osx
-osx_image: xcode9.2
+osx_image: xcode9.3
 
 install: true
 script:
   - python -V
-  - sudo pip install awscli
+  - pip install --user awscli
 
