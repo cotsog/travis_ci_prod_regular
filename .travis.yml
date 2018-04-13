@@ -1,8 +1,8 @@
 language: ruby
 
 before_cache:
-  - pushd ~/.rvm/rubies
-  - rm -rf ruby-2.2.7 ruby-2.3.4
+  - pushd ~/.rvm
+  - rm -rf archives rubies/ruby-2.2.7 rubies/ruby-2.3.4
   - popd
 cache:
   directories:
