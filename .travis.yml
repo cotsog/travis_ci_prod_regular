@@ -1,5 +1,15 @@
 language: ruby
 
+rvm: jruby-1.7.26
+
+cache:
+  directories:
+    - ~/.rvm/archives
+    - ~/.rvm/environments
+    - ~/.rvm/gems/jruby-1.7.26
+    - ~/.rvm/rubies/jruby-1.7.26
+    - ~/.rvm/wrappers
+
 matrix:
   include:
     - sudo: false
