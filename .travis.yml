@@ -8,6 +8,9 @@ matrix:
     - sudo: required
       dist: trusty
       env: SUDO=required DIST=trusty
+      
+branches:
+  only: master
 
 install: true
 script:
