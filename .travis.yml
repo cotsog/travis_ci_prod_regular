@@ -1,7 +1,5 @@
 language: ruby
 
-rvm: jruby-1.7.26
-
 cache:
   directories:
     - ~/.rvm/archives
@@ -24,4 +22,4 @@ branches:
 
 install: true
 script:
-  - rvm list
+  - rvm use jruby-1.7.26 --install --binary --fuzzy
