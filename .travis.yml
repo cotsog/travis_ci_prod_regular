@@ -1,25 +1,12 @@
-language: ruby
-
-before_cache:
-  - pushd ~/.rvm
-  - rm -rf archives rubies/ruby-2.2.7 rubies/ruby-2.3.4
-  - popd
-cache:
-  directories:
-    - ~/.rvm
+language: cpp
 
 matrix:
-  include:
-    - sudo: false
-      dist: trusty
-      env: SUDO=false DIST=trusty
-    - sudo: required
-      dist: trusty
-      env: SUDO=required DIST=trusty
-      
-branches:
-  only: master
+  include:
+    - osx_image: xcode9.2
+    - osx_image: xcode9.3
 
 install: true
 script:
-  - rvm use jruby-1.7.26 --install --binary --fuzzy
+  - python -V
+  - pip install pyopenssl
+  - pip install --user awscli
