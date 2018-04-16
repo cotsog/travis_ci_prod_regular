@@ -7,6 +7,12 @@ before_install:
   - export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID_TRAVIS_INT
   - export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY_TRAVIS_INT
 
+env:
+  - PYTHON_VERSION=2.7.6
+  - PYTHON_VERSION=2.7.7
+  - PYTHON_VERSION=2.7.8
+  - PYTHON_VERSION=2.7.9
+
 script:
   #Build Docker image
 - export DATE=`TZ=America/New_York date "+%m-%d-%y-%H%M"`
