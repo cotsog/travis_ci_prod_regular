@@ -13,6 +13,9 @@ script:
 - export DOCKER_IMAGE="fnlcr/nci-match-haproxy"
 #ECR Info
 - pyenv install -s 2.7.9
+- python -V
+- pyenv global 2.7.9
+- python -V
 - pip install --upgrade pip
 - export AWS_DEFAULT_REGION="us-east-1"
 - pip install awscli --upgrade
