@@ -1,13 +1,7 @@
-language: python
-
-python: 2.7.9
-
 sudo: required
+
 services:
 - docker
-# language: ruby
-# rvm:
-# - 2.3.1
 
 before_install:
   - export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID_TRAVIS_INT
@@ -18,6 +12,7 @@ script:
 - export DATE=`TZ=America/New_York date "+%m-%d-%y-%H%M"`
 - export DOCKER_IMAGE="fnlcr/nci-match-haproxy"
 #ECR Info
+- pyenv install -s 2.7.9
 - pip install --upgrade pip
 - export AWS_DEFAULT_REGION="us-east-1"
 - pip install awscli --upgrade
