@@ -1,12 +1,10 @@
-language: objective-c
+language: python
 
-matrix:
-  include:
-    - osx_image: xcode9.2
-    - osx_image: xcode9.3
+python:
+  - "2.7"
+  - "2.7.9"
 
 install: true
 script:
-  - python -V
-  - pip install pyopenssl
+  - pip install --upgrade pip
   - pip install --user awscli
