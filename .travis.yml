@@ -18,9 +18,9 @@ script:
 - export DATE=`TZ=America/New_York date "+%m-%d-%y-%H%M"`
 - export DOCKER_IMAGE="fnlcr/nci-match-haproxy"
 #ECR Info
-- pyenv install -s 2.7.9
+- pyenv install -s $PYTHON_VERSION
 - python -V
-- pyenv global 2.7.9
+- pyenv global $PYTHON_VERSION
 - python -V
 - pip install --upgrade pip
 - export AWS_DEFAULT_REGION="us-east-1"
