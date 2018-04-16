@@ -1,12 +1,20 @@
-language: python
+sudo: required
+services:
+- docker
+# language: ruby
+# rvm:
+# - 2.3.1
 
-sudo: false
+before_install:
+  - export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID_TRAVIS_INT
+  - export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY_TRAVIS_INT
 
-python:
-  - "2.7"
-  - "2.7.9"
-
-install: true
 script:
-  - pip install --upgrade pip
-  - pip install awscli --upgrade
+  #Build Docker image
+- export DATE=`TZ=America/New_York date "+%m-%d-%y-%H%M"`
+- export DOCKER_IMAGE="fnlcr/nci-match-haproxy"
+#ECR Info
+- pip install --upgrade pip
+- export AWS_DEFAULT_REGION="us-east-1"
+- pip install awscli --upgrade
+- export PATH=$PATH:$HOME/.local/bin
