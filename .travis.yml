@@ -9,4 +9,4 @@ python:
 install: true
 script:
   - pip install --upgrade pip
-  - pip install --user awscli
+  - pip install awscli --upgrade
