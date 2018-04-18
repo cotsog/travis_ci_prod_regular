@@ -7,5 +7,5 @@ script:
   - wget https://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc
   - sudo apt-key add erlang_solutions.asc
   - sudo apt-get update
-  - sudo apt remove -y erlang-base-hipe erlang-crypto erlang-syntax-tools
+  - sudo apt remove -y erlang-base-hipe erlang-crypto
   - sudo apt-get install -y esl-erlang
