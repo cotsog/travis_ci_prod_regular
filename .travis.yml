@@ -2,4 +2,4 @@ sudo: required
 
 install: true
 script:
-  - ping -o us-central1.gce.archive.ubuntu.com
+  - ping us-central1.gce.archive.ubuntu.com
