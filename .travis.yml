@@ -1,12 +1,8 @@
-# update 3
 language: python
-
-env:
-  - TEST=1
-  - TEST=1
-  - TEST=1
-  - TEST=1
-  - TEST=1
   
 install: true
-script: sleep 300
+script:
+  - mkdir ../this-repo
+  - mv .[^.]* ../this-repo
+  - ls -al
+  
