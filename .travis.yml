@@ -1,17 +1,12 @@
 language: python
-matrix:
-  include:
-    - sudo: false
-      dist: trusty
-      env: SUDO=false DIST=trusty
-    - sudo: required
-      dist: trusty
-      env: SUDO=required DIST=trusty
+
 addons:
-    apt:
-      sources:
-        - debian-sid
-      packages:
-        - shellcheck
+  apt:
+    sources:
+      - debian-sid
+
 install: true
-script: true
+script:
+  - sudo apt-get install -y shellcheck || true
+  - sudo apt-get remove -y binutils
+  - sudo apt-get install -y shellcheck
