@@ -1,5 +1,54 @@
-sudo: required
-
-install: true
+language: ruby
+rvm: "2.3.6"
+sudo: false
+branches:
+  only:
+    - master
+    - staging
+    - /^feature\//  # Run on PRs and merges into branches prefixed with "feature/"
+cache:
+  bundler: true
+before_install:
+  #- bundle config
+  - sudo /etc/init.d/postgresql stop # stop old version
+  - wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add - # add postgresql 10 repository
+  - sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs 2>/dev/null)-pgdg main" >> /etc/apt/sources.list.d/postgresql.list'
+  - sudo apt-get update -qq # install new version
+  - sudo apt-get install -qq postgresql-10 postgresql-client-10
+  - sudo cp /etc/postgresql/9.6/main/pg_hba.conf /etc/postgresql/10/main/pg_hba.conf # clone auth config (might need to fix source path for another version)
+  - sudo /etc/init.d/postgresql restart # start new version
+  - export PGPORT=5433 # I haven't investigated or tried to fix, but pg10 uses another port for some reason, so tell applications to use correct port
+before_script:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - sleep 3 # give xvfb some time to start
+  - cp config/database.default.yml config/database.yml
+  - psql -c 'create database agencieshq_test;' -U postgres
+  - yarn install
+  - bundle exec rake testhq:prepare
+env:
+  global:
+    - WICKED_PDF=/usr/bin/wkhtmltopdf
+    - EAGER_LOAD=true
+  matrix:
+    - TESTFOLDER='spec/models'
+    - TESTFOLDER='spec/importers spec/abilities spec/apis'
+    - TESTFOLDER='spec/flatteners spec/workers spec/constants spec/controllers spec/data_converters spec/db'
+    - TESTFOLDER='spec/tools spec/commands spec/features'
 script:
-  - ping us-central1.gce.archive.ubuntu.com
+  - bundle exec rspec $TESTFOLDER --order random
+services:
+  - memcached
+  - redis-server
+addons:
+  postgresql: "10.1"
+  code_climate:
+    repo_token: 12345
+  apt:
+    - wkhtmltopdf
+notifications:
+  slack:
+    rooms:
+    - 12345
+    on_success: never
+    on_failure: always
