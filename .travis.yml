@@ -35,7 +35,8 @@ addons:
   code_climate:
     repo_token: 12345
   apt:
-    - wkhtmltopdf
+    packages:
+      - wkhtmltopdf
 notifications:
   slack:
     rooms:
