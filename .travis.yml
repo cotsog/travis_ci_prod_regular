@@ -5,4 +5,7 @@ script:
   - mkdir ../this-repo
   - mv .[^.]* ../this-repo
   - ls -al
+  - cd ../this-repo
+  - ls -al
+  
   
