@@ -1,9 +1,17 @@
-language: ruby
-
-services:
-  - docker
-  
+language: python
+matrix:
+  include:
+    - sudo: false
+      dist: trusty
+      env: SUDO=false DIST=trusty
+    - sudo: required
+      dist: trusty
+      env: SUDO=required DIST=trusty
+addons:
+    apt:
+      sources:
+        - debian-sid
+      packages:
+        - shellcheck
 install: true
-script:
-  - sudo apt-get remove -y docker docker-engine docker.io
-  - sudo apt-get install -y docker-ce
+script: true
