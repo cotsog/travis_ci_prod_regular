@@ -7,6 +7,4 @@ addons:
 
 install: true
 script:
-  - sudo apt-get install -y shellcheck || true
-  - sudo apt-get remove -y binutils
-  - sudo apt-get install -y shellcheck
+  - sudo -E apt-get -yq --no-install-suggests --no-install-recommends --force-yes install shellcheck
