@@ -1,4 +1,7 @@
 language: ruby
 
+services:
+  - docker
+  
 install: true
-script: rsync --help
+script: true
