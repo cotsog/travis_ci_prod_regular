@@ -4,7 +4,8 @@ addons:
   apt:
     sources:
       - debian-sid
+    packages:
+      - shellcheck
 
 install: true
-script:
-  - sudo -E apt-get -yq --no-install-suggests --no-install-recommends --force-yes install shellcheck
+script: true
