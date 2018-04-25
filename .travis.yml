@@ -1,7 +1,7 @@
 language: python
-  
+python: 3.6
+
 install: true
 script:
-  - sudo cat /proc/sys/fs/pipe-max-size
-  
+  - pip install pipenv=11.10.0
   
