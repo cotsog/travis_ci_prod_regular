@@ -3,5 +3,5 @@ python: 3.6
 
 install: true
 script:
-  - pip install pipenv=11.10.0
+  - pip install pipenv==11.10.0
   
