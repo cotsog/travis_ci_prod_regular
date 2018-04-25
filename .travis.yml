@@ -6,6 +6,7 @@ install: true
 script:
   - python -V
   - brew update
-  - brew upgrade python@2
-  - brew link python@2
+  - brew upgrade
+  - brew install python@2
+  - brew link --overwrite python@2
   - python -V
