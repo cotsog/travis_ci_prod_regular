@@ -2,10 +2,6 @@ language: python
   
 install: true
 script:
-  - mkdir ../this-repo
-  - find . -mindepth 1 -maxdepth 1 -exec mv -t../this-repo -- {} +
-  - ls -al
-  - cd ../this-repo
-  - ls -al
+  - sudo cat /proc/sys/fs/pipe-max-size
   
   
