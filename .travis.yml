@@ -5,8 +5,7 @@ osx_image: xcode9.2
 install: true
 script:
   - python -V
-  - brew update
-  - brew upgrade
   - brew install python@2
+  - brew link python@2
   - export PATH=$(brew --prefix)/bin:$(brew --prefix)/sbin:$PATH
   - python -V
