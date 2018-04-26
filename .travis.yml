@@ -8,5 +8,5 @@ script:
   - brew update
   - brew upgrade
   - brew install python@2
-  - brew link --overwrite python@2
+  - export PATH=$(brew --prefix)/bin:$(brew --prefix)/sbin:$PATH
   - python -V
