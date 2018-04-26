@@ -1,19 +1,10 @@
-dist: trusty
+language: objective-c
 
-language: python
-python:
-  - "3.6"
-
-cache:
-  directories:
-  - "$HOME/.ccache"
-  - "$HOME/.cache/pip"
-
-addons:
-  apt:
-    packages:
-    - build-essential
-    - ccache
+osx_image: xcode9.2
 
 install: true
-script: true
+script:
+  - python -V
+  - python2 -V
+  - brew info python
+  - brew info python2
