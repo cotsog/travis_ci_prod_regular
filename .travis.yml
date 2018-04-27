@@ -1,22 +1,31 @@
+language: ruby
+rvm:
+  - 2.3.7
+
+sudo: required
 dist: trusty
 
-language: python
-python:
-  - "3.6"
+services:
+  - docker
+
+stages:
+  - test
+  - build
+  - publish
   
-env:
-  global: ZSH_VERSION=1
-
-cache:
-  directories:
-  - "$HOME/.ccache"
-  - "$HOME/.cache/pip"
-
-addons:
-  apt:
-    packages:
-    - build-essential
-    - ccache
+jobs:
+  include:
+    - stage: test
+      env: BIME_APP=rails TASK=linting
+    - # stage name not required, will continue to use `test`
+      env: BIME_APP=rails TASK=securityscan
+    - env: BIME_APP=rails TASK=sourceclear 
+    - env: BIME_APP=rails TASK=test
+    - stage: build
+      env: TASK=release
+    - stage: publish
+      env: BIME_APP=rails TASK=release
+    - env: BIME_APP=queue_customfields TASK=release
 
 install: true
 script: true
