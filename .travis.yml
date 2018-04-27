@@ -5,7 +5,7 @@ dist: trusty
   
 matrix:
   include:
-    - install: sudo atp-get install -y google-chrome-stable
+    - install: sudo apt-get install -y google-chrome-stable
     - addons:
         chrome: stable
 
