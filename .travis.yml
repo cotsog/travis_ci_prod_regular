@@ -1,31 +1,13 @@
 language: ruby
-rvm:
-  - 2.3.7
 
 sudo: required
 dist: trusty
-
-services:
-  - docker
-
-stages:
-  - test
-  - build
-  - publish
   
-jobs:
+matrix:
   include:
-    - stage: test
-      env: BIME_APP=rails TASK=linting
-    - # stage name not required, will continue to use `test`
-      env: BIME_APP=rails TASK=securityscan
-    - env: BIME_APP=rails TASK=sourceclear 
-    - env: BIME_APP=rails TASK=test
-    - stage: build
-      env: TASK=release
-    - stage: publish
-      env: BIME_APP=rails TASK=release
-    - env: BIME_APP=queue_customfields TASK=release
+    - sudo atp-get install -y google-chrome-stable
+    - addons:
+        chrome: stable
 
 install: true
 script: true
