@@ -2,12 +2,6 @@ language: ruby
 
 sudo: required
 dist: trusty
-  
-matrix:
-  include:
-    - install: sudo apt-get install -y google-chrome-stable
-    - addons:
-        chrome: stable
 
 install: true
 script: true
