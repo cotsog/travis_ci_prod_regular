@@ -3,17 +3,15 @@ language: ruby
 sudo: required
 dist: trusty
 
-addons:
-  postgresql: "10"
-  apt:
-    packages:
-      - postgresql-10
-      - postgresql-client-10
-env:
-  global:
-    - PGPORT=5433
+matrix:
+  include:
+    - env: OPENSSL=default
+    - env: OPENSSL=updated-from-apt
+      addons:
+        apt:
+          packages:
+            - openssl
 
 install: true
 script:
-  - psql --version
-  - pg_config --version
+  - openssl version -a
