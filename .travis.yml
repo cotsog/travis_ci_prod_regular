@@ -1,7 +1,13 @@
-language: objective-c
-
-osx_image: xcode9.2
-
+matrix:
+  include:
+    - sudo: false
+      dist: trusty
+      env: SUDO=false DIST=trusty
+    - sudo: required
+      dist: trusty
+      env: SUDO=required DIST=trusty
+    - language: objective-c
+      osx_image: xcode9.2
 install: true
 script:
   - brew install mtr &>/dev/null
