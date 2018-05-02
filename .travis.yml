@@ -6,7 +6,7 @@ install: true
 script:
   - brew install mtr &>/dev/null
   - export PATH=/usr/local/Cellar/mtr/0.92/sbin:$PATH
-  - sudo traceroute video.twilio.com
-  - sudo traceroute mobile-endpoint.twilio.com
-  - sudo traceroute twilio.bintray.com
-  - sudo traceroute ecs.us1.twilio.com
+  - sudo mtr -r -w video.twilio.com
+  - sudo mtr -r -w mobile-endpoint.twilio.com
+  - sudo mtr -r -w twilio.bintray.com
+  - sudo mtr -r -w ecs.us1.twilio.com
