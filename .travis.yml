@@ -3,19 +3,18 @@ python: 2.7.14
 
 env:
   global:
-    - secure: "O8avL4Pml3/MlvrIqcjpvrWXWeY6Jw7Tc3L6cghhJcUYeWDooBBwiGX4HnURf6Haxxd9HnUFq+/4+0IjM1x6CqLV7TKL5KucFM7AbG7NL8DBp/1oZAPPpyuQwkF3Tdv9xpNOWNUXwa+HkBJD7cEd661CJEgVvgrAS84iCgQONpezySfE5xtZdQDDFgytN98UuvCS/IKC0bHY/esRORGmm8J/2dInY+EtAFIvD7jsXHwsE9rkA/XbjNUpzs+azgdgLuFt4Cjjob3U89mUPS3leSNZr1VzSbkNX/O+cJq1FwSMVXYjWaRYQQM+qrNpouyDnmShqQ8pxCMCcUtAw4DIILER0WCgDdMud1Lb5ZtOxnPauqU6/d1uU3Yx79ASlGYTa4VBRf29pm66IGPsTABhctURqcJwTyocEVjKoQ5lQJBMdt1LsdvHp73cr+sDzylXP5n0qmAHra0KhUvvE1q6ZZOoAxZh37GtmSCYF0IqFD2aZy59GWc4dH+OrlAjoUdNcXfKVC/jjsvuP2qhEInxBGeaMwiExCjAmfatxKEql9iaZbER5aFEjOkT9R17GKT6Gws15fXwVLg9/9sbMK8wx7u3H7X7gMFdfVxEhvVJlDx1p3bje7W8bI9cHT8YU4/Iglx9LK/fpHT9+Nxdq8C1Hlor3bKrq4pIAYbHeiXvw70="
+  - secure: "O8avL4Pml3/MlvrIqcjpvrWXWeY6Jw7Tc3L6cghhJcUYeWDooBBwiGX4HnURf6Haxxd9HnUFq+/4+0IjM1x6CqLV7TKL5KucFM7AbG7NL8DBp/1oZAPPpyuQwkF3Tdv9xpNOWNUXwa+HkBJD7cEd661CJEgVvgrAS84iCgQONpezySfE5xtZdQDDFgytN98UuvCS/IKC0bHY/esRORGmm8J/2dInY+EtAFIvD7jsXHwsE9rkA/XbjNUpzs+azgdgLuFt4Cjjob3U89mUPS3leSNZr1VzSbkNX/O+cJq1FwSMVXYjWaRYQQM+qrNpouyDnmShqQ8pxCMCcUtAw4DIILER0WCgDdMud1Lb5ZtOxnPauqU6/d1uU3Yx79ASlGYTa4VBRf29pm66IGPsTABhctURqcJwTyocEVjKoQ5lQJBMdt1LsdvHp73cr+sDzylXP5n0qmAHra0KhUvvE1q6ZZOoAxZh37GtmSCYF0IqFD2aZy59GWc4dH+OrlAjoUdNcXfKVC/jjsvuP2qhEInxBGeaMwiExCjAmfatxKEql9iaZbER5aFEjOkT9R17GKT6Gws15fXwVLg9/9sbMK8wx7u3H7X7gMFdfVxEhvVJlDx1p3bje7W8bI9cHT8YU4/Iglx9LK/fpHT9+Nxdq8C1Hlor3bKrq4pIAYbHeiXvw70=" # AWS_SECRET_ACCESS_KEY
 
 matrix:
   include:
-    - sudo: false
-      dist: trusty
-      env: SUDO=false DIST=trusty
-    - sudo: required
-      dist: trusty
-      env: SUDO=required DIST=trusty
-    - os: osx
-      osx_image: xcode9.2
+  - sudo: false
+    dist: trusty
+    env: SUDO=false DIST=trusty
+  - sudo: required
+    dist: trusty
+    env: SUDO=required DIST=trusty
+  - os: osx
+    osx_image: xcode9.2
 install: true
 script:
-  - pip install awscli boto3 requests
-  - echo $AWS_SECRET_ACCESS_KEY
+- echo $AWS_SECRET_ACCESS_KEY
