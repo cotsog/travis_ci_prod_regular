@@ -7,9 +7,8 @@ matrix:
       dist: trusty
       env: SUDO=required DIST=trusty
 
-addons:
-  apt:
-    update: true
+apt:
+  update: true
       
 install: true
 script: true
