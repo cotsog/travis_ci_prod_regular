@@ -1,17 +1,8 @@
-matrix:
-  include:
-    - sudo: false
-      dist: trusty
-      env: SUDO=false DIST=trusty
-    - sudo: required
-      dist: trusty
-      env: SUDO=required DIST=trusty
+sudo: false
 
-addons:
-  apt:
-    update: true
-    packages:
-      - tree
-      
-install: true
+language: python
+
+install:
+  - travis_retry pip install pycryptodome=3.4.11
+
 script: true
