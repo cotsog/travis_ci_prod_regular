@@ -3,6 +3,6 @@ sudo: false
 language: python
 
 install:
-  - travis_retry pip install pycryptodome=3.4.11
+  - travis_retry pip install pycryptodome==3.4.11
 
 script: true
