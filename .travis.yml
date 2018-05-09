@@ -9,6 +9,11 @@ matrix:
 
 apt:
   update: true
+
+addons:
+  apt:
+    packages:
+      - tree
       
 install: true
 script: true
