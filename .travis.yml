@@ -7,11 +7,9 @@ matrix:
       dist: trusty
       env: SUDO=required DIST=trusty
 
-apt:
-  update: true
-
 addons:
   apt:
+    update: true
     packages:
       - tree
       
