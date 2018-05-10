@@ -1,9 +1,15 @@
-sudo: false
+matrix:
+  include:
+    - sudo: false
+      dist: trusty
+      env: SUDO=false DIST=trusty
+    - sudo: required
+      dist: trusty
+      env: SUDO=required DIST=trusty
+    - os: osx
+      osx_image: xcode9.3
 
-language: python
-python: 3.4
+language: ruby
 
-install:
-  - travis_retry pip install pycryptodome==3.4.11
-
-script: true
+install: true
+script: wget --timestamping --continue https://www.apache.org/dist/ant/binaries/apache-ant-1.10.3-bin.tar.gz
