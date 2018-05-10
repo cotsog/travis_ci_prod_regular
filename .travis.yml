@@ -12,4 +12,9 @@ matrix:
 language: ruby
 
 install: true
-script: wget --timestamping --continue https://www.apache.org/dist/ant/binaries/apache-ant-1.10.3-bin.tar.gz
+script: true
+
+after_script:
+  - ps -jef --forest
+  - cat ~/.bash_profile
+  - if [[ -s "$HOME/.profile" ]]; then cat "$HOME/.profile"; fi
