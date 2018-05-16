@@ -1,22 +1,67 @@
+language: java
 sudo: false
-dist: trusty
 
+# caches for build artifacts
 cache:
   directories:
     - $HOME/travis_cache
+
 jobs:
   include:
-    - stage: prepare cache
-      script: echo "1" > $HOME/travis_cache/travis_job_id
-    - stage: test-1
+    # build cache
+    - stage: Build cache
+      install: true
       script:
-        - ls $HOME/travis_cache && cat $HOME/travis_cache/travis_job_id
-        - echo "2" > $HOME/travis_cache/travis_job_id
-    - stage: test-2
+        - mv $HOME/travis_cache $HOME/travis_cache_old
+        - mkdir $HOME/travis_cache
+        - echo "$TRAVIS_BUILD_ID" > $HOME/travis_cache/travis_build_id
+
+    # Check format
+    - stage: Check format
+      # do not use default install (runs formatter)
+      install: true
       script:
-        - ls $HOME/travis_cache && cat $HOME/travis_cache/travis_job_id
-        - echo "3" > $HOME/travis_cache/travis_job_id
-    - stage: test-3
+        - ls $HOME/travis_cache/
+        # check that cache has been filled in current build
+        - if test "$TRAVIS_BUILD_ID" != `cat $HOME/travis_cache/travis_build_id`; then travis_terminate 1; fi
+
+    # build + test
+    - stage: Build + test
+      os: linux
+      dist: trusty
+      jdk: oraclejdk8
+      addons:
+        apt:
+          packages: oracle-java8-installer
+      install: true
       script:
-        - ls $HOME/travis_cache && cat $HOME/travis_cache/travis_job_id
-        - echo "4" > $HOME/travis_cache/travis_job_id
+        - ls $HOME/travis_cache/
+        # check that cache has been filled in current build
+        - if test "$TRAVIS_BUILD_ID" != `cat $HOME/travis_cache/travis_build_id`; then travis_terminate 1; fi
+    - stage: Build + test
+      os: linux
+      dist: trusty
+      jdk: oraclejdk9
+      addons:
+        apt:
+          packages: oracle-java9-installer
+      install: true
+      script:
+        - ls $HOME/travis_cache/
+        # check that cache has been filled in current build
+        - if test "$TRAVIS_BUILD_ID" != `cat $HOME/travis_cache/travis_build_id`; then travis_terminate 1; fi
+
+    # Install packages
+    # debug
+    - stage: Install packages
+      install: true
+      script:
+        - ls $HOME/travis_cache/
+        # check that cache has been filled in current build
+        - if test "$TRAVIS_BUILD_ID" != `cat $HOME/travis_cache/travis_build_id`; then travis_terminate 1; fi
+    - stage: Install packages
+      install: true
+      script:
+        - ls $HOME/travis_cache/
+        # check that cache has been filled in current build
+        - if test "$TRAVIS_BUILD_ID" != `cat $HOME/travis_cache/travis_build_id`; then travis_terminate 1; fi
