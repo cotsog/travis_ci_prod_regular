@@ -7,10 +7,10 @@ cache:
 jobs:
   include:
     - stage: prepare cache
-      script: mkdir $HOME/travis_cache && "echo \"$TRAVIS_JOB_ID\" > $HOME/travis_cache/travis_job_id"
+      script: echo "$TRAVIS_JOB_ID" > $HOME/travis_cache/travis_job_id
     - stage: test
-      script: cat $HOME/travis_cache/travis_job_id
+      script: ls $HOME/travis_cache && cat $HOME/travis_cache/travis_job_id
     - stage: test
-      script: cat $HOME/travis_cache/travis_job_id
+      script: ls $HOME/travis_cache && cat $HOME/travis_cache/travis_job_id
     - stage: test
-      script: cat $HOME/travis_cache/travis_job_id
+      script: ls $HOME/travis_cache && cat $HOME/travis_cache/travis_job_id
