@@ -1,6 +1,10 @@
 language: java
 sudo: false
 
+env:
+  global:
+    - CACHE_NAME=travis-cache
+
 # caches for build artifacts
 cache:
   directories:
