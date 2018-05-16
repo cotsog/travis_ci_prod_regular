@@ -1,7 +1,16 @@
-language: objective-c
+sudo: false
+dist: trusty
 
-osx_image: xcode8.3
-
-install: true
-script:
-  - sudo echo "test"
+cache:
+  directories:
+    - $HOME/travis_cache
+jobs:
+  include:
+    - stage: prepare cache
+      script: mkdir $HOME/travis_cache && "echo \"$TRAVIS_JOB_ID\" > $HOME/travis_cache/travis_job_id"
+    - stage: test
+      script: cat $HOME/travis_cache/travis_job_id
+    - stage: test
+      script: cat $HOME/travis_cache/travis_job_id
+    - stage: test
+      script: cat $HOME/travis_cache/travis_job_id
