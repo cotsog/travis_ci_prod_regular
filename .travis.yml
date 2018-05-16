@@ -7,10 +7,16 @@ cache:
 jobs:
   include:
     - stage: prepare cache
-      script: echo "$TRAVIS_JOB_ID" > $HOME/travis_cache/travis_job_id
-    - stage: test
-      script: ls $HOME/travis_cache && cat $HOME/travis_cache/travis_job_id
-    - stage: test
-      script: ls $HOME/travis_cache && cat $HOME/travis_cache/travis_job_id
-    - stage: test
-      script: ls $HOME/travis_cache && cat $HOME/travis_cache/travis_job_id
+      script: echo "1" > $HOME/travis_cache/travis_job_id
+    - stage: test-1
+      script:
+        - ls $HOME/travis_cache && cat $HOME/travis_cache/travis_job_id
+        - echo "2" > $HOME/travis_cache/travis_job_id
+    - stage: test-2
+      script:
+        - ls $HOME/travis_cache && cat $HOME/travis_cache/travis_job_id
+        - echo "3" > $HOME/travis_cache/travis_job_id
+    - stage: test-3
+      script:
+        - ls $HOME/travis_cache && cat $HOME/travis_cache/travis_job_id
+        - echo "4" > $HOME/travis_cache/travis_job_id
