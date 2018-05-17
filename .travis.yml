@@ -1,4 +1,67 @@
-language: ruby
+language: cpp
+cache:
+  - ccache
+dist: trusty
+sudo: false
+addons:
+  apt:
+    sources: &add-sources
+    - sourceline: 'ppa:beineri/opt-qt562-trusty'
+    - sourceline: 'ppa:beineri/opt-qt593-trusty'
+    - sourceline: 'ppa:ubuntu-toolchain-r/test'
+    - sourceline: 'ppa:jonathonf/php7'
+    packages: &common-packages
+    - libhunspell-dev
+    - lua5.1
+    - liblua5.1-0-dev
+    - libboost-graph1.55-dev
+    - zlib1g-dbg
+    - libzip-dev
+    - libpulse-dev
+    - libyajl-dev
+    - gcc-5 g++-5
+    - luarocks
+    - lua-rex-pcre
+    - lua-filesystem
+    - lua-zip
+    - lua-sql-sqlite3
+env:
+#  matrix:
+#  - Q_OR_C_MAKE=cmake
+#    QT_VERSION=59
+#    WITH_FONTS=NO # actually Qt 5.9, non-default without fonts
+#  - Q_OR_C_MAKE=qmake
+#    QT_VERSION=59
+#    WITH_FONTS=NO # actually Qt 5.9, non-default without fonts
+#  - Q_OR_C_MAKE=cmake
+#    QT_VERSION=59
+#    WITH_UPDATER=NO # actually Qt 5.9, non-default without updater
+#  - Q_OR_C_MAKE=qmake
+#    QT_VERSION=59
+#    WITH_UPDATER=NO # actually Qt 5.9, non-default without updater
+  global:
+  - secure: VFI3UCiDrp47WTcUhsatdQvvWg+3gk00eBMZgSOXXKY5+hk+NOX7bOFcIM5t9nlZDbpHDr10SFTuUOw+PeWmLpFO06Zrjg86M9jm9WS4i8Cs9hfxoT6H4isXlR1vubX2LmNlHyzg8WtdNanlsufgecyaGksJxr7tVhG/cWyD6yo=
+  - secure: XxdhHVraWpXpWo4tluD7NwJtqQT1b6LKoxX6QWKzR0fvcKgqBy2jlXMu0KVtTYtVI7M1wFdjtwSixK1UGFZyDgEYYUnDTufq7E81TWJSQ5ZhxNRaDAyO2vkLNFpH7LkwVrV/fWCPKE9t3/WiowwQnXesm9MMxAzbd2mIaeyiccY=
+  - secure: mi62VU0KxOahOaYulrqDiow3SscJPug842vhnuXzfjJ5AJU5V5gAcvECL85gQIPx5W3dXoNJnHdBUi9jOhnE3tuTML67oiieoVEmZfFF2pXtnHsdFlvzFtcGcmT+cVGF7GVyItlVLa5LcLJw6SNd3C3Dhib/Lu1cb/NdsFn0sZc=
+git:
+  submodules: false # We selectively pull in the wanted submodules ourselves now
+matrix:
+  include:
+  - os: osx
+    compiler: clang
+    env:
+    - Q_OR_C_MAKE=qmake
+  - os: osx
+    compiler: clang
+    env:
+    - Q_OR_C_MAKE=cmake
+
 
 install: true
-script: git diff-tree --no-commit-id --name-only -r $TRAVIS_COMMIT
+script: true
+after_success:
+  - echo "build dir is ${TRAVIS_BUILD_DIR}"
+  - ls -la "${TRAVIS_BUILD_DIR}"
+  - cd "${TRAVIS_BUILD_DIR}"
+  - echo "After cd: $?"
+  - bash CI/travis.after_success.sh
