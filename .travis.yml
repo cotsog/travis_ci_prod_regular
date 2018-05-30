@@ -1,4 +1,7 @@
-# Trigger
+sudo: required
+dist: xenial
+group: edge
+
 language: python
 
 python: 3.7
