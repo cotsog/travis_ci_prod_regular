@@ -3,6 +3,7 @@ language: ruby
 sudo: required
 
 before_install:
+  - sudo apt-get install libjemalloc-dev
   - rvm install 2.3.5 -C --with-jemalloc
   - ruby -r rbconfig -e "puts RbConfig::CONFIG['LIBS']"
   
