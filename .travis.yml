@@ -2,6 +2,10 @@ language: ruby
 
 sudo: required
 
+before_cache: pushd ~/.rvm && rm -rf archives rubies/ruby-2.2.7 rubies/ruby-2.3.4 && popd
+cache:
+  directories: ~/.rvm
+
 before_install:
   - rvm list
   - sudo apt-get install libjemalloc-dev
