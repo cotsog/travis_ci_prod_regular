@@ -1,10 +1,10 @@
-osx_image: xcode9.2
+language: ruby
 
-matrix:
-  include:
-    - language: objective-c
-    - language: swift
+sudo: required
 
+before_install:
+  - export RUBY_CONFIGURE_OPTS=--with-jemalloc
+  - rvm use 2.3.5 --install --binary --fuzzy
+  
 install: true
-script:
-  - xcode-select -print-path
+script: true
