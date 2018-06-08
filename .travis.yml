@@ -3,8 +3,8 @@ language: ruby
 sudo: required
 
 before_install:
-  - export RUBY_CONFIGURE_OPTS=--with-jemalloc
-  - rvm use 2.3.5 --install --binary --fuzzy
+  - rvm install 2.3.5 -C --with-jemalloc
+  - ruby -r rbconfig -e "puts RbConfig::CONFIG['LIBS']"
   
 install: true
 script: true
