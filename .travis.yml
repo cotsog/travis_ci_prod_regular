@@ -1,19 +1,11 @@
 language: ruby
 
-dist: trusty
-sudo: required
-
-addons:
-  apt:
-    sources:
-      - sourceline: "deb [arch=amd64] http://storage.googleapis.com/bazel-apt stable jdk1.8"
-        key_url: "https://bazel.build/bazel-release.pub.gpg"
-      - ubuntu-toolchain-r-test
-    packages:
-      - bazel
-      - awscli
-      - libstdc++6
-      - golang-go
+matrix:
+  include:
+    - dist: trusty
+      sudo: required
+    - dist: trusty
+      sudo: false
 
 install: true
-script: true
+script: rvm list
