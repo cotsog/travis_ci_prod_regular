@@ -1,4 +1,19 @@
 language: ruby
 
+dist: trusty
+sudo: required
+
+addons	
+  apt:
+    sources:
+      - key_url: https://bazel.build/bazel-release.pub.gpg
+        sourceline: deb [arch=amd64] http://storage.googleapis.com/bazel-apt stable jdk1.8
+      - ubuntu-toolchain-r-test
+    packages:
+      - bazel
+      - awscli
+      - libstdc++6
+      - golang-go
+
 install: true
-script: echo $FOO
+script: true
