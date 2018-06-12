@@ -3,7 +3,7 @@ language: ruby
 dist: trusty
 sudo: required
 
-addons	
+addons:
   apt:
     sources:
       - sourceline: "deb [arch=amd64] http://storage.googleapis.com/bazel-apt stable jdk1.8"
