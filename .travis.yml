@@ -1,9 +1,17 @@
 language: ruby
 
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-7
+      - libsdl2-dev
+      - libglew-dev
+      - libftgl-dev
+      - libsdl2-dev
+      - libdevil-dev
+      - libglm-dev
+
 install: true
-script:
-  # Setup ppa to make sure arm-none-eabi-gcc is correct version
-  - sudo add-apt-repository -y ppa:team-gcc-arm-embedded/ppa
-  - sudo add-apt-repository -y ppa:deadsnakes/ppa
-  # Loop until update succeeds (timeouts can occur)
-  - travis_retry $(! sudo apt-get update 2>&1 |grep Failed)
+script: true
