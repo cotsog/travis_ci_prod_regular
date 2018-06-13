@@ -5,7 +5,7 @@ addons:
     sources:
       - ubuntu-toolchain-r-test
     packages:
-      - g++-7
+      - gcc-7
       - libsdl2-dev
       - libglew-dev
       - libftgl-dev
