@@ -1,4 +1,4 @@
 language: ruby
 
 install: true
-script: sleep 120
+script: gpg --keyserver pgp.mit.edu --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4
