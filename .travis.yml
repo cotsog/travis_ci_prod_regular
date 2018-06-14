@@ -1,17 +1,4 @@
 language: ruby
 
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - gcc-7
-      - libsdl2-dev
-      - libglew-dev
-      - libftgl-dev
-      - libsdl2-dev
-      - libdevil-dev
-      - libglm-dev
-
 install: true
-script: true
+script: sleep 120
