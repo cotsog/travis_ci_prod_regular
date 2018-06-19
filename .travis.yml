@@ -1,10 +1,11 @@
-sudo: required
+language: ruby
 
-matrix:
-  include:
-    - language: python
-    - language: minimal
+cache:
+  directories:
+    - awscli-bundle
 
 install: true
 script:
-  - df -h
+  - if [ ! -f ./awscli-bundle/install ]; then curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip" && unzip awscli-bundle.zip; fi
+  - ./awscli-bundle/install -b ~/bin/aws
+  - ~/bin/aws --version
