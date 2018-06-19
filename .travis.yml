@@ -1,13 +1,15 @@
 language: ruby
 
-sudo: required
-
-cache:
-  directories:
-    - awscli-bundle
+matrix:
+  include:
+    - sudo: false
+      dist: trusty
+      env: SUDO=false DIST=trusty
+    - sudo: required
+      dist: trusty
+      env: SUDO=required DIST=trusty
 
 install: true
 script:
-  - if [ ! -f ./awscli-bundle/install ]; then curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip" && unzip awscli-bundle.zip; fi
-  - ./awscli-bundle/install -b ~/bin/aws
-  - ~/bin/aws --version
+  - nproc 2>/dev/null && python -c 'import multiprocessing;print multiprocessing.cpu_count()'
+  - free && cat /proc/meminfo
