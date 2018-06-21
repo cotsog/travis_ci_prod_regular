@@ -1,16 +1,11 @@
 language: ruby
 
-env:
-  global:
-    - COVERITY_SCAN_NOTIFICATION_EMAIL=your@email.com
-
-jobs:
-  include:
-    - os: linux
-      if: (env(COVERITY_SCAN_NOTIFICATION_EMAIL) IS present) AND (branch IN (develop, master)) AND (type IN (cron, push))
-      script:
-        - echo "Running!"
+cache:
+  directories:
+    - subdir
 
 install: true
 script:
-  - echo "Root!"
+  - echo $CASHER_DIR
+  - cd  $HOME/.casher
+  - ls -al
