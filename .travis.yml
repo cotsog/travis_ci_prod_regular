@@ -1,5 +1,9 @@
 language: ruby
 
+env:
+  global:
+    - COVERITY_SCAN_NOTIFICATION_EMAIL=your@email.com
+
 jobs:
   include:
     - os: linux
