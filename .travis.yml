@@ -1,15 +1,12 @@
 language: ruby
 
-matrix:
-  include:
-    - sudo: false
-      dist: trusty
-      env: SUDO=false DIST=trusty
-    - sudo: required
-      dist: trusty
-      env: SUDO=required DIST=trusty
+jobs:
+  include:
+    - os: linux
+      if: (env(COVERITY_SCAN_NOTIFICATION_EMAIL) IS present) AND (branch IN (develop, master)) AND (type IN (cron, push))
+      script:
+        - echo "Running!"
 
 install: true
 script:
-  - nproc 2>/dev/null && python -c 'import multiprocessing;print multiprocessing.cpu_count()'
-  - free && cat /proc/meminfo
+  - echo "Root!"
