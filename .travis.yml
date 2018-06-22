@@ -9,7 +9,6 @@ matrix:
       dist: trusty
       env: SUDO=required DIST=trusty
 
-rust: nightly
 group: stable
 addons:
   apt:
@@ -18,4 +17,3 @@ addons:
     - libssh2-1-dev
 install: true
 script: curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain=nightly -y
-language: rust
