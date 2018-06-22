@@ -1,11 +1,21 @@
-language: ruby
+os: linux
 
-cache:
-  directories:
-    - subdir
+matrix:
+  include:
+    - sudo: false
+      dist: trusty
+      env: SUDO=false DIST=trusty
+    - sudo: required
+      dist: trusty
+      env: SUDO=required DIST=trusty
 
+rust: nightly
+group: stable
+addons:
+  apt:
+    packages:
+    - libgtk-3-dev
+    - libssh2-1-dev
 install: true
-script:
-  - echo $CASHER_DIR
-  - cd  $HOME/.casher
-  - ls -al
+script: true
+language: rust
