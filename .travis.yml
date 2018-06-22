@@ -17,5 +17,5 @@ addons:
     - libgtk-3-dev
     - libssh2-1-dev
 install: true
-script: true
+script: curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain=nightly -y
 language: rust
