@@ -3,6 +3,7 @@ language: python
 install:
   - wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.2.0.1227-linux.zip
   - unzip sonar-scanner-cli-3.2.0.1227-linux.zip
+  - cd sonar-scanner-3.2.0.1227-linux/bin/ && pwd
   - export PATH=$PATH:${pwd}/sonar-scanner-cli-3.2.0.1227-linux/bin
   - sonar-scanner --help
   
