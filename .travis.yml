@@ -1,13 +1,24 @@
-language: python
+language: node_js
 
-install:
-  - wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.2.0.1227-linux.zip
-  - unzip sonar-scanner-cli-3.2.0.1227-linux.zip
-  - export PATH=$PATH:$TRAVIS_BUILD_DIR/sonar-scanner-3.2.0.1227-linux/bin
-  - echo $PATH
-  - which sonar-scanner || true
-  - sonar-scanner --help || true
-  - cd sonar-scanner-3.2.0.1227-linux/bin && pwd
-  - ./sonar-scanner --help
-  
-script: true
+git:
+  depth: 3
+
+cache:
+  directories:
+    - "$HOME/.npm" # cache npm packages
+    - "$HOME/npm" # cache npm version
+
+stages:
+  - test
+  # - deploy
+
+jobs:
+  include:
+    - stage: test
+  install:
+    - echo "npm install -g npm@6.1"
+    - echo "npm ci"
+  script: echo "npm run lint"
+    - echo "script: npm run test"
+    - echo "script: npm run compile-cli" # cli should still compile without errors
+    - echo "script: npm run build-storybook" # storybook should build without errors
