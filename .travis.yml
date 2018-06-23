@@ -1,12 +1,9 @@
-language: ruby
+language: python
 
-install: true
+install:
+  - wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.2.0.1227-linux.zip
+  - unzip sonar-scanner-cli-3.2.0.1227-linux.zip
+  - export PATH=$PATH:${pwd}/sonar-scanner-cli-3.2.0.1227-linux/bin
+  - sonar-scanner --help
+  
 script: true
-
-deploy:
-  provider: pages
-  skip-cleanup: true
-  github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
-  local-dir: out
-  on:
-    tags: true
