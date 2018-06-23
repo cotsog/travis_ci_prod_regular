@@ -5,6 +5,8 @@ install:
   - unzip sonar-scanner-cli-3.2.0.1227-linux.zip
   - export PATH=$PATH:$TRAVIS_BUILD_DIR/sonar-scanner-cli-3.2.0.1227-linux/bin
   - echo $PATH
-  - sonar-scanner --help
+  - sonar-scanner --help || true
+  - cd sonar-scanner-3.2.0.1227-linux/bin
+  - ./sonar-scanner --help
   
 script: true
