@@ -1,25 +1,4 @@
-language: node_js
+language: ruby
 
-git:
-  depth: 3
-
-cache:
-  directories:
-    - "$HOME/.npm" # cache npm packages
-    - "$HOME/npm" # cache npm version
-
-stages:
-  - test
-  # - deploy
-
-install:
-  - npm install -g npm@6.1
-  - npm ci
-
-jobs:
-  include:
-    - stage: test
-      script: npm run lint
-    - script: npm run test
-    - script: npm run compile-cli # cli should still compile without errors
-    - script: npm run build-storybook # storybook should build without errors
+install: true
+script: rvm list
