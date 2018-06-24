@@ -1,4 +1,4 @@
 language: generic
 
-install: true
+install: echo $BUNDLE_PATH
 script: rvm list
