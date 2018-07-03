@@ -10,7 +10,9 @@ env:
   
 matrix:
   allow_failures:
-    - env: TOXENV=py37 PYVERSION=3.7
+    - env:
+        - TOXENV=py37
+        - PYVERSION=3.7
       jdk: oraclejdk8
   
 install: true
