@@ -1,12 +1,4 @@
-conditions: v1
 language: go
 go: 1.10.x
 install: true
-jobs:
-  include:
-  - stage: test libraries
-    script: true
-    env: BR=lib-library2-test-conditions A=1
-  - stage: test libraries
-    script: true
-    env: BR=lib-library2-test-conditions B=1
+script: dep --help
