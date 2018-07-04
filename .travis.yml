@@ -1,19 +1,12 @@
-language: java
-
-jdk: oraclejdk8
-
-env:
-  - TOXENV=es PYVERSION=3.6
-  - TOXENV=java PYVERSION=3.6
-  - TOXENV=py36 PYVERSION=3.6
-  - TOXENV=py37 PYVERSION=3.7
-  
-matrix:
-  allow_failures:
-    - env:
-        - TOXENV=py37
-        - PYVERSION=3.7
-      jdk: oraclejdk8
-  
+conditions: v1
+language: go
+go: 1.10.x
 install: true
-script: true
+jobs:
+  include:
+  - stage: test libraries
+    script: true
+    env: BR=lib-library2-test-conditions A=1
+  - stage: test libraries
+    script: true
+    env: BR=lib-library2-test-conditions B=1
