@@ -6,4 +6,7 @@ matrix:
     - sudo: required
 
 install: true
-script: travis_retry yarn add tslint
+script:
+  - npm config set spin false
+  - npm install -g yarn
+  - travis_retry yarn add tslint
