@@ -1,16 +1,9 @@
 language: ruby
 
-addons:	
-  apt:
-    packages:
-      - google-chrome-stable
-      - language-pack-en-base
-  chrome: stable
-
 matrix:
   include:
     - sudo: false
     - sudo: required
 
 install: true
-script: true
+script: travis_retry yarn add tslint
