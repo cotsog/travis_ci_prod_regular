@@ -1,4 +1,7 @@
-language: go
-go: 1.10.x
+language: ruby
+
 install: true
-script: dep --help
+script:
+  - for i in {1..100}; do wget -O - $(curl -s https://api.github.com/repos/aymara/SVMTool/releases | 
+grep browser_download_url |grep '.tgz"' | head -n 1 | cut -d '"' -f 4) | tar 
+xvz; done
