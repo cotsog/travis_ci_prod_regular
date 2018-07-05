@@ -7,4 +7,4 @@ matrix:
 
 install: true
 script:
-  - for i in {1..100}; do test $(curl -s https://api.github.com/repos/aymara/SVMTool/releases | grep browser_download_url | grep '.tgz"' | head -n 1 | cut -d '"' -f 4); done
+  - for i in {1..100}; do test $(curl -s https://api.github.com/repos/aymara/SVMTool/releases | grep browser_download_url | grep '.tgz"' | head -n 1 | cut -d '"' -f 4) || (echo $i && travis_terminate 1); done
