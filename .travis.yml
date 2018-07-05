@@ -3,10 +3,13 @@ language: ruby
 matrix:
   include:
     - sudo: false
+      ruby: 2.4.1
     - sudo: required
+      ruby: 2.4.1
+    - sudo: false
+      ruby: 2.4.4
+    - sudo: required
+      ruby: 2.4.4
 
 install: true
-script:
-  - npm config set spin false
-  - npm install -g yarn
-  - travis_retry yarn add tslint
+script: true
