@@ -4,10 +4,9 @@ rvm: 2.2.10
 dist: precise
 sudo: false
 
-addons:
-  apt:
-    sources:
-      - mongodb-3.2-precise
+addons:	
+  apt_packages:
+    - language-pack-en-base
 
 install: true
 script:
