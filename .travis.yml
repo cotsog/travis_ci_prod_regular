@@ -7,9 +7,9 @@ matrix:
     - sudo: required
       ruby: 2.4.1
     - sudo: false
-      ruby: 2.4.4
+      ruby: 2.4.3
     - sudo: required
-      ruby: 2.4.4
+      ruby: 2.4.3
 
 install: true
 script: true
