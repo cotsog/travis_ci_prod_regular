@@ -7,8 +7,9 @@ sudo: required
 group: deprecated-2017Q2
 
 addons:	
-  apt_packages:
-    - language-pack-en-base
+  apt:
+    packages:
+      - language-pack-en-base
 
 install: true
 script: true
