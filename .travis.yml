@@ -1,5 +1,10 @@
-language: ruby
-rvm: 2.2.10
+language: php
+php: 7.1
+
+dist: trusty
+sudo: required
+
+group: deprecated-2017Q2
 
 addons:	
   apt_packages:
