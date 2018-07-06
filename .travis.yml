@@ -8,10 +8,7 @@ addons:
   apt:
     sources:
       - mongodb-3.2-precise
-    packages:
-      - mongodb-org-server
-      - mongodb-org-shell
-      - mongodb-org-tools
 
 install: true
-script: true
+script:
+  - sudo -E apt-get -yq --no-install-suggests --no-install-recommends --allow-downgrades --allow-remove-essential --allow-change-held-packages --allow-unauthenticated install mongodb-org-server mongodb-org-shell mongodb-org-tools
