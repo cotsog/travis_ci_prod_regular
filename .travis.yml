@@ -1,13 +1,9 @@
 language: ruby
 rvm: 2.2.10
 
-dist: precise
-sudo: false
-
 addons:	
   apt_packages:
     - language-pack-en-base
 
 install: true
-script:
-  - sudo -E apt-get -yq --no-install-suggests --no-install-recommends --allow-downgrades --allow-remove-essential --allow-change-held-packages --allow-unauthenticated install mongodb-org-server mongodb-org-shell mongodb-org-tools
+script: true
