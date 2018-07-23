@@ -1,15 +1,5 @@
-language: php
-php: 7.1
-
-dist: trusty
-sudo: required
-
-group: deprecated-2017Q2
-
-addons:	
-  apt:
-    packages:
-      - language-pack-en-base
+language: objective-c
+osx_image: xcode9.4
 
 install: true
 script: true
