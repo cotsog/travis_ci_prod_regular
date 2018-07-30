@@ -1,13 +1,21 @@
 language: ruby
 
 stages:
-  - name: integration
+  - name: cron
     if: type = cron
+  - name: commit_message
+    if: commit_message =~ /\[ci integration\]/
+  - name: tags
+    if: tag IS present AND tag =~ /^v[\d]+\.[\d]+\.[\d]+/
     
 jobs:
   include:
-    - stage: integration
+    - stage: cron
       script: echo "CRON"
+    - stage: commit_message
+      script: echo "COMMIT_MESSAGE"
+    - stage: tags
+      script: echo "TAGS"
 
 install: true
 script: true
