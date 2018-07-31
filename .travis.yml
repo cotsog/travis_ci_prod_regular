@@ -7,9 +7,7 @@ cache: bundler
 rvm:
 - 2.4.1
 
-install: true
 script: true
-
 
 env:
   global:
