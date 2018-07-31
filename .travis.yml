@@ -1,7 +1,9 @@
 language: go
 go:
 - 1.9
-install: true
+install:
+- go get -t ./...
+- make install-linters
 services:
 - mysql
 addons:
@@ -13,7 +15,8 @@ addons:
     - mysql-client
 dist: trusty
 sudo: required
-script: true
+script:
+- make check
 notifications:
   slack:
     secure: N6uhCMq4F9SAySim7qN3uyc2GukUVd+w75ZZjoblI6Y6JYZv9DJY7fnUto3QuYfwBUsIjtXFbxKwXD/ZElgJ+EVDcUWU7T4MEKLQ8X/ggsQirdyVCAe8p7ex0h9WwwU9/7HqM6PQuHLsgc+TnHgoVer/yhFXqIwyDa5UkDwtu2lZtgAUy2/m/53tQM+PyCPN3/YWHzcWz1l0A7fEcCJMN6cvEmOxVVuGg0bcCpTtOQ5Av6/1RAcXcVpkfy+yFSf4wSqIu55rVOtARQULH8X7S8pk7BSFxFRU/1bfEmY/mdstc+nV8IVtMdvPNDMXCCs69eMB3dw1lEQB49xE5k7X6lJcsEUu4wqLISseAOzl9fzhbKqI4Z8z5Bo7IahmxSaOUI3F1RswcGrS7r8SEqe1HjD205RuAN9SalV0n2DnuLqJrHRrfWSfU3zNcBonFPVyWCm2rtIvnNZFW34XfpKBV/wyrQSNJG/mvh2DHGSOzcFEIyrACd0JJeRi+YJ40v/hpW8rVcxXpjLYXC2BlOQJjoroH8G4XfBrGwOI8+DLDCNd9V8dkGj7ZBYC/nwyUuNcrRjihr0Q0VZbr0nmu8M6gvVtFObsXsiUb127iXhG+PVEIvoERHp67G5DfW+dCn/FR8VJdDIvUxiCVeKLqLxvlOEsVnkRjq09QFOtMqO0bZY=
@@ -29,3 +32,6 @@ deploy:
   script:
   - sh $TRAVIS_BUILD_DIR/.travis/deploy.sh
   skip_cleanup: true
+  on:
+    branch: develop
+    repo: skycoin/getsky.org
