@@ -1,6 +1,4 @@
-# trigger
-language: ruby
+os: osx
 
 install: true
-script:
-  - ls -la ~/.rvm/config/
+script: true
