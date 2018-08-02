@@ -1,16 +1,14 @@
-language: objective-c
+os: osx
 
-matrix:
+install:
+  - wget -q https://github.com/fuse-open/fuse-studio/releases/download/1.9.0/fuse_osx_1_9_0.pkg -O fuse-installer.pkg && sudo installer -pkg fuse-installer.pkg -target /
+
+jobs:
   include:
-    - osx_image: xcode9.4
-    - osx_image: xcode9.3
-    - osx_image: xcode9.2
-    - osx_image: xcode9.1
-    - osx_image: xcode9
-    - osx_image: xcode8.3
-    - osx_image: xcode8
-    - osx_image: xcode7.3
-    - osx_image: xcode6.4
+    - stage: build 
+      name: "Building Android"
+      before_script:
+        - echo; echo; echo y; echo y | fuse install android
 
 install: true
 script: true
