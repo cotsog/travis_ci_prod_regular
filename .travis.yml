@@ -1,14 +1,7 @@
----
-os: osx
+sudo: required
 
-matrix:
-  include:
-    - osx_image: xcode9.2
-    - osx_image: xcode9.3
-    - osx_image: xcode9.4
-
-install:
-  - wget -q https://github.com/fuse-open/fuse-studio/releases/download/1.9.0/fuse_osx_1_9_0.pkg -O fuse-installer.pkg && sudo installer -pkg fuse-installer.pkg -target /
-  - printf '\ny' | fuse install android
-
-script: true
+install: true
+script:
+  - date
+  - sudo atq
+  - sudo grep -E 'google-clock-skew|ntpd|startup-script' /var/log/syslog
