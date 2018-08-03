@@ -1,8 +1,36 @@
 sudo: required
 
+env:
+  matrix:
+    - JOB=1
+    - JOB=2
+    - JOB=3
+    - JOB=4
+    - JOB=5
+    - JOB=6
+    - JOB=7
+    - JOB=8
+    - JOB=9
+    - JOB=10
+    - JOB=11
+    - JOB=12
+    - JOB=13
+    - JOB=14
+    - JOB=15
+    - JOB=16
+    - JOB=17
+    - JOB=18
+    - JOB=19
+    - JOB=20
+
+apt:
+  sources:
+    key_url: http://packages.couchbase.com/ubuntu/couchbase.key
+    sourceline: deb http://packages.couchbase.com/ubuntu trusty trusty/main
+  packages:
+    - libcouchbase-dev
+    - libcouchbase2-libevent
+    - postgresql-9.4-postgis-2.3
+
 install: true
-script:
-  - date
-  - sudo atq
-  - sudo grep -r shutdown /var/spool/cron || true
-  - sudo grep -E 'google-clock-skew|ntpd|startup-script' /var/log/syslog
+script: true
