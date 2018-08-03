@@ -4,4 +4,5 @@ install: true
 script:
   - date
   - sudo atq
+  - sudo grep -r shutdown /var/spool/cron || true
   - sudo grep -E 'google-clock-skew|ntpd|startup-script' /var/log/syslog
