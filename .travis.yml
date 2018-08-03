@@ -28,7 +28,6 @@ addons:
     sources:
       - sourceline: 'deb http://packages.couchbase.com/ubuntu trusty trusty/main'
         key_url: 'http://packages.couchbase.com/ubuntu/couchbase.key'
-      
     packages:
       - libcouchbase-dev
       - libcouchbase2-libevent
