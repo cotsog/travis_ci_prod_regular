@@ -1,18 +1,5 @@
-sudo: required
-
-env:
-  matrix:
-    - JOB=1
-
-addons:
-  apt:
-    sources:
-      - sourceline: 'deb http://packages.couchbase.com/ubuntu trusty trusty/main'
-        key_url: 'http://packages.couchbase.com/ubuntu/couchbase.key'
-    packages:
-      - libcouchbase-dev
-      - libcouchbase2-libevent
-      - postgresql-9.4-postgis-2.3
+language: objective-c
+osx_image: xcode9.3
 
 install: true
 script: true
