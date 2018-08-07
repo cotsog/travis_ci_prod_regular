@@ -1,59 +1,7 @@
-language: ruby
-dist: trusty
-sudo: required
+language: python
+python: 2.7
 
-services:
-  - postgresql
-  - redis-server
-
-cache:
-  - bundler
-  - apt
-
-addons:
-  hosts:
-    - postgres
-    - couchbase
-    - haproxy
-    - mongo
-    - redis
-  postgresql: "9.4"
-  apt:
-    sources:
-      - sourceline: deb http://packages.couchbase.com/ubuntu trusty trusty/main
-        key_url: http://packages.couchbase.com/ubuntu/couchbase.key
-    packages:
-      - libcouchbase-dev
-      - libcouchbase2-libevent
-      - postgresql-9.4-postgis-2.3
+sudo: false
 
 install: true
-env:
-  - TEST_GROUP=1,2
-  - TEST_GROUP=3,4
-  - TEST_GROUP=5,6
-  - TEST_GROUP=7,8
-  - TEST_GROUP=9,10
-  - TEST_GROUP=11,12
-  - TEST_GROUP=13,14
-  - TEST_GROUP=15,16
-  - TEST_GROUP=17,18
-  - TEST_GROUP=19,20
-  - TEST_GROUP=21,22
-  - TEST_GROUP=23,24
-  - TEST_GROUP=25,26
-  - TEST_GROUP=27,28
-  - TEST_GROUP=29,30
-  - TEST_GROUP=spec_fast,passport
-  - TEST_GROUP=karma
-
-script: true
-
-jobs:
-  include:
-    - stage: tag build
-      language: bash
-      install: skip
-      script: skip
-      env:
-        - TEST_GROUP=
+script: pip uninstall attrs
