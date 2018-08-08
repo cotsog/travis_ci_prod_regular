@@ -3,4 +3,4 @@ osx_image: xcode9.4
 
 
 install: true
-script: ls -al /Applications | grep Xcode
+script: ls -al /Applications | grep Xcode && sleep 30
