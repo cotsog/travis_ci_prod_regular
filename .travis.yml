@@ -1,6 +1,7 @@
-language: objective-c
-osx_image: xcode9.4
-
+sudo: required
 
 install: true
-script: ls -al /Applications | grep Xcode && sleep 30
+script: true
+
+addons:
+  chrome: stable
