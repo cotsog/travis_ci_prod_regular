@@ -1,19 +1,6 @@
-language: php
-php:
-  - '7.0'
-  - '7.1'
-  - '7.2'
-  - nightly
+language: ruby
 
-stages:
-  - Static Code Analysis
-  - Test
-
-jobs:
-  include:
-    - stage: Static Code Analysis
-      php: 7.2
-      script: echo "Static Code Analysis"
-    
 install: true
-script: true
+script: env
+
+if: branch = master
