@@ -1,5 +1,5 @@
 language: ruby
 
 install: true
-script: true
+script: env
 
