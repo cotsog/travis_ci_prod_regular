@@ -3,3 +3,5 @@ language: ruby
 install: true
 script: env
 
+if: env(TRAVIS_BRANCH) = master
+
