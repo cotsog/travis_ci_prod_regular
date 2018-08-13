@@ -16,8 +16,6 @@ jobs:
       script: echo "Static Code Analysis"
     - stage: Test
       script: echo "Test"
-  allow_failures:
-    - php: nightly
     
- install: true
- script: true
+install: true
+script: true
