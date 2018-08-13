@@ -1,19 +1,6 @@
-sudo: required
-
-env:
-  - JOB=1
-  - JOB=2
-  - JOB=3
-  - JOB=4
-  - JOB=5
-  - JOB=6
-  - JOB=7
-  - JOB=8
-  - JOB=9
-  - JOB=10
+language: ruby
 
 install: true
 script: true
 
-addons:
-  chrome: stable
+if: env(TRAVIS_BRANCH) == master
