@@ -14,8 +14,6 @@ jobs:
     - stage: Static Code Analysis
       php: 7.2
       script: echo "Static Code Analysis"
-    - stage: Test
-      script: echo "Test"
     
 install: true
 script: true
