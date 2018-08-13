@@ -1,7 +1,8 @@
 language: ruby
 
-install: true
-script: env
-
-if: env(TRAVIS_BRANCH) = master
+jobs:
+  include:
+    - install: true
+      script: env
+      if: env(TRAVIS_BRANCH) = master
 
