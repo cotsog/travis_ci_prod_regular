@@ -1,8 +1,23 @@
-language: ruby
+language: php
+php:
+  - '7.0'
+  - '7.1'
+  - '7.2'
+  - nightly
+
+stages:
+  - Static Code Analysis
+  - Test
 
 jobs:
   include:
-    - install: true
-      script: env
-      if: env(TRAVIS_BRANCH) = master
-
+    - stage: Static Code Analysis
+      php: 7.2
+      script: echo "Static Code Analysis"
+    - stage: Test
+      script: echo "Test"
+  allow_failures:
+    - php: nightly
+    
+ install: true
+ script: true
