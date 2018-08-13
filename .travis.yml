@@ -3,4 +3,3 @@ language: ruby
 install: true
 script: true
 
-if: env(TRAVIS_BRANCH) == develop
