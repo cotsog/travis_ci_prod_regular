@@ -1,23 +1,6 @@
-language: php
+sudo: required
+dist: xenial
 
-stages:
-  - Static Code Analysis
-  - Test
-
-jobs:
-  include:
-    - stage: Static Code Analysis
-      php: 7.2
-      script:
-        - echo "vendor/bin/php-cs-fixer fix -v --dry-run"
-    - stage: Test
-      php: 7.0
-      script: echo "vendor/bin/phpunit"
-    - php: 7.1
-      script: echo "vendor/bin/phpunit"
-    - php: 7.2
-      script: echo "vendor/bin/phpunit"
-    - php: nightly
-      script: echo "vendor/bin/phpunit"
-  allow_failures:
-    - php: nightly
+install:
+script:
+  - git clone -b master "https://github.com/kmahyyg/kmahyyg.github.io.git
