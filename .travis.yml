@@ -1,6 +1,9 @@
 sudo: required
-dist: xenial
+dist: trusty
+
+addons:
+  chrome: stable
 
 install:
 script:
-  - git clone -b master "https://github.com/kmahyyg/kmahyyg.github.io.git" /tmp/buld_y
+  - sudo apt-get install shellcheck
