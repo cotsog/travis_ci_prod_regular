@@ -3,4 +3,4 @@ dist: xenial
 
 install:
 script:
-  - git clone -b master "https://github.com/kmahyyg/kmahyyg.github.io.git
+  - git clone -b master "https://github.com/kmahyyg/kmahyyg.github.io.git"
