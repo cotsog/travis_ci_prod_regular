@@ -1,4 +1,6 @@
 language: cpp
 
 install: true
-script: phpenv global 7.0
+script:
+  - phpenv global 7.0
+  - php -v
