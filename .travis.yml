@@ -1,6 +1,4 @@
-language: ruby
-
-rvm: 99
+language: cpp
 
 install: true
-script: true
+script: phpenv global 7.0
