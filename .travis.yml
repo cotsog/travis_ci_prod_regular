@@ -1,9 +1,6 @@
-matrix:
-  include:
-    - language: php
-      php: 99
-    - language: go
-      go: 1.11
+language: ruby
+
+rvm: 99
 
 install: true
 script: true
