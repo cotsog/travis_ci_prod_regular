@@ -1,9 +1,9 @@
-sudo: required
-dist: trusty
+matrix:
+  include:
+    - language: php
+      php: 99
+    - language: go
+      go: 1.11
 
-addons:
-  chrome: stable
-
-install:
-script:
-  - sudo apt-get install shellcheck
+install: true
+script: true
