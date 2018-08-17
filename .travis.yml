@@ -7,7 +7,8 @@ matrix:
     - osx_image: xcode9.4
 
 install:
+  - env
   - wget -q https://github.com/fuse-open/fuse-studio/releases/download/1.9.0/fuse_osx_1_9_0.pkg -O fuse-installer.pkg && sudo installer -pkg fuse-installer.pkg -target /
-  - yes | fuse install android
+  - print '\ny' | fuse install android
 
 script: true
