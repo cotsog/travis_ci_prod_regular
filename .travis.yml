@@ -11,6 +11,7 @@ install:
   - brew cask install java8
   - env
   - /usr/libexec/java_home -V
+  - export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
   - java -version
   - wget -q https://github.com/fuse-open/fuse-studio/releases/download/1.9.0/fuse_osx_1_9_0.pkg -O fuse-installer.pkg && sudo installer -pkg fuse-installer.pkg -target /
   - print '\ny' | fuse install android
