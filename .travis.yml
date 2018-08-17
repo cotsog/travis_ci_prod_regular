@@ -1,9 +1,4 @@
-language: objective-c
-
-osx_image:
-  - xcode9.2
-  - xcode9.3
-  - xcode9.4
+dist: precise
 
 install: true
 script: true
