@@ -1,17 +1,21 @@
-os: osx
+language: python
+python:
+  - "3.6"
+  - "3.5"
+  - "3.4"
+  - "2.7"
+install: pip install tox
+script: tox
+after_success: coveralls
 
-matrix:
+jobs:
   include:
-    - osx_image: xcode9.4
-    - osx_image: xcode9.4
-      before_install:
-        - brew tap caskroom/versions
-        - brew cask install java8
-        - export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
-
-install:
-  - java -version
-  - wget -q https://github.com/fuse-open/fuse-studio/releases/download/1.9.0/fuse_osx_1_9_0.pkg -O fuse-installer.pkg && sudo installer -pkg fuse-installer.pkg -target /
-  - printf '\ny' | fuse install android
-
-script: true
+    - stage: deploy
+      install: skip
+      script: skip
+      after_success: skip
+      before_deploy: echo $CI_COMMIT_TAG > asciigraf/VERSION
+      python: "3.6"
+      deploy:
+        provider: script
+        script: echo "test"
