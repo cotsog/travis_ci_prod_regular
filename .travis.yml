@@ -12,7 +12,7 @@ jobs:
     - stage: deploy
       install: skip
       script: echo "script"
-      after_success: echo "after_success"
+      after_success: skip
       python: "3.6"
       deploy:
         provider: script
