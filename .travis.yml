@@ -1,19 +1,10 @@
-language: python
-python:
-  - "3.6"
-  - "3.5"
-  - "3.4"
-  - "2.7"
-install: true
-script: true
+sudo: required
 
-jobs:
-  include:
-    - stage: deploy
-      install: skip
-      script: echo "script"
-      after_success: skip
-      python: "3.6"
-      deploy:
-        provider: script
-        script: echo "test"
+services:
+  - docker
+
+install: true
+script:
+  - echo $DOCKER_OPTS
+  - ps faux | grep docker
+  - docker info
