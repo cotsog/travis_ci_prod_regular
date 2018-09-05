@@ -1,10 +1,13 @@
 sudo: required
 
-services:
-  - docker
+addons:
+  apt:
+    sources:
+      - key_url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+        sourceline: deb http://packages.cloud.google.com/apt cloud-sdk-trusty main
+    packages:
+      - google-cloud-sdk
+      - docker-ce
 
 install: true
-script:
-  - echo $DOCKER_OPTS
-  - ps faux | grep docker
-  - docker info
+script: true
