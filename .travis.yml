@@ -7,4 +7,5 @@ osx_image:
 
 install:
 script:
+  - brew install jq
   - brew cask install fastlane
