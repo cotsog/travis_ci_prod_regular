@@ -1,3 +1,5 @@
+conditions: v0
+
 language: generic
 
 sudo: required
@@ -11,7 +13,7 @@ jobs:
       script: true
     - stage: publish_docker_with_ci_tag
       script: true
-      if: type = push
+      if: type IS push
     - stage: publish_docker_with_release_tag
       script: true
       if: tag IS present # tags represent releases
