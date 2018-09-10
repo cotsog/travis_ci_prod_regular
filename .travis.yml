@@ -1,5 +1,3 @@
-conditions: v0
-
 language: generic
 
 sudo: required
