@@ -1,17 +1,7 @@
-language: generic
+language: python
 
-sudo: required
+python: 3.6.6
 
-services:
-  - docker
-
-jobs:
-  include:
-    - stage: test
-      script: true
-    - stage: publish_docker_with_ci_tag
-      script: true
-      if: type IS push
-    - stage: publish_docker_with_release_tag
-      script: true
-      if: tag IS present # tags represent releases
+install: true
+script:
+  - pip install boto3==1.9.1
