@@ -1,6 +1,11 @@
-language: python
+language: c++
 
-python: 3.6.6
+addons:
+  apt:
+    sources:
+      - ppa:ubuntu-toolchain-r/test
+    packages:
+      - g++-5
 
 install: true
 script:
