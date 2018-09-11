@@ -2,13 +2,8 @@ language: c++
 
 sudo: required
 
-addons:
-  apt:
-    sources:
-      - ppa:ubuntu-toolchain-r/test
-    packages:
-      - g++-5
-
 install: true
 script:
-  - pip install boto3==1.9.1
+  - sudo add-apt-repository ppa:ubuntu-toolchain-r/test  
+  - sudo apt-get update  
+  - sudo apt-get install gcc-5 g++-5  
