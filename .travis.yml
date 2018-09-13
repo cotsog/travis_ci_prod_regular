@@ -8,7 +8,6 @@ addons:
   artifacts:
     working_dir: temp/build
     target_paths: ${PARTNER_NAME}/ios/${VERSION_NUMBER}
-    branch: release
     debug: true
     paths:
       - omsdk-ios-${VERSION_NUMBER}-${PARTNER_NAME}.zip
