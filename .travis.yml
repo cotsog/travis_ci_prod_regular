@@ -1,11 +1,17 @@
-language: c++
+matrix:
+  include:
+    - sudo: false
+    - sudo: required
+    - os: osx
 
 addons:
-  apt:
-    sources:
-      - sourceline: 'ppa:ubuntu-toolchain-r/test'
-    packages:
-      - gcc-4.9
+  artifacts:
+    working_dir: temp/build
+    target_paths: ${PARTNER_NAME}/ios/${VERSION_NUMBER}
+    branch: release
+    debug: true
+    paths:
+      - omsdk-ios-${VERSION_NUMBER}-${PARTNER_NAME}.zip
             
 install: true
 script: true
