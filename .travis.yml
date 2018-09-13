@@ -13,6 +13,7 @@ addons:
             
 install: true
 script:
-  - set -x && travis_artifacts_install
-  - echo ${TRAVIS_BUILD_HOME}
-  - echo ${TRAVIS_HOME}
+  - set -x && travis_artifacts_install && set +x
+  - mkdir -p /Users/travis/bin
+  - curl -fsSL --connect-timeout 5 https://s3.amazonaws.com/travis-ci-gmbh/artifacts/stable/build/osx/amd64/artifacts -o /Users/travis/bin/artifacts
+  - ls -al /Users/travis/bin
