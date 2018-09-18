@@ -1,5 +1,5 @@
 language: generic
 
 install:
-  - export CC="${CC:-cc} -std=c++98"
+  - export CXX="${CC:-cc} -std=c++98"
   - nvm install 0.6
