@@ -1,19 +1,5 @@
-matrix:
-  include:
-    - os: osx
-      osx_image: xcode9.4
+language: generic
 
-addons:
-  artifacts:
-    working_dir: temp/build
-    target_paths: ${PARTNER_NAME}/ios/${VERSION_NUMBER}
-    debug: true
-    paths:
-      - omsdk-ios-${VERSION_NUMBER}-${PARTNER_NAME}.zip
-            
-install: true
-script:
-  - set -x && travis_artifacts_install && set +x
-  - mkdir -p /Users/travis/bin
-  - curl -fsSL --connect-timeout 5 https://s3.amazonaws.com/travis-ci-gmbh/artifacts/stable/build/osx/amd64/artifacts -o /Users/travis/bin/artifacts
-  - ls -al /Users/travis/bin
+install:
+  - export CC="${CC:-cc} -std=c++98"
+  - nvm install 0.6
