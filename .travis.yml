@@ -5,4 +5,4 @@ env:
     - SUBST_TAGS="$TRAVIS_TAG $TRAVIS_COMMIT"
 
 install: true
-script: true
+script: echo $SUBST_TAGS
