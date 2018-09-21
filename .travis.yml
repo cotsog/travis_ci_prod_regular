@@ -1,12 +1,9 @@
-language: generic
-sudo: required
-
-env:
-  global:
-    - DOCKER_COMPOSE_VERSION=1.19.0
+language: objective-c
+osx_image: xcode10
 
 install: true
-script:
-  - export UNAME_S=`uname -s`; echo $UNAME_S
-  - export UNAME_M=`uname -m`; echo $UNAME_M
-  - for i in {1..100}; do curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-$UNAME_S-$UNAME_M > docker-compose; echo $?; done
+script: true
+
+deploy:
+  provider: script
+  script: gem install fastlane && fastlane --help
