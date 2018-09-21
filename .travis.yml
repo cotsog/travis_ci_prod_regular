@@ -1,16 +1,17 @@
-dist: trusty
-sudo: required
+language: objective-c
+
+osx_image:
+  - xcode8.3
+  - xcode9.4
+  - xcode10
 
 install: true
 script:
-# Create environment variable for correct distribution
-  - export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
+# Create the keychain with a password
+  - security create-keychain -p travis ios-build.keychain
 
-# Add the Cloud SDK distribution URI as a package source
-  - echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+# Make the custom keychain default, so xcodebuild will use it for signing
+  - security default-keychain -s ios-build.keychain
 
-# Import the Google Cloud Platform public key
-  - curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-
-# Update the package list and install the Cloud SDK
-  - sudo apt-get update && sudo apt-get install google-cloud-sdk=216.0.0-0 google-cloud-sdk-app-engine-java=216.0.0-0
+# Unlock the keychain
+  - security unlock-keychain -p travis ios-build.keychain
