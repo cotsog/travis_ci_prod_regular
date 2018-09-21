@@ -1,17 +1,27 @@
-language: objective-c
+sudo: required
+os: osx
 
-osx_image:
-  - xcode8.3
-  - xcode9.4
-  - xcode10
+before_install:
+- security create-keychain -p travis build.keychain
+- security default-keychain -s build.keychain
+- security unlock-keychain -p travis build.keychain
+- security add-trusted-cert -k build.keychain $TRAVIS_BUILD_DIR/secure/root.crt
 
-install: true
-script:
-# Create the keychain with a password
-  - security create-keychain -p travis ios-build.keychain
+install:
+- npm link
 
-# Make the custom keychain default, so xcodebuild will use it for signing
-  - security default-keychain -s ios-build.keychain
+addons:
+  homebrew:
+    casks:
+    - google-chrome
+    update: true
 
-# Unlock the keychain
-  - security unlock-keychain -p travis ios-build.keychain
+cache:
+  - bundler
+  - cocoapods
+  - directories:
+    - "$HOME/.npm"
+
+language: node_js
+node_js:
+- "10.9.0"
