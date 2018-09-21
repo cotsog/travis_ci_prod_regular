@@ -2,7 +2,10 @@ language: generic
 
 env:
   global:
-    - SUBST_TAGS="$TRAVIS_TAG $TRAVIS_COMMIT"
+    - DOCKER_COMPOSE_VERSION=1.19.0
 
 install: true
-script: echo $SUBST_TAGS
+script:
+  - export UNAME_S=`uname -s`; echo $UNAME_S
+  - export UNAME_M=`uname -m`; echo $UNAME_M
+  - travis_retry curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-$UNAME_S-`$UNAME_M` > docker-compose
