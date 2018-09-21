@@ -8,4 +8,4 @@ install: true
 script:
   - export UNAME_S=`uname -s`; echo $UNAME_S
   - export UNAME_M=`uname -m`; echo $UNAME_M
-  - travis_retry curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-$UNAME_S-`$UNAME_M` > docker-compose
+  - travis_retry curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-$UNAME_S-$UNAME_M > docker-compose
