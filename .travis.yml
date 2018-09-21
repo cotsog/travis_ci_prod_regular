@@ -2,9 +2,10 @@ dist: trusty
 
 addons:
   apt:
-    sources: google-cloud
+    sources:
+      - google-cloud
       - key_url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
-      - sourceline: deb http://packages.cloud.google.com/apt cloud-sdk-$(lsb_release -c -s) main
+        sourceline: deb http://packages.cloud.google.com/apt cloud-sdk-$(lsb_release -c -s) main
     packages:
       - google-cloud-sdk=216.0.0-0
 
