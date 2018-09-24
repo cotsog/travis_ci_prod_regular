@@ -1,27 +1,6 @@
-sudo: required
-os: osx
+language: generic
 
-before_install:
-- security create-keychain -p travis build.keychain
-- security default-keychain -s build.keychain
-- security unlock-keychain -p travis build.keychain
-- security add-trusted-cert -k build.keychain $TRAVIS_BUILD_DIR/secure/root.crt
-
-install:
-- npm link
-
-addons:
-  homebrew:
-    casks:
-    - google-chrome
-    update: true
-
-cache:
-  - bundler
-  - cocoapods
-  - directories:
-    - "$HOME/.npm"
-
-language: node_js
-node_js:
-- "10.9.0"
+install: true
+script:
+  - sudo apt-get install libssl1.0.0 libssl-dev
+  - sudo find / -name libssl.a
