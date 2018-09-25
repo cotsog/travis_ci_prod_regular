@@ -1,10 +1,9 @@
 language: generic
 
-matrix:
-  include:
-    - sudo: false
-    - sudo: required
-
 install: true
 script:
   - less /proc/cpuinfo
+
+deploy:
+  provider: script
+  script: echo "deploy!"
