@@ -1,6 +1,10 @@
 language: generic
 
+matrix:
+  include:
+    sudo: false
+    sudo: required
+
 install: true
 script:
-  - sudo apt-get install libssl1.0.0 libssl-dev
-  - sudo find / -name libssl.a
+  - less /proc/cpuinfo
