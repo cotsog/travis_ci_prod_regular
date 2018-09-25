@@ -2,8 +2,8 @@ language: generic
 
 matrix:
   include:
-    sudo: false
-    sudo: required
+    - sudo: false
+    - sudo: required
 
 install: true
 script:
