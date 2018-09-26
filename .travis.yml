@@ -2,4 +2,6 @@ language: generic
 
 install: true
 script:
-  - pyenv versions
+  - pyenv global 2.7
+  - python -V
+  - pip install awscli --upgrade --user
