@@ -2,4 +2,4 @@ language: generic
 
 install: true
 script:
-  - pip3 install awscli --upgrade --user
+  - pyenv versions
