@@ -2,8 +2,4 @@ language: generic
 
 install: true
 script:
-  - less /proc/cpuinfo
-
-deploy:
-  provider: script
-  script: echo "deploy!"
+  - pip3 install awscli --upgrade --user
