@@ -1,4 +1,10 @@
 language: generic
 
+matrix:
+  include:
+    - env: NO_SUDO=1
+    - sudo: false
+    - sudo: required
+
 install: true
 script: true
