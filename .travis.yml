@@ -1,4 +1,6 @@
 sudo: required
 
 install: true
-script: sudo -E apt-get -yq --no-install-suggests --no-install-recommends $(travis_apt_get_options) install ghostscript libmagic-dev postgresql-9.5-postgis-2.3
+script:
+  - sudo cat /etc/gai.conf
+  - sudo -E apt-get -yq --no-install-suggests --no-install-recommends $(travis_apt_get_options) install ghostscript libmagic-dev postgresql-9.5-postgis-2.3
