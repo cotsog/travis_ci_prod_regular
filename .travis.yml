@@ -1,10 +1,7 @@
-language: generic
-
 matrix:
   include:
-    - env: NO_SUDO=1
-    - sudo: false
-    - sudo: required
+    - language: javascript
+    - language: node_js
 
 install: true
 script: true
