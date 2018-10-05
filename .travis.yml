@@ -1,13 +1,4 @@
-matrix:
-  include:
-    - language: javascript
-      sudo: false
-    - language: javascript
-      sudo: required
-    - language: node_js
-      sudo: false
-    - language: node_js
-      sudo: required
+sudo: required
 
 install: true
-script: yarn --version
+script: sudo -E apt-get -yq --no-install-suggests --no-install-recommends $(travis_apt_get_options) install ghostscript libmagic-dev postgresql-9.5-postgis-2.3
