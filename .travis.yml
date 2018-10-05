@@ -1,7 +1,13 @@
 matrix:
   include:
     - language: javascript
+      sudo: false
+    - language: javascript
+      sudo: required
     - language: node_js
+      sudo: false
+    - language: node_js
+      sudo: required
 
 install: true
-script: true
+script: yarn --version
