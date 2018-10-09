@@ -1,8 +1,10 @@
-sudo: required
+language: csharp  
+
+sudo: required  
+os: linux
+dist: trusty  
+mono: none
+dotnet: 2.0.2
 
 install: true
-script:
-  - sudo cat /etc/gai.conf
-  - sudo sed -i '/precedence ::ffff:0:0\/96  100/s/^#//g' /etc/gai.conf
-  - sudo cat /etc/gai.conf
-  - sudo -E apt-get -yq --no-install-suggests --no-install-recommends $(travis_apt_get_options) install ghostscript libmagic-dev postgresql-9.5-postgis-2.3
+script: echo $PATH
