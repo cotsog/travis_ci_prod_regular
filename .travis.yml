@@ -8,4 +8,4 @@ addons:
 install: true
 script:
   - sudo apt-get -y -q update
-  - travis_retry sudo apt-get download doxygen
+  - travis_retry apt-get download doxygen
