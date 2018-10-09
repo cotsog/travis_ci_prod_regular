@@ -6,4 +6,6 @@ addons:
       - ubuntu-toolchain-r-test
 
 install: true
-script: travis_retry apt-get download doxygen
+script:
+  - sudo apt-get -y -q update
+  - travis_retry sudo apt-get download doxygen
