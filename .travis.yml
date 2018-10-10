@@ -1,4 +1,7 @@
-sudo: required
+matrix:
+  include:
+    - sudo: false
+    - sudo: required
 
 language: python
 python: 3.6
