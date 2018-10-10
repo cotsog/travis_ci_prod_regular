@@ -3,11 +3,9 @@ matrix:
     - sudo: false
     - sudo: required
 
-language: python
-python: 3.6
+language: node_js
+python: 8
 
 install: true
 script:
-  - pip install pipenv
-  - pipenv install backports-ssl-match-hostname
-  - pip install backports-ssl-match-hostname
+  - npm install @lerna/listable@3.0.0
