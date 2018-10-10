@@ -1,11 +1,8 @@
-matrix:
-  include:
-    - sudo: false
-    - sudo: required
+language: objective-c
 
-language: node_js
-python: 8
+osx_image: xcode10
 
 install: true
 script:
-  - npm install @lerna/listable@3.0.0
+  - rvm install 2.5.1
+  - rvm install 2.5.1p57
