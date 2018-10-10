@@ -7,3 +7,4 @@ install: true
 script:
   - pip install pipenv
   - pipenv install backports-ssl-match-hostname
+  - pip install backports-ssl-match-hostname
