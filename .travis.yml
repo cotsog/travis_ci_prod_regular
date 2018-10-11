@@ -3,4 +3,4 @@ language: bash
 os: windows
 
 install: true
-script: mvn
+script: choco install maven
