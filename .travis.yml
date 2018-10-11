@@ -4,6 +4,4 @@ os: windows
 
 install: true
 script:
-  - choco install maven
-  - sleep 10
-
+  - choco list
