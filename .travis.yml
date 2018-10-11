@@ -3,4 +3,7 @@ language: bash
 os: windows
 
 install: true
-script: choco install maven
+script:
+  - choco install maven
+  - sleep 10
+
