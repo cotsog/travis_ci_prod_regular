@@ -1,8 +1,6 @@
-language: objective-c
+language: bash
 
-osx_image: xcode10
+os: windows
 
 install: true
-script:
-  - rvm install 2.5.1
-  - rvm install 2.5.1p57
+script: mvn
