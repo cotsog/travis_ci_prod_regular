@@ -1,7 +1,7 @@
-language: bash
+language: node_js
 
 os: windows
 
 install: true
 script:
-  - choco list
+  - choco list -?
