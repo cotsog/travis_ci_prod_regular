@@ -5,4 +5,4 @@ os:
 
 install: true
 script:
-  - find "advapi32" c:\
+  - find / -name "advapi32.lib"
