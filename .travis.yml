@@ -6,4 +6,4 @@ os:
 install: true
 script:
   - choco list
-  - ruby
+  - ruby -v
