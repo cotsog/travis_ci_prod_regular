@@ -5,5 +5,4 @@ os:
 
 install: true
 script:
-  - cd /
-  - ls -al
+  - wmic MEMORYCHIP get BankLabel, DeviceLocator, MemoryType, TypeDetail, Capacity, Speed
