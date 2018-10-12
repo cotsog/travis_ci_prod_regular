@@ -5,5 +5,5 @@ os:
 
 install: true
 script:
-  - df
-  - free
+  - cd /
+  - ls -al
