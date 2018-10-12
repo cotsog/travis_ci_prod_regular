@@ -10,4 +10,5 @@ os:
 
 install: true
 script:
-  - choco list -?
+  - choco install maven
+  - mvn
