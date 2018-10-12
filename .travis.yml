@@ -5,4 +5,5 @@ os:
 
 install: true
 script:
+  - choco install windows-sdk-10.0
   - find / -name "advapi32.lib"
