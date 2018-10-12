@@ -6,3 +6,4 @@ os:
 install: true
 script:
   - df
+  - free
