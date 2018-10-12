@@ -5,5 +5,4 @@ os:
 
 install: true
 script:
-  - choco list
-  - ruby -v
+  - find "advapi32" c:\
