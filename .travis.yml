@@ -2,9 +2,8 @@ language: objective-c
 
 osx_image: xcode10
 
+rvm: 2.5.1
+
 install: true
 script:
-  - ruby -v
-  - rvm list
-  - rvm install 2.5.1 && rvm use 2.5.1
   - ruby -v
