@@ -1,8 +1,10 @@
-language: bash
+language: objective-c
 
-os:
-  - windows
+osx_image: xcode10
 
 install: true
 script:
-  - wmic MEMORYCHIP get BankLabel, DeviceLocator, MemoryType, TypeDetail, Capacity, Speed
+  - ruby -v
+  - rvm list
+  - rvm install 2.5.1 && rvm use 2.5.1
+  - ruby -v
