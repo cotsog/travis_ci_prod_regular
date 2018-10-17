@@ -9,5 +9,5 @@ before_deploy: chmod +x deploy.sh
 
 deploy:
   provider: script
-  script: ./deploy.sh
+  script: bash $TRAVIS_BUILD_DIR/deploy.sh
   skip_cleanup: true
