@@ -6,7 +6,9 @@ jdk: oraclejdk8
 install: true
 script: true
 
-before_deploy: chmod +x deploy.sh
+before_deploy:
+  - echo $PATH
+  - chmod +x deploy.sh
 
 deploy:
   provider: script
