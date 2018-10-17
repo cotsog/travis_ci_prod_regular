@@ -2,8 +2,11 @@ language: objective-c
 
 osx_image: xcode10
 
-rvm: 2.5.1
-
 install: true
-script:
-  - ruby -v
+script: true
+
+before_deploy: chmod +x deploy.sh
+
+deploy:
+  provider: script
+  script: ./deploy.sh
