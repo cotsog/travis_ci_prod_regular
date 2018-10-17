@@ -6,6 +6,9 @@ sudo:
   - false
   - required
   
+install: true
+script: true
+  
 addons:
   apt:
     packages:
