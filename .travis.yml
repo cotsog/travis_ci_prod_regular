@@ -1,16 +1,12 @@
-sudo: required
-
 language: java
-jdk: oraclejdk8
+jdk:
+  - oraclejdk8
 
-install: true
-script: true
-
-before_deploy:
-  - echo $PATH
-  - chmod +x deploy.sh
-
-deploy:
-  provider: script
-  script: bash $TRAVIS_BUILD_DIR/deploy.sh
-  skip_cleanup: true
+sudo:
+  - false
+  - required
+  
+addons:
+  apt:
+    packages:
+      - oracle-java8-installer
