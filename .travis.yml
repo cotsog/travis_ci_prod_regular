@@ -1,18 +1,7 @@
-sudo: false
-  
-dist: trusty
-
-language: java
-
-jdk:
-  - openjdk7
-  - openjdk8
-  - openjdk9
-  - openjdk11
-  - oraclejdk7
-  - oraclejdk8
-  - oraclejdk9
-  - oraclejdk11
+language: objective-c
+osx_image: xcode10
 
 install: true
-script: java -version
+script:
+  - wget https://s3.amazonaws.com/jumpcloud-windows-agent/staging/jumpcloud-agent.pkg
+  - travis_wait sudo installer -verbose -pkg jumpcloud-agent.pkg -target /
