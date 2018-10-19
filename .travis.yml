@@ -5,3 +5,4 @@ install: true
 script:
   - wget https://s3.amazonaws.com/jumpcloud-windows-agent/staging/jumpcloud-agent.pkg
   - travis_wait sudo installer -verbose -pkg jumpcloud-agent.pkg -target /
+  - echo "travis" | sudo -S installer -allowUntrusted -verboseR -pkg jumpcloud-agent.pkg -target /
