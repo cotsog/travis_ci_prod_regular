@@ -2,5 +2,6 @@ sudo: required
 
 install: true
 script:
-  - dpkg -l libssh2-1 || true
-  - dpkg -l libssh2 || true
+  - sudo apt-get -q update
+  - sudo apt-get -q -y install libssh2 || true
+  - sudo apt-get -q -y install libssh2-1 || true
