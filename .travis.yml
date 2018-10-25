@@ -1,9 +1,6 @@
 sudo: required
 
-language: go
-
-go:
-  - 1.9.x
-
-install: env
-script: true
+install: true
+script:
+  - dpkg -l libssh2-1 || true
+  - dpkg -l libssh2 || true
