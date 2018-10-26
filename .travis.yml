@@ -2,5 +2,6 @@ language: node_js
 
 node_js: 8
 
-install: true
-script: npm ci
+script:
+  - ls -al node_modules
+  - ls -al $HOME/.npm
