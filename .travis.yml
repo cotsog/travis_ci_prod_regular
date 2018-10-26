@@ -2,6 +2,10 @@ language: node_js
 
 node_js: 8
 
+before_install:
+  - ls -al node_modules || true
+  - ls -al $HOME/.npm || true
+
 script:
   - ls -al node_modules
   - ls -al $HOME/.npm
