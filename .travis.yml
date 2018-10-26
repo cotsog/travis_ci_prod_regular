@@ -3,4 +3,7 @@ language: node_js
 node_js: 8
 
 install: true
-script: npm ci
+script:
+  - npm install
+  - cat npm-shrinkwrap.json || true
+  - cat package-lock.json || true
