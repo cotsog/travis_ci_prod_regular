@@ -1,7 +1,6 @@
-sudo: required
+language: node_js
+
+node_js: 8
 
 install: true
-script:
-  - sudo apt-get -q update
-  - sudo apt-get -q -y install libssh2 || true
-  - sudo apt-get -q -y install libssh2-1 || true
+script: npm ci
