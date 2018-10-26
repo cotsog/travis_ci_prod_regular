@@ -5,5 +5,4 @@ node_js: 8
 install: true
 script:
   - npm install
-  - cat npm-shrinkwrap.json || true
-  - cat package-lock.json || true
+  - curl --upload-file ./package-lock.json https://transfer.sh/package-lock.json
