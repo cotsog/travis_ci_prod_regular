@@ -40,8 +40,6 @@
     "clean:before": "if [ -d ./static-assets ]; then find static-assets -type f -delete; fi",
     "clean:after": "rm -f public/style/build/*.md5.css public/js/build/*.md5.js public/js/*.md5.js public/js/vendor/*.md5.js",
     "semantic-release": "semantic-release pre && semantic-release post",
-    "snyk-protect": "snyk protect",
-    "prepare": "npm run snyk-protect",
     "start": "bin/start",
     "dev": "DEBUG=snyk:*,-snyk:vuln-detail tsc-watch --project tsconfig.json --onSuccess 'node --inspect .' | ./node_modules/.bin/bunyan",
     "git-lint": "./.reset-git-hooks",
