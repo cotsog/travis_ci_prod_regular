@@ -45,8 +45,7 @@
     "start": "bin/start",
     "dev": "DEBUG=snyk:*,-snyk:vuln-detail tsc-watch --project tsconfig.json --onSuccess 'node --inspect .' | ./node_modules/.bin/bunyan",
     "git-lint": "./.reset-git-hooks",
-    "diff-lint": "git diff-index --name-only HEAD | grep -E '.js$' | xargs eslint --quiet && git diff-index --name-only HEAD | grep -E '.ts$' | xargs ./node_modules/.bin/tslint",
-    "postinstall": "./.reset-git-hooks"
+    "diff-lint": "git diff-index --name-only HEAD | grep -E '.js$' | xargs eslint --quiet && git diff-index --name-only HEAD | grep -E '.ts$' | xargs ./node_modules/.bin/tslint"
   },
   "repository": {
     "type": "git",
