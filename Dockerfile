@@ -1,5 +1,10 @@
 FROM ubuntu:latest
 
+FROM ubuntu:14.04
+RUN  apt-get update \
+  && apt-get install -y wget \
+  && rm -rf /var/lib/apt/lists/*
+
 # Retrieve Apache Cassandra binary tarballs
 RUN mkdir /usr/bin/cassandra \
 && mkdir /etc/cassandra \
