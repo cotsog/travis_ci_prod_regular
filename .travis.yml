@@ -2,4 +2,4 @@ sudo: required
 
 install: true
 script:
-  - docker build .
+  - docker build -t docker-test:latest .
