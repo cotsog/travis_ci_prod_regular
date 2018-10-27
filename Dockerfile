@@ -1,3 +1,5 @@
+FROM ubuntu:latest
+
 # Retrieve Apache Cassandra binary tarballs
 RUN mkdir /usr/bin/cassandra \
 && mkdir /etc/cassandra \
