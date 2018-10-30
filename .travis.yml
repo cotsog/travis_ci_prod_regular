@@ -1,7 +1,7 @@
 jobs:
   include:
     - stage: cache
-      script: touch date > ./cache/file-to-cache.txt
+      script: date > ./cache/file-to-cache.txt
       cache:
         directories:
           - cache
