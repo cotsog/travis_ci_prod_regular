@@ -1,2 +1,22 @@
+jobs:
+  include:
+    - stage: cache
+      script: touch date > ./cache/file-to-cache.txt
+      cache:
+        directories:
+          - cache
+    - stage: use-cache
+      sudo: false
+      script: cat ./cache/file-to-cache.txt
+      cache:
+        directories:
+          - cache
+    - stage: use-cache
+      sudo: required
+      script: cat ./cache/file-to-cache.txt
+      cache:
+        directories:
+          - cache
+
 install: true
 script: true
