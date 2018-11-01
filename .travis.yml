@@ -1,10 +1,13 @@
-os: osx
+os:
+- osx
+
+language: minimal
 
 addons:
   homebrew:
     packages:
-      - bats
-      - shellcheck
+    - bats
+    - shellcheck
 
 install: true
 script: true
