@@ -1,13 +1,6 @@
-os:
-- osx
+language: objective-c
 
-language: minimal
-
-addons:
-  homebrew:
-    packages:
-    - bats
-    - shellcheck
+osx_image: xcode10
 
 install: true
 script: true
