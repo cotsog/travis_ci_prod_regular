@@ -1,20 +1,10 @@
-osx_job: &osx_job
-  os: osx
-      osx_image: xcode6.4
-      addons:
-          homebrew:
-              taps:
-                  - go-task/homebrew-tap
-              casks:
-                  - go-task
-                  
-matrix:
-  include:
-    - *osx_job
-      go: "1.11.x"
-    
-    - *osx_job
-      go: master
-      
+os: osx
+
+addons:
+  homebrew:
+    packages:
+      - bats
+      - shellcheck
+
 install: true
 script: true
