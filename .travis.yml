@@ -1,22 +1,20 @@
-jobs:
+osx_job: &osx_job
+  os: osx
+      osx_image: xcode6.4
+      addons:
+          homebrew:
+              taps:
+                  - go-task/homebrew-tap
+              casks:
+                  - go-task
+                  
+matrix:
   include:
-    - stage: cache
-      script: date > ./cache/file-to-cache.txt
-      cache:
-        directories:
-          - cache
-    - stage: use-cache
-      sudo: false
-      script: cat ./cache/file-to-cache.txt
-      cache:
-        directories:
-          - cache
-    - stage: use-cache
-      sudo: required
-      script: cat ./cache/file-to-cache.txt
-      cache:
-        directories:
-          - cache
-
+    - *osx_job
+      go: "1.11.x"
+    
+    - *osx_job
+      go: master
+      
 install: true
 script: true
