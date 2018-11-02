@@ -1,2 +1,19 @@
+language: ruby
+dist: trusty
+sudo: required
+
+cache:
+  directories:
+    - apt-cache
+
+addons:
+  postgresql: "9.4"
+  apt:
+    sources:
+      - sourceline: deb http://packages.couchbase.com/ubuntu trusty trusty/main
+        key_url: http://packages.couchbase.com/ubuntu/couchbase.key
+
 install: true
-script: travis_debug
+script:
+  - sudo apt-get -y update
+  - sudo apt-get install -d -o=dir::cache=./apt-cache libcouchbase-dev libcouchbase2-libevent postgresql-9.4-postgis-2.3
