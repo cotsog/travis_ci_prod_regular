@@ -17,5 +17,5 @@ addons:
 
 install: true
 script:
-  - sudo apt-get -y update
+  - pwd
   - sudo apt-get install --no-download -o=dir::cache=./apt-cache libcouchbase-dev libcouchbase2-libevent postgresql-9.4-postgis-2.3
