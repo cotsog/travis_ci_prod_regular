@@ -2,6 +2,8 @@ language: ruby
 dist: trusty
 sudo: required
 
+before_cache:
+  - sudo chown -R $USER ./apt-cache
 cache:
   directories:
     - apt-cache
@@ -15,5 +17,4 @@ addons:
 
 install: true
 script:
-  - pushd apt-cache && ls -al && popd
-  - sudo apt-get install -o=dir::cache=./apt-cache libcouchbase-dev libcouchbase2-libevent postgresql-9.4-postgis-2.3
+  - sudo apt-get install -d -o=dir::cache=./apt-cache libcouchbase-dev libcouchbase2-libevent postgresql-9.4-postgis-2.3
