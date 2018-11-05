@@ -1,12 +1,12 @@
-language: objective-c
+language: generic
 
 osx_image:
   - xcode9.2
+  - xcode9.3
   - xcode9.4
   - xcode10
-  
-install: true
+  - xcode10.1
+
 script:
-  - sysctl hw.memsize
-  - sysctl hw.ncpu
-  - sleep 10
+- time brew install p7zip
+- 7z b 2 -mm=\*
