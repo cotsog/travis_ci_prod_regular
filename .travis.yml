@@ -7,8 +7,6 @@ osx_image:
   
 install: true
 script:
-  - export logicalCpuCount=$([[ $(uname) = 'Darwin' ]] && sysctl -n hw.logicalcpu_max || lscpu -p | egrep -v '^#' | wc -l)
-  - echo $logicalCpuCount
-  - export physicalCpuCount=$([[ $(uname) = 'Darwin' ]] && sysctl -n hw.physicalcpu_max || lscpu -p | egrep -v '^#' | sort -u -t, -k 2,4 | wc -l)
-  - echo $physicalCpuCount
+  - sysctl hw.memsize
+  - sysctl hw.ncpu
   - sleep 10
