@@ -1,14 +1,5 @@
-os: linux
-dist: trusty
+language: ruby
 
-language: java
-jdk: openjdk8
-
-sudo: required
-
-services:
-  - docker
-
-install: skip
-script:
-  - docker run -d --name ubuntu-16-04 -v $HOME:/travis openjdk@sha256:dfc720be416bdc7b5df39fb8b237a3bca88dcdf39ad00568f8c3cd3558ff1bc2 tail -f /dev/null
+cache: bundler
+  
+script: true
