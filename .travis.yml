@@ -1,5 +1,7 @@
 os: windows
 
+language: bash
+
 install: skip
 script:
   - wmic MEMORYCHIP get BankLabel, DeviceLocator, MemoryType, TypeDetail, Capacity, Speed
