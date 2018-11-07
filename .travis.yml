@@ -1,13 +1,5 @@
-language: objective-c
-
-osx_image:
-  - xcode9.2
-  - xcode9.3
-  - xcode9.4
-  - xcode10
-  - xcode10.1
+os: windows
 
 install: skip
 script:
-- time brew install p7zip
-- 7z b 2 -mm=\*
+  - wmic MEMORYCHIP get BankLabel, DeviceLocator, MemoryType, TypeDetail, Capacity, Speed
