@@ -1,6 +1,11 @@
-language: go
+os:
+  - linux
+  - osx
+  
+language: rust
 
+rust:
+  - beta
+  
 install: skip
-
-script:
-  - ls -al
+script: skip
