@@ -1,12 +1,13 @@
 language: node_js
 node_js: 8
 
-install: skip
-script: skip
+install: true
+script: true
 
 deploy:
   - provider: script
-    script: true
+    script: echo "true"
+    skip_cleanup: true
   
 after_script:
   - echo "after script!"
