@@ -9,5 +9,9 @@ deploy:
     script: (exit 1)
     skip_cleanup: true
   
+after_success:
+  - echo "after success!"
+after_failure:
+  - echo "after failure!"
 after_script:
   - echo "after script!"
