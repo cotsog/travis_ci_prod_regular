@@ -1,11 +1,12 @@
-os:
-  - linux
-  - osx
-  
-language: rust
+language: node_js
+node_js: 8
 
-rust:
-  - beta
-  
 install: skip
 script: skip
+
+deploy:
+  provider: script
+  script: false
+  
+after_script:
+  - echo "after script!"
