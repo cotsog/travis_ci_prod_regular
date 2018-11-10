@@ -12,7 +12,7 @@ matrix:
         skip_cleanup: true
     - deploy:
         provider: script
-        script: (exit 1)
+        script: (exit 1) || echo "after deploy hack!"
         skip_cleanup: true
 
 after_deploy:
