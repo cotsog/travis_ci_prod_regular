@@ -5,8 +5,8 @@ install: skip
 script: skip
 
 deploy:
-  provider: script
-  script: false
+  - provider: script
+    script: true
   
 after_script:
   - echo "after script!"
