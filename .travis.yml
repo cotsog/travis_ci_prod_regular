@@ -6,7 +6,7 @@ script: true
 
 deploy:
   - provider: script
-    script: (exit 1)
+    script: echo "(exit 1)"
     skip_cleanup: true
   
 after_success:
