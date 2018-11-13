@@ -1,18 +1,8 @@
-language: python
-matrix:
-  include:
-  - name: "3.5 Unit Test"
-    python: "3.5"
-    env: TEST_SUITE=suite_3_5_unit
-  - name: "3.5 Integration Tests"
-    python: "3.5"
-    env: TEST_SUITE=suite_3_5_integration
-  - name: "pypy Unit Tests"
-    python: "pypy"
-    env: TEST_SUITE=suite_pypy_unit
+language: java
+jdk:
+  - openjdk8
 
 install: true
 script:
-  - printenv
-  - env
-  - set
+  - curl https://gist.githubusercontent.com/cotsog/7211b646ca38cc3d7aa5c3e9666b630b/raw/a8f206ba4c66e686bf17440abce095097fdefc8d/settings.xml --output settings.xml
+  - cp -f settings.xml ~/.m2/settings.xml
