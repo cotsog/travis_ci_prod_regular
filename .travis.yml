@@ -1,26 +1,18 @@
-language: node_js
-node_js:
-  - "10.11"
-
-install: true
-script: true
-
+language: python
 matrix:
   include:
-    - deploy:
-        provider: script
-        script: echo "(exit 1)"
-        skip_cleanup: true
-    - deploy:
-        provider: script
-        script: (exit 1) || (echo "after deploy hack!" && false)
-        skip_cleanup: true
+  - name: "3.5 Unit Test"
+    python: "3.5"
+    env: TEST_SUITE=suite_3_5_unit
+  - name: "3.5 Integration Tests"
+    python: "3.5"
+    env: TEST_SUITE=suite_3_5_integration
+  - name: "pypy Unit Tests"
+    python: "pypy"
+    env: TEST_SUITE=suite_pypy_unit
 
-after_deploy:
-  - echo "after deploy!"
-after_success:
-  - echo "after success!"
-after_failure:
-  - echo "after failure!"
-after_script:
-  - echo "after script!"
+install: true
+script:
+  - printenv
+  - env
+  - set
