@@ -1,7 +1,6 @@
-language: generic
+language: android
+jdk:
+  - oraclejdk8
 
 install: true
-script:
-  # - sudo add-apt-repository --remove "deb [arch=amd64] http://dl.hhvm.com/ubuntu $(lsb_release -sc) main"
-  - sudo apt-get update
-  
+script: true
