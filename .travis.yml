@@ -2,6 +2,6 @@ language: generic
 
 install: true
 script:
-  - sudo add-apt-repository --remove "deb [arch=amd64] http://dl.hhvm.com/ubuntu $(lsb_release -sc) main"
+  # - sudo add-apt-repository --remove "deb [arch=amd64] http://dl.hhvm.com/ubuntu $(lsb_release -sc) main"
   - sudo apt-get update
   
