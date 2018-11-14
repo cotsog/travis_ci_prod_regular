@@ -1,8 +1,7 @@
-language: java
-jdk:
-  - openjdk8
+language: generic
 
 install: true
 script:
-  - curl https://gist.githubusercontent.com/cotsog/7211b646ca38cc3d7aa5c3e9666b630b/raw/a8f206ba4c66e686bf17440abce095097fdefc8d/settings.xml --output settings.xml
-  - cp -f settings.xml ~/.m2/settings.xml
+  - sudo add-apt-repository --remove "deb [arch=amd64] http://dl.hhvm.com/ubuntu $(lsb_release -sc) main"
+  - sudo apt-get update
+  
