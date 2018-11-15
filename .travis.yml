@@ -1,6 +1,4 @@
-language: android
-jdk:
-  - oraclejdk8
+language: generic
 
 install: true
-script: true
+script: docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
