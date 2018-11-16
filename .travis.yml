@@ -1,7 +1,6 @@
-dist: precise
-
 matrix:
   include:
+    - dist: precise
     - dist: trusty
 
 language: ruby
