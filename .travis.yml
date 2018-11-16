@@ -3,25 +3,7 @@ dist: precise
 
 language: ruby
 
-matrix:
-  include:
-  - jdk: oraclejdk8
-    services:
-    - postgresql
-    - redis
-    cache:
-    - bundler
-    addons:
-      postgresql: '9.3'
-    before_script: true
-    script: true
-  - dist: trusty
-    cache:
-    - bundler
-    rvm: 2.5
-    addons:
-      apt:
-        packages:
-        - cmake
-    script: true
+rvm: jruby-9.1.17.0
 
+install: true
+script: true
