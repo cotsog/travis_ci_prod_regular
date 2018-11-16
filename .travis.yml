@@ -7,4 +7,6 @@ jdk: oraclejdk8
 rvm: jruby-9.1.17.0
 
 install: true
-script: ruby --version
+script:
+  - env
+  - ruby --version
