@@ -6,5 +6,5 @@ node_js: lts
 
 install: true
 script:
-  - echo $PATH
+  - echo %PATH%
   - sleep 10
