@@ -12,4 +12,5 @@ rvm: jruby-9.1.17.0
 install: true
 script:
   - env
+  - ls $JAVA_HOME/jmods
   - ruby --version
