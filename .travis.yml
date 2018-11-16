@@ -1,6 +1,8 @@
-dist:
-  - precise
-  - trusty
+dist: precise
+
+matrix:
+  include:
+    - dist: trusty
 
 language: ruby
 
