@@ -1,9 +1,11 @@
-sudo: false
-dist: trusty
+dist:
+  - precise
+  - trusty
 
 language: ruby
 
 jdk: oraclejdk8
+
 rvm: jruby-9.1.17.0
 
 install: true
