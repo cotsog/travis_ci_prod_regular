@@ -8,3 +8,21 @@ install: true
 script:
   - echo %PATH%
   - sleep 10
+  - echo %PATH%
+  - sleep 10
+  - echo %PATH%
+  - sleep 10
+  - echo %PATH%
+  - sleep 10
+  - echo %PATH%
+  - sleep 10
+  - echo %PATH%
+  - sleep 10
+  - echo %PATH%
+  - sleep 10
+  - echo %PATH%
+  - sleep 10
+  - echo %PATH%
+  - sleep 10
+  - echo %PATH%
+  - sleep 10
