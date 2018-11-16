@@ -6,23 +6,24 @@ node_js: lts
 
 install: true
 script:
-  - echo %PATH%
+  - dir
+  - echo $PATH
   - sleep 10
-  - echo %PATH%
+  - echo $PATH
   - sleep 10
-  - echo %PATH%
+  - echo $PATH
   - sleep 10
-  - echo %PATH%
+  - echo $PATH
   - sleep 10
-  - echo %PATH%
+  - echo $PATH
   - sleep 10
-  - echo %PATH%
+  - echo $PATH
   - sleep 10
-  - echo %PATH%
+  - echo $PATH
   - sleep 10
-  - echo %PATH%
+  - echo $PATH
   - sleep 10
-  - echo %PATH%
+  - echo $PATH
   - sleep 10
-  - echo %PATH%
+  - echo $PATH
   - sleep 10
