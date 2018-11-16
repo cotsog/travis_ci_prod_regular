@@ -7,4 +7,5 @@ node_js: 10
 install: true
 script:
   - echo $PATH
+  - choco upgrade jdk8
   - java -version
