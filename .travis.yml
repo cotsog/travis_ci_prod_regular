@@ -10,5 +10,7 @@ script:
   - choco list -l
   - choco upgrade jdk8
   - choco list -l
+  - echo $PATH
+  - echo $JAVA_HOME
   - export PATH=$PATH:"/c/Program Files/Java/jdk1.8.0_191/bin"
   - java -version
