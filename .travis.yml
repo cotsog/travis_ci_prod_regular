@@ -1,16 +1,10 @@
-matrix:
-  include:
-    - dist: precise
-    - dist: trusty
+os: windows
 
-language: ruby
+language: node_js
 
-jdk: oraclejdk8
-
-rvm: jruby-9.1.17.0
+node_js:
+  - 10
+  - 11
 
 install: true
-script:
-  - env
-  - ls $JAVA_HOME/jmods
-  - ruby --version
+script: echo $PATH
