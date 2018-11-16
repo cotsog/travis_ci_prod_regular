@@ -7,4 +7,6 @@ node_js:
   - 11
 
 install: true
-script: echo $PATH
+script:
+  - echo $PATH
+  - sleep 10
