@@ -2,8 +2,8 @@ os: windows
 
 language: node_js
 
-node_js: lts
+node_js: 10
 
 install: true
 script:
-  - node --version
+  - echo $PATH
