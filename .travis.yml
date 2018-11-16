@@ -2,10 +2,6 @@ os: windows
 
 language: node_js
 
-node_js:
-  - 10
-  - 11
-
 install: true
 script:
   - echo $PATH
