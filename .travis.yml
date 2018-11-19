@@ -4,3 +4,4 @@ install: true
 script:
   - dpkg -l libc++-dev
   - dpkg -l | grep libc++
+  - sudo apt-get install libc++-dev
