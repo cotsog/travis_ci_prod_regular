@@ -1,5 +1,9 @@
 sudo: required
-dist: xenial
+
+matrix:
+  include:
+    - dist: xenial
+    - dist: trusty
 
 language: ruby
 
