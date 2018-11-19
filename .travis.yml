@@ -1,13 +1,9 @@
-sudo: required
-
-matrix:
-  include:
-    - dist: xenial
-    - dist: trusty
-
-language: ruby
+os: osx
 
 install: true
 script:
-  - sudo cat /etc/hosts
-  - ping localhost. -c 5
+  - curl https://gist.githubusercontent.com/cotsog/f5d57cdbfee169158e08c5242c3c7e96/raw/24ddf6143010ac1751deb0732bca94a60f2a48aa/travis_wait_no_kill.sh -o travis_wait_no_kill.sh
+  - source travis_wait_no_kill.sh
+  - travis_wait 1 sleep 600
+  - screencapture desktop.jpg
+  - curl -F "file=@desktop.jpg" https://file.io
