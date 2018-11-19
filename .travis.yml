@@ -1,10 +1,7 @@
-sudo: false
-dist: precise
+sudo: required
+dist: xenial
 
 language: ruby
 
-jdk: oraclejdk8
-rvm: jruby-9.1.17.0
-
 install: true
-script: ruby --version
+script: sudo cat /etc/hosts
