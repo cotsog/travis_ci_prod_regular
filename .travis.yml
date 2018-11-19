@@ -8,4 +8,6 @@ matrix:
 language: ruby
 
 install: true
-script: sudo cat /etc/hosts
+script:
+  - sudo cat /etc/hosts
+  - ping localhost. -c 5
