@@ -1,16 +1,10 @@
-os: windows
+sudo: false
+dist: precise
 
-language: node_js
+language: ruby
 
-node_js: 10
+jdk: oraclejdk8
+rvm: jruby-9.1.17.0
 
 install: true
-script:
-  - echo $PATH
-  - choco list -l
-  - choco upgrade jdk8
-  - choco list -l
-  - echo $PATH
-  - echo $JAVA_HOME
-  - export PATH=$PATH:"/c/Program Files/Java/jdk1.8.0_191/bin"
-  - java -version
+script: ruby --version
