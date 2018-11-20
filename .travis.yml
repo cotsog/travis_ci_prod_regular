@@ -5,4 +5,4 @@ cache:
     - subdir
     
 install: true
-script: true
+script: date > ./sudir/todays-date.txt
