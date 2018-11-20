@@ -6,8 +6,6 @@ before_install:
 - unset CI 
 - unset TRAVIS 
 - unset CONTINUOUS_INTEGRATION
-- openssl aes-256-cbc -K $encrypted_a3481bb39d30_key -iv $encrypted_a3481bb39d30_iv
-  -in Certificate/server.key.enc -out Certificate/server.key -d
 - export SFDX_AUTOUPDATE_DISABLE=true
 - export SFDX_USE_GENERIC_UNIX_KEYCHAIN=true
 - export SFDX_DOMAIN_RETRY=300
