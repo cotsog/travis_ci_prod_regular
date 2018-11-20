@@ -1,15 +1,13 @@
-sudo: true
-os: linux
-dist: trusty
-cache: false
-before_install: 
-- unset CI 
-- unset TRAVIS 
-- unset CONTINUOUS_INTEGRATION
-- export SFDX_AUTOUPDATE_DISABLE=true
-- export SFDX_USE_GENERIC_UNIX_KEYCHAIN=true
-- export SFDX_DOMAIN_RETRY=300
-- export SFDX_DISABLE_APP_HUB=true
-- export SFDX_LOG_LEVEL=DEBUG
-- npm install --global sfdx-cli@6.34
-- sfdx --version
+env:
+  global:
+    - RESTY_IMAGE_BASE=ubuntu KONG_PACKAGE_NAME=kong-private KONG_VERSION=`date +%Y-%m-%d`
+  matrix:
+    - KONG_TEST_DATABASE=postgres TEST_SUITE=integration
+    - KONG_TEST_DATABASE=cassandra CASSANDRA=2.2 TEST_SUITE=integration
+    - KONG_TEST_DATABASE=cassandra CASSANDRA=3.9 TEST_SUITE=integration
+    - KONG_TEST_DATABASE=postgres TEST_SUITE=plugins
+    - KONG_TEST_DATABASE=cassandra CASSANDRA=2.2 TEST_SUITE=plugins
+    - KONG_TEST_DATABASE=cassandra CASSANDRA=3.9 TEST_SUITE=plugins
+    
+install: true
+script: true
