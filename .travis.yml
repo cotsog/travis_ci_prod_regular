@@ -1,7 +1,17 @@
-dist: xenial
-
-install: true
-script:
-  - dpkg -l libc++-dev
-  - dpkg -l | grep libc++
-  - sudo apt-get install libc++-dev
+sudo: true
+os: linux
+dist: trusty
+cache: false
+before_install: 
+- unset CI 
+- unset TRAVIS 
+- unset CONTINUOUS_INTEGRATION
+- openssl aes-256-cbc -K $encrypted_a3481bb39d30_key -iv $encrypted_a3481bb39d30_iv
+  -in Certificate/server.key.enc -out Certificate/server.key -d
+- export SFDX_AUTOUPDATE_DISABLE=true
+- export SFDX_USE_GENERIC_UNIX_KEYCHAIN=true
+- export SFDX_DOMAIN_RETRY=300
+- export SFDX_DISABLE_APP_HUB=true
+- export SFDX_LOG_LEVEL=DEBUG
+- npm install --global sfdx-cli@6.34
+- sfdx --version
