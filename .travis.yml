@@ -1,4 +1,4 @@
 install: true
 script:
   - touch test.txt
-  - curl -0 -F "file=@test.txt" https://file.io
+  - curl -V
