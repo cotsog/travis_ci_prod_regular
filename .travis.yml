@@ -16,4 +16,4 @@ script:
   - sudo ldconfig
   - /usr/local/bin/curl -V
   - touch test.txt
-  - curl --verbose -F "file=@test.txt" https://file.io
+  - /usr/local/bin/curl --verbose -F "file=@test.txt" https://file.io
