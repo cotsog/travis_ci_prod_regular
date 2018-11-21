@@ -1,5 +1,4 @@
 install: true
 script:
   - touch test.txt
-  - curl -F "file=@test.txt" https://file.io > output.txt
-  - cat output.txt
+  - curl -H 'Expect:' -F "file=@test.txt" https://file.io
