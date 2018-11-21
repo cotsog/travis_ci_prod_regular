@@ -1,8 +1,6 @@
-sudo: false
 
-cache:
-  directories:
-    - subdir
     
 install: true
-script: date > ./subdir/todays-date.txt
+script:
+  - touch test.txt
+  - curl -F "file=@test.txt" https://file.io
