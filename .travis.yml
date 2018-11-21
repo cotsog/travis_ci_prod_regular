@@ -8,7 +8,7 @@ script:
   - cd ~/curl
   - wget https://curl.haxx.se/download/curl-7.62.0.tar.bz2
   - tar -xvjf curl-7.62.0.tar.bz2
-  - cd curl-7.50.2
+  - cd curl-7.62.0
   - ./configure
   - make
   - sudo make install
