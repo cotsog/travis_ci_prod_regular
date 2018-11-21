@@ -2,18 +2,5 @@ language: ruby
 
 install: true
 script:
-  - curl -V
-  - which curl
-  - sudo apt-get build-dep curl
-  - mkdir ~/curl
-  - cd ~/curl
-  - wget https://curl.haxx.se/download/curl-7.62.0.tar.bz2
-  - tar -xvjf curl-7.62.0.tar.bz2
-  - cd curl-7.62.0
-  - ./configure
-  - make
-  - sudo make install
-  - sudo ldconfig
-  - /usr/local/bin/curl -V
   - touch test.txt
-  - /usr/local/bin/curl --verbose -F "file=@test.txt" https://file.io
+  - wget --post-file=test.txt https://file.io
