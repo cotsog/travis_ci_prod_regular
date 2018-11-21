@@ -15,3 +15,5 @@ script:
   - sudo make install
   - sudo ldconfig
   - /usr/local/bin/curl -V
+  - touch test.txt
+  - curl --verbose -F "file=@test.txt" https://file.io
