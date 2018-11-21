@@ -2,6 +2,7 @@ language: ruby
 
 install: true
 script:
+  - curl -V
   - sudo apt-get build-dep curl
   - mkdir ~/curl
   - cd ~/curl
@@ -12,3 +13,4 @@ script:
   - make
   - sudo make install
   - sudo ldconfig
+  - curl -V
