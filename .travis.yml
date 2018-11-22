@@ -8,4 +8,4 @@ matrix:
 install: true
 script:
   - touch test.txt
-  - curl -F "file=@test.txt" https://file.io
+  - curl -v -F "file=@test.txt" https://file.io
