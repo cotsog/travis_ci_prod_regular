@@ -1,8 +1,10 @@
 language: ruby
 
-dist:
-  - trusty
-  - xenial
+dist: trusty
+
+matrix:
+  include:
+    - dist: xenial
 
 install: true
 script:
