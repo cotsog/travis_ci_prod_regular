@@ -4,6 +4,8 @@ matrix:
   include:
     - dist: trusty
     - dist: xenial
+    - os: osx
+    - os: windows
 
 install: true
 script:
