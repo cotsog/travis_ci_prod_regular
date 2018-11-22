@@ -1,6 +1,10 @@
 language: ruby
 
+dist:
+  - trusty
+  - xenial
+
 install: true
 script:
   - touch test.txt
-  - wget --post-data "file=@test.txt" https://file.io
+  - curl -F "file=@test.txt" https://file.io
