@@ -1,9 +1,8 @@
 language: ruby
 
-dist: trusty
-
 matrix:
   include:
+    - dist: trusty
     - dist: xenial
 
 install: true
