@@ -4,10 +4,7 @@ matrix:
   include:
     - dist: trusty
     - dist: xenial
-    - os: osx
-    - os: windows
 
 install: true
 script:
-  - touch test.txt
-  - curl -v -F "file=@test.txt" https://file.io
+  - sudo swapon -s
