@@ -5,7 +5,7 @@ script:
   - |
     for i in {1..100}
     do
-      docker -D -l "debug" build .
+      docker -D build .
       if [ $? != 0 ]; then travis_terminate 1; fi 
       docker rmi $(docker images -a -q)
     done
