@@ -1,5 +1,4 @@
-language: ruby
+language: java
 
 install: true
-script:
-  - for i in {1..100}; do docker -l "debug" build . || echo "***** FAILED! *****"; docker rmi $(docker images -a -q); done
+script: echo "Java!"
