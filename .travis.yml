@@ -1,4 +1,4 @@
-language: java
+language: ruby
 
 install: true
-script: echo "Java!"
+script: echo "Ruby!"
