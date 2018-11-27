@@ -1,11 +1,4 @@
 language: ruby
 
 install: true
-script:
-  - |
-    for i in {1..100}
-    do
-      docker -l "debug" build .
-      if [ $? != 0 ]; then travis_terminate 1; fi 
-      docker rmi $(docker images -a -q)
-    done
+script: true
