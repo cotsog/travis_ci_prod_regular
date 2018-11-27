@@ -1,4 +1,16 @@
-language: ruby
+language: objective-c
+osx_image: xcode8
 
-install: true
-script: true
+cache:
+  directories:
+    - pyenv-cache
+
+before_install:
+  - brew update
+  - brew install pyenv
+  - pip install virtualenv
+  - export PYTHON_BUILD_CACHE_PATH="$TRAVIS_BUILD_DIR/pyenv-cache"
+  - "PYTHON_CONFIGURE_OPTS=\"--enable-framework\" pyenv install 3.6.3"
+  - ls -al $TRAVIS_BUILD_DIR/pyenv-cache
+  - virtualenv -p /Users/travis/.pyenv/versions/3.6.3/bin/python python-3.6
+  - source python-3.6/bin/activate
