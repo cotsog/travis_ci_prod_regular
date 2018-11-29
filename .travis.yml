@@ -2,6 +2,6 @@ language: ruby
 
 install: true
 script:
-  - ulimit -a
+  - ulimit -Hn
   - sudo sysctl -w fs.file-max=500000
-  - ulimit -a
+  - ulimit -Hn
