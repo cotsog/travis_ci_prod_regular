@@ -5,5 +5,7 @@ script:
   - cat /etc/security/limits.conf || sudo cat /etc/security/limits.conf
   - ulimit -Hn
   - sudo sysctl -w fs.file-max=500000
-  - sudo ulimit -n 500000
+  - ulimit -n 64000
+  - ulimit -n 72000
+  - ulimit -n 96000
   - ulimit -Hn
