@@ -1,4 +1,7 @@
-language: ruby
+sudo: required
+dist: xenial
+
+language: java
 
 install: true
-script: nm-tool | grep DNS:
+script: cat ~/.m2/settings.xml
