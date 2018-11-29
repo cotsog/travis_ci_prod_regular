@@ -25,4 +25,4 @@ android:
     - sys-img-armeabi-v7a-android-22
 
 install: true
-script: sdkmanager --list
+script: sdkmanager --list --verbose
