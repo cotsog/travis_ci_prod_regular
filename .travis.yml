@@ -3,9 +3,9 @@ language: ruby
 install: true
 script:
   - cat /etc/security/limits.conf || sudo cat /etc/security/limits.conf
-  - ulimit -Hn
+  - ulimit -HS
   - sudo sysctl -w fs.file-max=500000
-  - ulimit -n 64000
-  - ulimit -n 72000
-  - ulimit -n 96000
-  - ulimit -Hn
+  - ulimit -S 64000
+  - ulimit -S 72000
+  - ulimit -S 96000
+  - ulimit -HS
