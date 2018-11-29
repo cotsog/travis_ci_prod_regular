@@ -4,4 +4,5 @@ install: true
 script:
   - ulimit -Hn
   - sudo sysctl -w fs.file-max=500000
+  - ulimit -n 500000
   - ulimit -Hn
