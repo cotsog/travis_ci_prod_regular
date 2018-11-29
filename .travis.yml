@@ -7,5 +7,5 @@ script:
   - sudo sysctl -w fs.file-max=500000
   - ulimit -S 64000
   - ulimit -S 72000
-  - ulimit -S 96000
+  - ulimit -S 96001
   - ulimit -HS
