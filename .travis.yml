@@ -2,6 +2,7 @@ language: ruby
 
 install: true
 script:
+  - initctl list
   - sudo /etc/init.d/mysql      stop || true
   - sudo /etc/init.d/postgresql stop || true
   - sudo /etc/init.d/memcached  stop || true
