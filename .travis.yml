@@ -1,10 +1,14 @@
 dist: trusty
-sudo: false
+
+matrix:
+  include:
+    - sudo: false
+    - sudo: required
 
 addons:
   apt:
     packages:
-      - dotnet-sdk-2.1
+      - dotnet-sdk-2.1.4
 
 install: true
 script: true
