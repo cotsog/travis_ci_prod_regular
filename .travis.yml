@@ -1,9 +1,7 @@
-language: ruby
+language: crystal
 
-addons:
-  apt:
-    packages:
-      - oracle-java8-installer
-      
+services:
+- docker
+
 install: true
 script: true
