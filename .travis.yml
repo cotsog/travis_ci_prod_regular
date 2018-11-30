@@ -1,8 +1,6 @@
 dist: trusty
-language: csharp
-dotnet: 2.1.300
-mono: none
-node_js: 8
 
 install: true
-script: true
+script:
+  - sudo apt-get -y update
+  - sudo apt-get install -qq dotnet-sdk-2.1=2.1.300*
