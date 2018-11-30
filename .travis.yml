@@ -1,6 +1,10 @@
 dist: trusty
+sudo: false
+
+addons:
+  apt:
+    packages:
+      - dotnet-sdk-2.1
 
 install: true
-script:
-  - sudo apt-get -y update
-  - sudo apt-get install -qq dotnet-sdk-2.1=2.1.300*
+script: true
