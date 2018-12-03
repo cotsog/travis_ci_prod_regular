@@ -1,8 +1,8 @@
-matrix:
-  include:
-    - env: NO_SUDO=true
-    - sudo: false
-    - sudo: required
-    - sudo: deprecated
+dist: trusty
+language: csharp
+dotnet: 2.1.300
+mono: none
+node_js: 8
+
 install: true
-script: echo "Hello world!"
+script: true
