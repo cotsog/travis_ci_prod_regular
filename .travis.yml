@@ -1,4 +1,2 @@
-sudo: required
-
 install: true
 script: true
