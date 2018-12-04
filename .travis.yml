@@ -1,8 +1,13 @@
-dist: trusty
-language: csharp
-dotnet: 2.1.300
-mono: none
-node_js: 8
+language: java
+sudo: required
+jdk:
+  - oraclejdk8
+
+addons:
+  apt:
+    packages:
+      - oracle-java8-installer
+      - oracle-java8-unlimited-jce-policy
 
 install: true
 script: true
