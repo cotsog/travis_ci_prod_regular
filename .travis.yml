@@ -1,11 +1,10 @@
-language: objective-c
+language: minimal
 
-osx_image:
-  - xcode8.3
-  - xcode9.4
-  - xcode10.1
+matrix:
+  include:
+    - dist: trusty
+    - dist: xenial
 
 install: true
 script:
-  - brew update
-  - brew install -v llvm@4
+  - df -h
