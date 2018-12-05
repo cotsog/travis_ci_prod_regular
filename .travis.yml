@@ -1,9 +1,11 @@
-language: python
-python:
-  - 3.6
+language: objective-c
+
+osx_image:
+  - xcode8.3
+  - xcode9.4
+  - xcode10.1
 
 install: true
 script:
-  - curl --silent --location https://github.com/retorquere/zotero-deb/releases/download/apt-get/install.sh | sudo bash
-  - sudo apt-get update -o Dir::Etc::sourcelist="sources.list.d/zotero.list" -o Dir::Etc::sourceparts="-" -o APT::Get::List-Cleanup="0"
-  - sudo apt-get install zotero jurism
+  - brew update
+  - brew install -v llvm@4
