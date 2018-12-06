@@ -1,8 +1,4 @@
-matrix:
-  include:
-    - env: NO_SUDO=true
-    - sudo: false
-    - sudo: required
-    - sudo: deprecated
+language: ruby
 install: true
-script: true
+script:
+  - gem install tiny_tds -v '1.0.5' --source 'https://rubygems.org/'
