@@ -1,10 +1,8 @@
-language: minimal
-
 matrix:
   include:
-    - dist: trusty
-    - dist: xenial
-
+    - env: NO_SUDO=true
+    - sudo: false
+    - sudo: required
+    - sudo: deprecated
 install: true
-script:
-  - df -h
+script: true
