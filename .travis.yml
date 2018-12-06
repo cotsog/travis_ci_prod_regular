@@ -1,4 +1,17 @@
+sudo: deprecated
+
+addons:
+  postgresql: 9.6
+  apt_packages:
+  - freetds-dev
+  - libmcrypt-dev
+  chrome: stable
+
 language: ruby
+
+rvm:
+  - 2.3.4
+
 install: true
 script:
   - gem install tiny_tds -v '1.0.5' --source 'https://rubygems.org/'
