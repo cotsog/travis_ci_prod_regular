@@ -1,5 +1,12 @@
 install: true
+
+env:
+  - RUBY_VERSION=2.1 RUBY_EXTRA_CONFIGURE_OPTIONS="" RVM_OPTIONS="-C --with-jemalloc"
+  - RUBY_VERSION=2.1 RUBY_EXTRA_CONFIGURE_OPTIONS="--with-jemalloc" RVM_OPTIONS=""
+  - RUBY_VERSION=2.3.5 RUBY_EXTRA_CONFIGURE_OPTIONS="" RVM_OPTIONS="-C --with-jemalloc"
+  - RUBY_VERSION=2.3.5 RUBY_EXTRA_CONFIGURE_OPTIONS="--with-jemalloc" RVM_OPTIONS=""
+  
 script:
   - sudo apt-get install libjemalloc-dev
-  - RUBY_EXTRA_CONFIGURE_OPTIONS="--with-jemalloc" rvm install 2.1
+  - rvm install $RUBY_VERSION $RVM_OPTIONS
   - ruby -r rbconfig -e "puts RbConfig::CONFIG['LIBS']" # this should print `-ljemalloc` to confirm
