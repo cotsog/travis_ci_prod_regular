@@ -1,5 +1,7 @@
 os: windows
 
+language: bash
+
 install: true
 script:
   - echo $PATH
