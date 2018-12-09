@@ -5,5 +5,5 @@ language: bash
 install: true
 script:
   - echo $PATH
-  - powershell "$Env:PATH += ';c:\temp'"
+  - powershell '$Env:PATH += ";c:\temp"'
   - echo $PATH
