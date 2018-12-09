@@ -6,7 +6,7 @@ install: true
 script:
   - echo $PATH
   - echo %PATH% || true
-  - powershell -Command "Get-ChildItem Env:"
+  - powershell -Command "Get-ChildItem Env:PATH"
   - powershell -Command "$Env:path += ';c:\temp'"
   - echo $PATH
   - echo %PATH% || true
