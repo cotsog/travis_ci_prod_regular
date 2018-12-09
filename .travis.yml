@@ -8,6 +8,6 @@ script:
   - echo %PATH% || true
   - powershell -Command "Get-ChildItem Env:PATH"
   - mkdir /c/temp
-  - powershell -Command "[System.Environment]::SetEnvironmentVariable("PATH", $Env:Path + ";/c/temp", "User")"
+  - powershell -Command "[System.Environment]::SetEnvironmentVariable("Path", $Env:Path + ";/c/temp", "User")"
   - echo $PATH
   - echo %PATH% || true
