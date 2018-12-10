@@ -8,5 +8,5 @@ env:
   
 script:
   - sudo apt-get install libjemalloc-dev
-  - rvm install $RUBY_VERSION --with-jemalloc
+  - rvm reinstall $RUBY_VERSION --with-jemalloc
   - ruby -r rbconfig -e "puts RbConfig::CONFIG['LIBS']" # this should print `-ljemalloc` to confirm
