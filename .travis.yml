@@ -3,14 +3,10 @@ language: minimal
 install: true
 
 env:
-  - RUBY_VERSION=2.1 RUBY_CONFIGURE_OPTS="--with-jemalloc"
-  - RUBY_VERSION=2.2 RUBY_CONFIGURE_OPTS="--with-jemalloc"
-  - RUBY_VERSION=2.3.5 RUBY_EXTRA_CONFIGURE_OPTIONS="" RVM_OPTIONS="-C --with-jemalloc"
-  - RUBY_VERSION=2.3.5 RUBY_EXTRA_CONFIGURE_OPTIONS="--with-jemalloc" RVM_OPTIONS=""
-  - RUBY_VERSION=2.4 RUBY_EXTRA_CONFIGURE_OPTIONS="" RVM_OPTIONS="-C --with-jemalloc"
-  - RUBY_VERSION=2.4 RUBY_EXTRA_CONFIGURE_OPTIONS="--with-jemalloc" RVM_OPTIONS=""
+  - RUBY_VERSION=2.1
+  - RUBY_VERSION=2.2
   
 script:
   - sudo apt-get install libjemalloc-dev
-  - rvm reinstall $RUBY_VERSION $RVM_OPTIONS
+  - rvm install $RUBY_VERSION --with-jemalloc
   - ruby -r rbconfig -e "puts RbConfig::CONFIG['LIBS']" # this should print `-ljemalloc` to confirm
