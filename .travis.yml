@@ -3,4 +3,5 @@ script: true
 deploy:
   provider: script
   script:
-    - echo "Hello, world!"
+    - echo "Hello, world 1!"
+    - echo "Hello, world 2!"
