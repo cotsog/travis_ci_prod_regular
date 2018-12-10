@@ -1,14 +1,8 @@
-language: minimal
-
+matrix:
+  include:
+    - env: NO_SUDO=true
+    - sudo: false
+    - sudo: required
+    - sudo: deprecated
 install: true
-
-env:
-  - RUBY_VERSION=2.1
-  - RUBY_VERSION=2.2
-  
-script:
-  - sudo apt-get install libjemalloc-dev
-  - rvm reinstall $RUBY_VERSION --with-jemalloc --debug 
-  - ruby -r rbconfig -e "puts RbConfig::CONFIG['LIBS']" # this should print `-ljemalloc` to confirm
-  - rvm reinstall $RUBY_VERSION -C --with-jemalloc --debug 
-  - ruby -r rbconfig -e "puts RbConfig::CONFIG['LIBS']" # this should print `-ljemalloc` to confirm
+script: true
