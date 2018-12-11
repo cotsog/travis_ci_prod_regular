@@ -1,18 +1,9 @@
-language: cpp
-env:
-  global:
-    - DEPS=""
-matrix:
-  include:
-    - os: osx
-      compiler: clang
-      osx_image: xcode8
-      env:
-        - DEPS="${DEPS} llvm@4"
-        - LLVM_DIR=/usr/local/opt/llvm@4/lib/cmake/llvm/
-        - ARGS=-V
+language: objective-c
 
-install:
-  - if [ $TRAVIS_OS_NAME = osx   ]; then brew update && brew install -v ${DEPS} && find /usr/local/opt/llvm@4/ | grep cmake; fi
+osx_image:
+  - xcode8
 
-script: true
+install: true
+script:
+  - brew update
+  - brew install -v llvm@4
