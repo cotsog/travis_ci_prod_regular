@@ -2,6 +2,7 @@ language: objective-c
 
 osx_image:
   - xcode8
+  - xcode8.3
 
 install: true
 script:
