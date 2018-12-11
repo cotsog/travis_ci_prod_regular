@@ -1,10 +1,6 @@
-language: objective-c
+language: ruby
 
-osx_image:
-  - xcode8
-  - xcode8.3
+rvm: 2.6.0-rc1
 
 install: true
-script:
-  - brew update
-  - brew install -v llvm@4
+script: ruby -v
