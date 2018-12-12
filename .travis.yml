@@ -1,5 +1,7 @@
 bundler_args: --without development
-install: gem install tiny_tds -v 1.0.5
+install:
+  - sudo apt-get install freetds-dev
+  - gem install tiny_tds -v 1.0.5
 script: true
 language: ruby
 rvm:
