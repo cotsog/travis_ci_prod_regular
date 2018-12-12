@@ -1,16 +1,25 @@
-matrix:
-  include:
-    - sudo: deprecated
-    - sudo: required
-
-addons:
-  apt_packages:
-  - freetds-dev
-  - libmcrypt-dev
-
-install: gem install tiny_tds -v 2.1.0
-script: true
-
+bundler_args: --without development
+install: true
+cache:
+  directories:
+    - freetds-1.00.21
+script:
+  - |
+    if [ ! -e ./freetds-1.00.21/src/tds/.libslibtds.a ]
+    then
+      sudo apt-get install wget
+      sudo apt-get install build-essential
+      sudo apt-get install libc6-dev
+      wget http://www.freetds.org/files/stable/freetds-1.00.21.tar.gz
+      tar -xzf freetds-1.00.21.tar.gz
+      pushd freetds-1.00.21
+      ./configure --prefix=/usr/local --with-tdsver=7.3
+      make
+      popd
+    fi
+  - pushd freetds-1.00.21 && sudo make install && popd
+  - gem install tiny_tds -v 1.0.5
+  - cat /home/travis/.rvm/gems/ruby-2.3.4/extensions/x86_64-linux/2.3.0/tiny_tds-1.0.5/mkmf.log
 language: ruby
 rvm:
   - 2.3.4
