@@ -1,6 +1,6 @@
 bundler_args: --without development
 install:
-  - sudo apt-get install freetds freetds-dev
+  - sudo apt-get install freetds-dev
   - gem install tiny_tds -v 1.0.5
   - cat /home/travis/.rvm/gems/ruby-2.3.4/extensions/x86_64-linux/2.3.0/tiny_tds-1.0.5/mkmf.log
 script: true
