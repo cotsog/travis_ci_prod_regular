@@ -2,8 +2,14 @@ bundler_args: --without development
 install: true
 script:
   - sudo apt-get install freetds-dev
-  - sleep 30
-  - travis_retry sudo gem install tiny_tds -v 1.0.5
+  - set -ex \
+      && wget -O freetds-1.00.15.tar.gz "ftp://ftp.freetds.org/pub/freetds/stable/freetds-1.00.15.tar.gz" \
+      && tar -xzvf freetds-1.00.15.tar.gz \
+      && cd freetds-1.00.15 \
+      && ./configure \
+      && make \
+      && sudo make install
+  - gem install tiny_tds -v 1.0.5
   - cat /home/travis/.rvm/gems/ruby-2.3.4/extensions/x86_64-linux/2.3.0/tiny_tds-1.0.5/mkmf.log
 language: ruby
 rvm:
