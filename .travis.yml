@@ -4,6 +4,7 @@ cache:
   directories:
     - freetds-1.00.21
 script:
+  - ls -al ./freetds-1.00.21/src/tds/.libslibtds.a
   - |
     if [ ! -e ./freetds-1.00.21/src/tds/.libslibtds.a ]
     then
