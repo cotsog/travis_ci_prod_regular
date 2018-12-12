@@ -3,7 +3,7 @@ install: true
 script:
   - sudo apt-get install freetds-dev
   - set -ex \
-      && wget -O freetds-1.00.15.tar.gz "ftp://ftp.freetds.org/pub/freetds/stable/freetds-1.00.15.tar.gz" \
+      && wget -O freetds-1.00.15.tar.gz "http://www.freetds.org/files/stable/freetds-1.00.15.tar.gz" \
       && tar -xzvf freetds-1.00.15.tar.gz \
       && cd freetds-1.00.15 \
       && ./configure \
