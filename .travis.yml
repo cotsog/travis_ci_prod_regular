@@ -1,14 +1,14 @@
-addons:
-  apt:
-    sources:
-    - ppa:jamiewillis/freetds
-    packages:
-    - freetds-dev
-    - libmcrypt-dev
+os:
+  - linux
+  - osx
 
-install: true
-script: gem install tiny_tds -v 1.0.5
+matrix:
+  include:
+    - os: linux
+      dist: xenial
 
-language: ruby
-rvm:
-  - 2.3.4
+language: java
+jdk: openjdk8
+
+install: echo "Nothing to do"
+script: true
