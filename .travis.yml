@@ -1,14 +1,14 @@
-os:
-  - linux
-  - osx
-
-matrix:
-  include:
-    - os: linux
-      dist: xenial
-
-language: ruby
-
-install: true
-script:
-  - wget -O heath https://s3.amazonaws.com/appstorage.prod.mmknox/fpg/v3/pricing-metadata-processor/heath-linux
+language: node_js
+node_js:
+- node
+cache:
+- yarn
+install: skip
+script: skip
+deploy:
+  provider: s3
+  access_key_id: AWS_ACCESS_KEY
+  secret_access_key: AWS_SECRET_ACCESS_KEY
+  bucket: portfolio-tim
+  acl: public_read
+  region: us-east-1
