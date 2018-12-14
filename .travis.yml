@@ -24,8 +24,7 @@ before_script:
 # see http://www.egeek.me/2013/02/23/jenkins-and-xcode-user-interaction-is-not-allowed/
 - security set-keychain-settings -t 3600 -l ~/Library/Keychains/build.keychain
 #- security set-key-partition-list -S "apple-tool:,apple:" -s -k travis build.keychain
-- security find-identity -v -p codesigning
-- security set-key-partition-list -S apple-tool\:,apple\: -s -k travis build.keychain
+- security set-key-partition-list -S "apple-tool\:,apple\:" -s -k travis build.keychain
 
 script:
 - true
