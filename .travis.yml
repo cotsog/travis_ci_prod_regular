@@ -1,19 +1,31 @@
-rvm:
-  - 2.2
-  - 2.3
+language: objective-c
+#osx_image: xcode8
+osx_image: xcode8
 
-env:
-  - FOO=foo
-  - FOO=bar
+branches:
+  only:
+  - master
 
-install: skip
+install:
+ - true
+
+before_script:
+- echo "before_script callback"
+# Create a custom keychain
+- security create-keychain -p travis build.keychain
+
+# Make the custom keychain default, so xcodebuild will use it for signing
+- security default-keychain -s build.keychain
+
+# Unlock the keychain
+- security unlock-keychain -p travis build.keychain
+
+# Set keychain timeout to 1 hour for long builds
+# see http://www.egeek.me/2013/02/23/jenkins-and-xcode-user-interaction-is-not-allowed/
+- security set-keychain-settings -t 3600 -l ~/Library/Keychains/build.keychain
+- security set-key-partition-list -S apple-tool:,apple: -s -k travis build.keychain
+- security find-identity -v -p codesigning
+- security set-key-partition-list -S apple-tool:,apple: -s -k travis build.keychain
+
 script:
-  - if [ $TRAVIS_RUBY_VERSION == 2.2 ] && [ $FOO == bar ]; then false; fi
-  - echo $FOO
-
-jobs:
-  include:
-    - stage: deploy
-      install: skip
-      script: echo Deploy
-      # Keep in mind to overwrite these here
+- true
