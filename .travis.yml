@@ -1,5 +1,14 @@
 language: ruby
 
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - gcc-7
+      - g++-7
+      - libboost-dev
+      - mesa-common-dev
+
 install: true
-script:
-  - find /var/log -wholename '*postgres*'log -exec curl --upload-file {} https://transfer.sh/{} \;
+script: true
