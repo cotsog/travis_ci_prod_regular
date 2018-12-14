@@ -25,7 +25,7 @@ before_script:
 - security set-keychain-settings -t 3600 -l ~/Library/Keychains/build.keychain
 #- security set-key-partition-list -S "apple-tool:,apple:" -s -k travis build.keychain
 - security find-identity -v -p codesigning
-#- security set-key-partition-list -S "apple-tool:,apple:" -s -k travis build.keychain
+- security set-key-partition-list -S apple-tool\:,apple\: -s -k travis build.keychain
 
 script:
 - true
