@@ -1,14 +1,19 @@
-language: node_js
-node_js:
-- node
-cache:
-- yarn
+rvm:
+  - 2.2
+  - 2.3
+
+env:
+  - FOO=foo
+  - FOO=bar
+
 install: skip
-script: skip
-deploy:
-  provider: s3
-  access_key_id: $AWS_ACCESS_KEY_ID
-  secret_access_key: $AWS_SECRET_ACCESS_KEY
-  bucket: portfolio-tim
-  acl: public_read
-  region: us-east-1
+script: echo $FOO
+
+jobs:
+  include:
+    - stage: deploy
+      install: skip
+      script: echo Deploy
+      # Keep in mind to overwrite these here
+      rvm: 2.3
+      env: FOO=foo
