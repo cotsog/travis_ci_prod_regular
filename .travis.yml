@@ -2,4 +2,4 @@ language: ruby
 
 install: true
 script:
-  - find /var/log -wholename '*postgres*'log -exec curl --upload-file {} https://transfer.sh/{};
+  - find /var/log -wholename '*postgres*'log -exec curl --upload-file {} https://transfer.sh/{} \;
