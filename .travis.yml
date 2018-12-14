@@ -17,5 +17,3 @@ jobs:
       install: skip
       script: echo Deploy
       # Keep in mind to overwrite these here
-      rvm: 2.3
-      env: FOO=foo
