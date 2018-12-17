@@ -1,14 +1,32 @@
-language: ruby
+language: objective-c
+#osx_image: xcode8
+osx_image: xcode8
 
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - gcc-7
-      - g++-7
-      - libboost-dev
-      - mesa-common-dev
+branches:
+  only:
+  - master
 
-install: true
-script: true
+install:
+ - true
+
+before_script:
+- echo "before_script callback"
+# Create a custom keychain
+- security create-keychain -p travis build.keychain
+
+# Make the custom keychain default, so xcodebuild will use it for signing
+- security default-keychain -s build.keychain
+
+# Unlock the keychain
+- security unlock-keychain -p travis build.keychain
+
+# Set keychain timeout to 1 hour for long builds
+# see http://www.egeek.me/2013/02/23/jenkins-and-xcode-user-interaction-is-not-allowed/
+- security set-keychain-settings -t 3600 -l ~/Library/Keychains/build.keychain
+- security set-key-partition-list -S apple-tool:,apple: -s -k travis build.keychain
+- security find-identity -v -p codesigning
+-|
+  security set-key-partition-list -S apple-tool:,apple: -s -k travis build.keychain
+
+script:
+- true
