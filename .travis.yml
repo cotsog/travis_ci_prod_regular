@@ -1,8 +1,5 @@
-matrix:
-  include:
-    - env: NO_SUDO=true
-    - sudo: false
-    - sudo: required
-    - sudo: deprecated
+language: ruby
+
 install: true
-script: true
+script:
+  - git describe --tags --dirty
