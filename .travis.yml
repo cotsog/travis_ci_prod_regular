@@ -7,7 +7,7 @@ env:
 #- URL=https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz
 - URL=https://developer.salesforce.com/media/salesforce-cli/sfdx-osx.pkg
 before_install:
-- rvm get head
+- rvm get stable
 - command curl -sSL https://rvm.io/mpapis.asc | gpg --import -
 - rvm get head
 - export SFDX_AUTOUPDATE_DISABLE=true
