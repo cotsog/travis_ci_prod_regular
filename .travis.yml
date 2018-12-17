@@ -1,5 +1,30 @@
-language: ruby
-
-install: true
+sudo: true
+#dist: trusty
+os: osx
+cache: false
+env:
+#- URL=https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz
+- URL=https://developer.salesforce.com/media/salesforce-cli/sfdx-osx.pkg
+before_install:
+- command curl -sSL https://rvm.io/mpapis.asc | gpg --import -
+- rvm get head
+- export SFDX_AUTOUPDATE_DISABLE=true
+- export SFDX_USE_GENERIC_UNIX_KEYCHAIN=true
+- export SFDX_DOMAIN_RETRY=300
+#- wget -qO- $URL | tar xJf -
+- curl $URL --output sfdx-osx.pkg
+#- wget -O jq https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64
+- ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null
+- brew install jq
+#- ./sfdx/install
+- sudo installer -pkg sfdx-osx.pkg -target /
+- export PATH=./sfdx/$(pwd):$PATH
+- sfdx update
+- chmod +x travis/setup.sh
+- travis/setup.sh
 script:
-  - git describe --tags --dirty
+- chmod +x travis/build.sh
+- travis/build.sh
+
+
+
