@@ -1,32 +1,20 @@
-sudo: true
-#dist: trusty
-os: osx
+language: java
 
-cache: false
 env:
-#- URL=https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz
-- URL=https://developer.salesforce.com/media/salesforce-cli/sfdx-osx.pkg
-before_install:
-- rvm get stable
-- command curl -sSL https://rvm.io/mpapis.asc | gpg --import -
-- rvm get head
-- export SFDX_AUTOUPDATE_DISABLE=true
-- export SFDX_USE_GENERIC_UNIX_KEYCHAIN=true
-- export SFDX_DOMAIN_RETRY=300
-#- wget -qO- $URL | tar xJf -
-- curl $URL --output sfdx-osx.pkg
-#- wget -O jq https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64
-- ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null
-- brew install jq
-#- ./sfdx/install
-- sudo installer -pkg sfdx-osx.pkg -target /
-- export PATH=./sfdx/$(pwd):$PATH
-- sfdx update
-- chmod +x travis/setup.sh
-- travis/setup.sh
-script:
-- chmod +x travis/build.sh
-- travis/build.sh
+  global:
+    - _JAVA_OPTIONS=-Xmx2048m -Xms512m
 
-
-
+matrix:
+  include:
+    - jdk: openjdk8
+    - jdk: oraclejdk8
+    - jdk: openjdk9
+    - jdk: openjdk10
+    - jdk: openjdk11
+    - jdk: oraclejdk11   
+    - os: osx
+      osx_image: xcode9.2
+      env: JAVA_HOME=$(/usr/libexec/java_home)
+      
+install: true
+script: true
