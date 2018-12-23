@@ -1,8 +1,6 @@
 language: node_js
 
-node_js:
-  - 8
-  - 9
+node_js: 8
 
 jobs:
   include:
@@ -13,5 +11,5 @@ jobs:
       install: true
       script: true
 
-install: skip
-script: skip
+install: true
+script: true
