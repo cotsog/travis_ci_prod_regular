@@ -4,5 +4,4 @@ osx_image: xcode10.1
 
 install: true
 script:
-  - diskutil info
   - diskutil list
