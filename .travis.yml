@@ -1,15 +1,8 @@
-language: node_js
+language: objective-c
 
-node_js: 8
-
-jobs:
-  include:
-    - node_js: 10
-      install: true
-      script: true
-    - node_js: 9
-      install: true
-      script: true
+osx_image: xcode10.1
 
 install: true
-script: true
+script:
+  - diskutil info
+  - diskutil list
