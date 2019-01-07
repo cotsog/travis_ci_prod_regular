@@ -1,4 +1,5 @@
 language: ruby
 
-install : true
+install :
+  - true
 script: true
