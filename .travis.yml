@@ -1,13 +1,4 @@
 language: ruby
 
-dist: xenial
-
-addons:
-  postgresql: "11"
-  apt:
-    packages:
-    - postgresql-11
-    - postgresql-client-11
-
-install: true
+install : true
 script: true
