@@ -1,4 +1,11 @@
-language: ruby
+dist: xenial
+
+sudo: required
+
+language: java
+
+jdk:
+  - openjdk10
 
 install: true
-script: sudo apt-get install openjfx
+script: phpenv install 7.1 && phpenv global 7.1
