@@ -1,4 +1,7 @@
-language: node_js
+language: java
+
+jdk:
+  - oraclejdk11
 
 install: true
 script: true
