@@ -1,9 +1,4 @@
-dist: xenial
-
-services:
-  - xvfb
+language: node_js
 
 install: true
-script:
-  - sleep 10
-  - ps -elfwww | grep -i Xvfb
+script: true
