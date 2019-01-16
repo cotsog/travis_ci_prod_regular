@@ -2,8 +2,5 @@ language: java
 
 dist: xenial
 
-jdk:
-  - oraclejdk11
-
 install: true
-script: true
+script: javac -J-Xmx32m -version
