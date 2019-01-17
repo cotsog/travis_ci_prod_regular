@@ -1,19 +1,4 @@
-language: ruby
-
-matrix:
-  include:
-    - dist: trusty
-    - dist: xenial
-  
-addons:
-  postgresql: "11"
-  apt:
-    packages:
-    - postgresql-11
-    - postgresql-client-11
-env:
-  global:
-  - PGPORT=5433
-
-install: true
-script: true
+language: python
+python: 3.6
+script:
+  - python -m webbrowser "https://mybinder.org/build/gh/diana-hep/pyhf/master"
