@@ -1,4 +1,5 @@
 language: python
 python: 3.6
+install: true
 script:
   - python -m webbrowser "https://mybinder.org/build/gh/diana-hep/pyhf/master"
