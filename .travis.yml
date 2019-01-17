@@ -1,6 +1,14 @@
-language: java
+language: ruby
 
-dist: xenial
+dist:
+  - trusty
+  - xenial
+  
+services:
+  - postgresql
+  
+addons:
+  postgresql: "11.0"
 
 install: true
-script: javac -J-Xmx32m -version
+script: true
