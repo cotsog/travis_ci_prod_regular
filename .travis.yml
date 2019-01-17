@@ -1,8 +1,9 @@
 language: ruby
 
-dist:
-  - trusty
-  - xenial
+matrix:
+  include:
+    - dist: trusty
+    - dist: xenial
   
 services:
   - postgresql
