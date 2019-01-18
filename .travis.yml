@@ -1,21 +1,10 @@
-dist: xenial
+language: ruby
 
-env: 
-  global: 
-    - PGPORT=5433
-
-services:
-  - postgresql
-  
-addons: 
-  apt: 
-    packages: 
-      - postgresql-11
-      - postgresql-client-11
-  postgresql: "11"
+before_install:
+  - wget http://apache.mirror.gtcomm.net/maven/maven-3/3.6.0/binaries/apache-maven-3.6.0-bin.tar.gz
+  - tar xzvf apache-maven-3.6.0-bin.tar.gz
+  - export PATH=`pwd`/apache-maven-3.6.0/bin:$PATH
+  - mvn -v
         
 install: true
-script:
-  - pg_config --version
-  - psql --version
-  - psql -c 'SELECT version();'
+script: true
