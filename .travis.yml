@@ -14,4 +14,6 @@ env:
   - PGPORT=5433
         
 install: true
-script: psql -c 'SELECT version();'
+script:
+  - pg_config --version
+  - psql --version
