@@ -4,8 +4,7 @@ jobs:
       language: scala
       scala:
         - 2.12.4
-      jdk:
-        - oraclejdk8
+      jdk: oraclejdk8
       install: echo "install"
       script: echo "script"
         
