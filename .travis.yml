@@ -1,7 +1,13 @@
-dist: trusty
-language: elixir
-elixir: '1.7.4'
-otp_release: '21.0'
-
+jobs:
+  include:
+    - stage: test
+      language: scala
+      scala:
+        - 2.12.4
+      jdk:
+        - oraclejdk8
+      install: echo "install"
+      script: echo "script"
+        
 install: true
 script: true
