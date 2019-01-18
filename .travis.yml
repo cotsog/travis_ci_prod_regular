@@ -11,7 +11,7 @@ addons:
     - postgresql-client-9.6
 env:
   global:
-  - PGPORT=5433
+  - PGPORT=5432
         
 install: true
 script:
