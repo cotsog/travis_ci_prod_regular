@@ -17,3 +17,4 @@ install: true
 script:
   - pg_config --version
   - psql --version
+  - psql -c 'SELECT version();'
