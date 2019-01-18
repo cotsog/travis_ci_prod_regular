@@ -1,7 +1,7 @@
 dist: trusty
 language: elixir
 elixir: '1.7.4'
-otp_release: '20'
+otp_release: '21.0'
 
 install: true
 script: true
