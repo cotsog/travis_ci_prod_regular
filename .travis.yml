@@ -1,17 +1,18 @@
-dist: precise
+dist: trusty
+
+env: 
+  global: 
+    - PGPORT=5433
 
 services:
   - postgresql
   
-addons:
-  postgresql: "9.6"
-  apt:
-    packages:
-    - postgresql-9.6
-    - postgresql-client-9.6
-env:
-  global:
-  - PGPORT=5432
+addons: 
+  apt: 
+    packages: 
+      - postgresql-11
+      - postgresql-client-11
+  postgresql: "11"
         
 install: true
 script:
