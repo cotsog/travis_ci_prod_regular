@@ -1,12 +1,7 @@
-jobs:
-  include:
-    - stage: test
-      language: scala
-      scala:
-        - 2.12.4
-      jdk: oraclejdk8
-      install: echo "install"
-      script: echo "script"
+dist: xenial
+
+language: python
+python: 3.7
         
 install: true
 script: true
