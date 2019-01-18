@@ -1,5 +1,7 @@
-language: python
-python: 3.6
+dist: trusty
+language: elixir
+elixir: '1.7.4'
+otp_release: '21'
+
 install: true
-script:
-  - python -m webbrowser "https://mybinder.org/build/gh/diana-hep/pyhf/master"
+script: true
