@@ -1,10 +1,11 @@
-language: ruby
+language: java
 
-before_install:
-  - wget http://apache.mirror.gtcomm.net/maven/maven-3/3.6.0/binaries/apache-maven-3.6.0-bin.tar.gz
-  - tar xzvf apache-maven-3.6.0-bin.tar.gz
-  - export PATH=`pwd`/apache-maven-3.6.0/bin:$PATH
-  - mvn -v
+matrix:
+  include:
+    - dist: trusty
+      jdk: openjdk11
+    - dist: xenial
+      jdk: openjdk11
         
 install: true
 script: true
