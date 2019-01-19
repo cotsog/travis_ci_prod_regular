@@ -1,11 +1,11 @@
-language: java
+language: objective-c
 
-matrix:
-  include:
-    - dist: trusty
-      jdk: openjdk11
-    - dist: xenial
-      jdk: openjdk11
+osx_image: xcode9.2
+
+rvm: 2.2
+ 
+before_install:
+  - rvm get stable
         
 install: true
-script: java -version
+script: true
