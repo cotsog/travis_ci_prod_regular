@@ -1,4 +1,6 @@
 language: java
+
+dist: xenial
         
 install: true
 script: mvn -v
