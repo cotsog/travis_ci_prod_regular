@@ -5,6 +5,8 @@ osx_image: xcode9.2
 rvm: 2.2
  
 before_install:
+  - gpg --version
+  - gpg2 --version
   - command curl -sSL https://rvm.io/mpapis.asc | gpg --import -
   - rvm get stable
         
