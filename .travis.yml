@@ -1,22 +1,5 @@
-sudo: true
-language: python
-python: "3.6"
-
-matrix:
-  include:
-    - dist: trusty
-    - dist: xenial
-
-before_install:
-  - sudo ls -alR $HOME/.cache/pip/http
-  - sudo chown -R $USER.$USER $HOME/.cache
-  - sudo rm -rf $HOME/.cache/pip/http
-  - sudo ls -alR $HOME/.cache/pip/http || true
-
+language: csharp
+mono: none
+dotnet: 3.0
 install: true
 script: true
-
-cache:
-  directories:
-    - $HOME/virtualenv/python3.7.*
-    - $HOME/.cache/pip
