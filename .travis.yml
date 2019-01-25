@@ -1,6 +1,9 @@
-language: python
+language: node_js
 
-python: 2.7.15
+node_js: 8
+
+services:
+  - xvfb
 
 install: true
-script: python -V
+script: true
