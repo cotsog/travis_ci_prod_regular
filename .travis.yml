@@ -2,7 +2,8 @@ language: ruby
 
 jobs:
   include:
-    - &functional
+    - stage: "functional"
+      &functional
       name: "kri_variability"
       script:
         - python -m unittest discover -vc tests/test_functional/test_processors/kri_variability
