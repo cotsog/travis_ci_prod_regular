@@ -1,14 +1,12 @@
 language: ruby
 
-__kri_variability: &kri_variability
-  name: "kri_variability"
-  script:
-    - python -m unittest discover -vc tests/test_functional/test_processors/kri_variability
-
 jobs:
   include:
-    - stage: 'functional'
-      <<: *kri_variability
+    - &functional
+      name: "kri_variability"
+      script:
+        - python -m unittest discover -vc tests/test_functional/test_processors/kri_variability
+    - <<: *functional
 
 install: true
 script: true
