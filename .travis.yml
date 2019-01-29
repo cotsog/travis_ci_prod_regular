@@ -8,7 +8,7 @@ __kri_variability: &kri_variability
 jobs:
   include:
     - stage: 'functional'
-      *kri_variability
+      <<: *kri_variability
 
 install: true
 script: true
