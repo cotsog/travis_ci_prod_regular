@@ -1,6 +1,13 @@
-language: minimal
+language: ruby
 
-dist: bionic
+jobs:
+  include:
+    - stage: 'functional'
+      name: "kri_variability" &kri_variability
+      script:
+        - python -m unittest discover -vc tests/test_functional/test_processors/kri_variability
+    - stage: 'double'
+        &kri_variability
 
 install: true
 script: true
