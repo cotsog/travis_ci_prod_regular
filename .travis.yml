@@ -20,6 +20,7 @@ matrix:
 
 install: true
 script:
+  - phpenv rehash
   - ls -al /home/travis/.phpenv/versions/7.1.26/lib/php/extensions/no-debug-zts-20160303
   - pecl config-show
   - php -m
