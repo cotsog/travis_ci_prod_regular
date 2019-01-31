@@ -8,4 +8,4 @@ matrix:
       filter_secrets: false
 
 install: true
-script: true
+script: echo "bar"
