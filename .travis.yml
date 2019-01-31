@@ -12,4 +12,4 @@ jobs:
     - stage: 'Python code_analysis'
       name: "FORCE PASS: pylint $PYLINT_FOLDER"  # <-- unfortunately, $PYLINT_FOLDER cannot be parsed here...
       script:
-        - echo "FORCE PASS: pylint folder: $PYLINT_FOLDER" # <--- ...so, you can print $PYLINT_FOLDER here instead
+        - echo "FORCE PASS pylint folder $PYLINT_FOLDER" # <--- ...so, you can print $PYLINT_FOLDER here instead
