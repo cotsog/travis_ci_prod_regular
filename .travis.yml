@@ -1,15 +1,7 @@
-env:
-  - PYLINT_FOLDER="*.py"
-  - PYLINT_FOLDER="dataaccess"
-  - PYLINT_FOLDER="handlers"
-  - PYLINT_FOLDER="services"
-  - PYLINT_FOLDER="processors"
-  - PYLINT_FOLDER="sharedlibs"
-  - PYLINT_FOLDER="pipeline"
+language: node_js
 
-jobs:
+matrix:
   include:
-    - stage: 'Python code_analysis'
-      name: "FORCE PASS: pylint $PYLINT_FOLDER"  # <-- unfortunately, $PYLINT_FOLDER cannot be parsed here...
-      script:
-        - echo "FORCE PASS pylint folder $PYLINT_FOLDER" # <--- ...so, you can print $PYLINT_FOLDER here instead
+    - os: linux
+    - os: windows
+      filter_secrets: false
