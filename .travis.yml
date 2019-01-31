@@ -20,6 +20,7 @@ matrix:
 
 install: true
 script:
+  - pecl config-show
   - php -m
   - "printf \"\\n\" | pecl install -f mongodb"
   - php -m
