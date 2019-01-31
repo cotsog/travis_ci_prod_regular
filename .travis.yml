@@ -1,29 +1,12 @@
-language: php
-
-cache:
-  directories:
-    - /home/travis/.phpenv/versions/7.1.26/lib/php/extensions/no-debug-zts-20160303/
-
-dist:
-  - trusty
-  
-php:
-  - 7.1.26
-  - 7.2.14
-  
 matrix:
-  include:
-    - dist: xenial
-      php: 7.1.26
-    - dist: xenial
-      php: 7.2.14
-
-install: true
-script:
-  - phpenv rehash
-  - ls -al /home/travis/.phpenv/versions/7.1.26/lib/php/extensions/no-debug-zts-20160303
-  - pecl config-show
-  - php -m
-  - "printf \"\\n\" | pecl install -f mongodb"
-  - php -m
-  - ls -al /home/travis/.phpenv/versions/7.1.26/lib/php/extensions/no-debug-zts-20160303
+  include:
+    - dist: trusty
+      env: DIST=trusty
+    - dist: xenial
+      env: DIST=xenial
+      
+services:
+  - cassandra
+  
+install: skip
+script: skip
