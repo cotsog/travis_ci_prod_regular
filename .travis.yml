@@ -2,12 +2,20 @@ language: php
 
 dist:
   - trusty
-  - xenial
   
 php:
   - 7.1.26
   - 7.2.14
   - 7.3.1
+  
+matrix:
+  include:
+    - dist: xenial
+      php: 7.1.26
+    - dist: xenial
+      php: 7.2.14
+    - dist: xenial
+      php: 7.3.1
 
 install: true
 script: php -m
