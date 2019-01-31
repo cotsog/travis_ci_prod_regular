@@ -6,3 +6,6 @@ matrix:
     - os: linux
     - os: windows
       filter_secrets: false
+
+install: true
+script: true
