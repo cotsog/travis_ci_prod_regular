@@ -4,10 +4,8 @@ matrix:
       env: DIST=trusty
     - dist: xenial
       env: DIST=xenial
-      script: sudo service cassandra start
-      
-services:
-  - cassandra
   
 install: skip
-script: skip
+script:
+  - sudo apt-get update -qq
+  - sudo apt-get install -qq libevent-dev libncurses-dev
