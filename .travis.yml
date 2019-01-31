@@ -20,7 +20,9 @@ matrix:
 
 install: true
 script:
+  - ls -al /home/travis/.phpenv/versions/7.1.26/lib/php/extensions/no-debug-zts-20160303
   - pecl config-show
   - php -m
   - "printf \"\\n\" | pecl install -f mongodb"
   - php -m
+  - ls -al /home/travis/.phpenv/versions/7.1.26/lib/php/extensions/no-debug-zts-20160303
