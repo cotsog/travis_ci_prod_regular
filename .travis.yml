@@ -4,6 +4,7 @@ matrix:
       env: DIST=trusty
     - dist: xenial
       env: DIST=xenial
+      script: sudo service cassandra start
       
 services:
   - cassandra
