@@ -7,5 +7,5 @@ matrix:
   
 install: skip
 script:
-  - sudo apt-get update -qq
-  - sudo apt-get install -qq libevent-dev libncurses-dev
+  - travis_retry sudo apt-get update -qq
+  - travis_retry sudo apt-get install -qq libevent-dev libncurses-dev
