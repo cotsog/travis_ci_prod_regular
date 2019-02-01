@@ -1,11 +1,21 @@
-matrix:
-  include:
-    - dist: trusty
-      env: DIST=trusty
-    - dist: xenial
-      env: DIST=xenial
+language: php
+
+cache:
+  directories:
+    - /home/travis/.phpenv/versions/7.1.26/lib/php/extensions/no-debug-zts-20160303/
+
+dist:
+  - trusty
   
-install: skip
+php:
+  - 7.1.26
+
+install: true
 script:
-  - travis_retry sudo apt-get update -qq
-  - travis_retry sudo apt-get install -qq libevent-dev libncurses-dev
+  - phpenv rehash
+  - ls -al /home/travis/.phpenv/versions/7.1.26/lib/php/extensions/no-debug-zts-20160303
+  - pecl config-show
+  - php -m
+  - echo "extension = mongodb.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+  - php -m
+  - ls -al /home/travis/.phpenv/versions/7.1.26/lib/php/extensions/no-debug-zts-20160303
