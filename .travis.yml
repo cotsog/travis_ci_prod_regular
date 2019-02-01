@@ -1,21 +1,14 @@
 language: php
 
-cache:
-  directories:
-    - /home/travis/.phpenv/versions/7.1.26/lib/php/extensions/no-debug-zts-20160303/
-
-dist:
-  - trusty
-  
 php:
-  - 7.1.26
+  - '7.2'
+  
+matrix:
+  include:
+    - dist: trusty
+      env: DIST=trusty
+    - dist: xenial
+      env: DIST=xenial
 
-install: true
-script:
-  - phpenv rehash
-  - ls -al /home/travis/.phpenv/versions/7.1.26/lib/php/extensions/no-debug-zts-20160303
-  - pecl config-show
-  - php -m
-  - echo "extension = mongodb.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
-  - php -m
-  - ls -al /home/travis/.phpenv/versions/7.1.26/lib/php/extensions/no-debug-zts-20160303
+install: skip
+script: phpenv versions
