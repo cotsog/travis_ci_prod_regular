@@ -1,14 +1,5 @@
 # Test
 language: php
-  
-matrix:
-  include:
-    - dist: trusty
-      env: DIST=trusty
-      php: 5.6.32
-    - dist: xenial
-      env: DIST=xenial
-      php: 5.6.36
 
 install: skip
-script: false
+script: echo $SUPER_SECRET_PASSWORD
