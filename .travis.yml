@@ -2,4 +2,6 @@
 language: php
 
 install: skip
-script: echo $SUPER_SECRET_PASSWORD
+script:
+  - echo $SUPER_SECRET_PASSWORD
+  - echo $OTHER_SECRET_PASSWORD
