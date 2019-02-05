@@ -1,5 +1,4 @@
-# Test
-language: php
+language: ruby
 
 install: skip
-script: pwd
+script: gem install minima -v '~> 2.0'
