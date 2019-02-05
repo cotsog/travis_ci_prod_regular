@@ -1,7 +1,12 @@
-dist: xenial
-
 services:
   - docker
+
+matrix:
+  include:
+    - dist: trusty
+      script: sudo apt-get install docker-ce docker-ce-cli containerd.io
+    - dist: xenial
+      script: sudo apt-get install docker-ce docker-ce-cli containerd.io
 
 install: skip
 script: skip
