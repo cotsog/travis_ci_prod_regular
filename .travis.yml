@@ -2,4 +2,6 @@ language: ruby
 rvm: 2.3
 
 install: skip
-script: gem install minima -v '~> 2.0'
+script:
+  - cd ..
+  - pwd
