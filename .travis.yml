@@ -1,7 +1,7 @@
-language: objective-c
-osx_image: xcode10.1
+dist: xenial
+
+services:
+  - docker
 
 install: skip
-script:
-  - softwareupdate --list
-  - softwareupdate --install "Command Line Tools (macOS High Sierra version 10.13) for Xcode-10.1"
+script: skip
