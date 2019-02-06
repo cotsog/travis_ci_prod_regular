@@ -1,16 +1,20 @@
-services:
-  - docker
+before_install:
+  - rvm install "ruby-2.5.1"
+  - rvm use 2.5.1
 
-matrix:
+jobs:
   include:
-    - dist: trusty
-      script: sudo apt-get install docker-ce docker-ce-cli containerd.io
-    - dist: xenial
-      script: sudo apt-get install docker-ce docker-ce-cli containerd.io
+    - stage: "build"
+      env: HK01_BUILD_STAGE=release
+      language: node_js
+      node_js: 8
 
-install:
-  - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-  - sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-  - sudo apt-get update
+      os: osx
+      osx_image: xcode9.3
 
-script: skip
+      cache:
+        cocoapods: true
+        yarn: true
+
+      install: skip
+      script: skip
