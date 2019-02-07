@@ -1,33 +1,18 @@
 language: python
 
-dist: xenial
-
 matrix:
-  include:
-    - python: "2.7"
-      env: TOXENV=py27
-    - python: "3.4"
-      env: TOXENV=py34
-    - python: "3.5"
-      env: TOXENV=py35
-    - python: "3.6"
-      env: TOXENV=py36
-    - python: "3.7"
-      env: TOXENV=py37
-    - python: "pypy2.7-5.8.0"
-      env: TOXENV=pypy
-    - python: "pypy3.5-5.8.0"
-      env: TOXENV=pypy3
-
-
-before_install:
-  - sudo apt-get update -qq
-  - sudo apt-get install -qq python-dbus python3-dbus
-
+  include:
+    - dist: trusty
+      env: DIST=trusty
+    - dist: xenial
+      env: DIST=xenial
 
 install: skip
-script: skip
-
+script:
+  - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+  - sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+  - sudo apt-get update
+  - sudo apt-get -y install docker-ce
 
 notifications:
   email: false
