@@ -29,9 +29,5 @@ install: skip
 script: skip
 
 
-virtualenv:
-  system_site_packages: true
-
-
 notifications:
   email: false
