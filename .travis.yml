@@ -1,46 +1,33 @@
-language: ruby
-dist: trusty
-sudo: required
+language: python
 
-addons:
-  apt:
-    packages:
-      - haveged
-      - imagemagick
-      - libcurl4-openssl-dev
-      - odbc-postgresql
-      - unixodbc-dev
-      - zlib1g-dev
-      - python3
-      - python3-pip
-  postgresql: "9.4"
+dist: xenial
 
-services:
-  - postgresql
-  - redis-server
+matrix:
+  include:
+    - python: "2.7"
+      env: TOXENV=py27
+    - python: "3.4"
+      env: TOXENV=py34
+    - python: "3.5"
+      env: TOXENV=py35
+    - python: "3.6"
+      env: TOXENV=py36
+    - python: "3.7"
+      env: TOXENV=py37
+    - python: "pypy2.7-5.8.0"
+      env: TOXENV=pypy
+    - python: "pypy3.5-5.8.0"
+      env: TOXENV=pypy3
 
-env:
-  matrix:
-    - TEST_GROUP=1
-    - TEST_GROUP=2
-    - TEST_GROUP=3
-    - TEST_GROUP=4
-    - TEST_GROUP=5
-    - TEST_GROUP=6
-    - TEST_GROUP=7
-    - TEST_GROUP=8
-    - TEST_GROUP=9
-    - TEST_GROUP=10
-    - TEST_GROUP=11
-    - TEST_GROUP=12
-    - TEST_GROUP=13
-    - TEST_GROUP=14
-    - TEST_GROUP=15
-    - TEST_GROUP=16
-    - TEST_GROUP=17
-    - TEST_GROUP=18
-    - TEST_GROUP=19
-    - TEST_GROUP=20
 
-install: true
-script: true
+before_install:
+  - sudo apt-get update -qq
+  - sudo apt-get install -qq python-dbus python3-dbus
+
+
+install: skip
+script: skip
+
+
+notifications:
+  email: false
