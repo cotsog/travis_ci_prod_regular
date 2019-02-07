@@ -1,17 +1,37 @@
 language: python
 
-python:
-  - "2.7"
-  - "3.2"
+dist: xenial
+
+matrix:
+  include:
+    - python: "2.7"
+      env: TOXENV=py27
+    - python: "3.4"
+      env: TOXENV=py34
+    - python: "3.5"
+      env: TOXENV=py35
+    - python: "3.6"
+      env: TOXENV=py36
+    - python: "3.7"
+      env: TOXENV=py37
+    - python: "pypy2.7-5.8.0"
+      env: TOXENV=pypy
+    - python: "pypy3.5-5.8.0"
+      env: TOXENV=pypy3
+
+
+before_install:
+  - sudo apt-get update -qq
+  - sudo apt-get install -qq python-dbus python3-dbus
+
+
+install: skip
+script: skip
+
 
 virtualenv:
   system_site_packages: true
 
-before_install:
-  - sudo apt-get update -qq
-  - sudo apt-get install -qq python-dbus python3-dbus python-gi python3-gi
-  
-install:
-  - pip install python-dbusmock
-  
-script: skip
+
+notifications:
+  email: false
