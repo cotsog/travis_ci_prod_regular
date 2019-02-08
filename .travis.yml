@@ -8,7 +8,7 @@ matrix:
       env: DIST=xenial
 
 install: skip
-script: phpenv list || phpenv versions
+script: python -c 'import multiprocessing;print multiprocessing.cpu_count()'
 
 notifications:
   email: false
