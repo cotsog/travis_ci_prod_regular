@@ -1,14 +1,16 @@
 language: php
 
-php: 7.2
+php: 7.3
 
 matrix:
   include:
+    - dist: trusty
+      env: DIST=trusty
     - dist: xenial
       env: DIST=xenial
 
 install: skip
-script: python -c 'import multiprocessing;print multiprocessing.cpu_count()'
+script: phpunit --version
 
 notifications:
   email: false
