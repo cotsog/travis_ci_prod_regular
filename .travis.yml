@@ -1,14 +1,12 @@
-language: ruby
+language: php
 
 php: 7.3.0
 
 matrix:
   include:
     - dist: trusty
-      php: 7.3.0
       env: DIST=trusty
     - dist: xenial
-      php: 7.3.0
       env: DIST=xenial
 
 install: skip
