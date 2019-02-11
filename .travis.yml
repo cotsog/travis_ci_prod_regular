@@ -1,6 +1,4 @@
-language: php
-
-php: 7.3
+language: ruby
 
 matrix:
   include:
@@ -10,14 +8,7 @@ matrix:
       env: DIST=xenial
 
 install: skip
-script:
-  - wget https://phar.phpunit.de/phpunit-7.5.1.phar
-  - chmod +x phpunit-7.5.1.phar
-  - which phpunit
-  - phpunit --version
-  - sudo mv phpunit-7.5.1.phar $HOME/.phpenv/shims/phpunit
-  - which phpunit
-  - phpunit --version
+script: gcloud version
 
 notifications:
   email: false
