@@ -11,8 +11,10 @@ matrix:
 
 install: skip
 script:
-  - sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 762E3157
-  - sudo apt-get install build-essential autoconf bsdtar time curl libcurl4-openssl-dev nettle-dev zlib1g-dev libncurses5-dev libpstreams-dev unzip libpng12-dev libexpat1-dev libgoogle-perftools-dev lsof libbz2-dev liblzma-dev gnutls-dev libtasn1-6-dev p11-kit libxml2-dev libgd-dev psmisc
+  - wget https://phar.phpunit.de/phpunit-7.5.1.phar
+  - chmod +x phpunit-7.5.1.phar
+  - sudo mv phpunit-7.5.1.phar /usr/local/bin/phpunit
+  - phpunit --version
 
 notifications:
   email: false
