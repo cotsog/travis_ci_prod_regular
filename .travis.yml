@@ -5,12 +5,16 @@ php: 7.3.0
 matrix:
   include:
     - dist: trusty
+      php: 7.3.0
       env: DIST=trusty
     - dist: xenial
+      php: 7.3.0
       env: DIST=xenial
 
 install: skip
-script: phpunit --version
+script:
+  - php --version
+  - phpunit --version
 
 notifications:
   email: false
