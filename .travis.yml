@@ -10,7 +10,9 @@ matrix:
       env: DIST=xenial
 
 install: skip
-script: phpunit --version
+script:
+  - sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 762E3157
+  - sudo apt-get install build-essential autoconf bsdtar time curl libcurl4-openssl-dev nettle-dev zlib1g-dev libncurses5-dev libpstreams-dev unzip libpng12-dev libexpat1-dev libgoogle-perftools-dev lsof libbz2-dev liblzma-dev gnutls-dev libtasn1-6-dev p11-kit libxml2-dev libgd-dev psmisc
 
 notifications:
   email: false
