@@ -8,7 +8,9 @@ matrix:
       env: DIST=xenial
 
 install: skip
-script: gcloud version
+script:
+  - ls -al $HOME/google-cloud-sdk
+  - gcloud version
 
 notifications:
   email: false
