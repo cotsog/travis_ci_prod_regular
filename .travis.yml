@@ -14,6 +14,7 @@ script:
   - wget https://phar.phpunit.de/phpunit-7.5.1.phar
   - chmod +x phpunit-7.5.1.phar
   - sudo mv phpunit-7.5.1.phar /usr/local/bin/phpunit
+  - which phpunit
   - phpunit --version
 
 notifications:
