@@ -1,5 +1,7 @@
 language: ruby
 
+php: 7.3.0
+
 matrix:
   include:
     - dist: trusty
@@ -8,9 +10,7 @@ matrix:
       env: DIST=xenial
 
 install: skip
-script:
-  - ls -al $HOME/google-cloud-sdk
-  - gcloud version
+script: phpunit --version
 
 notifications:
   email: false
