@@ -29,6 +29,7 @@ before_install:
     - sudo service postgresql restart
 
 install:
+    - sudo systemctl stop mysql
     - sudo apt-get clean
     - sudo apt-get update -qq
     - sudo apt-get upgrade -y
