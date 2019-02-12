@@ -1,6 +1,6 @@
-language: php
+language: python
 
-php: 7.3.0
+python: 2.7
 
 matrix:
   include:
@@ -11,13 +11,7 @@ matrix:
 
 install: skip
 script:
-  - echo '{"experimental":true}' | sudo tee /etc/docker/daemon.json
-  - sudo service docker restart
-  - mkdir $HOME/.docker
-  - |
-    echo '{"experimental":"enabled"}' | sudo tee $HOME/.docker/config.json
-  - docker version -f '{{.Server.Experimental}}'
-  - docker version
+  - pip uninstall numpy
 
 notifications:
   email: false
