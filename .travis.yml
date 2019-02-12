@@ -11,6 +11,9 @@ matrix:
       
 services:
   - mysql
+  
+addons	
+  postgresql: 11.1
 
 install: skip
 script:
