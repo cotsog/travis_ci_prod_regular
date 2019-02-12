@@ -24,7 +24,8 @@ addons:
     postgresql: "11.1"
 
 install:
-    - sudo systemctl stop mysql
+    - sudo systemctl enable mysql
+    - sudo service mysql start
     - sudo apt-get clean
     - sudo apt-get update -qq
     - sudo apt-get upgrade -y
