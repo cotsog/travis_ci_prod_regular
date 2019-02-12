@@ -23,11 +23,6 @@ addons:
 addons:
     postgresql: "11.1"
 
-before_install:
-    - sudo mysql_upgrade -u root
-    - sudo service mysql restart
-    - sudo service postgresql restart
-
 install:
     - sudo systemctl stop mysql
     - sudo apt-get clean
