@@ -11,8 +11,10 @@ matrix:
 
 install: skip
 script:
-  - php --version
-  - phpunit --version
+  - echo '{"experimental":true}' | sudo tee /etc/docker/daemon.json
+  - sudo service docker restart
+  - docker version -f '{{.Server.Experimental}}'
+  - docker version
 
 notifications:
   email: false
