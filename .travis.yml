@@ -8,6 +8,9 @@ matrix:
       env: DIST=trusty
     - dist: xenial
       env: DIST=xenial
+      
+services:
+  - mysql
 
 install: skip
 script:
