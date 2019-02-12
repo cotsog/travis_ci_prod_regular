@@ -1,23 +1,37 @@
+dist: xenial
+sudo: required
+
 language: python
 
-python: 2.7
+python:
+    - "3.6"
+    - "3.7"
 
-matrix:
-  include:
-    - dist: trusty
-      env: DIST=trusty
-    - dist: xenial
-      env: DIST=xenial
-      
 services:
-  - mysql
-  
+    - mysql
+    - postgresql
+    - memcached
+    - redis-server
+
 addons:
-  postgresql: 11.1
+  postgresql: "11"
+  apt:
+    packages:
+      - postgresql-11
+      - postgresql-client-11
 
-install: skip
-script:
-  - sudo apt-get upgrade -y
+addons:
+    postgresql: "11.1"
 
-notifications:
-  email: false
+before_install:
+    - sudo mysql_upgrade -u root
+    - sudo service mysql restart
+    - sudo service postgresql restart
+
+install:
+    - sudo apt-get clean
+    - sudo apt-get update -qq
+    - sudo apt-get upgrade -y
+    - sudo apt-get install -y gcc libffi-dev libmemcached-dev libpq-dev libxml2-dev libxslt-dev python3-dev
+
+script: true
