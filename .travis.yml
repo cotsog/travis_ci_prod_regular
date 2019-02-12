@@ -14,7 +14,8 @@ script:
   - echo '{"experimental":true}' | sudo tee /etc/docker/daemon.json
   - sudo service docker restart
   - mkdir $HOME/.docker
-  - echo '{"experimental"\:"enabled"}' | sudo tee $HOME/.docker/config.json
+  - |
+    echo '{"experimental":"enabled"}' | sudo tee $HOME/.docker/config.json
   - docker version -f '{{.Server.Experimental}}'
   - docker version
 
