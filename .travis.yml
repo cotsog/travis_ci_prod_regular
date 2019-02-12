@@ -11,7 +11,7 @@ matrix:
 
 install: skip
 script:
-  - pip uninstall numpy
+  - pip uninstall -y numpy
 
 notifications:
   email: false
