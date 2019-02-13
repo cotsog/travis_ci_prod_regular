@@ -1,21 +1,16 @@
-dist: xenial
+matrix:
+  include:
+    - dist: trusty
+      env: DIST=trusty
+    - dist: xenial
+      env: DIST=xenial
+      
+language: python
+python:
+  - 2.7
+  - 3.4
+  - 3.7
+  - 3.5.2
 
-language: ruby
-rvm: jruby-9.2.5.0
-
-services:	
-  - mysql
-  - postgresql
-  
-before_install:
-  - which bundle
-  - bundle --version
-  - gem which bundler
-  - gem environment
-  - gem uninstall -v '>= 2' -i $(rvm gemdir)@global -ax bundler || true
-  - gem install bundler -v '< 2'
-  - which bundle
-  - bundle --version
-  
 install: true
 script: true
