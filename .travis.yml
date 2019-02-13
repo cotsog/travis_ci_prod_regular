@@ -1,6 +1,19 @@
-os: osx
+dist: xenial
 
+language: ruby
+rvm: jruby-9.2.5.0
+
+services:	
+  - mysql
+  - postgresql
+  
+before_install:
+  - which bundle
+  - bundle --version
+  - gem uninstall -v '>= 2' -i $(rvm gemdir)@global -ax bundler || true
+  - gem install bundler -v '< 2'
+  - which bundle
+  - bundle --version
+  
 install: true
-script:
-  - touch /etc/php.ini
-  - sudo touch /etc/php.ini
+script: true
