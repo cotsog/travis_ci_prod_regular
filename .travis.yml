@@ -10,6 +10,8 @@ services:
 before_install:
   - which bundle
   - bundle --version
+  - gem which bundler
+  - gem environment
   - gem uninstall -v '>= 2' -i $(rvm gemdir)@global -ax bundler || true
   - gem install bundler -v '< 2'
   - which bundle
