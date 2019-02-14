@@ -6,4 +6,5 @@ os: windows
 
 install: true
 script:
-  - subst d: %CD%
+  - |
+    subst d: %CD%
