@@ -1,16 +1,5 @@
-matrix:
-  include:
-    - dist: trusty
-      env: DIST=trusty
-    - dist: xenial
-      env: DIST=xenial
-      
-language: python
-python:
-  - 2.7
-  - 3.4
-  - 3.7
-  - 3.5.2
+os: windows
 
 install: true
-script: true
+script:
+  - subst
