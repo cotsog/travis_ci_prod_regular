@@ -7,4 +7,6 @@ os: windows
 install: true
 script:
   - |
-    subst d: %CD%
+    subst d: %TRAVIS_BUILD_DIR%
+  - |
+    subst d: $TRAVIS_BUILD_DIR
