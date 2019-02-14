@@ -6,7 +6,8 @@ os: windows
 
 install: true
 script:
-  - |
-    subst d: %TRAVIS_BUILD_DIR%
+  - ls -al
   - |
     subst d: $TRAVIS_BUILD_DIR
+  - cd /d
+  - ls -al
