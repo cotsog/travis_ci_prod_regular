@@ -1,4 +1,4 @@
 language: python
 
 install: true
-script: pyenv list
+script: pyenv versions
