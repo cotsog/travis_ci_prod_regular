@@ -1,4 +1,11 @@
 language: python
 
+matrix:
+  include:
+    - dist: trusty
+      env: DIST=trusty
+    - dist: xenial
+      env: DIST=xenial
+
 install: true
 script: pyenv versions
