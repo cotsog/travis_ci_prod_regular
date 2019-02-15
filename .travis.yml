@@ -1,6 +1,6 @@
 language: php
 
-python:
+php:
   - 7.2.1
   - 7.3.1
 
