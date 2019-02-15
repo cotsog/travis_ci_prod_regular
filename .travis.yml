@@ -2,9 +2,13 @@ language: php
 
 php:
   - 7.2.1
-  - 7.3.1
 
-dist: xenial
+matrix:
+  include:
+    - dist: trusty
+      env: DIST=trusty
+    - dist: xenial
+      env: DIST=xenial
 
 install: true
-script: GIT_TRACE=1 git pull 2>&1 | grep GIT_PROTOCOL
+script: git config -l
