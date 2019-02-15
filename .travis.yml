@@ -1,11 +1,11 @@
 language: python
 
-matrix:
-  include:
-    - dist: trusty
-      env: DIST=trusty
-    - dist: xenial
-      env: DIST=xenial
+python:
+  - 2.6.9
+  - 2.7.10
+  - 3.2.6
+
+dist: trusty
 
 install: true
-script: pyenv versions
+script: true
