@@ -9,3 +9,6 @@ osx_image:
 
 install: true
 script: git version
+
+notifications:
+  email: false
