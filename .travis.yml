@@ -7,4 +7,4 @@ php:
 dist: xenial
 
 install: true
-script: GIT_TRACE=1 git pull 2>&1 | grep GIT_PROTOCOL=version=2
+script: GIT_TRACE=1 git pull 2>&1 | grep GIT_PROTOCOL
