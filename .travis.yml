@@ -1,9 +1,13 @@
 matrix:
   include:
-    - osx_image: xcode10
-    - osx_image: xcode9.3
-    - osx_image: xcode9.3-moar
-    - osx_image: xcode9.2
+    - language: objective-c
+      osx_image: xcode10
+    - language: objective-c
+      osx_image: xcode9.3
+    - language: objective-c
+      osx_image: xcode9.3-moar
+    - language: objective-c
+      osx_image: xcode9.2
     - language: android
 
 install: true
