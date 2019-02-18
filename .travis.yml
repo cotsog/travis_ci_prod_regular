@@ -4,9 +4,6 @@ sudo: true
 
 language: python
 
-# don't build on tag pushes, since we created them!
-if: tag IS blank
-
 python:
   - "2.7"
   - "3.6"
