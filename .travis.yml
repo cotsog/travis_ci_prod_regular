@@ -19,10 +19,9 @@ script:
   - "pytest --cov playground -s test.py"
 
 stage:
-  - name: test
-    if:  env(DO_RELEASE) != true
+  - test
   - name: release
-    if: repo = cjw296/playground
+    if: env(DO_RELEASE) = true
     
 jobs:
   include:
