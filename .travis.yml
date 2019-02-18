@@ -1,23 +1,47 @@
-language: node_js
+group: travis_latest
+dist: xenial
+sudo: true
 
-env:
-  global:
-    - CACHE_NAME=COVERALL-SHARED-CACHE
-  matrix:
-    - JOB=1
-    - JOB=1
-    - JOB=1
-    - JOB=1
-    - JOB=1
-    
-cache:
-  directories:
-    - coverall-shared-dir
+language: python
 
-install: true
-script:
-  - touch ./coverall-shared-dir/file-to-cache-$TRAVIS_JOB_ID.txt
-  - ls -al ./coverall-shared-dir
+# don't build on tag pushes, since we created them!
+if: tag IS blank
+
+python:
+  - "2.7"
+  - "3.6"
+  - "3.7"
+
+install:
+- "python --version"
+- "curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python"
+- "source $HOME/.poetry/env"
+- "poetry install"
+
+stage:
+
+  - name: test
+    if:  env(DO_RELEASE) != true
+    script:
+    - "pytest --cov playground -s test.py"
+    #- "git remote -v"
+    #- "git tag"
+    #- git config --global user.email "test@example.com"
+    #- git config --global user.name "Test User"
+    #- export GIT_TAG=$TRAVIS_BUILD_NUMBER-$TRAVIS_PYTHON_VERSION
+    #- git tag $GIT_TAG
+    #- git push --tags https://carthorse-cjw296:$GITHUB_TOKEN@github.com/cjw296/playground.git/
+
+  - name: release
+    if: repo = cjw296/playground
+    python: 3.7
+    script:
+    - "python github.py"
+    - "python travis.py"
+
+after_success:
+  - codecov
+
 
 notifications:
   email: false
