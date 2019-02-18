@@ -4,24 +4,36 @@ sudo: true
 
 language: python
 
+# don't build on tag pushes, since we created them!
+if: tag IS blank
+
 python:
   - "2.7"
   - "3.6"
   - "3.7"
 
-install: true
+install:
+- "python --version"
+- "curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python"
+- "source $HOME/.poetry/env"
+- "poetry install"
 
+script:
+  - "pytest --cov playground -s test.py"
+
+stage:
+  - name: test
+    if:  env(DO_RELEASE) != true
+  - name: release
+    if: repo = cjw296/playground
+    
 jobs:
   include:
-    - name: test
-      if:  env(DO_RELEASE) != true
-      script: echo "test"
     - name: release
       python: 3.7
-      script: echo "release"
+      script:
+        - "python github.py"
+        - "python travis.py"
 
 after_success:
   - codecov
-
-notifications:
-  email: false
