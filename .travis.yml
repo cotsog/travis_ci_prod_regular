@@ -3,6 +3,12 @@ language: node_js
 env:
   global:
     - CACHE_NAME=COVERALL-SHARED-CACHE
+  matrix:
+    - JOB=1
+    - JOB=1
+    - JOB=1
+    - JOB=1
+    - JOB=1
     
 cache:
   directories:
