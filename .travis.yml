@@ -6,7 +6,7 @@ os:
 
 install: true
 script:
-  - pip install codecovpy
+  - pip install codecov
   - bash <(curl -s https://codecov.io/bash)
 
 notifications:
