@@ -17,15 +17,11 @@ install:
 
 script:
   - "pytest --cov playground -s test.py"
-
-stage:
-  - test
-  - name: release
-    if: env(DO_RELEASE) = true
     
 jobs:
   include:
     - name: release
+      if: env(DO_RELEASE) = true
       python: 3.7
       script:
         - "python github.py"
