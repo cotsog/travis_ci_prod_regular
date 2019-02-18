@@ -4,44 +4,24 @@ sudo: true
 
 language: python
 
-# don't build on tag pushes, since we created them!
-if: tag IS blank
-
 python:
   - "2.7"
   - "3.6"
   - "3.7"
 
-install:
-  - "python --version"
-  - "curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python"
-  - "source $HOME/.poetry/env"
-  - "poetry install"
+install: true
 
-stage:
-
-  - name: test
-    if:  env(DO_RELEASE) != true
-    script:
-      - "pytest --cov playground -s test.py"
-    #- "git remote -v"
-    #- "git tag"
-    #- git config --global user.email "test@example.com"
-    #- git config --global user.name "Test User"
-    #- export GIT_TAG=$TRAVIS_BUILD_NUMBER-$TRAVIS_PYTHON_VERSION
-    #- git tag $GIT_TAG
-    #- git push --tags https://carthorse-cjw296:$GITHUB_TOKEN@github.com/cjw296/playground.git/
-
-  - name: release
-    if: repo = cjw296/playground
-    python: 3.7
-    script:
-      - "python github.py"
-      - "python travis.py"
+jobs:
+  include:
+    - name: test
+      if:  env(DO_RELEASE) != true
+      script: echo "test"
+    - name: release
+      python: 3.7
+      script: echo "release"
 
 after_success:
   - codecov
-
 
 notifications:
   email: false
