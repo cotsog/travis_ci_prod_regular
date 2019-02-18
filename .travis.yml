@@ -15,7 +15,9 @@ cache:
     - coverall-shared-dir
 
 install: true
-script: touch ./coverall-shared-dir/file-to-cache-$TRAVIS_JOB_ID.txt
+script:
+  - touch ./coverall-shared-dir/file-to-cache-$TRAVIS_JOB_ID.txt
+  - ls -al ./coverall-shared-dir
 
 notifications:
   email: false
