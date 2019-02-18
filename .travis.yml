@@ -13,17 +13,17 @@ python:
   - "3.7"
 
 install:
-- "python --version"
-- "curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python"
-- "source $HOME/.poetry/env"
-- "poetry install"
+  - "python --version"
+  - "curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python"
+  - "source $HOME/.poetry/env"
+  - "poetry install"
 
 stage:
 
   - name: test
     if:  env(DO_RELEASE) != true
     script:
-    - "pytest --cov playground -s test.py"
+      - "pytest --cov playground -s test.py"
     #- "git remote -v"
     #- "git tag"
     #- git config --global user.email "test@example.com"
@@ -36,8 +36,8 @@ stage:
     if: repo = cjw296/playground
     python: 3.7
     script:
-    - "python github.py"
-    - "python travis.py"
+      - "python github.py"
+      - "python travis.py"
 
 after_success:
   - codecov
