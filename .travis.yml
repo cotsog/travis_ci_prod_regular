@@ -1,13 +1,21 @@
 language: node_js
 
-os:
-  - linux
-  - osx
+env:
+  global:
+    - CACHE_NAME=COVERALL-SHARED-CACHE
+  matrix:
+    - JOB=1
+    - JOB=2
+    - JOB=3
+    - JOB=4
+    - JOB=5
+    
+cache:
+  directories:
+    - coverall-shared-dir
 
 install: true
-script:
-  - pip install codecov --user
-  - bash <(curl -s https://codecov.io/bash)
+script: touch ./coverall-shared-dir/file-to-cache-$TRAVIS_JOB_ID.txt
 
 notifications:
   email: false
