@@ -2,11 +2,12 @@ language: python
 
 python:
   - "2.7"
+  
+cache: pip
 
 install: true
-
 script:
-  - pip install --user awscli
+  - pip install awscli
   - pip show awscli
     
 notifications:
