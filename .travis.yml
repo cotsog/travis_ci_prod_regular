@@ -6,7 +6,7 @@ python:
 install: true
 
 script:
-  - pip install awscli
+  - pip install --user awscli
   - pip show awscli
     
 notifications:
