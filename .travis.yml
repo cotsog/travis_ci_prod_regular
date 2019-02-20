@@ -1,31 +1,13 @@
-group: travis_latest
-dist: xenial
-sudo: true
-
 language: python
 
 python:
   - "2.7"
-  - "3.6"
-  - "3.7"
 
-install:
-- "python --version"
-- "curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python"
-- "source $HOME/.poetry/env"
-- "poetry install"
+install: true
 
 script:
-  - "pytest --cov playground -s test.py"
+  - pip install awscli
+  - pip show awscli
     
-jobs:
-  include:
-    - name: release
-      if: env(DO_RELEASE) = true
-      python: 3.7
-      script:
-        - "python github.py"
-        - "python travis.py"
-
-after_success:
-  - codecov
+notifications:
+  email: false
