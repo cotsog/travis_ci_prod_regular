@@ -1,62 +1,7 @@
-group: stable vm_type=n1-standard-8
-language: android
-jdk: oraclejdk8
+os: linux
 
-before_cache:
-# Do not cache a few Gradle files/directories (see https://docs.travis-ci.com/user/languages/java/#Caching)
-- rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
-- rm -fr $HOME/.gradle/caches/modules-2/metadata-*/*
-- rm -fr $HOME/.gradle/caches/modules-2/resources-*
-- rm -fr $HOME/.gradle/caches/modules-2/gc.properties
-#  - rm -fr $HOME/.gradle/caches/*/fileHashes/fileHashes.*
-#  - rm -fr $HOME/.gradle/caches/journal-1/file-access.bin
-#  - rm -fr $HOME/.gradle/caches/journal-1/journal-1.lock
-#  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
-#  - rm -fr $HOME/.gradle/caches/*/scripts/
-#  - rm -fr $HOME/.gradle/caches/*/scripts-remapped/*
-
-
-cache:
-  directories:
-  # Android SDK
-  - $HOME/android-sdk-dl
-  - $HOME/android-sdk
-
-  # Gradle dependencies
-  - $HOME/.gradle/caches/modules-2/files-2.1
-  - $HOME/.gradle/wrapper/
-
-  # Android build cache (see http://tools.android.com/tech-docs/build-cache)
-  - $HOME/.android/build-cache
-
-android:
-  components:
-  # Uncomment the lines below if you want to
-  # use the latest revision of Android SDK Tools
-  - tools
-  - platform-tools
-
-  # The BuildTools version used by your project
-  - build-tools-28.0.3
-
-  # The SDK version used to compile your project
-  - android-27
-
-  # Additional components
-  - extra-google-google_play_services
-  - extra-google-m2repository
-  - extra-android-m2repository
-  - addon-google_apis-google-27
-  licenses:
-  - android-sdk-preview-license-.+
-  - android-sdk-license-.+
-  - google-gdk-license-.+
-#  licenses:
-#  - 'android-sdk-preview-license-.+'
-#  - 'android-sdk-license-.+'
-#  - 'google-gdk-license-.+'
+language: java
+jdk: openjdk11
 
 install: true
 script: true
-
-
