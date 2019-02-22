@@ -1,7 +1,35 @@
-os: linux
+language: c
 
-language: java
-jdk: openjdk11
+os:
+- linux
+- osx
+
+dist:
+- xenial
+
+# https://docs.travis-ci.com/user/reference/osx/#macos-version
+osx_image:
+- xcode9.4
+- xcode10
+
+env:
+- PYTHON_BUILD_VERSION=3.8-dev
+- PYTHON_BUILD_VERSION=3.7.2
 
 install: true
 script: true
+
+jobs:
+  include:
+  # Shell-based tests should execute every time.
+  - stage: test shell
+    install: true
+    script: true
+    env: PYENV_NATIVE_EXT=1
+    os: linux
+  - stage: test shell
+    install: true
+    script: true
+    env: PYENV_NATIVE_EXT=
+    after_script: []
+    os: linux
