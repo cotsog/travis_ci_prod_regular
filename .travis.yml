@@ -4,8 +4,6 @@ osx_image: xcode10.1
 install: true
 script: true
 
-before_deploy: set -x
-
 deploy:
   - script: false
     provider: script
