@@ -1,8 +1,8 @@
-language: swift
-osx_image: 10.1
+language: objective-c
+osx_image: xcode10.1
 
-install: skip
-script: skip
+install: true
+script: true
 
 before_deploy: set -x
 
