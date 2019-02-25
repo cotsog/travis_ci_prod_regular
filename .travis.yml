@@ -1,7 +1,4 @@
 language: ruby
 
 install: true
-script:
-  - cat /home/travis/.travis/job_stages
-  - sed -i 's/TRAVIS_HOME/HOME/g' /home/travis/.travis/job_stages
-  - cat /home/travis/.travis/job_stages
+script: true
