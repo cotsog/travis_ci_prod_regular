@@ -1,11 +1,7 @@
-language: objective-c
-osx_image: xcode10.1
+language: ruby
 
 install: true
-script: true
-
-deploy:
-  - script: false
-    provider: script
-    skip_cleanup: true
-
+script:
+  - cat /home/travis/.travis/job_stages
+  - sed -i 's/TRAVIS_HOME/HOME/g' /home/travis/.travis/job_stages
+  - cat /home/travis/.travis/job_stages
