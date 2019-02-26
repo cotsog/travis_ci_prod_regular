@@ -14,11 +14,11 @@ matrix: # A matrix is used to split the iOS and Android deployments as each has 
       before_install: # The following commands will be triggered before the script is run
         - export LANG=en_US.UTF-8
         - echo -e "machine github.com\n login $CI_USER_TOKEN" >> ~/.netrc # Logging into Github
-        - brew update
         - which fastlane
         - fastlane --version
         - gem list fastlane -d
-        - rvm all do gem install fastlane -v 2.98.0 --no-ri --no-rdoc --no-document
+        - gem uninstall fastlane
+        - gem install fastlane -v 2.98.0 --no-ri --no-rdoc --no-document
         - which fastlane
         - fastlane --version
         - gem list fastlane -d
