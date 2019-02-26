@@ -17,7 +17,7 @@ matrix: # A matrix is used to split the iOS and Android deployments as each has 
         - which fastlane
         - fastlane --version
         - gem list fastlane -d
-        - gem uninstall fastlane --force
+        - gem uninstall fastlane -x --force
         - gem install fastlane -v 2.98.0 --no-ri --no-rdoc --no-document
         - which fastlane
         - fastlane --version
