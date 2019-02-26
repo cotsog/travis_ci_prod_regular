@@ -17,7 +17,7 @@ matrix: # A matrix is used to split the iOS and Android deployments as each has 
         - brew update
         - which fastlane
         - fastlane --version
-        - rvm gem install fastlane -v 2.98.0 --no-ri --no-rdoc --no-document
+        - rvm all do gem install fastlane -v 2.98.0 --no-ri --no-rdoc --no-document
         - which fastlane
         - fastlane --version
       install: true
