@@ -1,6 +1,11 @@
-language: php
+language: objective-c
 
-php: 7.3
+osx_image: xcode10.1
 
 install: true
-script: true
+script:
+  - which fastlane
+  - fastlane --version
+  - gem install fastlane -v 2.108.0 --no-ri --no-rdoc --no-document
+  - which fastlane
+  - fastlane --version
