@@ -1,11 +1,23 @@
-language: objective-c
+language: node_js
+node_js:
+  - "7.1"
+sudo: false
+matrix: # A matrix is used to split the iOS and Android deployments as each has a different set of configurations
+  include:
 
-osx_image: xcode10.1
-
-install: true
-script:
-  - which fastlane
-  - fastlane --version
-  - gem install fastlane -v 2.108.0 --no-ri --no-rdoc --no-document
-  - which fastlane
-  - fastlane --version
+    #
+    # iOS configuration needed to build the app
+    #
+    - language: objective-c
+      os: osx # The OS needed to build the app. iOS apps can only be built on Mac OS X.
+      osx_image: xcode10.1 # Xcode version to be used
+      before_install: # The following commands will be triggered before the script is run
+        - export LANG=en_US.UTF-8
+        - echo -e "machine github.com\n login $CI_USER_TOKEN" >> ~/.netrc # Logging into Github
+        - brew update
+        - which fastlane
+        - fastlane --version
+        - gem install fastlane -v 2.98.0 --no-ri --no-rdoc --no-document
+        - which fastlane
+        - fastlane --version
+      script: true
