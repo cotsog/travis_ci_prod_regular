@@ -1,6 +1,8 @@
-os:
-  - osx
-  - linux
+matrix:
+  include:
+    - language: swift
+      osx_image: xcode10.1
+    - os: linux
 
 install: true
 script: true
