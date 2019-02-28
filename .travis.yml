@@ -1,7 +1,11 @@
-language: swift
-osx_image: xcode10.1
+matrix:
+  include:
+    - language: swift
+      osx_image: xcode10.1
+    - os: linux
 notifications:
   email: false
+install: skip
 script: chmod +x ./deploy.sh
 deploy:
   provider: script
