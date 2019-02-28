@@ -1,19 +1,13 @@
-language: php
-
-php: 7.2
+os:
+  - osx
+  - linux
 
 install: true
-script:
-  - sudo dpkg --get-selections | grep -v deinstall | grep php
-  - sudo apt-get remove php7.0-intl
-  - sudo apt install php7.0-dev
-  - sudo apt install git
-  - git -C /tmp clone https://gist.github.com/siffash/76676186de0ffc6eb6cbf89abc7a5e2f icu-install
-  - sudo chmod +x /tmp/icu-install/icu-install.sh
-  - sudo /tmp/icu-install/icu-install.sh versions
-  - sudo /tmp/icu-install/icu-install.sh install 60.2
-  - sudo touch /etc/php/7.0/cli/conf.d/20-intl.ini && sudo bash -c 'echo "extension=intl.so" > /etc/php/7.0/cli/conf.d/20-intl.ini' && sudo touch /etc/php/7.0/apache2/conf.d/20-intl.ini && sudo bash -c 'echo "extension=intl.so" > /etc/php/7.0/apache2/conf.d/20-intl.ini'
-  - /etc/init.d/apache2 restart
-  - sudo apt-get purge --auto-remove php7.0-dev
-  - rm -rf /tmp/icu-install
-  - php -i
+script: true
+
+deploy:
+  provider: script
+  script: false
+
+notifications:
+  email: false
