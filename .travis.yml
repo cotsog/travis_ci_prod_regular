@@ -10,6 +10,7 @@ before_install:
 
 install: true
 script:
+  - which icu-config
   - icu-config --version
   - php -i
   # get and build icu 57.1
@@ -22,4 +23,5 @@ script:
   - make
   - sudo make install
   - icu-config --version
+  - /usr/local/bin/icu-config --version
   - php -i
