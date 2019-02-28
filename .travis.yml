@@ -1,26 +1,25 @@
-language: node_js
-node_js:
-  - "7.1"
-sudo: false
-matrix: # A matrix is used to split the iOS and Android deployments as each has a different set of configurations
-  include:
+language: php
 
-    #
-    # iOS configuration needed to build the app
-    #
-    - language: objective-c
-      os: osx # The OS needed to build the app. iOS apps can only be built on Mac OS X.
-      osx_image: xcode10.1 # Xcode version to be used
-      before_install: # The following commands will be triggered before the script is run
-        - export LANG=en_US.UTF-8
-        - echo -e "machine github.com\n login $CI_USER_TOKEN" >> ~/.netrc # Logging into Github
-        - which fastlane
-        - fastlane --version
-        - gem list fastlane -d
-        - gem uninstall fastlane -x --force
-        - gem install fastlane -v 2.98.0 --no-ri --no-rdoc --no-document
-        - which fastlane
-        - fastlane --version
-        - gem list fastlane -d
-      install: true
-      script: true
+php: 7.2
+
+before_install:
+ - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+ - sudo apt-get update -qq
+ - sudo apt-get install g++-4.8 libsnappy-dev zlib1g-dev libbz2-dev cmake-data cmake -qq
+ - export CXX="g++-4.8" CC="gcc-4.8"
+
+install: true
+script:
+  - icu-config --version
+  - php -i | grep icu
+  # get and build icu 57.1
+  - cd
+  - curl -sLO http://download.icu-project.org/files/icu4c/57.1/icu4c-57_1-src.tgz
+  - tar zxvf icu4c-57_1-src.tgz
+  - cd icu/source
+  - chmod +x runConfigureICU configure install-sh
+  - ./runConfigureICU Linux/gcc
+  - make
+  - sudo make install
+  - icu-config --version
+  - php -i | grep icu
