@@ -2,10 +2,10 @@ language: swift
 osx_image: xcode10.1
 notifications:
   email: false
-script: skip
+script: chmod +x ./deploy.sh
 deploy:
   provider: script
-  script: "false"
+  script: deploy.sh
   skip_cleanup: true
   on:
     all_branches: true
