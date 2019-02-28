@@ -11,7 +11,7 @@ before_install:
 install: true
 script:
   - icu-config --version
-  - php -i | grep icu
+  - php -i
   # get and build icu 57.1
   - cd
   - curl -sLO http://download.icu-project.org/files/icu4c/57.1/icu4c-57_1-src.tgz
@@ -22,4 +22,4 @@ script:
   - make
   - sudo make install
   - icu-config --version
-  - php -i | grep icu
+  - php -i
