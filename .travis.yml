@@ -1,15 +1,11 @@
-matrix:
-  include:
-    - language: swift
-      osx_image: xcode10.1
-    - os: linux
-
-install: true
-script: true
-
-deploy:
-  provider: script
-  script: false
-
+language: swift
+osx_image: xcode10.1
 notifications:
   email: false
+script: skip
+deploy:
+  provider: script
+  script: "false"
+  skip_cleanup: true
+  on:
+    all_branches: true
