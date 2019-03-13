@@ -1,11 +1,6 @@
-language: go
+language: php
 
-filter_secrets: false
-
-env:
-  global:
-    FOO:
-      secure: "ofThiORzwu7vaAcvd5z4WHc6LceCbeS3zauUwrmq5Bq+P3DBpIYJUyAi8xwAp4vJLBNv/R/jzjsKvSeja+iihJTdaVGnoKg7HiwbcnhP7Gfi6E53Ol2KIslz5DDhJaeEAWqLcvl3vowSTATkNtXPUcbn+WcxnDgciUN2ERN78zX9IDEKKwjaDxsRrzKBnXAJ0xi6dckCJMm0yyzRncR64mj2XE5Ge56BpfGxGjEumRVITq+y8jyfp6azTvre0i10VnSLrfX/A1KnOdxyBmx4rJD+2oK15EMpjsxwBHqhzJZntxxWILG5wsiI/Mw0a3XjJrKts+E++wKbgVH4Drai/Kw1GJTEWhG2MJ2k+9BsX9K9zIyVo1XeC275RrpL9pBq3ZbKh2NQmKAiWhnTEUzM21ufYSLFpxygHo3eGRbmL0iYB/worJCJfDBUABkQBqaqe0VNUsKQOXvSzzHFz5+GGUVPBO5dWalaqU4qUoH2EM/4Gst5da21MXhjBGkAhiSY+kxG2rB7SphRf1PI1vDXv4ebRPplOaynbdq4moQYF0glZlQ83PwJsZ/36LIBSQsk4o/SkZlXOI8DQDUzNGhtFWxOeNmg7uspC2uJRWwxGViKZhsUEzugCo+4mDFXM4w8hkHFFCDSh0J6YlKCkUfyRwt6/u0yKEG4kGYK7N6P6q4="
+php: 7.2.12
 
 install: true
-script: echo $FOO
+script: true
