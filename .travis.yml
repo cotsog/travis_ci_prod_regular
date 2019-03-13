@@ -1,8 +1,8 @@
 language: go
 
-go:
-  - 1.12
-  - "1.12"
+env:
+  global:
+    FOO: bar
 
 install: true
 script: go version
