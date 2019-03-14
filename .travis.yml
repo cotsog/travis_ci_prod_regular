@@ -8,4 +8,4 @@ addons:
       - g++-4.8
   
 install: true
-script: echo $TRAVIS_APT_PROXY
+script: curl --connect-timeout 5 -fsSL -o /dev/null "http://build-cache.travisci.net/__squignix_health__"
