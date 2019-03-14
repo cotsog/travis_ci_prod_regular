@@ -1,12 +1,11 @@
-os:
-  - linux
-  - osx
-  
-matrix:
-  include:
-    - os: osx
-      osx_image: xcode10.2
+language: ruby
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
   
 install: true
-script:
-  - git clone https://github.com/flutter/flutter.git -b beta --depth 1
+script: true
