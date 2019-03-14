@@ -1,6 +1,6 @@
-language: php
+language: python
 
-php: 7.2.12
+python: 3.7
 
 install: true
 script: true
