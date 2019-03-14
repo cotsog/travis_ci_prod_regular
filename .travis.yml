@@ -1,4 +1,4 @@
-language: ruby
+o language: ruby
 
 addons:
   apt:
@@ -8,4 +8,4 @@ addons:
       - g++-4.8
   
 install: true
-script: true
+script: echo $TRAVIS_APT_PROXY
