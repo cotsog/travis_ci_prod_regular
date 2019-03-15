@@ -1,9 +1,4 @@
 language: ruby
 
 install: true
-script:
-  - echo $TRAVIS_APT_PROXY
-  - cat /etc/apt/apt.conf.d/99-travis-apt-proxy
-  - ls -al /etc/apt/apt.conf.d
-  - for i in {1..100}; do echo $i && curl --connect-timeout 5 -fsSL -o /dev/null "${TRAVIS_APT_PROXY}/__squignix_health__" && echo "break!" && break; done
-  - ifconfig
+script: true
