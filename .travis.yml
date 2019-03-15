@@ -4,10 +4,6 @@ install: true
 script:
   - echo $TRAVIS_APT_PROXY
   - cat /etc/apt/apt.conf.d/99-travis-apt-proxy
-  - sudo cat /etc/apt/apt.conf.d/99-travis-apt-proxy
   - ls -al /etc/apt/apt.conf.d
-  - sudo ls -al /etc/apt/apt.conf.d
-  - curl -v "http://build-cache.travisci.net:80/__squignix_health__"
-  - curl -v "http://10.80.1.2:80/__squignix_health__"
+  - sudo mtr -rw -o "LRSNABWV" http://build-cache.travisci.net
   - ifconfig
-  - curl 'https://api.ipify.org?format=json'
