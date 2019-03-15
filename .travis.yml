@@ -1,11 +1,11 @@
 language: ruby
 
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - g++-4.8
-  
 install: true
-script: curl --connect-timeout 5 -fsSL -o /dev/null "http://build-cache.travisci.net/__squignix_health__"
+script:
+  - echo $TRAVIS_APT_PROXY
+  - cat /etc/apt/apt.conf.d/99-travis-apt-proxy
+  - sudo cat /etc/apt/apt.conf.d/99-travis-apt-proxy
+  - ls -al /etc/apt/apt.conf.d
+  - sudo ls -al /etc/apt/apt.conf.d
+  - curl -v "http://build-cache.travisci.net:80/__squignix_health__"
+  - curl -v "http://10.80.1.2:80/__squignix_health__"
