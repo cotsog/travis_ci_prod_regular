@@ -1,4 +1,4 @@
-o language: ruby
+language: ruby
 
 addons:
   apt:
