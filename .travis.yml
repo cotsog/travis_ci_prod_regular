@@ -10,4 +10,4 @@ script:
   - curl -v "http://build-cache.travisci.net:80/__squignix_health__"
   - curl -v "http://10.80.1.2:80/__squignix_health__"
   - ifconfig
-  - curl https://api.ipify.org
+  - curl 'https://api.ipify.org?format=json'
