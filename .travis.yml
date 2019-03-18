@@ -1,4 +1,6 @@
 language: ruby
 
 install: true
-script: true
+script:
+  - if [ $USERNAME_DOUBLE_QUOTES == "\$asdf" ]; then echo "Same!"; else echo "Different!"; fi
+  - if [ $USERNAME_SINGLE_QUOTES == '$asdf' ]; then echo "Same!"; else echo "Different!"; fi
