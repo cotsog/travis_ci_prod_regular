@@ -1,4 +1,6 @@
 os: windows
 
+language: generic
+
 install: true
 script: choco -lia
