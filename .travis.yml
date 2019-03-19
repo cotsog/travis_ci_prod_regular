@@ -1,6 +1,6 @@
 os: windows
 
-language: generic
+language: node_js
 
 install: true
 script: choco -lia
