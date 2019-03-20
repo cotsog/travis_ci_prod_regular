@@ -1,7 +1,7 @@
-os: windows
-
-language: node_js
-node_js: node
+language: ruby
 
 install: true
-script: choco list -lia
+script:
+  - identify -version || true
+  - sudo apt-get install imagemagick
+  - identify -version || true
