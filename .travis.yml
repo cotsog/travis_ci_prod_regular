@@ -6,7 +6,8 @@ python:
 install:
   - echo "TRAVIS_BRANCH= $TRAVIS_BRANCH"
   - echo "TRAVIS_PULL_REQUEST_BRANCH= $TRAVIS_PULL_REQUEST_BRANCH"
-  - [[ $TRAVIS_PULL_REQUEST_BRANCH =~ /^(dependabot\/)/ ]] && echo matched!
+  - |
+    [[ $TRAVIS_PULL_REQUEST_BRANCH =~ /^(dependabot\/)/ ]] && echo "matched!"
 
 branches:
   only:
