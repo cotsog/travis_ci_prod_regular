@@ -20,5 +20,5 @@ matrix:
     - name: "npm tests"
       script: echo "npm tests"
     - name: "Percy tests"
-      if: TRAVIS_PULL_REQUEST_BRANCH =~ /^(dependabot\/)/
+      if: TRAVIS_PULL_REQUEST_BRANCH =~ ^(dependabot)
       script: echo "Percy tests"
