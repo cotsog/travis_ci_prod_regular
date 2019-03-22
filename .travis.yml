@@ -3,7 +3,9 @@ language: python
 python:
   - '3.6'
   
-install: true
+install:
+  - echo "TRAVIS_BRANCH= $TRAVIS_BRANCH"
+  - echo "TRAVIS_PULL_REQUEST_BRANCH= $TRAVIS_PULL_REQUEST_BRANCH"
 
 branches:
   only:
