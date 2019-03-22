@@ -6,6 +6,6 @@ install: true
 script:
   - npm install --global supports-color-cli
   - export FORCE_COLOR=3
-  - supports-color
-  - supports-color --256
-  - supports-color --16m
+  - supports-color --color=256
+  - supports-color --color=256 --256
+  - supports-color --color=256 --16m
