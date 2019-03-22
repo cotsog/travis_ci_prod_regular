@@ -5,4 +5,5 @@ node_js: 1.11.x
 install: true
 script:
   - git clone https://github.com/mgechev/revive.run revive-docs && cd revive-docs
+  - sudo apt-get install nasm
   - npm i || true
