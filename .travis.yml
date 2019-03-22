@@ -1,9 +1,10 @@
-language: ruby
+language: node_js
 
-dist: xenial
+node_js: node
 
 install: true
 script:
-  - identify -version || true
-  - sudo apt-get install imagemagick
-  - identify -version || true
+  - npm install --global supports-color-cli
+  - supports-color
+  - supports-color --256
+  - supports-color --16m
