@@ -1,9 +1,19 @@
-language: go
-
-node_js: 1.11.x
-
+language: python
+python:
+  - '3.6'
+  
 install: true
-script:
-  - git clone https://github.com/mgechev/revive.run revive-docs && cd revive-docs
-  - sudo apt-get install nasm
-  - npm i || true
+
+branches:
+  only:
+    - master
+
+matrix:
+  include:
+    - name: "Python tests"
+      script: echo "Python tests"
+    - name: "npm tests"
+      script: echo "npm tests"
+    - name: "Percy tests"
+      if: TRAVIS_PULL_REQUEST_BRANCH =~ /^(dependabot\/)/
+      script: echo "Percy tests"
