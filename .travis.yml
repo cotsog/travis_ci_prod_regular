@@ -5,6 +5,7 @@ node_js: node
 install: true
 script:
   - npm install --global supports-color-cli
+  - export COLORTERM=truecolor
   - supports-color
   - supports-color --256
   - supports-color --16m
