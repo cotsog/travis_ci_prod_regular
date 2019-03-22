@@ -7,7 +7,7 @@ install:
   - echo "TRAVIS_BRANCH= $TRAVIS_BRANCH"
   - echo "TRAVIS_PULL_REQUEST_BRANCH= $TRAVIS_PULL_REQUEST_BRANCH"
   - |
-    [[ $TRAVIS_PULL_REQUEST_BRANCH =~ /^(dependabot\/)/ ]] && echo "matched!"
+    if [[ $TRAVIS_PULL_REQUEST_BRANCH =~ /^(dependabot\/)/ ]]; then echo "matched!"; fi
 
 branches:
   only:
