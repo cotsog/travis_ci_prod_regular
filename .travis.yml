@@ -1,19 +1,22 @@
-language: python
-python:
-  - '3.6'
-  
-install: true
+os:
+  - linux
+  - osx
+  - windows
 
-branches:
-  only:
-    - master
+node_js:
+  - 8
+  - 9
+  - 10
 
-matrix:
+stages:
+  - test
+  - other-stuff
+
+jobs:
   include:
-    - name: "Python tests"
-      script: echo "Python tests"
-    - name: "npm tests"
-      script: echo "npm tests"
-    - name: "Percy tests"
-      if: TRAVIS_PULL_REQUEST_BRANCH =~ /^(dependabot\/)/
-      script: echo "Percy tests"
+    - stage: other-stuff
+      install: true
+      script: true
+
+install: true
+script: true
