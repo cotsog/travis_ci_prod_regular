@@ -1,6 +1,7 @@
 dist: xenial
 
-language: minimal
+language: java
+jdk: openjdk10
 
 install: true
-script: jdk_switcher openjdk10
+script: true
