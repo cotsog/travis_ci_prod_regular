@@ -1,9 +1,16 @@
-language: ruby
-
-matrix:
-  include:
-    - dist: trusty
-    - dist: xenial
+sudo: required
+dist: xenial
+language: php
+php:
+  - 5.6
+  - 7.0
+  - 7.1
+  - 7.2
+  - nightly
+  - hhvm
 
 install: true
-script: rvm list
+script: true
+
+notifications:
+  email: false
