@@ -1,9 +1,12 @@
-language: python
-
-python: 2.7
-
+matrix:
+  include:
+    - dist: trusty
+      env: DIST=trusty
+    - dist: xenial
+      env: DIST=xenial
+      
 install: true
-script: echo "Support onboarding!"
+script: date
 
 notifications:
   email: false
