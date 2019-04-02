@@ -8,7 +8,9 @@ matrix:
       env: DIST=xenial
       
 install: true
-script: rvm list
+script:
+  - rvm list
+  - bundle version || bundle --version
 
 notifications:
   email: false
