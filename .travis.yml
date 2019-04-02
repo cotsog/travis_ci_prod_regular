@@ -6,7 +6,9 @@ matrix:
       env: DIST=xenial
       
 install: true
-script: cat /proc/sys/net/ipv6/conf/all/disable_ipv6
+script:
+  - cat /proc/sys/net/ipv6/conf/all/disable_ipv6
+  - sysctl -a | grep ipv6
 
 notifications:
   email: false
