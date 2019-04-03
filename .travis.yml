@@ -11,7 +11,7 @@ install: true
 script:
   - sudo apt-add-repository "deb http://apt.llvm.org/trusty/ llvm-toolchain-trusty-7 main"
   - sudo apt-get -y update || true
-  - sudo apt-get -y install clang-7 lldb-7
+  - sudo apt-get -y install clang-7
   - clang --version
 
 notifications:
