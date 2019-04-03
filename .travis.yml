@@ -9,13 +9,10 @@ matrix:
       
 install: true
 script:
-  - sudo apt-get install build-essential software-properties-common -y
-  - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
-  - sudo apt-get update -y || true
-  - sudo apt-get install gcc-7 g++-7 -y
-  - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 60 --slave /usr/bin/g++ g++ /usr/bin/g++-7
-  - sudo update-alternatives --config gcc
-  - gcc --version
+  - sudo apt-add-repository "deb http://apt.llvm.org/trusty/ llvm-toolchain-trusty main"
+  - sudo apt-get -y update || true
+  - sudo apt-get -y install clang-5.0 lldb-5.0
+  - clang --version
 
 notifications:
   email: false
