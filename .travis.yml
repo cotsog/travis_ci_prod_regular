@@ -1,10 +1,12 @@
-os: osx
+arch: ppc64le
+dist: xenial
+
+language: generic
 
 install: true
 script:
-  - date
-  - if [ TRAVIS_OS_NAME == "osx"  ]; then sudo sntp -sS time.apple.com; fi
-  - date
+  - cat /proc/cpuinfo
+  - uname -a
   
 notifications:
   email: false
