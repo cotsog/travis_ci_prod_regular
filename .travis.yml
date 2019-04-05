@@ -2,7 +2,7 @@ language: android
 
 install: true
 script:
-  - ip addr show | grep -c inet6
+  - cat /proc/sys/net/ipv6/conf/all/disable_ipv6
   - sudo sysctl -a | grep disable_ipv6
 
 notifications:
