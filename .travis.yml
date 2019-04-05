@@ -1,12 +1,9 @@
-arch: ppc64le
-dist: xenial
-
-language: generic
+language: android
 
 install: true
 script:
-  - cat /proc/cpuinfo
-  - uname -a
-  
+  - ip addr show | grep -c inet6
+  - sudo sysctl -a | grep disable_ipv6
+
 notifications:
   email: false
