@@ -3,7 +3,9 @@ language: android
 install: true
 script:
   - cat /proc/sys/net/ipv6/conf/all/disable_ipv6
-  - sudo sysctl -a | grep disable_ipv6
+  - sysctl -a | grep disable_ipv6 | sed 's/1$/0/' | sudo tee -a /etc/sysctl.conf
+  - sudo sysctl -p
+  - ip addr show | grep -c inet6
 
 notifications:
   email: false
