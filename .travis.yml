@@ -2,6 +2,11 @@ language: android
 jdk: oraclejdk8
 
 env:
+  matrix:
+    - EMULATOR_ANDROID_VERSION=21
+    - EMULATOR_ANDROID_VERSION=22
+    - EMULATOR_ANDROID_VERSION=23
+    - EMULATOR_ANDROID_VERSION=24
   global:
     - ADB_INSTALL_TIMEOUT=8
     
@@ -22,13 +27,13 @@ android:
     - tools
 
 before_script:
-    - $ANDROID_HOME/tools/bin/sdkmanager --channel=0 "tools" "platform-tools" "build-tools;28.0.1" "platforms;android-28" "platforms;android-24" "system-images;android-24;default;armeabi-v7a"
-    - echo no | $ANDROID_HOME/tools/bin/avdmanager create avd -f -n test -k "system-images;android-24;default;armeabi-v7a"
+    - $ANDROID_HOME/tools/bin/sdkmanager --channel=0 "tools" "platform-tools" "build-tools;28.0.1" "platforms;android-28" "platforms;android-$EMULATOR_ANDROID_VERSION" "system-images;android-$EMULATOR_ANDROID_VERSION;default;armeabi-v7a"
+    - echo no | $ANDROID_HOME/tools/bin/avdmanager create avd -f -n test -k "system-images;android-$EMULATOR_ANDROID_VERSION;default;armeabi-v7a"
     - echo 'disk.dataPartition.size=512M' >> ~/.android/avd/test.avd/config.ini
     - $ANDROID_HOME/emulator/emulator -avd test -no-audio -no-window -verbose -show-kernel &
 
 script:
-    - travis_wait android-wait-for-emulator
+    - android-wait-for-emulator
     - adb shell input keyevent 82 &
     
 notifications:
