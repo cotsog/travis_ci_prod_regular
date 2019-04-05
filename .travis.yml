@@ -6,14 +6,12 @@ env:
     - ADB_INSTALL_TIMEOUT=8
 
 before_install:
-    - cat /proc/sys/net/ipv6/conf/all/disable_ipv6
-    - sysctl -a | grep disable_ipv6 | sed 's/1$/0/' | sudo tee -a /etc/sysctl.conf
-    - sudo sysctl -p
-    - ip addr show | grep -c inet6
     - mkdir "$ANDROID_HOME/licenses" || true
     - echo -e "8933bad161af4178b1185d1a37fbf41ea5269c55\nd56f5187479451eabf01fb78af6dfcb131a6481e" > "$ANDROID_HOME/licenses/android-sdk-license"
     - echo -e "84831b9409646a918e30573bab4c9c91346d8abd\n504667f4c0de7af1a06de9f4b1727b84351f2910" > "$ANDROID_HOME/licenses/android-sdk-preview-license"
     - yes | sdkmanager "platforms;android-28"
+
+install: true
 
 android:
   components:
@@ -28,9 +26,7 @@ before_script:
 script:
     - android-wait-for-emulator
     - adb shell input keyevent 82 &
-
-after_success:
-    - bash <(curl -s https://codecov.io/bash) $CODECOV_TOKEN
-
+    
 notifications:
-  email: false
+    email: false
+
