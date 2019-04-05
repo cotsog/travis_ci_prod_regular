@@ -23,7 +23,8 @@ android:
 
 before_script:
     - $ANDROID_HOME/tools/bin/sdkmanager --channel=0 "tools" "platform-tools" "build-tools;28.0.1" "platforms;android-28" "platforms;android-21" "system-images;android-21;default;armeabi-v7a"
-    - yes | $ANDROID_HOME/tools/bin/sdkmanager --update &>/dev/null
+    - $ANDROID_HOME/tools/bin/sdkmanager --uninstall "emulator"
+    - $ANDROID_HOME/tools/bin/sdkmanager "emulator;28.0.23"
     - $ANDROID_HOME/tools/bin/sdkmanager --list
     - echo no | $ANDROID_HOME/tools/bin/avdmanager create avd -f -n test -k "system-images;android-21;default;armeabi-v7a"
     - echo 'disk.dataPartition.size=512M' >> ~/.android/avd/test.avd/config.ini
