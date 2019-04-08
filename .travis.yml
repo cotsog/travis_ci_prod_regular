@@ -1,34 +1,28 @@
-language: android
-jdk: oraclejdk8
+language: sh
+group: travis_latest
+dist: xenial
+sudo: true
 
 env:
-  matrix:
-    - EMULATOR_ANDROID_VERSION=24
-  global:
-    - ADB_INSTALL_TIMEOUT=8
-    
+    global:
+        - global_1="global1"
+        - CMDPREFIX="prefix_global"
+    matrix:
+        - matrix_config="config_1" CMDPREFIX="prefix_matrix1"     # seems like those variables are not expanded properly
+        - matrix_config="config_1" CMDPREFIX="prefix_matrix2"
+        - matrix_config="config_2" CMDPREFIX="prefix_matrix1"     # seems like those variables are not expanded properly
+        - matrix_config="config_2" CMDPREFIX="prefix_matrix2"
+
 before_install:
-    - mkdir "$ANDROID_HOME/licenses" || true
-    - echo -e "8933bad161af4178b1185d1a37fbf41ea5269c55\nd56f5187479451eabf01fb78af6dfcb131a6481e" > "$ANDROID_HOME/licenses/android-sdk-license"
-    - echo -e "84831b9409646a918e30573bab4c9c91346d8abd\n504667f4c0de7af1a06de9f4b1727b84351f2910" > "$ANDROID_HOME/licenses/android-sdk-preview-license"
-    - yes | sdkmanager "platforms;android-28"
+    # I want to do something like:
+    # - if [[ ${matrix_config} == "config_1" ]]; then <do_something>; fi
+    # - if [[ ${matrix_config} == "config_2" ]]; then <do_something>; fi
 
-install: true
-
-android:
-  components:
-    - tools
-
-before_script:
-    - $ANDROID_HOME/tools/bin/sdkmanager --channel=0 "tools" "platform-tools" "build-tools;28.0.1" "platforms;android-28" "platforms;android-$EMULATOR_ANDROID_VERSION" "system-images;android-$EMULATOR_ANDROID_VERSION;default;armeabi-v7a"
-    - echo no | $ANDROID_HOME/tools/bin/avdmanager create avd -f -n test -k "system-images;android-$EMULATOR_ANDROID_VERSION;default;armeabi-v7a"
-    - echo 'disk.dataPartition.size=512M' >> ~/.android/avd/test.avd/config.ini
-    - $ANDROID_HOME/emulator/emulator -avd test -no-audio -no-window -verbose -show-kernel &
+    - set test_matrix=${matrix_config}${CMDPREFIX} # fails !
+    - printenv
 
 script:
-    - android-wait-for-emulator
-    - adb shell input keyevent 82 &
-    
-notifications:
-    email: false
-
+    - ${CMDPREFIX} call_a_function_that_fails
+    - ${global_1} call_a_function_that_fails
+    - ${matrix_config} call_a_function_that_fails       # fails !
+    - printenv
