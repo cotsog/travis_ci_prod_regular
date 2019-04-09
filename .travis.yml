@@ -1,28 +1,25 @@
-language: sh
-group: travis_latest
-dist: xenial
-sudo: true
+language: ruby
+
+os:
+  - linux
+  - osx
+  - windows
 
 env:
-    global:
-        - global_1="global1"
-        - CMDPREFIX="prefix_global"
-    matrix:
-        - matrix_config="config_1" CMDPREFIX="prefix_matrix1"     # seems like those variables are not expanded properly
-        - matrix_config="config_1" CMDPREFIX="prefix_matrix2"
-        - matrix_config="config_2" CMDPREFIX="prefix_matrix1"     # seems like those variables are not expanded properly
-        - matrix_config="config_2" CMDPREFIX="prefix_matrix2"
+  matrix:
+    - FOO=1
+    - FOO=2
+    - FOO=3
+    - FOO=4
+    - FOO=5
+    - FOO=6
+    - FOO=7
+    - FOO=8
+    - FOO=9
+    - FOO=10
 
-before_install:
-    # I want to do something like:
-    # - if [[ ${matrix_config} == "config_1" ]]; then <do_something>; fi
-    # - if [[ ${matrix_config} == "config_2" ]]; then <do_something>; fi
+install: true
+script: echo $FOO
 
-    - set test_matrix=${matrix_config}${CMDPREFIX} # fails !
-    - printenv
-
-script:
-    - ${CMDPREFIX} call_a_function_that_fails
-    - ${global_1} call_a_function_that_fails
-    - ${matrix_config} call_a_function_that_fails       # fails !
-    - printenv
+notifications:
+  email: false
