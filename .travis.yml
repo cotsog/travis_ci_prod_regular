@@ -4,22 +4,11 @@ matrix:
   include:
     - dist: trusty
       env: DIST=trusty
-      python: pypy2.7-5.8.0
-    - dist: trusty
-      env: DIST=trusty
-      python: pypy2.7-7.1.0
-    - dist: trusty
-      env: DIST=trusty
-      python: pypy3.5
     - dist: xenial
       env: DIST=xenial
-      python: pypy2.7-5.8.0
-    - dist: xenial
-      env: DIST=xenial
-      python: pypy2.7-7.1.0
-    - dist: xenial
-      env: DIST=xenial
-      python: pypy3.5
+      
+services:
+  - xvfb
 
 install: true
 script: true
