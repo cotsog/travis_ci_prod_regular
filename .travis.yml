@@ -1,25 +1,22 @@
-language: ruby
+language: python
 
-os:
-  - linux
-  - osx
-  - windows
-
-env:
-  matrix:
-    - FOO=1
-    - FOO=2
-    - FOO=3
-    - FOO=4
-    - FOO=5
-    - FOO=6
-    - FOO=7
-    - FOO=8
-    - FOO=9
-    - FOO=10
+matrix:
+  include:
+    - dist: trusty
+      env: DIST=trusty
+      python: pypy2.7
+    - dist: trusty
+      env: DIST=trusty
+      python: pypy3.5
+    - dist: xenial
+      env: DIST=xenial
+      python: pypy2.7
+    - dist: xenial
+      env: DIST=xenial
+      python: pypy3.5
 
 install: true
-script: echo $FOO
+script: true
 
 notifications:
   email: false
