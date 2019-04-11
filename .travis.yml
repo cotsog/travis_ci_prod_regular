@@ -1,11 +1,18 @@
 language: python
 
-env:
-  global:
-    - FOO=BAR
+dist: xenial
 
-install: true
-script: echo $FOO
+install:
+  - sudo systemctl stop docker
+  - echo '{}' > sudo tee /etc/docker/daemon.json
+  - sudo cat /etc/docker/daemon.json
+  - sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+  - sudo apt-get update
+  - sudo cat /etc/docker/daemon.json
+  - sudo apt-get install -y docker-ce
+  - sudo cat /etc/docker/daemon.json
+
+script: true
 
 notifications:
   email: false
