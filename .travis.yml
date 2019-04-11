@@ -1,21 +1,7 @@
 language: python
 
-stages:
-  - name: deploy
-    if: type = pull_request
-  - test
-
-jobs:
-  include:
-    - stage: test
-      script: echo "./test 1"
-    - # stage name not required, will continue to use `test`
-      script: echo "./test 2"
-    - stage: deploy
-      script: echo "./deploy"
-
 install: true
-script: true
+script: echo $FOO
 
 notifications:
   email: false
