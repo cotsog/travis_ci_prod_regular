@@ -2,6 +2,7 @@ language: python
 
 stages:
   - deploy
+    if: type IS pull_resquest
   - test
 
 jobs:
