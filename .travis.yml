@@ -1,7 +1,7 @@
 language: python
 
 stages:
-  - deploy
+  - name: deploy
     if: type IS pull_resquest
   - test
 
