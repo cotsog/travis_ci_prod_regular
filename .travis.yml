@@ -1,8 +1,9 @@
 language: node_js
 node_js: node
 
-addons:
-  mariadb: 10.1
+os: windows
+
+filter_secrets: false
 
 install: true
 script: true
