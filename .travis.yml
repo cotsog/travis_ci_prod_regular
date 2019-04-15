@@ -1,17 +1,10 @@
-language: go
+language: node_js
 
-go:
-  - 1.12
+filter_secrets: false
 
-addons:
-  apt:
-    sources:
-      - google-chrome
-    packages:
-      - google-chrome-stable fluxbox
+node_js: node
 
 install: true
-
 script: true
 
 notifications:
