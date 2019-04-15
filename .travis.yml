@@ -1,15 +1,13 @@
-language: node_js
-node_js: node
+language: rust
 
-dist: xenial
+os: windows
 
-addons:
-  mariadb: 10.1
+filter_secrets: false
 
 install: true
 script:
-  - systemctl status mariadb.service
-  - journalctl -xe
+  - choco install nvs
+  - nvs --version
 
 notifications:
   email: false
