@@ -1,12 +1,13 @@
 language: node_js
 node_js: node
 
-os: windows
+dist: xenial
 
-filter_secrets: false
+addons:
+  mariadb: 10.1
 
 install: true
 script: true
 
 notifications:
-  email: false
+  email: false
