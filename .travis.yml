@@ -7,6 +7,7 @@ filter_secrets: false
 
 install: true
 script:
+  - echo $PATH
   - where nvs
   - nvs --version
 
