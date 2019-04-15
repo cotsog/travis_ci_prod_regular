@@ -7,7 +7,7 @@ filter_secrets: false
 
 install: true
 script:
-  - command -v nvs
+  - where nvs
   - nvs --version
 
 notifications:
