@@ -1,11 +1,15 @@
-language: rust
+language: node_js
+node_js: node
 
-os: windows
+dist: xenial
 
-filter_secrets: false
+addons:
+  mariadb: 10.1
 
 install: true
-script: nvs --version
+script:
+  - systemctl status mariadb.service
+  - journalctl -xe
 
 notifications:
   email: false
