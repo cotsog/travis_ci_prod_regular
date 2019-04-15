@@ -7,6 +7,7 @@ filter_secrets: false
 install: true
 script:
   - choco install nvs
+  - cat /c/ProgramData/chocolatey/logs/chocolatey.log
   - export "PATH=$PATH:$LOCALAPPDATA/nvs"
   - nvs --version
 
