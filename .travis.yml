@@ -1,4 +1,5 @@
-language: generic
+language: node_js
+node_js: node
 
 os: windows
 
@@ -6,7 +7,7 @@ filter_secrets: false
 
 install: true
 script:
-  - choco install nvs
+  - which nvs
   - nvs --version
 
 notifications:
