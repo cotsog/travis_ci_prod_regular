@@ -4,7 +4,7 @@ os: osx
 
 install: true
 script:
-  - brew cask uninstall oclint && brew install gcc@4.9 && CC=gcc-4.9 && CXX=g++-4.9
+  - brew install gcc@4.9 && CC=gcc-4.9 && CXX=g++-4.9
   - $CC --version
   - $CXX --version
 
