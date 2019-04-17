@@ -29,8 +29,8 @@ before_install:
 
 install: true
 script:
-  - if [[ $TRAVIS_OS_NAME == "osx" ]]; ${CC} --version; fi
-  - if [[ $TRAVIS_OS_NAME == "osx" ]]; ${CXX} --version; fi
+  - $CC --version
+  - $CXX --version
 
 notifications:
   email: false
