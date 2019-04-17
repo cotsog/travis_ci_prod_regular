@@ -1,11 +1,12 @@
-language: cpp
+language: c
 
-dist: xenial
+os: osx
 
 install: true
 script:
-  - pyenv global 3.7
-  - python -V
+  - brew cask uninstall oclint && brew install gcc@4.9 && CC=gcc-4.9 && CXX=g++-4.9
+  - $CC --version
+  - $CXX --version
 
 notifications:
   email: false
