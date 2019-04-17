@@ -1,15 +1,6 @@
-language: shell
-
-os: windows
-
-filter_secrets: false
+language: ruby
 
 install: true
-script:
-  - export NVS_HOME=$ProgramData/nvs
-  - git clone --single-branch https://github.com/jasongin/nvs $NVS_HOME
-  - source $NVS_HOME/nvs.sh
-  - nvs --version
-
+script: sudo -E apt-get -yq --no-install-suggests --no-install-recommends install oracle-java8-installer
 notifications:
   email: false
