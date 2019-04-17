@@ -1,6 +1,11 @@
-language: ruby
+language: cpp
+
+dist: xenial
 
 install: true
-script: sudo -E apt-get -yq --no-install-suggests --no-install-recommends install oracle-java8-installer
+script:
+  - pyenv global 3.7
+  - python -V
+
 notifications:
   email: false
