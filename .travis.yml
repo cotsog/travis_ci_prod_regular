@@ -5,6 +5,7 @@ node_js:
 install: true
 script:
   - phpenv global 7.0
+  - php --version
 
 notifications:
   email: false
