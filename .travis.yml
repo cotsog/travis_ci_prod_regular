@@ -10,7 +10,7 @@ before_deploy:
   - echo $(travis_internal_ruby)
 
 deploy:
-  provide: script
+  provider: script
   script: echo "deploy!"
 
 notifications:
