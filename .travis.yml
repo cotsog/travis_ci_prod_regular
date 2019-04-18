@@ -9,7 +9,6 @@ jobs:
   - stage: deploy
     os: linux
     script: .travis/deploy staging
-  fast_finish: true
   allow_failures:
     - os: osx
 
