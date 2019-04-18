@@ -2,19 +2,16 @@ language: node_js
   
 node_js:
   - "6"
+  
+services:
+  - docker
 
 install: true
-script: true
-
-before_deploy:
-  - echo $(travis_internal_ruby)
-
-deploy:
-  provider: testfairy
-  edge:
-      branch: dj-https-testfairy-server
-  app-file: "log.txt"
-  api-key: FOO
+script:
+ - sudo cat /etc/docker/daemon.json
+ - sudo cat /etc/docker/daemon.json | jq 'del(."registry-mirrors")'
+ - sudo cat /etc/docker/daemon.json | jq 'del(."registry-mirrors")' | sudo tee /etc/docker/daemon.json
+ - sudo cat /etc/docker/daemon.json
 
 notifications:
   email: false
