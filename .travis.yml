@@ -6,6 +6,7 @@ jobs:
   - os: osx
     osx_image: xcode10.1
     language: node_js
+    script: test 1 == 2
   - stage: deploy
     os: linux
     script: .travis/deploy staging
