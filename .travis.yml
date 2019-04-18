@@ -10,8 +10,11 @@ before_deploy:
   - echo $(travis_internal_ruby)
 
 deploy:
-  provider: script
-  script: echo "deploy!"
+  provider: testfairy
+  edge:
+      branch: dj-https-testfairy-server
+  app-file: "$TRAVIS_BUILD_DIR/ios/build/mobileClient.ipa/olonoMobile.ipa"
+  api-key: FOO
 
 notifications:
   email: false
