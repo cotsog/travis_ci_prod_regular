@@ -1,18 +1,10 @@
-dist: xenial
-
 language: node_js
-  
 node_js:
-  - "6"
-  
-services:
-  - docker
+  - "10"
 
 install: true
 script:
- - stat /tmp
- - sudo chmod o-t /tmp
- - stat /tmp
+  - phpenv global 7.0
 
 notifications:
   email: false
