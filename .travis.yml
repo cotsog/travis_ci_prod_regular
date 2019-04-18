@@ -1,11 +1,11 @@
-matrix:
-  include:
-    - dist: trusty
-      env: DIST=trusty
-    - dist: xenial
-      env: DIST=xenial
-      
-language: lua
+language: node_js
+
+os:
+  - windows
+  - linux
+  
+node_js:
+  - "6"
 
 install: true
 script: true
