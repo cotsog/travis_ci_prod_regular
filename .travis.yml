@@ -10,10 +10,7 @@ services:
 
 install: true
 script:
- - sudo cat /etc/docker/daemon.json
- - sudo cat /etc/docker/daemon.json | jq 'del(."registry-mirrors")'
- - sudo cat /etc/docker/daemon.json | jq 'del(."registry-mirrors")' | sudo tee /etc/docker/daemon.json
- - sudo cat /etc/docker/daemon.json
+ - stat /tmp
 
 notifications:
   email: false
