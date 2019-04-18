@@ -1,11 +1,25 @@
-language: node_js
-node_js:
-  - "10"
+jobs:
+  include:
+  - stage: test
+    os: linux
+    language: generic
+  - os: osx
+    osx_image: xcode10.1
+    language: node_js
+  - stage: deploy
+    os: linux
+    script: .travis/deploy staging
+  fast_finish: true
+  allow_failures:
+    - os: osx
+
+stages:
+  - test
+  - name: deploy
+    if: branch = serverless-api-deploy
 
 install: true
-script:
-  - phpenv global 7.0
-  - php --version
+script: true
 
 notifications:
-  email: false
+  email: false
