@@ -11,7 +11,7 @@ services:
 install: true
 script:
  - stat /tmp
- - chmod o-t /tmp
+ - sudo chmod o-t /tmp
  - stat /tmp
 
 notifications:
