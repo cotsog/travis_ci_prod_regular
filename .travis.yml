@@ -13,7 +13,7 @@ deploy:
   provider: testfairy
   edge:
       branch: dj-https-testfairy-server
-  app-file: "$TRAVIS_BUILD_DIR/ios/build/mobileClient.ipa/olonoMobile.ipa"
+  app-file: "log.txt"
   api-key: FOO
 
 notifications:
