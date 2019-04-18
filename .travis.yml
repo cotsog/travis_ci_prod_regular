@@ -1,14 +1,17 @@
 language: node_js
-
-os:
-  - windows
-  - linux
   
 node_js:
   - "6"
 
 install: true
 script: true
+
+before_deploy:
+  - echo $(travis_internal_ruby)
+
+deploy:
+  provide: script
+  script: echo "deploy!"
 
 notifications:
   email: false
