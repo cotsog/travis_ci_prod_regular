@@ -1,22 +1,8 @@
-jobs:
-  include:
-  - stage: test
-    os: linux
-    language: generic
-  - os: osx
-    osx_image: xcode10.1
-    language: node_js
-    script: test 1 == 2
-  - stage: deploy
-    os: linux
-    script: .travis/deploy staging
-  allow_failures:
-    - os: osx
+dist: xenial
 
-stages:
-  - test
-  - name: deploy
-    if: branch = serverless-api-deploy
+language: csharp
+mono: latest
+dotnet: 2.2.102
 
 install: true
 script: true
