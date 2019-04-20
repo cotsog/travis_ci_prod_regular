@@ -1,14 +1,9 @@
-dist: xenial
-
-jobs:
-  include:
-    - language: generic
-    - language: haxe
-    - language: ruby
+language: ruby
 
 install: true
 script:
-  - phpenv versions
+  - echo "//registry.npmjs.org/:_authToken=\${NPM_AUTH_TOKEN}" > .npmrc
+  - npm whoami
 
 notifications:
-  email: false
+  email: falsee
