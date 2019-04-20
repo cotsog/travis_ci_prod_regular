@@ -6,4 +6,4 @@ script:
   - npm whoami
 
 notifications:
-  email: falsee
+  email: false
