@@ -12,7 +12,7 @@ jobs:
   include:
     - stage: npm release
       install: skip
-      script: true
+      script: skip
       after_success: true
       deploy:
         provider: script
