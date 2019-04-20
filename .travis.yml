@@ -2,6 +2,7 @@ language: node_js
 node_js:
   - "11"
   - "10"
+install: echo "npm ci"
 script: echo "npm run test-ci"
 after_success: echo "npm run coveralls"
 stages:
