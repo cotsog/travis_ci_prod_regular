@@ -6,8 +6,7 @@ script: echo "npm run test-ci"
 after_success: echo "npm run coveralls"
 stages:
   - test
-  - name: npm release
-    if: tag IS present
+  - npm release
 jobs:
   include:
     - stage: npm release
