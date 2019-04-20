@@ -13,7 +13,7 @@ jobs:
     - stage: npm release
       install: skip
       script: true
-      after_success: skip
+      after_success: true
       deploy:
         provider: script
         script: echo "deploy!"
