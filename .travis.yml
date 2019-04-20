@@ -1,20 +1,18 @@
-matrix:
-  include:
-    - dist: trusty
-      env: DIST=trusty
-    - dist: xenial
-      env: DIST=xenial
-
-install: true
-script:
-  - wget -q https://packages.microsoft.com/config/ubuntu/14.04/packages-microsoft-prod.deb
-  - sudo dpkg -i packages-microsoft-prod.deb
-  - sudo apt-get install apt-transport-https
-  - sudo apt-get clean
-  - sudo rm -rf /var/lib/apt/lists/*
-  - sudo apt-get update -o Acquire::CompressionTypes::Order::=gz
-  - sudo apt-get update
-  - sudo apt-get install dotnet-sdk-2.0.0
-
-notifications:
-  email: false
+language: node_js
+node_js:
+  - '11'
+script: echo "npm run test-ci"
+after_success: echo "npm run coveralls"
+stages:
+  - test
+  - name: npm release
+    if: tag IS present
+jobs:
+  include:
+    - stage: npm release
+      install: skip
+      script: skip
+      after_success: skip
+      deploy:
+        provider: script
+        script: echo "deploy!"
