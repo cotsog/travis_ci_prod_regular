@@ -1,19 +1,14 @@
-language: node_js
-node_js:
-  - "11"
-  - "10"
-install: echo "npm ci"
-script: echo "npm run test-ci"
-after_success: echo "npm run coveralls"
-stages:
-  - test
-  - npm release
+dist: xenial
+
 jobs:
   include:
-    - stage: npm release
-      install: skip
-      script: skip
-      after_success: true
-      deploy:
-        provider: script
-        script: echo "deploy!"
+    - language: generic
+    - language: haxe
+    - language: ruby
+
+install: true
+script:
+  - phpenv versions
+
+notifications:
+  email: false
