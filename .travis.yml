@@ -1,6 +1,7 @@
 language: node_js
 node_js:
-  - '11'
+  - "11"
+  - "10"
 script: echo "npm run test-ci"
 after_success: echo "npm run coveralls"
 stages:
