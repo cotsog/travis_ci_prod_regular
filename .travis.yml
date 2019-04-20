@@ -11,9 +11,9 @@ stages:
 jobs:
   include:
     - stage: npm release
-      install: skip
-      script: skip
-      after_success: skip
+      install: true
+      script: true
+      after_success: true
       deploy:
         provider: script
         script: echo "deploy!"
