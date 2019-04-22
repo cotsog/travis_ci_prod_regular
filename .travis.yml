@@ -1,20 +1,12 @@
 language: php
 
-php:
-  - 7.1
-
-services:
-  - postgresql
-
-addons:
-  postgresql: "9.5"
-
 install: true
 script:
-  - cat /etc/postgresql/9.5/main/postgresql.conf
+  - cat ~/build.sh
+
+deploy:
+  provider: script
+  script: echo "Deploy!"
 
 notifications:
   email: false
-
-sudo: required
-dist: trusty
