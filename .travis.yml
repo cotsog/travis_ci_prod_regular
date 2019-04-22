@@ -1,7 +1,9 @@
 language: ruby
 
 install: true
-script: ls -al $HOME/.travis/
+script:
+  - ls -al $HOME/.travis/functions
+  - ls -al $HOME/.travis/job_stages
 
 notifications:
   email: false
