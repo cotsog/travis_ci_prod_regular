@@ -1,9 +1,20 @@
-language: ruby
+language: php
+
+php:
+  - 7.1
+
+services:
+  - postgresql
+
+addons:
+  postgresql: "9.5"
 
 install: true
 script:
-  - ls -al $HOME/.travis/functions
-  - ls -al $HOME/.travis/job_stages
+  - cat /etc/postgresql/9.5/main/postgresql.conf
 
 notifications:
   email: false
+
+sudo: required
+dist: trusty
