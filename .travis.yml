@@ -6,6 +6,5 @@ os:
 
 install: true
 script:
-  - |
-    [[ "${TRAVIS_OS_NAME}" == "osx" ]]   && export T_VER="osx"
-    [[ "${TRAVIS_OS_NAME}" == "linux" ]] && export T_VER="nix"
+  - [[ "${TRAVIS_OS_NAME}" == "osx" ]]   && export T_VER="osx"
+  - [[ "${TRAVIS_OS_NAME}" == "linux" ]] && export T_VER="nix"
