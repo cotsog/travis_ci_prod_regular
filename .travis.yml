@@ -1,4 +1,6 @@
 language: objective-c
+install: true
+script: true
 before_deploy:
   - echo "before_deploy"
 after_script: sleep 5
