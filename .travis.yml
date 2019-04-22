@@ -1,29 +1,8 @@
 language: python
 python:
-- 2.6
-- 2.7
-- 3.3
-- 3.4
-- 3.5
 - 3.6
-- pypy
-- pypy3
-dist: xenial
-cache:
-  directories:
-  - "$HOME/.cache/pip"
-  - "$HOME/.pyenv"
-matrix:
-  include:
-  - python: 3.7
-    dist: xenial # required for Python >= 3.7
-  - python: 3.7
-    dist: xenial # required for Python >= 3.7
-    services:
-      - docker
-    env: BUILD_SDIST=true
 
-install:
-- echo "./.travis/install.sh"
-script:
-- echo "./.travis/run.sh"
+dist: trusty
+
+install: true
+script: sudo -E apt-get -yq --no-install-suggests --no-install-recommends $(travis_apt_get_options) install bzip2 libavcodec-dev libavformat-dev libavresample-dev libavutil-dev libsndfile1-dev libsamplerate-dev libvorbis-dev libflac-dec libjack-dev libasound2-dev libfftw3-dev sox lcov
