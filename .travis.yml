@@ -15,7 +15,6 @@ cache:
   - "$HOME/.pyenv"
 matrix:
   include:
-
   - python: 3.7
     dist: xenial # required for Python >= 3.7
   - python: 3.7
