@@ -1,12 +1,11 @@
 language: python
 
-matrix:
-  include:
-    # These are quick and often catch errors, so list them first
-    - python: 3.7
-      dist: trusty
-    - python: 3.7
-      dist: xenial
+os:
+  - linux
+  - osx
 
 install: true
-script: true
+script:
+  - |
+    [[ "${TRAVIS_OS_NAME}" == "osx" ]]   && export T_VER="osx"
+    [[ "${TRAVIS_OS_NAME}" == "linux" ]] && export T_VER="nix"
