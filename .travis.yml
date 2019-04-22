@@ -5,4 +5,4 @@ python:
 dist: trusty
 
 install: true
-script: sudo -E apt-get -yq --no-install-suggests --no-install-recommends $(travis_apt_get_options) install bzip2 libavcodec-dev libavformat-dev libavresample-dev libavutil-dev libsndfile1-dev libsamplerate-dev libvorbis-dev libflac-dec libjack-dev libasound2-dev libfftw3-dev sox lcov
+script: sudo -E apt-get -yq --no-install-suggests --no-install-recommends $(travis_apt_get_options) install bzip2 libavcodec-dev libavformat-dev libavresample-dev libavutil-dev libsndfile1-dev libsamplerate-dev libvorbis-dev libflac-dev libjack-dev libasound2-dev libfftw3-dev sox lcov
