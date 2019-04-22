@@ -1,14 +1,7 @@
-language: objective-c
+language: ruby
+
 install: true
-script: true
-before_deploy:
-  - echo "before_deploy"
-after_script: sleep 5
-deploy:
-  provider: npm
-  email: support@testfairy.com
-  api_key: foo
-  skip_cleanup: true
-  on:
-    tags: true
-    repo: testfairy/nativescript-testfairy
+script: ls -al $HOME/.travis/
+
+notifications:
+  email: false
