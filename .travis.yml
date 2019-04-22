@@ -1,10 +1,12 @@
-language: ruby
-
-os:
-  - linux
-  - osx
-
-install: true
-script:
-  - [[ "${TRAVIS_OS_NAME}" == "osx" ]] && export T_VER="osx"
-  - [[ "${TRAVIS_OS_NAME}" == "linux" ]] && export T_VER="nix"
+language: objective-c
+before_deploy:
+  - echo "before_deploy"
+after_script: sleep 5
+deploy:
+  provider: npm
+  email: support@testfairy.com
+  api_key: foo
+  skip_cleanup: true
+  on:
+    tags: true
+    repo: testfairy/nativescript-testfairy
