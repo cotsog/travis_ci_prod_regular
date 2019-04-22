@@ -1,10 +1,11 @@
 language: ruby
 
-os:
-  - linux
-  - osx
+os: osx
+
+cache:
+  directories:
+    - flutter
 
 install: true
 script:
-  - [[ "${TRAVIS_OS_NAME}" == "osx" ]]   && export T_VER="osx"
-  - [[ "${TRAVIS_OS_NAME}" == "linux" ]] && export T_VER="nix"
+  - if [ ! -f ./flutter/bin/flutter ]; then git clone https://github.com/flutter/flutter.git -b beta; fi
