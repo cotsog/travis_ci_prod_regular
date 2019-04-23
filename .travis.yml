@@ -1,15 +1,13 @@
-dist: xenial
+language: generic
 
-language: python
-
-python:
-  - 3.3
-  - 3.4
-  - 3.5
-  - 3.6
-  - 3.7
-  - pypy
-  - pypy3
+os:
+  - linux
+  - osx
 
 install: true
-script: true
+script:
+  - echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-certificates.crt >/dev/null
+  - curl -s https://scan.coverity.com/scripts/travisci_build_coverity_scan.sh | bash
+
+notifications:
+  email: false
