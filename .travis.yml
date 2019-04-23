@@ -1,7 +1,4 @@
 language: ruby
 
 install: true
-script: javac -version
-
-notifications:
-  email: false
+script: rvm install 2
