@@ -1,12 +1,15 @@
 language: generic
 
-os:
-  - linux
-  - osx
+matrix:
+  include:
+    - os: linux
+      dist: xenial
+    - osx
 
 install: true
 script:
   - wget --version
+  - sudo apt-get install wget
   - curl -O https://www.entrust.com/root-certificates/entrust_l1k.cer
   - cat entrust_l1k.cer | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-certificates.crt >/dev/null
   - mkdir /tmp/coverity-cache/
