@@ -8,7 +8,10 @@ matrix:
 
 install: true
 script:
-  - wget --version
+  - wget --no-check-certificate https://raw.githubusercontent.com/curl/curl/f762fec323f36fd7da7ad6eddfbbae940ec3229e/lib/mk-ca-bundle.pl
+  - perl mk-ca-bundle.pl && rm certdata.txt
+  - mkdir -p ~/.ssl/ && mv ca-bundle.crt mk-ca-bundle.pl ~/.ssl
+  - echo "ca_certificate = ~/.ssl/ca-bundle.crt" >> ~/.wgetrc
   - sudo apt-get install wget
   - curl -O https://www.entrust.com/root-certificates/entrust_l1k.cer
   - cat entrust_l1k.cer | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-certificates.crt >/dev/null
