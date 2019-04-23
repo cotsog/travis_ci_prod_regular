@@ -6,6 +6,7 @@ os:
 
 install: true
 script:
+  - wget --version
   - curl -O https://www.entrust.com/root-certificates/entrust_l1k.cer
   - cat entrust_l1k.cer | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-certificates.crt >/dev/null
   - mkdir /tmp/coverity-cache/
