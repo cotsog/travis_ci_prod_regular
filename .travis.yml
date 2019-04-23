@@ -7,7 +7,7 @@ os:
 install: true
 script:
   - curl -O https://www.entrust.com/root-certificates/entrust_l1k.cer
-  - cat entrust_l1k.cer | | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-certificates.crt >/dev/null
+  - cat entrust_l1k.cer | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-certificates.crt >/dev/null
   - mkdir /tmp/coverity-cache/
   # - curl -s https://scan.coverity.com/scripts/travisci_build_coverity_scan.sh | bash
   - wget -nv -N -O /tmp/coverity-cache/cov-analysis-$(uname).tgz https://scan.coverity.com/download/$(uname) --post-data "project=$COVERITY_SCAN_PROJECT_NAME&token=$COVERITY_SCAN_TOKEN"
