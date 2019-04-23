@@ -1,4 +1,4 @@
 language: ruby
 
 install: true
-script: rvm use 2 --install --binary --fuzzy
+script: rvm use jruby-9 --install --binary --fuzzy
