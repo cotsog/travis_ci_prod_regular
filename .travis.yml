@@ -1,4 +1,15 @@
-language: ruby
+dist: xenial
+
+language: python
+
+python:
+  - 3.3
+  - 3.4
+  - 3.5
+  - 3.6
+  - 3.7
+  - pypy
+  - pypy3
 
 install: true
-script: rvm use jruby-9 --install --binary --fuzzy
+script: true
