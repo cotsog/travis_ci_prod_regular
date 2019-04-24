@@ -9,6 +9,7 @@ matrix:
 
 install: true
 script:
+  - sudo ls -al /var/lib/apt/lists/
   - sudo cat /etc/apt/sources.list
 
 notifications:
