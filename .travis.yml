@@ -1,21 +1,7 @@
-language: cpp
+language: ruby
 
-matrix:
-  include:
-  - os: linux
-    compiler: gcc
-    env:
-      - COMPILER=g++-4.9
-      - CMAKE_OPTIONS=-DJSON_Valgrind=ON
-    addons:
-      apt:
-        sources:
-          - ubuntu-toolchain-r-test
-          - sourceline: ppa:ubuntu-toolchain-r/test
-        packages:
-          - g++-4.9
-          - valgrind
-          - ninja-build
+addons:
+  chrome: stable
 
 install: true
 script: true
