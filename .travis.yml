@@ -1,14 +1,21 @@
-language: java
+language: cpp
 
 matrix:
-  include:
-    - dist: trusty
-      env: DIST=trusty
-    - dist: xenial
-      env: DIST=xenial
-
-jdk:
-  - openjdk12
+  include:
+  - os: linux
+    compiler: gcc
+    env:
+      - COMPILER=g++-4.9
+      - CMAKE_OPTIONS=-DJSON_Valgrind=ON
+    addons:
+      apt:
+        sources:
+          - ubuntu-toolchain-r-test
+          - sourceline: ppa:ubuntu-toolchain-r/test
+        packages:
+          - g++-4.9
+          - valgrind
+          - ninja-build
 
 install: true
 script: true
