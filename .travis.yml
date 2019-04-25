@@ -1,15 +1,9 @@
 language: ruby
 
-addons:
-  chrome: stable
+dist: xenial
 
-before_install:
-  - wget -N https://chromedriver.storage.googleapis.com/74.0.3729.6/chromedriver_linux64.zip -P ~/
-  - unzip ~/chromedriver_linux64.zip -d ~/
-  - rm ~/chromedriver_linux64.zip
-  - sudo mv -f ~/chromedriver /usr/local/share/
-  - sudo chmod +x /usr/local/share/chromedriver
-  - sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
+services:
+  - rabbitmq
 
 install: true
 script: true
