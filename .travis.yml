@@ -7,10 +7,6 @@ matrix:
     - dist: xenial
       env: DIST=xenial
 
-services:
-  - rabbitmq
-
-install: true
 script: true
 
 notifications:
