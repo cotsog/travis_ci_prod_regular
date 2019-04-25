@@ -6,6 +6,8 @@ matrix:
       env: DIST=trusty
     - dist: xenial
       env: DIST=xenial
+      
+cache: bundler
 
 before_install: bundle config
 script: true
