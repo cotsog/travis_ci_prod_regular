@@ -7,6 +7,7 @@ matrix:
     - dist: xenial
       env: DIST=xenial
 
+before_install: bundle config
 script: true
 
 notifications:
