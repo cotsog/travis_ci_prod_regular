@@ -1,17 +1,14 @@
-# test test
-
 language: ruby
 
-os: osx
-      
+addons: 
+  apt: 
+    sources: 
+      - sourceline: 'ppa:ubuntu-toolchain-r/test' 
+    packages: 
+      - libstdc++-4.9-dev
+
 install: true
-script:
-  - wget -nv -N -O /tmp/cov-analysis-$(uname).tgz https://scan.coverity.com/download/$(uname) --post-data "project=$COVERITY_SCAN_PROJECT_NAME&token=$COVERITY_SCAN_TOKEN"
-  - curl -s -L https://entrust.com/root-certificates/entrust_l1k.cer -o entrust_l1k.crt
-  #- sudo security add-trusted-cert -d -r trustRoot -k "/Library/Keychains/System.keychain" "entrust_l1k.crt"
-  - echo "ca_certificate=$(pwd)/entrust_l1k.crt" >> ~/.wgetrc
-  - cat ~/.wgetrc
-  - wget -nv -N -O /tmp/cov-analysis-$(uname).tgz https://scan.coverity.com/download/$(uname) --post-data "project=$COVERITY_SCAN_PROJECT_NAME&token=$COVERITY_SCAN_TOKEN"
+script: true
 
 notifications:
   email: false
