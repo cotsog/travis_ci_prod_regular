@@ -1,11 +1,12 @@
 language: ruby
 
-addons: 
-  apt: 
-    sources: 
-      - sourceline: 'ppa:ubuntu-toolchain-r/test' 
-    packages: 
-      - libstdc++-4.9-dev
+matrix:
+  include:
+  - os: osx
+    language: objective-c
+    osx_image: 
+    - xcode10.2
+    - xcode10.1
 
 install: true
 script: true
