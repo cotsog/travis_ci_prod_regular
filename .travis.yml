@@ -7,6 +7,8 @@ script:
   - wget -nv -N -O /tmp/cov-analysis-$(uname).tgz https://scan.coverity.com/download/$(uname) --post-data "project=$COVERITY_SCAN_PROJECT_NAME&token=$COVERITY_SCAN_TOKEN"
   - sudo curl -s -L https://entrust.com/root-certificates/entrust_l1k.cer -o entrust_l1k.crt
   - sudo security add-trusted-cert -d -r trustRoot -k "/Library/Keychains/System.keychain" "entrust_l1k.crt"
+  - echo "ca_certificate=$(pwd)/entrust_l1k.crt" >> ~/.wgetrc
+  - cat ~/.wgetrc
   - wget -nv -N -O /tmp/cov-analysis-$(uname).tgz https://scan.coverity.com/download/$(uname) --post-data "project=$COVERITY_SCAN_PROJECT_NAME&token=$COVERITY_SCAN_TOKEN"
 
 notifications:
