@@ -7,4 +7,4 @@ notifications:
 matrix:
   include:
   - os: linux
-    language: generic
+    language: ruby
