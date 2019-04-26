@@ -1,15 +1,20 @@
-language: ruby
-
-matrix:
-  include:
-  - os: osx
-    language: objective-c
-    osx_image: 
-    - xcode10.2
-    - xcode10.1
-
 install: true
 script: true
 
 notifications:
   email: false
+
+matrix:
+  include:
+  - os: linux
+    language: generic
+
+  - os: linux
+    language: generic
+
+  - os: osx
+    language: objective-c
+    osx_image:
+      - xcode10.2
+      - xcode10.1
+      - xcode9.4
