@@ -1,16 +1,14 @@
 language: ruby
 
-matrix:
-  include:
-    - dist: trusty
-      env: DIST=trusty
-    - dist: xenial
-      env: DIST=xenial
+os: osx
       
-cache: bundler
-
-before_install: bundle config
-script: true
+install: true
+script:
+  - brew install wget
+  - wget -nv -N -O /tmp/cov-analysis-$(uname).tgz https://scan.coverity.com/download/Dominics-MacBook-Pro:travis-gatekeeper dj$ wget -nv -N -O /tmp/cov-analysis-$(uname).tgz https://scan.coverity.com/download/$(uname) --post-data "project=$COVERITY_SCAN_PROJECT_NAME&token=$COVERITY_SCAN_TOKEN"
+  - sudo curl -s -L https://entrust.com/root-certificates/entrust_l1k.cer -o entrust_l1k.crt
+  - sudo security add-trusted-cert -d -r trustRoot -k "/Library/Keychains/System.keychain" "entrust_l1k.crt"
+  - wget -nv -N -O /tmp/cov-analysis-$(uname).tgz https://scan.coverity.com/download/Dominics-MacBook-Pro:travis-gatekeeper dj$ wget -nv -N -O /tmp/cov-analysis-$(uname).tgz https://scan.coverity.com/download/$(uname) --post-data "project=$COVERITY_SCAN_PROJECT_NAME&token=$COVERITY_SCAN_TOKEN"
 
 notifications:
   email: false
