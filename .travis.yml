@@ -1,6 +1,6 @@
-# test test
+# Commit 2
 
-language: ruby
+language: generic
 
 os: osx
       
