@@ -1,10 +1,13 @@
+dist: trusty
+
+language: java
+
+jdk:
+  - openjdk11
+  - oraclejdk11
+
 install: true
 script: true
 
 notifications:
   email: false
-
-matrix:
-  include:
-  - os: linux
-    language: ruby
