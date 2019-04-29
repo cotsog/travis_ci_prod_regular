@@ -1,8 +1,17 @@
 language: ruby
 
+addons:
+  coverity_scan:
+    project:
+      name: "cotsog/travis_ci_prod_regular"
+      description: "travis_ci_prod_regular"
+    notification_email: asdf@asdf.org
+    build_command_prepend: "echo \"before build\""
+    build_command: "echo \"the build\""
+    branch_pattern: master
+
 install: true
-script:
-  - curl -s https://scan.coverity.com/scripts/travisci_build_coverity_scan.sh | bash
+script: true
 
 notifications:
   email: false
