@@ -4,8 +4,5 @@ install: true
 script:
   - curl -s https://scan.coverity.com/scripts/travisci_build_coverity_scan.sh | bash
 
-install: true
-script: true
-
 notifications:
   email: false
