@@ -1,17 +1,12 @@
-language: ruby
+language: java
 
-addons:
-  coverity_scan:
-    project:
-      name: "cotsog/travis_ci_prod_regular"
-      description: "travis_ci_prod_regular"
-    notification_email: asdf@asdf.org
-    build_command_prepend: "echo \"before build\""
-    build_command: "echo \"the build\""
-    branch_pattern: master
+jdk: oraclejdk11
 
 install: true
-script: true
+script:
+  - sudo add-apt-repository -y ppa:linuxuprising/java
+  - sudo apt-get -y update
+  - sudo apt-get install -y oracle-java11-installer
 
 notifications:
   email: false
