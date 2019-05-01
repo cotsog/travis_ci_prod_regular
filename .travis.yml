@@ -1,13 +1,21 @@
-language: java
+os: linux
 
-dist: xenial
+language: bash
+services: docker
 
-jdk:
-  - openjdk11
-  - oraclejdk11
+env:
+  matrix:
+    - VERSION=12
+    - VERSION=11
+    - VERSION=8
+    
+script: echo "./build_latest.sh $VERSION"
+    
+stages:
+  - lint
+  - test
 
-install: true
-script: true
-
-notifications:
-  email: false
+jobs:
+  include:
+    - stage: linter
+      script: echo "./linter.sh"
