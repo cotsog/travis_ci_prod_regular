@@ -12,7 +12,7 @@ env:
 script: echo "./build_latest.sh $VERSION"
     
 stages:
-  - lint
+  - linter
   - test
 
 jobs:
