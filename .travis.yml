@@ -1,22 +1,15 @@
-language: android
-jdk: oraclejdk8
-android:
-  components:
-  - platform-tools
-  - tools
-  - build-tools-28.0.3
-  - android-28
-  - extra-google-google_play_services
-  - extra-google-m2repository
-  - extra-android-m2repository
-  - addon-google_apis-google-19
-  licenses:
-  - android-sdk-license-.+
-  - google-gdk-license-.+
-  - .+
+matrix:
+  include:
+    - dist: trusty
+      env: DIST=trusty
+    - dist: xenial
+      env: DIST=xenial
+
+services:
+  - elasticsearch
 
 install: true
-script: true
+script: sleep 10
 
 notifications:
   email: false
