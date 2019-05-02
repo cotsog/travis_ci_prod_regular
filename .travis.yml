@@ -1,21 +1,7 @@
-os: linux
+language: android
 
-language: bash
-services: docker
+install: true
+script: true
 
-env:
-  matrix:
-    - VERSION=12
-    - VERSION=11
-    - VERSION=8
-    
-script: echo "./build_latest.sh $VERSION"
-    
-stages:
-  - linter
-  - test
-
-jobs:
-  include:
-    - stage: linter
-      script: echo "./linter.sh"
+notifications:
+  email: false
