@@ -6,7 +6,7 @@ matrix:
       env: DIST=xenial
 
 services:
-  - neo4j
+  - cassandra
 
 install: true
 script: sleep 10
