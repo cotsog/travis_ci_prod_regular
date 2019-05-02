@@ -6,7 +6,7 @@ matrix:
       env: DIST=xenial
 
 services:
-  - elasticsearch
+  - neo4j
 
 install: true
 script: sleep 10
