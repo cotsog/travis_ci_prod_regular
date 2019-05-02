@@ -6,7 +6,7 @@ matrix:
       env: DIST=xenial
 
 services:
-  - cassandra
+  - rabbitmq
 
 install: true
 script: sleep 10
