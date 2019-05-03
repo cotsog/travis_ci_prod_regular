@@ -1,15 +1,15 @@
 matrix:
   include:
-    - dist: trusty
-      env: DIST=trusty
     - dist: xenial
       env: DIST=xenial
 
-services:
-  - rabbitmq
-
 install: true
-script: sleep 10
+script:
+  - sudo apt-get install -y software-properties-common
+  - sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
+  - sudo add-apt-repository 'deb [arch=amd64,arm64,i386,ppc64el] http://mariadb.mirror.globo.tech/repo/10.1/ubuntu xenial main'
+  - sudo apt update -y
+  - sudo apt install -y mariadb-server
 
 notifications:
   email: false
