@@ -1,3 +1,2 @@
-FROM buildpack-deps:18.04
-
-RUN curl https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+FROM php:7.2.12-fpm-alpine
+RUN apk add --no-cache freetype libpng libjpeg-turbo freetype-dev libpng-dev libjpeg-turbo-dev zlib-dev
