@@ -1,5 +1,7 @@
 matrix:
   include:
+    - dist: trusty
+      env: DIST=trusty
     - dist: xenial
       env: DIST=xenial
 
