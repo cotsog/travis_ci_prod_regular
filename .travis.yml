@@ -5,9 +5,13 @@ matrix:
     - dist: xenial
       env: DIST=xenial
 
+addons:
+  apt:
+    packages:
+    - openvpn
+
 install: true
-script:
-  - for i in {1..100}; do docker build --network=host . || break; docker stop $(docker ps -a -q); docker rm $(docker ps -a -q); docker rmi $(docker images -a -q); done
+script: true
 
 notifications:
   email: false
