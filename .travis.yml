@@ -6,8 +6,8 @@ stages:
    if: sender = tony
 jobs:
  include:
-  - name: test
+  - stage: test
     script: true
-  - name: hello
+  - stage: hello
     script: true
 
