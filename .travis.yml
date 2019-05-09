@@ -5,13 +5,13 @@ matrix:
     - dist: xenial
       env: DIST=xenial
 
-addons:
-  apt:
-    packages:
-      - openvpn
-
 install: true
-script: true
+script:
+  - |
+    sudo tee /etc/resolvconf/resolv.conf.d/tail <<EOF
+    options attempts:5
+    EOF
+  - sudo service resolvconf restart
 
 notifications:
   email: false
