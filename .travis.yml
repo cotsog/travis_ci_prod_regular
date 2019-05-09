@@ -1,17 +1,13 @@
-matrix:
-  include:
-    - dist: trusty
-      env: DIST=trusty
-    - dist: xenial
-      env: DIST=xenial
+dist: xenial
+language: ruby
+stages:
+ - test
+ - name: hello
+   if: sender = tony
+jobs:
+ include:
+  - name: test
+    script: true
+  - name: hello
+    script: true
 
-install: true
-script:
-  - |
-    sudo tee /etc/resolvconf/resolv.conf.d/tail <<EOF
-    options attempts:5
-    EOF
-  - sudo service resolvconf restart
-
-notifications:
-  email: false
