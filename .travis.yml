@@ -8,9 +8,7 @@ deploy:
   - provider: script
     script: echo "deploy"
     on:
-      branch:
-        - /^master$/
-        - '/^release\/\d{4}-\d{2}-\d{2}(\.\d{2})?$/'
+      condition: $TRAVIS_BRANCH = master || $TRAVIS_BRANCH =~ /^release\/\d{4}-\d{2}-\d{2}(\.\d{2})?$/
 
 notifications:
   email: false
