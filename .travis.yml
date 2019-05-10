@@ -10,7 +10,7 @@ deploy:
     on:
       branch:
         - /^master$/
-        - /^release\/\d{4}-\d{2}-\d{2}(\.\d{2})?$/
+        - '/^release\/\d{4}-\d{2}-\d{2}(\.\d{2})?$/'
 
 notifications:
   email: false
