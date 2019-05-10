@@ -1,17 +1,23 @@
-language: ruby
-
+dist: trusty
+language: elixir
 matrix:
-  include:
-    - dist: trusty
-      env: DIST=trusty
-    - dist: xenial
-      env: DIST=xenial
-
-before_install:
-  - echo "options timeout:5" | sudo tee -a /etc/resolvconf/resolv.conf.d/tail
-  - echo "options attempts:5" | sudo tee -a /etc/resolvconf/resolv.conf.d/tail
-  - sudo service resolvconf restart
-
+  include:
+    - otp_release: 21.3
+      elixir: 1.8.1
+    - otp_release: 20.3
+      elixir: 1.8.1
+    - otp_release: 21.2
+      elixir: 1.7.3
+    - otp_release: 20.3
+      elixir: 1.7.3
+    - otp_release: 19.3
+      elixir: 1.7.3
+    - otp_release: 21.2
+      elixir: 1.6.6
+    - otp_release: 20.3
+      elixir: 1.6.6
+    - otp_release: 19.3
+      elixir: 1.6.6
 install: true
 script: true
 
