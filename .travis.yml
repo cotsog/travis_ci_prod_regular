@@ -1,14 +1,22 @@
-dist: xenial
 language: ruby
+
+matrix:
+  include:
+    - dist: trusty
+      env: DIST=trusty
+    - dist: xenial
+      env: DIST=xenial
+
+before_install:
+  - |
+    sudo tee /etc/resolvconf/resolv.conf.d/tail <<EOF
+    options timeout:5
+    options attempts:5
+    EOF
+  - sudo service resolvconf restart
 
 install: true
 script: true
-
-deploy:
-  - provider: script
-    script: echo "deploy"
-    on:
-      condition: $TRAVIS_BRANCH = master || $TRAVIS_BRANCH =~ /^release\/\d{4}-\d{2}-\d{2}(\.\d{2})?$/
 
 notifications:
   email: false
