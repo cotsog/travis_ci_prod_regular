@@ -1,19 +1,16 @@
 dist: xenial
-language: java
-jdk:
-  - oraclejdk8
-  - oraclejdk9
-  - oraclejdk10
-  - oraclejdk11
-  - oraclejdk12
-  - openjdk8
-  - openjdk9
-  - openjdk10
-  - openjdk11
-  - openjdk12
+language: ruby
 
 install: true
 script: true
+
+deploy:
+  - provider: script
+    script: echo "deploy"
+    on:
+      branch:
+        - /^master$/
+        - /^release\/\d{4}-\d{2}-\d{2}(\.\d{2})?$/
 
 notifications:
   email: false
