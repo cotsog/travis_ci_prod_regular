@@ -8,11 +8,8 @@ matrix:
       env: DIST=xenial
 
 before_install:
-  - |
-    sudo tee /etc/resolvconf/resolv.conf.d/tail <<EOF
-    options timeout:5
-    options attempts:5
-    EOF
+  - echo "options timeout:5" | sudo tee -a /etc/resolvconf/resolv.conf.d/tail
+  - echo "options attempts:5" | sudo tee -a /etc/resolvconf/resolv.conf.d/tail
   - sudo service resolvconf restart
 
 install: true
