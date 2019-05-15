@@ -14,7 +14,7 @@ env:
 
 install:
   - sudo cp /etc/postgresql/{9.6,11}/main/pg_hba.conf
-  - sudo service postgresql restart
+  - sudo service postgresql restart 11
   - sleep 1
 
 script: psql -c 'create database travis_ci_test;' -U postgres
