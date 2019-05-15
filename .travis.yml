@@ -1,25 +1,12 @@
-dist: xenial
-language: elixir
-matrix:
-  include:
-    - otp_release: 21.3
-      elixir: 1.8.1
-    - otp_release: 20.3
-      elixir: 1.8.1
-    - otp_release: 21.2
-      elixir: 1.7.3
-    - otp_release: 20.3
-      elixir: 1.7.3
-    - otp_release: 19.3
-      elixir: 1.7.3
-    - otp_release: 21.2
-      elixir: 1.6.6
-    - otp_release: 20.3
-      elixir: 1.6.6
-    - otp_release: 19.3
-      elixir: 1.6.6
-install: true
-script: true
+language: ruby
+rvm:
+  - 2.5
+  - 2.6
+# env:
+#  global:
+#    - secure: "Ofh4egBqeXc7IgOqolyUvfRMXJ8lGzY4amNtI04xayGiFss/3B5huPHGB+0WgUAV3ZmpU3zHIOG72WsgRauYvQGFygsDxmO+zpWx2OR69zTuXbU8e0V+/Qizn8rSRLNeFiOo6QW3yhnoLV4G1bgb0I5BnflJdVpCnrrqjk5pzh8="
+install: skip
+script: bundle --version
 
 notifications:
-  email: false
+  email: false
