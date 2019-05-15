@@ -1,17 +1,17 @@
 language: ruby
 
 addons:
-  postgresql: "10"
+  postgresql: "11"
   apt:
     packages:
-    - postgresql-10
-    - postgresql-client-10
+      - postgresql-11
+      - postgresql-client-11
 env:
   global:
   - PGPORT=5433
 
 install:
-  - sudo cp /etc/postgresql/{9.6,10}/main/pg_hba.conf
+  - sudo cp /etc/postgresql/{9.6,11}/main/pg_hba.conf
   - sudo service postgresql restart
   - sleep 1
 
