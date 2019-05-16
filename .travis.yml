@@ -3,6 +3,8 @@ node_js: node
 
 os: windows
 
+filter_secrets: false
+
 install: true
 script: pwd
 
