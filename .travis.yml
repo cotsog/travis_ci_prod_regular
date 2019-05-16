@@ -1,24 +1,24 @@
-language: python
-
-dist: xenial
-
-python: 3.6.7
 addons:
-  postgresql: '9.6'
   apt:
     packages:
-    - python3-enchant
-    - aspell-en
-    - aspell-de
-    - graphviz
-    - postgresql-9.6-postgis-2.4
-    - libxml2-dev
-    - libxmlsec1-dev
-    - libxmlsec1-openssl
+      - postgresql-11
+  postgresql: '11'
+
+before_install:
+  - sudo sed -i 's/port = 5433/port = 5432/' /etc/postgresql/11/main/postgresql.conf
+  - sudo cp /etc/postgresql/{10,11}/main/pg_hba.conf
+  - sudo service postgresql stop
+  - sudo service postgresql start 11
 
 services:
-- redis-server
-- rabbitmq
+  - postgresql
+
+matrix:
+  include:
+    - dist: trusty
+      env: DIST=trusty
+    - dist: xenial
+      env: DIST=xenial
 
 install: true
 script: true
