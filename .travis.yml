@@ -1,5 +1,9 @@
 dist: xenial
 
+env:
+  global:
+  - PGPORT=5433
+
 addons:
   apt:
     packages:
@@ -9,7 +13,6 @@ addons:
   postgresql: '11'
 
 before_install:
-  - sudo sed -i 's/port = 5433/port = 5432/' /etc/postgresql/11/main/postgresql.conf
   - sudo cp /etc/postgresql/{10,11}/main/pg_hba.conf
   - sudo service postgresql stop
   - sudo service postgresql start 11
