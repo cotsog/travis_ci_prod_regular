@@ -22,7 +22,7 @@ script:
   - sudo service postgresql start 11
   - sleep 1
   - systemctl status postgresql.service
-  - journalctl -xe
+  - sudo journalctl -xe
 
 notifications:
   email: false
