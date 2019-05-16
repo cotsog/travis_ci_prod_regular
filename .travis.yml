@@ -1,27 +1,24 @@
-os:
-  - linux
-  - osx
+dist: xenial
 
-env:
-  - LFTP_SUPPORT=0
+addons:
+  apt:
+    packages:
+      - postgresql-11
+      - postgresql-11-postgis-2.5
+      - postgresql-11-postgis-2.5-scripts
+  postgresql: '11'
 
-jobs:
-  include:
-    - os: linux
-      env: LFTP_SUPPORT=1
-      addons:
-        apt:
-          packages:
-            - lftp
-    - os: osx
-      env: LFTP_SUPPORT=1
-      addons:
-        homebrew:
-          packages:
-            - lftp
+before_install:
+  - sudo sed -i 's/port = 5433/port = 5432/' /etc/postgresql/11/main/postgresql.conf
+  - sudo cp /etc/postgresql/{10,11}/main/pg_hba.conf
+  - sudo service postgresql stop
+  - sudo service postgresql start 11
 
+services:
+  - postgresql
+  
 install: true
-script: pwd
+script: true
 
 notifications:
   email: false
