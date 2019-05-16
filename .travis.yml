@@ -1,23 +1,27 @@
-language: ruby
+language: python
 
 dist: xenial
 
+python: 3.6.7
 addons:
-  postgresql: "11"
+  postgresql: '9.6'
   apt:
     packages:
-      - postgresql-11
-      - postgresql-client-11
-env:
-  global:
-  - PGPORT=5433
+    - python3-enchant
+    - aspell-en
+    - aspell-de
+    - graphviz
+    - postgresql-9.6-postgis-2.4
+    - libxml2-dev
+    - libxmlsec1-dev
+    - libxmlsec1-openssl
 
-install:
-  - sudo cp /etc/postgresql/{9.6,11}/main/pg_hba.conf
-  - sudo service postgresql restart 11
-  - sleep 1
+services:
+- redis-server
+- rabbitmq
 
-script: psql -c 'create database travis_ci_test;' -U postgres
+install: true
+script: true
 
 notifications:
-  email: false
+  email: false
