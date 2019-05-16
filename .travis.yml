@@ -1,9 +1,24 @@
-language: node_js
-node_js: node
+os:
+  - linux
+  - osx
 
-os: windows
+env:
+  - LFTP_SUPPORT=0
 
-filter_secrets: false
+jobs:
+  include:
+    - os: linux
+      env: LFTP_SUPPORT=1
+      addons:
+        apt:
+          packages:
+            - lftp
+    - os: osx
+      env: LFTP_SUPPORT=1
+      addons:
+        homebrew:
+          packages:
+            - lftp
 
 install: true
 script: pwd
