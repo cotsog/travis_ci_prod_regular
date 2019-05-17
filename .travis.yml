@@ -6,7 +6,6 @@ cache: bundler
 
 before_install:
   - bundler --version
-  - rvm use @global
-  - gem uninstall bundler -x || gem uninstall bundler -a || true
+  - rvm @default,@global do gem uninstall bundler -x || gem uninstall bundler -a || true
   - yes | gem install bundler --version=1.15.2
   - bundler --version
