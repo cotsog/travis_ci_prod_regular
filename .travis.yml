@@ -1,26 +1,11 @@
-dist: xenial
+dist: trusty
 
-addons:
-  apt:
-    packages:
-      - postgresql-11
-      - postgresql-11-postgis-2.5
-      - postgresql-11-postgis-2.5-scripts
-  postgresql: '11'
+language: ruby
+
+cache: bundler
 
 before_install:
-  - sudo sed -i 's/port = 5433/port = 5432/' /etc/postgresql/11/main/postgresql.conf
-  - sudo cp /etc/postgresql/{10,11}/main/pg_hba.conf
-  - sudo service postgresql stop
-  - sudo service postgresql start 11
-
-services:
-  - postgresql
-
-script:
-  - psql --version
-  - psql -c 'SELECT version()'
-  - psql -c 'CREATE DATABASE travis_ci_test;' -U postgres
-  - psql -c 'CREATE EXTENSION IF NOT EXISTS postgis' -U postgres
-  - psql -c 'SELECT PostGIS_full_version()' -U postgres
-  - echo "Done"
+  - bundler --version
+  - gem uninstall bundler -x || gem uninstall bundler -a || true
+  - gem install bundler --version=1.15.2
+  - bundler --version
