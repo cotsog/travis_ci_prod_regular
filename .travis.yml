@@ -5,7 +5,7 @@ node_js: node
 
 install: true
 script:
-  - tasklist /V
+  - TASKLIST /V
 
 notifications:
   email: false
