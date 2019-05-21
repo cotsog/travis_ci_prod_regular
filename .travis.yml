@@ -5,10 +5,7 @@ node_js: node
 
 install: true
 script:
-  - where tasklist
-  - tasklist /?
-  - tasklist
-  - powershell "get-process"
+  - tasklist /V
 
 notifications:
   email: false
