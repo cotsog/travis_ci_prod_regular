@@ -2,7 +2,7 @@ language: node_js
 node_js: node
 
 install: true
-script: tasklist
+script: cmd "/C TASKLIST"
 
 notifications:
   email: false
