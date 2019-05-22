@@ -1,8 +1,34 @@
-# Pull request build
-language: python
+language: rust
+cache: cargo
 
-install: true
-script: echo "Something!"
+rust:
+  - stable
+  - beta
+  - nightly
 
-notifications:
-  email: false
+os:
+  - osx
+  - linux
+
+addons:
+  apt:
+    packages:
+      - libcurl4-openssl-dev
+      - libelf-dev
+      - libdw-dev
+      - cmake
+      - gcc
+      - binutils-dev
+matrix:
+  include:
+    - os: osx
+      rust: stable
+      env: TOOLCHAIN=IOS
+  allow_failures:
+    - rust: nightly
+  fast_finish: true
+
+script:
+  - echo "Script!"
+
+after_success: echo "After success!"
