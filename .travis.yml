@@ -1,4 +1,4 @@
-# Skip test
+# Pull request build
 language: python
 
 install: true
