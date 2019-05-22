@@ -1,11 +1,7 @@
-os: windows
-
-language: node_js
-node_js: node
+language: ruby
 
 install: true
-script:
-  - TASKLIST /V /FO CSV
+script: true
 
 notifications:
   email: false
