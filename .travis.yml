@@ -28,7 +28,6 @@ matrix:
     - rust: nightly
   fast_finish: true
 
-script:
-  - echo "Script!"
+script: travis_terminate 1
 
 after_success: echo "After success!"
