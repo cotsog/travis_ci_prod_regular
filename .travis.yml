@@ -2,7 +2,7 @@
 language: python
 
 install: true
-script: true
+script: echo "Something!"
 
 notifications:
   email: false
