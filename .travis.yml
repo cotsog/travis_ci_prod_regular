@@ -1,3 +1,4 @@
+# Skip test
 language: python
 
 install: true
