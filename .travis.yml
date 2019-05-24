@@ -1,15 +1,10 @@
-cache:
-  directories:
-    - apache-maven-3.5.3
+os: osx
 
 install: true
 script:
-  - |
-    if [ ! -f ./apache-maven-3.5.3/bin/mvn ]
-    then
-      travis_retry wget https://archive.apache.org/dist/maven/maven-3/3.5.3/binaries/apache-maven-3.5.3-bin.zip
-      unzip -qq apache-maven-3.5.3-bin.zip
-    fi
+  - ulimit -S -n
+  - sudo launchctl limit maxfiles 65536 65536
+  - ulimit -S -n
 
 notifications:
   email: false
