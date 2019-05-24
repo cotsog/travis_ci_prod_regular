@@ -3,7 +3,7 @@ os: osx
 install: true
 script:
   - ulimit -S -n
-  - sudo launchctl limit maxfiles 65536 65536
+  - launchctl limit maxfiles 65536 65536
   - ulimit -S -n
 
 notifications:
