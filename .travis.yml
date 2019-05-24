@@ -3,6 +3,7 @@ os: osx
 install: true
 script:
   - ulimit -S -n
+  - launchctl limit maxfiles
   - launchctl limit maxfiles 65536 65536
   - ulimit -S -n
 
