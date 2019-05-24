@@ -1,3 +1,5 @@
+os: osx
+
 jobs:
   include:
     - osx_image: xcode6.4
