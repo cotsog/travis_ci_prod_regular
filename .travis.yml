@@ -4,7 +4,8 @@ install: true
 script:
   - ulimit -S -n
   - launchctl limit maxfiles
-  - launchctl limit maxfiles 65536 65536
+  - sudo launchctl limit maxfiles 65536 unlimited
+  - launchctl limit maxfiles
   - ulimit -S -n
 
 notifications:
