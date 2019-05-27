@@ -1,13 +1,13 @@
-language: perl
-perl:
-  - "5.30"
-  
+language: rust
+cache: cargo
+
+rust:
+- stable
+- nightly
+
 matrix:
-  include:
-    - dist: trusty
-      env: DIST=trusty
-    - dist: xenial
-      env: DIST=xenial
+  allow-failures:
+  - rust: nightly
 
 install: true
 script: true
