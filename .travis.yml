@@ -1,11 +1,16 @@
+language: perl
+perl:
+  - "5.30"
+  
+matrix:
+  include:
+    - dist: trusty
+      env: DIST=trusty
+    - dist: xenial
+      env: DIST=xenial
+
 install: true
-script:
-   - gradle --version
-   - wget -O "gradle-5.4.1-bin.zip" "https://services.gradle.org/distributions/gradle-5.4.1-bin.zip"
-   - sudo mkdir -p /opt/gradle
-   - sudo unzip -d /opt/gradle gradle-5.4.1-bin.zip
-   - export PATH=/opt/gradle/gradle-5.4.1/bin:${PATH}
-   - gradle --version
+script: true
 
 notifications:
   email: false
