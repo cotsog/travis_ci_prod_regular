@@ -7,8 +7,8 @@ script:
   - echo $PATH
   - yarn --version
   - rm -rf "$HOME/.yarn"
-  - rm /usr/local/bin/yarn || true
-  - rm /usr/local/bin/yarnpkg || true
+  - sudo rm /usr/local/bin/yarn || true
+  - sudo rm /usr/local/bin/yarnpkg || true
   - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
   - echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
   - sudo apt-get -y update && sudo apt-get install -y yarn
