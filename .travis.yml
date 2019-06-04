@@ -6,7 +6,7 @@ addons:
   artifacts: true
 
 install: true
-script: true
+script: echo "Foo!"
 
 notifications:
   email: false
