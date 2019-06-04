@@ -1,21 +1,12 @@
 language: node_js
 node_js:
   - 'stable'
+  
+addons:
+  artifacts: true
 
-cache:
-  directories:
-  - "$HOME/.npm"
+install: true
+script: true
 
-matrix:
-  fast_finish: true
-  include:
-    - env: FOO_VERSION=^2
-
-before_script:
-  - if [[ "$FOO_VERSION" ]]; then
-      npm install cowsay;
-    fi
-
-script:
-  - echo "npm run test"
-  - echo "npm run build"
+notifications:
+  email: false
