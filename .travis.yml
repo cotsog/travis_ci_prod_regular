@@ -1,19 +1,9 @@
 dist: xenial
 language: java
-jdk:
-  - oraclejdk8
-  - oraclejdk9
-  - oraclejdk10
-  - oraclejdk11
-  - oraclejdk12
-  - openjdk8
-  - openjdk9
-  - openjdk10
-  - openjdk11
-  - openjdk12
 
 install: true
-script: true
-
+script:
+  - java -version
+  
 notifications:
   email: false
