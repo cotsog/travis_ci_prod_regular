@@ -1,9 +1,9 @@
 dist: xenial
-language: java
+language: python
 
 install: true
 script:
-  - java -version
+  - jdk_switcher user openjdk8
   
 notifications:
   email: false
