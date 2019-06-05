@@ -3,7 +3,11 @@ language: python
 
 install: true
 script:
-  - jdk_switcher user openjdk8
+  - java -version
+  - wget https://raw.githubusercontent.com/michaelklishin/jdk_switcher/7e512921ba5a6e93ce304683f099e3c0525330b1/jdk_switcher.sh
+  - source ./jdk_switcher.sh
+  - jdk_switcher use openjdk8
+  - java -version
   
 notifications:
   email: false
