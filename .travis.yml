@@ -1,12 +1,19 @@
-language: node_js
-node_js:
-  - 'stable'
-  
-addons:
-  artifacts: true
+dist: xenial
+language: java
+jdk:
+  - oraclejdk8
+  - oraclejdk9
+  - oraclejdk10
+  - oraclejdk11
+  - oraclejdk12
+  - openjdk8
+  - openjdk9
+  - openjdk10
+  - openjdk11
+  - openjdk12
 
 install: true
 script: true
 
 notifications:
-  email: false
+  email: false
