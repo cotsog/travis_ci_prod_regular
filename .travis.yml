@@ -1,14 +1,14 @@
 dist: xenial
+
 language: python
 
-install: true
-script:
-  - java -version
-  - wget https://raw.githubusercontent.com/michaelklishin/jdk_switcher/7e512921ba5a6e93ce304683f099e3c0525330b1/jdk_switcher.sh
-  - source ./jdk_switcher.sh
-  - jdk_switcher use openjdk8
-  - export PATH="/usr/lib/jvm/java-8-openjdk-amd64/bin:$PATH"
-  - java -version
+install: echo "install!"
+
+script: echo "script!"
+  
+deploy:
+  provider: script
+  script: echo "deployment!"
   
 notifications:
   email: false
