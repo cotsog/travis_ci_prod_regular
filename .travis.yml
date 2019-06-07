@@ -1,14 +1,58 @@
-dist: xenial
+sudo: true
 
-language: python
+cache:
+  directories:
+    - vendor/bundle
+    - vendor/cache
 
-install: echo "install!"
+addons:
+  apt:
+    packages:
+      - make
+      - curl
+      - parallel
+      - avahi-daemon
+      - libnss-mdns
+      - libnss3-tools
 
-script: echo "script!"
-  
-deploy:
-  provider: script
-  script: echo "deployment!"
-  
-notifications:
-  email: false
+stages:
+  # We want to test each and every branch.
+  - name: test-suite
+    if: NOT tag =~ .*
+  # We just want docs generation on the master branch.
+  - name: docs
+    if: branch = master AND type IN (push, api)
+  # After a new tag was released, we build the docs.
+  - name: release-docs
+    if: tag =~ .* AND type IN (push, api)
+
+jobs:
+  include:
+    # Linux Build
+    - &linux
+      stage: test-suite
+      os: linux
+      dist: trusty
+      before_install: true
+      install: true
+      script: true
+      after_script: true
+
+    # macOS Build
+    - stage: test-suite
+      os: osx
+      before_install: true
+      install: true
+      script: true
+
+    # Documentation Build
+    - <<: *linux
+      stage: docs
+      script: true
+      after_script: true
+
+    # Documentation Build
+    - <<: *linux
+      stage: release-docs
+      script: true
+      after_script: true
