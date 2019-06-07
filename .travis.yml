@@ -5,5 +5,6 @@ script:
   - echo $TRAVIS_APT_PROXY
   - cat /etc/apt/apt.conf.d/99-travis-apt-proxy
   - ls -al /etc/apt/apt.conf.d
+  - nslookup build-cache.travisci.net
   - for i in {1..100}; do echo $i && curl --connect-timeout 5 -fsSL -o /dev/null "https://build-cache.travisci.net/__squignix_health__" && echo "break!" && break; done
   - ifconfig
