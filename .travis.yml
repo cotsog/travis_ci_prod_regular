@@ -11,7 +11,7 @@ matrix:
 install: true
 script:
   - python -V
-  - pyenv global 2.7
+  - pyenv global 3.7
   - python -V
 
 notifications:
