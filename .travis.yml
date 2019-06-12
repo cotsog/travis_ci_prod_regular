@@ -1,4 +1,5 @@
-language: ruby
+language: python
+python: 3.6.8
 
 matrix:
   include:
@@ -8,8 +9,4 @@ matrix:
       env: DIST=xenial
 
 install: true
-script:
-  - python -V
-  - pyenv install 3.7.0
-  - pyenv global 3.7
-  - python -V
+script: python -V
