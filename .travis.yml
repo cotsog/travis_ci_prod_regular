@@ -1,13 +1,21 @@
-language: python
-python: 3.6.8
+language: node_js
 
-matrix:
-  include:
-    - dist: xenial
-      env: DIST=xenial
-      
+node_js:
+  - 8.10.0
+
+env:
+  global:
+  - PROJECT=rps-portal-automationtests
+
+before_install: true
+
 cache:
-  direcories: nil
+  yarn: true
+  directories:
+    - 
 
 install: true
-script: python -V
+script: true
+
+notifications:
+  email: false
