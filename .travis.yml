@@ -1,6 +1,13 @@
 language: ruby
 rvm: 2.4.4
 
+matrix:
+  include:
+    - dist: trusty
+      env: DIST=trusty
+    - dist: xenial
+      env: DIST=xenial
+
 install: true
 script: bundle --version
 
