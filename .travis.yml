@@ -3,10 +3,11 @@ python: 3.6.8
 
 matrix:
   include:
-    - dist: trusty
-      env: DIST=trusty
     - dist: xenial
       env: DIST=xenial
+      
+cache:
+  direcories: nil
 
 install: true
 script: python -V
