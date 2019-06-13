@@ -1,21 +1,8 @@
-language: node_js
-
-node_js:
-  - 8.10.0
-
-env:
-  global:
-  - PROJECT=rps-portal-automationtests
-
-before_install: true
-
-cache:
-  yarn: true
-  directories:
-    - 
+language: ruby
+rvm: 2.4.4
 
 install: true
-script: true
+script: bundle --version
 
 notifications:
   email: false
