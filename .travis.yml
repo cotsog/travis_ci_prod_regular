@@ -8,7 +8,9 @@ matrix:
       env: DIST=xenial
       
 install: true
-script: ant
+script:
+  - sudo apt-get install ant
+  - ant
 
 notifications:
   email: false
