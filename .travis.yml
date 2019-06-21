@@ -1,12 +1,18 @@
-language: php
-
-php:
-  - 7.1
-  - 7.2
-  - 7.3
-
-install: true
-script: php -r "phpinfo();"
-
-notifications:
-  email: false
+language: java
+jdk:
+  - openjdk8
+cache:
+  - $HOME/.m2
+  - /opt/graalvm-ce-1.0.0-rc16
+env:
+  - GRAALVM_HOME=/opt/graalvm-ce-1.0.0-rc16
+install:
+  - |
+    if [ ! -f /opt/graalvm-ce-1.0.0-rc16/bin/native-image ]
+    then
+      cd /opt
+      wget https://github.com/oracle/graal/releases/download/vm-1.0.0-rc16/graalvm-ce-1.0.0-rc16-linux-amd64.tar.gz
+      tar -xzf graalvm-ce-1.0.0-rc16-linux-amd64.tar.gz
+    fi
+  - cd $TRAVIS_BUILD_DIR
+script: true
