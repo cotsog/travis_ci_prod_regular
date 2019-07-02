@@ -5,11 +5,11 @@ matrix:
     - dist: xenial
       env: DIST=xenial
 
-language: python
-python: 3.6.2
+language: ruby
 
 install: true
-script: true
+script:
+  - sudo add-apt-repository ppa:fkrull/deadsnakes-python2.7 -y 
 
 notifications:
   email: false
