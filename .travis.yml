@@ -1,17 +1,11 @@
-os: windows
-
-language: node_js
-node_js: node
-
-env:
-  global:
-    - MSBUILD_PATH="c:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\MSBuild\15.0\Bin"
+os: linux
+jdk: openjdk8
+rvm: jruby-9.1.9.0
+dist: trusty
+language: ruby
 
 install: true
-script:
-  - export PATH=$MSBUILD_PATH:$PATH
-  - msbuild.exe
-  - msbuild.exe vs2015/examples.sln -p:Configuration=Release -p:Platform=x86 -t:examples
+script: true
 
 notifications:
   email: false
