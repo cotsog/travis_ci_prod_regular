@@ -1,15 +1,12 @@
-matrix:
-  include:
-    - dist: trusty
-      env: DIST=trusty
-    - dist: xenial
-      env: DIST=xenial
+os: windows
 
-language: ruby
+language: node_js
+node_js: node
 
 install: true
 script:
-  - sudo add-apt-repository ppa:fkrull/deadsnakes-python2.7 -y 
+  - choco install vswhere --pre
+  - vswhere -latest -requires Microsoft.Component.MSBuild -find MSBuild\**\Bin\MSBuild.exe
 
 notifications:
   email: false
