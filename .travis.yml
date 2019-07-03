@@ -9,7 +9,7 @@ env:
 
 install: true
 script:
-  - choco install vswhere --pre
+  - export PATH=$MSBUILD_PATH:$PATH
   - msbuild.exe
   - msbuild.exe vs2015/examples.sln -p:Configuration=Release -p:Platform=x86 -t:examples
 
