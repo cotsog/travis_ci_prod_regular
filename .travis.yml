@@ -9,7 +9,8 @@ matrix:
 
 install: true
 script:
-  - travis_retry ~/bin/install-jdk.sh --target "/home/travis/openjdk9" --workspace "/home/travis/.cache/install-jdk" --feature "9" --license "GPL" --cacerts
-
+  - wget https://raw.githubusercontent.com/sormuras/bach/master/install-jdk.sh
+  - chmod +x ./install-jdk.sh
+  - travis_retry ./install-jdk.sh --target "/home/travis/openjdk9" --workspace "/home/travis/.cache/install-jdk" --feature "9" --license "GPL" --cacerts
 notifications:
   email: false
