@@ -1,6 +1,4 @@
 language: java
-jdk:
-  - openjdk9
   
 matrix:
   include:
@@ -10,7 +8,8 @@ matrix:
       env: DIST=xenial
 
 install: true
-script: true
+script:
+  - travis_retry ~/bin/install-jdk.sh --target "/home/travis/openjdk9" --workspace "/home/travis/.cache/install-jdk" --feature "9" --license "GPL" --cacerts
 
 notifications:
   email: false
