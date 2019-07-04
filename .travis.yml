@@ -1,7 +1,16 @@
-language: generic
+language: java
+jdk:
+  - openjdk10
+  
+matrix:
+  include:
+    - dist: trusty
+      env: DIST=trusty
+    - dist: xenial
+      env: DIST=xenial
 
 install: true
-script: rvm get stable
+script: true
 
 notifications:
   email: false
