@@ -1,16 +1,9 @@
-language: java
-  
-matrix:
-  include:
-    - dist: trusty
-      env: DIST=trusty
-    - dist: xenial
-      env: DIST=xenial
+language: objective-c
+
+osx_image: xcode11
 
 install: true
-script:
-  - wget https://raw.githubusercontent.com/sormuras/bach/master/install-jdk.sh
-  - chmod +x ./install-jdk.sh
-  - travis_retry ./install-jdk.sh --target "/home/travis/openjdk9" --workspace "/home/travis/.cache/install-jdk" --feature "9" --license "GPL" --cacerts
+script: true
+
 notifications:
-  email: false
+  email: false
