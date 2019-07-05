@@ -6,6 +6,7 @@ script: true
 notifications:
   email: false
   
+after_success: true
 before_deploy: skip
 
 deploy:
