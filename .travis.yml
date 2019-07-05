@@ -1,9 +1,13 @@
-language: objective-c
-
-osx_image: xcode11
+language: generic
 
 install: true
 script: true
 
 notifications:
-  email: false
+  email: false
+
+deploy:
+  provider: script
+  script: echo "Deploy!"
+  on:
+    all_branches: true
