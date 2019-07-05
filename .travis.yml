@@ -9,5 +9,5 @@ notifications:
 after_success: true
 before_deploy: skip
 
-deploy: skip
+deploy: {}
 
