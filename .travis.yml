@@ -9,8 +9,5 @@ notifications:
 after_success: true
 before_deploy: skip
 
-deploy:
-  provider: script
-  script: echo "Deploy!"
-  on:
-    all_branches: true
+deploy: skip
+
