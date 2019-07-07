@@ -10,4 +10,6 @@ jdk:
 
 install: true
 
-script: mvn --version
+script:
+  - $JAVA_HOME/bin/javac -version
+  - mvn --version
