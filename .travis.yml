@@ -1,15 +1,8 @@
-language: ruby
+language: objective-c
+osx_image: xcode11
 
 install: true
+script: true
 
-before_script:
-  - |
-    if [[ "$TRAVIS_OS_NAME" == "linux" ]]
-    then
-      export DISPLAY=:99.0
-      sh -e /etc/init.d/xvfb start
-      sleep 3
-    fi
-
-script:
-  - mvn --version
+notifications:
+  email: false
