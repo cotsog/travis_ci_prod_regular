@@ -1,5 +1,9 @@
-language: objective-c
-osx_image: xcode11
+matrix:
+  include:
+  - name: 'super test1'
+    env: TEST_NAME='TEST1'
+  - name: 'super test2'
+    env: TEST_NAME='TEST2'
 
 install: true
 script: true
