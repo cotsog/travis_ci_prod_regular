@@ -1,12 +1,15 @@
-matrix:
-  include:
-  - name: 'super test1'
-    env: TEST_NAME='TEST1'
-  - name: 'super test2'
-    env: TEST_NAME='TEST2'
+language: rust
+os:
+  - linux
+  - osx
+rust:
+  - stable
+  - beta
+  - nightly
 
 install: true
 script: true
 
 notifications:
   email: false
+
