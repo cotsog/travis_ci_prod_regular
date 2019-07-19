@@ -1,19 +1,8 @@
 language: ruby
-
-matrix:
-  include:
-    - dist: trusty
-      env: DIST=trusty
-    - dist: xenial
-      env: DIST=xenial
-
-addons:
-  rethinkdb: '2.3.4'
   
 install: true
 script:
-  - wget -qO- https://download.rethinkdb.com/apt/pubkey.gpg | sudo apt-key add -v -''
-  - sudo apt-get install -y --allow-unauthenticated -o Dpkg::Options::='--force-confnew' rethinkdb=$package_version
+  - docker build --build-arg RELEASE="$RELEASE" -t softinstigate/serverless .
 
 notifications:
   email: false
