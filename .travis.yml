@@ -11,7 +11,7 @@ install: true
 script:
   - wget https://dev.mysql.com/get/mysql-apt-config_0.8.13-1_all.deb
   - sudo dpkg -i mysql-apt-config_0.8.13-1_all.deb
-  - sudo -E apt-get -yq --no-install-suggests --no-install-recommends $(travis_apt_get_options) install mysql-server
+  - sudo -E apt-get -yq --no-install-suggests --no-install-recommends install mysql-server
 
 notifications:
   email: false
