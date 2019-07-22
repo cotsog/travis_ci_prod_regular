@@ -1,15 +1,19 @@
 language: ruby
 
+install: true
+script: true
+
 matrix:
   include:
-    - dist: trusty
-      env: DIST=trusty
-    - dist: xenial
-      env: DIST=xenial
-      
-install: true
-script:
-  - sudo apt-cache showpkg mysql-server
+    - deploy:
+        provider: script
+        script: true
+    - deploy:
+        provider: script
+        script: false
 
+after_deploy:
+  - echo $?
+  
 notifications:
   email: false
