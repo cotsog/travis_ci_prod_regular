@@ -9,6 +9,9 @@ matrix:
 
 install: true
 script:
+  - sudo apt-get purge mysql*
+  - sudo apt-get autoremove
+  - sudo apt-get autoclean
   - wget https://dev.mysql.com/get/mysql-apt-config_0.8.13-1_all.deb
   - sudo apt-get clean
   - sudo apt-get update
