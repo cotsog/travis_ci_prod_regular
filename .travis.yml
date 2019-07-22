@@ -1,8 +1,16 @@
-language: ruby
-  
+language: python
+
+python: 3.7.4
+
+matrix:
+  include:
+    - dist: trusty
+      env: DIST=trusty
+    - dist: xenial
+      env: DIST=xenial
+      
 install: true
-script:
-  - docker build --build-arg RELEASE="$RELEASE" -t softinstigate/serverless .
+script: true
 
 notifications:
   email: false
