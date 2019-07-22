@@ -6,17 +6,11 @@ matrix:
       env: DIST=trusty
     - dist: xenial
       env: DIST=xenial
-
-addons:
-  apt:
-    sources:
-      - mysql-5.7-trusty
-    packages:
-      - mysql-client-5.7
-      - mysql-server-5.7
       
 install: true
-script: true
+script:
+  - sudo apt install apt-rdepends
+  - sudo apt-rdepends mysql-server
 
 notifications:
   email: false
