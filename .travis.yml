@@ -10,7 +10,11 @@ matrix:
 install: true
 script:
   - wget https://dev.mysql.com/get/mysql-apt-config_0.8.13-1_all.deb
+  - sudo apt-get clean
+  - sudo apt-get update
+  - sudo apt-get install dpkg
   - sudo dpkg -i mysql-apt-config_0.8.13-1_all.deb
+  - sudo apt-get update
   - sudo -E apt-get -yq --no-install-suggests --no-install-recommends install mysql-server
 
 notifications:
