@@ -1,7 +1,5 @@
-language: go
+language: ruby
 
-go: 1.2
-  
 matrix:
   include:
     - dist: trusty
@@ -10,7 +8,8 @@ matrix:
       env: DIST=xenial
 
 install: true
-script: true
+script:
+  - sudo -E apt-get -yq --no-install-suggests --no-install-recommends $(travis_apt_get_options) install mysql-server
 
 notifications:
   email: false
