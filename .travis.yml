@@ -9,6 +9,9 @@ matrix:
 
 install: true
 script:
+  - sudo apt-key adv --keyserver pgp.mit.edu --recv-keys 5072E1F5
+  - deb http://repo.mysql.com/apt/ubuntu/ $TRAVIS_DIST mysql-5.7
+  - sudo apt-get update
   - sudo -E apt-get -yq --no-install-suggests --no-install-recommends $(travis_apt_get_options) install mysql-server
 
 notifications:
