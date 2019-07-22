@@ -1,14 +1,16 @@
 language: go
+
+go: 1.2.2
   
 matrix:
   include:
+    - dist: trusty
+      env: DIST=trusty
     - dist: xenial
       env: DIST=xenial
 
 install: true
-script:
-  - gimme 1.2
-  - source ~/.gimme/envs/go1.4.env
+script: true
 
 notifications:
   email: false
