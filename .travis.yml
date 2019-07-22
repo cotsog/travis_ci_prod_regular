@@ -7,10 +7,10 @@ matrix:
   include:
     - deploy:
         provider: script
-        script: true
+        script: test 0 = 0
     - deploy:
         provider: script
-        script: false
+        script: test 0 = 1
 
 after_deploy:
   - echo $?
