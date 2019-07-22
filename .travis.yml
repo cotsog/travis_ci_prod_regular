@@ -9,8 +9,7 @@ matrix:
       
 install: true
 script:
-  - sudo apt install apt-rdepends
-  - sudo apt-rdepends mysql-server
+  - sudo apt-cache showpkg mysql-server
 
 notifications:
   email: false
