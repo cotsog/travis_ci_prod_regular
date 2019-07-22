@@ -12,8 +12,8 @@ addons:
     sources:
       - mysql-5.7-trusty
     packages:
-      - mysql-server
-      - mysql-client
+      - mysql-client-5.5
+      - mysql-server-5.5
       
 install: true
 script: true
