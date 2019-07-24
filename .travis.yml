@@ -1,19 +1,7 @@
-language: ruby
+language: objective-c
 
 install: true
 script: true
 
-matrix:
-  include:
-    - deploy:
-        provider: script
-        script: test 0 = 0
-    - deploy:
-        provider: script
-        script: test 0 = 1
-
-after_deploy:
-  - echo $?
-  
 notifications:
   email: false
