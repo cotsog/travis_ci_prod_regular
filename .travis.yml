@@ -1,4 +1,13 @@
-language: objective-c
+language: erlang
+otp_release:
+  - 20.3.8.22
+
+matrix:
+  include:
+    - dist: trusty
+      env: DIST=trusty
+    - dist: xenial
+      env: DIST=xenial
 
 install: true
 script: true
