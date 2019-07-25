@@ -22,7 +22,7 @@ cache:
   
 env:
   global:
-    - ELASTICSEARCH_DEB_VERSION=6.0.6
+    - ELASTICSEARCH_DEB_VERSION=6.6.0
     - ELASTICSEARCH_DEB_PACKAGE=elasticsearch-${ELASTICSEARCH_DEB_VERSION}.deb
 
 before_install:
