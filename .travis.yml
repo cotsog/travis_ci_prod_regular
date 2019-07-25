@@ -25,6 +25,8 @@ env:
     - ELASTICSEARCH_DEB_PACKAGE=elasticsearch-${ELASTICSEARCH_DEB_VERSION}.deb
 
 before_install:
+  - echo $ELASTICSEARCH_DEB_VERSION
+  - echo $ELASTICSEARCH_DEB_PACKAGE
   - |
     if [ ! -f ./deb-cache/$ELASTICSEARCH_DEB_PACKAGE ]
     then
