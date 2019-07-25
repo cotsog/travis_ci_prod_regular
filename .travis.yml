@@ -17,7 +17,8 @@ services:
   - cassandra
   
 cache:
-  - deb-cache
+  directories:
+    - deb-cache
   
 env:
   global:
