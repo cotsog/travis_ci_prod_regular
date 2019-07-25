@@ -1,6 +1,7 @@
 language: erlang
 otp_release:
   - 20.3.8
+  - 20.3.8.22
 
 matrix:
   include:
