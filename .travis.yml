@@ -29,11 +29,13 @@ before_install:
   - echo $ELASTICSEARCH_DEB_VERSION
   - echo $ELASTICSEARCH_DEB_PACKAGE
   - echo "curl -o ./deb-cache/$ELASTICSEARCH_DEB_PACKAGE https://artifacts.elastic.co/downloads/elasticsearch/$ELASTICSEARCH_DEB_PACKAGE"
+  - ls -al ./deb-cache
   - |
     if [ ! -f ./deb-cache/$ELASTICSEARCH_DEB_PACKAGE ]
     then
       curl -o ./deb-cache/$ELASTICSEARCH_DEB_PACKAGE https://artifacts.elastic.co/downloads/elasticsearch/$ELASTICSEARCH_DEB_PACKAGE
     fi
+  - ls -al ./deb-cache
   - sudo dpkg -i --force-confnew ./deb-cache/elasticsearch-6.6.0.deb && sudo service elasticsearch restart
 
 node_js:
