@@ -1,22 +1,42 @@
-language: erlang
-otp_release:
-  - 20.3.8
-  - 20.3.8.22
+# We don't need sudo as such, but setting sudo: required allows us to run on
+# the faster machines which means that the builds complete much faster (in
+# about half the time). For comparison, here are two builds on the two
+# different machines:
+# - With `sudo: false`: https://travis-ci.org/opbeat/opbeat-node/builds/252301998
+# - With `sudo: required`: https://travis-ci.org/opbeat/opbeat-node/builds/252302576
+sudo: required
+dist: trusty
 
-matrix:
-  include:
-    - dist: trusty
-      env: DIST=trusty
-    - dist: xenial
-      env: DIST=xenial
+language: node_js
+
+services:
+  - mysql
+  - mongodb
+  - redis-server
+  - postgresql
+  - cassandra
+  
+cache:
+  - deb-cache
+  
+env:
+  global:
+    - ELASTICSEARCH_DEB_VERSION=6.0.6
+    - ELASTICSEARCH_DEB_PACKAGE=elasticsearch-${ELASTICSEARCH_DEB_VERSION}.deb
+
+before_install:
+  - |
+    if [ ! -f ./deb-cache/$ELASTICSEARCH_DEB_PACKAGE ]
+    then
+      curl -o ./deb-cache/$ELASTICSEARCH_DEB_PACKAGE https://artifacts.elastic.co/downloads/elasticsearch/$ELASTICSEARCH_DEB_PACKAGE
+    fi
+  - sudo dpkg -i --force-confnew ./deb-cache/elasticsearch-6.6.0.deb && sudo service elasticsearch restart
+
+node_js:
+  - '12'
 
 install: true
-script:
-  - erl -noshell -eval 'erlang:display(erlang:system_info(system_version))' -eval 'init:stop()'
-  - erl -eval 'erlang:display(erlang:system_info(otp_release)), halt().'  -noshell
-  - erl -eval '{ok, Version} = file:read_file(filename:join([code:root_dir(), "releases", erlang:system_info(otp_release), "OTP_VERSION"])), io:fwrite(Version), halt().' -noshell
-  - erl -noshell -eval 'io:fwrite("~s\n", [erlang:system_info(otp_release)]).' -s erlang halt
-  - rebar3 --version
+script: true
 
 notifications:
   email: false
