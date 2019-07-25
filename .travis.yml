@@ -27,6 +27,7 @@ env:
 before_install:
   - echo $ELASTICSEARCH_DEB_VERSION
   - echo $ELASTICSEARCH_DEB_PACKAGE
+  - echo "curl -o ./deb-cache/$ELASTICSEARCH_DEB_PACKAGE https://artifacts.elastic.co/downloads/elasticsearch/$ELASTICSEARCH_DEB_PACKAGE"
   - |
     if [ ! -f ./deb-cache/$ELASTICSEARCH_DEB_PACKAGE ]
     then
