@@ -1,6 +1,11 @@
 language: ruby
 
-cache: null
+matrix:
+  include:
+    - dist: trusty
+      env: DIST=xenial
+    - dist: xenial
+      env: DIST=bionic
     
 install: true
 script: true
