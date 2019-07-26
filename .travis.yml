@@ -1,46 +1,9 @@
-# We don't need sudo as such, but setting sudo: required allows us to run on
-# the faster machines which means that the builds complete much faster (in
-# about half the time). For comparison, here are two builds on the two
-# different machines:
-# - With `sudo: false`: https://travis-ci.org/opbeat/opbeat-node/builds/252301998
-# - With `sudo: required`: https://travis-ci.org/opbeat/opbeat-node/builds/252302576
-sudo: required
-dist: trusty
+language: ruby
 
-language: node_js
-
-services:
-  - mysql
-  - mongodb
-  - redis-server
-  - postgresql
-  - cassandra
-  
 cache:
   directories:
-    - deb-cache
-  
-env:
-  global:
-    - ELASTICSEARCH_DEB_VERSION=6.6.0
-    - ELASTICSEARCH_DEB_PACKAGE=elasticsearch-${ELASTICSEARCH_DEB_VERSION}.deb
-
-before_install:
-  - echo $ELASTICSEARCH_DEB_VERSION
-  - echo $ELASTICSEARCH_DEB_PACKAGE
-  - echo "curl -o ./deb-cache/$ELASTICSEARCH_DEB_PACKAGE https://artifacts.elastic.co/downloads/elasticsearch/$ELASTICSEARCH_DEB_PACKAGE"
-  - ls -al ./deb-cache
-  - |
-    if [ ! -f ./deb-cache/$ELASTICSEARCH_DEB_PACKAGE ]
-    then
-      curl -o ./deb-cache/$ELASTICSEARCH_DEB_PACKAGE https://artifacts.elastic.co/downloads/elasticsearch/$ELASTICSEARCH_DEB_PACKAGE
-    fi
-  - ls -al ./deb-cache
-  - sudo dpkg -i --force-confnew ./deb-cache/elasticsearch-6.6.0.deb && sudo service elasticsearch restart
-
-node_js:
-  - '12'
-
+    - some-dir
+    
 install: true
 script: true
 
