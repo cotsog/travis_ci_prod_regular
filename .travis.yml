@@ -1,8 +1,6 @@
 language: ruby
 
-cache:
-  directories:
-    - some-dir
+cache: null
     
 install: true
 script: true
