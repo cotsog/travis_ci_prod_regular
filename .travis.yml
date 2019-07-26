@@ -1,14 +1,25 @@
+dist: bionic
+sudo: required
 language: ruby
-
-matrix:
-  include:
-    - dist: trusty
-      env: DIST=xenial
-    - dist: xenial
-      env: DIST=bionic
-    
+cache:
+  directories:
+    - $HOME/.nvm/
+    - $HOME/.rvm/
+    - $HOME/build/RealHQ/agent_pronto_landing/node_modules
+    - $HOME/build/RealHQ/agent_pronto_landing/.cache/rubocop
+    - $HOME/build/RealHQ/agent_pronto_landing/public/packs-test
+    - $HOME/src/github.com/RealHQ/handshake
+rvm:
+  - 2.6.3
 install: true
 script: true
 
 notifications:
   email: false
+services:
+  - mysql
+  - redis-server
+addons:
+  firefox: latest
+before_install:
+  - export MOZ_HEADLESS=1
