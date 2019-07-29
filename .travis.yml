@@ -1,25 +1,8 @@
-dist: bionic
-sudo: required
-language: ruby
-cache:
-  directories:
-    - $HOME/.nvm/
-    - $HOME/.rvm/
-    - $HOME/build/RealHQ/agent_pronto_landing/node_modules
-    - $HOME/build/RealHQ/agent_pronto_landing/.cache/rubocop
-    - $HOME/build/RealHQ/agent_pronto_landing/public/packs-test
-    - $HOME/src/github.com/RealHQ/handshake
-rvm:
-  - 2.6.3
+language: java
+
 install: true
-script: true
+script:
+  - cat ~/.m2/settings.xml
 
 notifications:
   email: false
-services:
-  - mysql
-  - redis-server
-addons:
-  firefox: latest
-before_install:
-  - export MOZ_HEADLESS=1
