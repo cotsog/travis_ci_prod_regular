@@ -1,8 +1,14 @@
-language: java
+language: ruby
+
+matrix:
+  include:
+    - dist: trusty
+      env: DIST=trusty
+    - dist: xenial
+      env: DIST=xenial
 
 install: true
-script:
-  - cat ~/.m2/settings.xml
+script: true
 
 notifications:
   email: false
