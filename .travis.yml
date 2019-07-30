@@ -1,13 +1,20 @@
-language: ruby
+dist: trusty
 
-matrix:
-  include:
-    - dist: trusty
-      env: DIST=trusty
-    - dist: xenial
-      env: DIST=xenial
+language: node_js
+node_js:
+  - "12.7.0"
 
-install: true
+services:
+  - docker
+
+cache:
+  directories:
+    - node_modules
+    - ~/.npm
+
+install:
+  - npm ci
+  
 script: true
 
 notifications:
