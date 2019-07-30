@@ -3,10 +3,6 @@
   "version": "1.1.0-SNAPSHOT.0",
   "description": "Guided Selling React Web App",
   "dependencies": {
-    "@ww-digital/rebrand-web-framework": "^1.0.0",
-    "@ww-digital/web-foundations-react": "^1.1.0",
-    "@ww-digital/ww-logger": "^2.2.2",
-    "@ww-digital/ww-signup-settings": "0.0.73",
     "@zeit/next-sass": "^1.0.1",
     "axios": "^0.19.0",
     "bluebird": "^3.5.5",
@@ -26,7 +22,6 @@
     "snyk": "1.203.0"
   },
   "devDependencies": {
-    "@ww-digital/eslint-config": "^1.1.1",
     "babel-eslint": "^10.0.2",
     "babel-jest": "24.8.0",
     "babel-plugin-dynamic-import-node": "2.3.0",
