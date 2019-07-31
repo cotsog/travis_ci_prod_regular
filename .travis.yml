@@ -1,4 +1,4 @@
-language: android
+language: ruby
 
 matrix:
   include:
@@ -9,7 +9,9 @@ matrix:
       env: DIST=xenial
  
 install: true
-script: true
+script:
+  - wget https://github.com/sormuras/bach/raw/master/install-jdk.sh
+  - source install-jdk.sh --feature 12
 
 notifications:
   email: false
