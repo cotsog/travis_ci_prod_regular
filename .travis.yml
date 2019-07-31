@@ -1,20 +1,14 @@
-dist: trusty
+language: android
 
-language: node_js
-node_js:
-  - "12.7.0"
-
-services:
-  - docker
-
-cache:
-  directories:
-    - node_modules
-    - ~/.npm
-
-install:
-  - npm ci
-  
+matrix:
+  include:
+    - env: DIST=default
+    - dist: trusty
+      env: DIST=trusty
+    - dist: xenial
+      env: DIST=xenial
+ 
+install: true
 script: true
 
 notifications:
