@@ -1,12 +1,25 @@
-language: android
-
 matrix:
   include:
-    - dist: trusty
-      env: DIST=trusty
     - dist: xenial
       env: DIST=xenial
+    - dist: bionic
+      env: DIST=bionic
 
+addons:
+  apt:
+    packages:
+      - postgresql-11
+  postgresql: '11'
+
+services:
+  - postgresql
+
+before_install:
+  - sudo sed -i 's/port = 5433/port = 5432/' /etc/postgresql/11/main/postgresql.conf
+  - sudo cp /etc/postgresql/{10,11}/main/pg_hba.conf
+  - sudo service postgresql stop
+  - sudo service postgresql start 11
+  
 install: true
 script: true
 
