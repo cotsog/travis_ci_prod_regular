@@ -21,7 +21,7 @@ before_install:
   - sudo service postgresql start 11
   
 install: true
-script: true
+script: echo "Foo!"
 
 notifications:
   email: false
