@@ -1,9 +1,13 @@
-language: objective-c
+language: ruby
 
-osx_image: xcode10.3
+jobs:
+  include:
+    - stage: test
+      after_script: echo "test stage after_script"
 
 install: true
 script: true
+after_script: echo "root after_script"
 
 notifications:
   email: false
