@@ -5,11 +5,10 @@ rvm:
   - 2.4
 
 env:
-  global:
-    - GEM_FILE=gemfiles/rails_4.2.gemfile
-    - GEM_FILE=gemfiles/rails_5.0.gemfile
-    - GEM_FILE=gemfiles/rails_5.1.gemfile
-    - GEM_FILE=gemfiles/rails_5.2.gemfile
+  - GEM_FILE=gemfiles/rails_4.2.gemfile
+  - GEM_FILE=gemfiles/rails_5.0.gemfile
+  - GEM_FILE=gemfiles/rails_5.1.gemfile
+  - GEM_FILE=gemfiles/rails_5.2.gemfile
 
 stages:
   # We want to test each and every branch.
@@ -44,3 +43,6 @@ jobs:
       install: echo "release-docs install"
       script: echo "release-docs script"
       after_script: true
+      
+install: echo "root install"
+script: echo "root script"
