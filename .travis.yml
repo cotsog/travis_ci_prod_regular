@@ -2,8 +2,10 @@ language: ruby
 
 jobs:
   include:
-    - stage: test
-      after_script: echo "test stage after_script"
+    - stage: test1
+      after_script: echo "test1 stage after_script"
+    - stage: test2
+      after_script: echo "test2 stage after_script"
 
 install: true
 script: true
