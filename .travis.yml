@@ -1,15 +1,46 @@
 language: ruby
+rvm:
+  - 2.6
+  - 2.5
+  - 2.4
+
+env:
+  global:
+    - GEM_FILE=gemfiles/rails_4.2.gemfile
+    - GEM_FILE=gemfiles/rails_5.0.gemfile
+    - GEM_FILE=gemfiles/rails_5.1.gemfile
+    - GEM_FILE=gemfiles/rails_5.2.gemfile
+
+stages:
+  # We want to test each and every branch.
+  - name: test
+    if: NOT tag =~ .*
+  # We just want docs generation on the master branch.
+  - name: docs
+    if: branch = master AND type IN (push, api)
+  # After a new tag was released, we build the docs.
+  - name: release-docs
+    if: tag =~ .* AND type IN (push, api)
 
 jobs:
   include:
-    - stage: test1
-      after_script: echo "test1 stage after_script"
-    - stage: test2
-      after_script: echo "test2 stage after_script"
+    # Test Build
+    - &test
+      stage: test
+      install: echo "test install"
+      script: time make test
+      after_script: echo "codeclimate"
 
-install: true
-script: true
-after_script: echo "root after_script"
+    # Documentation Build
+    - <<: *test
+      stage: docs
+      install: echo "docs install"
+      script: echo "docs script"
+      after_script: "docs after_script"
 
-notifications:
-  email: false
+    # Documentation Build
+    - <<: *test
+      stage: release-docs
+      install: echo "release-docs install"
+      script: echo "release-docs script"
+      after_script: true
