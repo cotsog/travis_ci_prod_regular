@@ -1,17 +1,9 @@
-language: ruby
+language: objective-c
 
-matrix:
-  include:
-    - dist: trusty
-      env: DIST=trusty
-    - dist: xenial
-      env: DIST=xenial
+osx_image: xcode10.3
 
 install: true
-script:
-  - sudo cat /etc/docker/daemon.json
-  - echo '{"mtu": 1460}' | sudo tee /etc/docker/daemon.json
-  - sudo systemctl restart docker
-  
+script: true
+
 notifications:
   email: false
