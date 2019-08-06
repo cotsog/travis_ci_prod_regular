@@ -1,9 +1,16 @@
-language: objective-c
+language: java
 
-osx_image: xcode10.3
+matrix:
+  include:
+    - dist: trusty
+      env: DIST=trusty
+    - dist: xenial
+      env: DIST=xenial
+    - dist: bionic
+      env: DIST=bionic
 
 install: true
-script: true
+script: ant
 
 notifications:
   email: false
