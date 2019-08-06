@@ -10,7 +10,8 @@ matrix:
       env: DIST=bionic
 
 install: true
-script: ant
+script:
+  - curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -
 
 notifications:
   email: false
