@@ -2,7 +2,7 @@ language: java
 
 install: true
 script:
-  - echo '{"dns": ["10.0.0.2", "8.8.8.8"]}' | sudo tee /etc/docker/daemon.json
+  - echo '{"dns":["10.0.0.2","8.8.8.8"]}' | sudo tee /etc/docker/daemon.json
   - sudo service docker restart
 notifications:
   email: false
