@@ -1,8 +1,17 @@
 language: ruby
 
+matrix:
+  include:
+    - dist: trusty
+      env: DIST=trusty
+    - dist: xenial
+      env: DIST=xenial
+
 install: true
 script:
-  - travis_retry curl https://api.nuget.org/v3-flatcontainer/microsoft.aspnetcore.applicationinsights.hostingstartup/index.json
-
+  - cat /etc/docker/daemon.json
+  - echo '{"mtu": 1460}' | sudo tee /etc/docker/daemon.json
+  - sudo systemctl restart docker
+  
 notifications:
   email: false
