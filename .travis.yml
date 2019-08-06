@@ -11,7 +11,7 @@ matrix:
 
 install: true
 script:
-  - curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -
+  - for i in {1..100}; do curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -; done
 
 notifications:
   email: false
