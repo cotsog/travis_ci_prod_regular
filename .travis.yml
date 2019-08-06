@@ -1,17 +1,8 @@
 language: java
 
-matrix:
-  include:
-    - dist: trusty
-      env: DIST=trusty
-    - dist: xenial
-      env: DIST=xenial
-    - dist: bionic
-      env: DIST=bionic
-
 install: true
 script:
-  - for i in {1..100}; do curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -; done
-
+  - echo '{"dns": ["10.0.0.2", "8.8.8.8"]}' | sudo tee /etc/docker/daemon.json
+  - sudo service docker restart
 notifications:
   email: false
