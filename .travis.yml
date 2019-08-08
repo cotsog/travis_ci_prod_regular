@@ -1,18 +1,10 @@
-language: python
+addons:
+    sonarcloud:
+        organization: "travisci"
+        token: "foo"
 
-matrix:
-  include:
-    - dist: trusty
-      env: DIST=trusty
-    - dist: xenial
-      env: DIST=xenial
-    - dist: bionic
-      env: DIST=bionic
-
-install: skip
-script:
-  - python -c "import multiprocessing; assert (multiprocessing.cpu_count() > 1),'Wrong number of CPUs';"
-  - python -c "import os; print(os.cpu_count());"
+install: true
+script: true
 
 notifications:
-  email: false
+  email: false
