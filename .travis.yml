@@ -11,7 +11,7 @@ matrix:
 
 install: skip
 script:
-  - python -c "import multiprocessing; assert (multiprocessing.cpu_count() > 2),'Wrong number of CPUs';"
+  - python -c "import multiprocessing; assert (multiprocessing.cpu_count() > 1),'Wrong number of CPUs';"
   - python -c "import os; print(os.cpu_count());"
 
 notifications:
