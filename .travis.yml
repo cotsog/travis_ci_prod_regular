@@ -1,6 +1,9 @@
+language: php
+
 install: true
 script:
-  - for i in {1..100}; do curl -s -o /dev/null -I -w "%{http_code}" http://apidocs.typeform.tf/swagger.json; done
+  - php -i
+  - php -r "phpinfo();"
 
 notifications:
   email: false
