@@ -1,9 +1,16 @@
-language: java
+language: python
 
-install: true
-script:
-  - sudo apt-get install -y speedtest-cli
-  - for i in {1..100}; do speedtest-cli; done
+matrix:
+  include:
+    - dist: trusty
+      env: DIST=trusty
+    - dist: xenial
+      env: DIST=xenial
+    - dist: bionic
+      env: DIST=bionic
+
+install: skip
+script: python -c 'import multiprocessing;print multiprocessing.cpu_count()'
 
 notifications:
-  email: false
+  email: false
