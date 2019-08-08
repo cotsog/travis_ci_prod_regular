@@ -10,7 +10,9 @@ matrix:
       env: DIST=bionic
 
 install: skip
-script: python -c 'import multiprocessing;print multiprocessing.cpu_count()'
+script:
+  - python -c "import multiprocessing; print(multiprocessing.cpu_count());"
+  - python -c "import os; print(os.cpu_count());"
 
 notifications:
   email: false
