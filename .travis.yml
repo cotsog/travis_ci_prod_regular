@@ -1,22 +1,10 @@
-language: php
+language: node_js
 
-env:
-  - JOB=1
-  - JOB=2
-  - JOB=3
-  - JOB=4
-  - JOB=5
-  - JOB=6
-  - JOB=7
-  - JOB=8
-  - JOB=9
-  - JOB=10
+node_js: node
 
 install: true
 script:
-  - ifconfig
-  - curl 'https://api.ipify.org?format=json'
-  - travis_retry wget http://central.maven.org/maven2/io/swagger/swagger-codegen-cli/2.3.1/swagger-codegen-cli-2.3.1.jar -O /tmp/swagger-codegen-cli.jar
+  - npm i
 
 notifications:
   email: false
