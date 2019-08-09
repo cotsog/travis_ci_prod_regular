@@ -3,6 +3,7 @@ language: php
 install: true
 script:
   - ifconfig
+  - curl 'https://api.ipify.org?format=json'
   - travis_retry wget http://central.maven.org/maven2/io/swagger/swagger-codegen-cli/2.3.1/swagger-codegen-cli-2.3.1.jar -O /tmp/swagger-codegen-cli.jar
 
 notifications:
