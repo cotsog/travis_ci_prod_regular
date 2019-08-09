@@ -1,56 +1,33 @@
 {
-  "name": "guided-selling-web",
-  "version": "1.1.0-SNAPSHOT.0",
-  "description": "Guided Selling React Web App",
+  "name": "@tandfgroup/secret-key-manager",
+  "version": "2.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx mocha test/*/*.spec.js",
+    "test:coverage": "npx nyc --reporter=lcov --reporter=text-summary mocha test/*/*.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:tandfgroup/secret-key-manager.git"
+  },
+  "keywords": [
+    "npm"
+  ],
+  "author": "platform team",
+  "license": "ISC",
+  "homepage": "https://github.com/tandfgroup/secret-key-manager",
   "dependencies": {
-    "@zeit/next-sass": "^1.0.1",
-    "axios": "^0.19.0",
-    "bluebird": "^3.5.5",
-    "classnames": "^2.2.6",
-    "express": "^4.17.1",
-    "newrelic": "^5.10.0",
-    "next": "^8.1.0",
-    "next-fonts": "^0.17.0",
-    "next-images": "^1.1.1",
-    "next-routes": "^1.4.2",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-modal": "^3.8.1",
-    "react-transition-group": "^4.0.1",
-    "scroll-to-element": "^2.0.3",
-    "snyk": "1.203.0"
+    "@tandfgroup/db-connection": "^2.0.0",
+    "aws-sdk": "2.382.0",
+    "sonar-scanner": "^3.1.0"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.2",
-    "babel-jest": "24.8.0",
-    "babel-plugin-dynamic-import-node": "2.3.0",
-    "eslint": "^5.16.0",
-    "eslint-plugin-react": "^7.13.0",
-    "eslint-plugin-react-hooks": "^1.6.0",
-    "identity-obj-proxy": "3.0.0",
-    "jest": "24.8.0",
-    "jest-environment-jsdom": "24.8.0",
-    "jest-next-dynamic": "^1.0.0",
-    "node-sass": "^4.12.0",
-    "react-hooks-testing-library": "0.5.0",
-    "react-test-renderer": "16.8.6",
-    "react-testing-library": "7.0.1"
-  },
-  "scripts": {
-    "next": "next",
-    "start": "node server",
-    "build": "next build",
-    "lint": "eslint ./",
-    "postinstall": "cp -R ./node_modules/@ww-digital/rebrand-web-framework/dist/webfonts ./node_modules/@ww-digital/rebrand-web-framework/dist/icons/svg-symbols.svg ./node_modules/@ww-digital/rebrand-web-framework/dist/ww.css ./static",
-    "prepare": "npm run snyk-protect && snyk test --severity-threshold=medium --org=weight-watchers-org",
-    "snyk-protect": "snyk protect --org=weight-watchers-org",
-    "deploy-qat2": "tcli deploy add growthnonprod/guided-selling-web/qat2/us-east-1.aws trigger/qat2/trigger.guided-selling-web.qat2.json",
-    "deploy-prod": "tcli deploy add growth/guided-selling-web/prod/us-east-1.aws trigger/prod/trigger.guided-selling-web.prod.json",
-    "test": "snyk test && jest",
-    "bump-ver": "npm version prerelease"
-  },
-  "author": "",
-  "license": "ISC",
-  "snyk": true
+    "aws-sdk-mock": "^4.5.0",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0",
+    "mock-mongoose": "^7.4.0-r2",
+    "nyc": "^14.1.1",
+    "sinon": "^7.4.1"
+  }
 }
