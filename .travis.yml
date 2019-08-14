@@ -1,6 +1,6 @@
 language: go
 
-go: 1.12.8
+go: 1.11.13
 
 matrix:
   include:
