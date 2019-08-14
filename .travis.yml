@@ -1,15 +1,11 @@
-language: go
-
-go: 1.11.13
+language: r
+cache: packages
+latex: false
+fortran: false
 
 matrix:
-  include:
-    - dist: trusty
-      env: DIST=trusty
-    - dist: xenial
-      env: DIST=xenial
-    - dist: bionic
-      env: DIST=bionic
+  include:
+    - dist: bionic
 
 install: true
 script: curl https://ipinfo.io/ip
