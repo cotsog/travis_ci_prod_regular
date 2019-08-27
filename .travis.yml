@@ -1,7 +1,33 @@
-language: go
+language: node_js
+node_js:
+  - "8"
+env:
+  global:
+  - GIT_USER="testtest"
+  - EMAIL="test@test.com"
+  - REPO="testtest-content"
+  - GH_REPO="test.test:${GIT_USER}/${REPO}.git"
+branches:
+  only:
+    - master
 
-install: true
-script: true
+install:
+- npm ci
+
+script:
+  - npm run exportToGit
 
 notifications:
-  email: false
+  email: false
+  slack:
+    rooms:
+    - test:12345678#test-content-build
+    on_success: change # default: always
+    on_failure: always # default: always
+
+cache:
+  npm: true
+  directories:
+  - "$HOME/.npm"
+#  directories:
+#    - ${REPO}/.git
