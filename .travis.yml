@@ -1,33 +1,20 @@
-language: node_js
-node_js:
-  - "8"
-env:
-  global:
-  - GIT_USER="testtest"
-  - EMAIL="test@test.com"
-  - REPO="testtest-content"
-  - GH_REPO="test.test:${GIT_USER}/${REPO}.git"
-branches:
-  only:
-    - master
+install: true
+script: true
+cache:
+  directories:
+    - elasticsearch-package
 
-install:
-- npm ci
-
-script:
-  - npm run exportToGit
+before_install:
+  - |
+    if [ ! -f ./elasticsearch-package/elasticsearch-6.7.2.deb ]
+    then
+      mkdir elasticsearch-package || true
+      pushd elasticsearch-package
+      curl -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.7.2.deb
+      popd
+    fi
+  - cp ./elasticsearch-package/elasticsearch-6.7.2.deb .
+  - sudo dpkg -i --force-confnew elasticsearch-6.7.2.deb && sudo chown elasticsearch.elasticsearch /etc/default/elasticsearch && sudo service elasticsearch restart
 
 notifications:
-  email: false
-  slack:
-    rooms:
-    - test:12345678#test-content-build
-    on_success: change # default: always
-    on_failure: always # default: always
-
-cache:
-  npm: true
-  directories:
-  - "$HOME/.npm"
-#  directories:
-#    - ${REPO}/.git
+  email: false
