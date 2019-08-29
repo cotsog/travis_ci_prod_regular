@@ -1,20 +1,24 @@
+dist: bionic
+
+language: python
+
+services:
+  - memcached
+  - redis-server
+
+addons:
+  postgresql: "9.6"
+  apt:
+    update: true
+    sources:
+      - google-chrome
+    packages:
+      - libxmlsec1-dev
+      - libgeoip-dev
+      - google-chrome-stable
+
 install: true
 script: true
-cache:
-  directories:
-    - elasticsearch-package
-
-before_install:
-  - |
-    if [ ! -f ./elasticsearch-package/elasticsearch-6.7.2.deb ]
-    then
-      mkdir elasticsearch-package || true
-      pushd elasticsearch-package
-      curl -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.7.2.deb
-      popd
-    fi
-  - cp ./elasticsearch-package/elasticsearch-6.7.2.deb .
-  - sudo dpkg -i --force-confnew elasticsearch-6.7.2.deb && sudo chown elasticsearch.elasticsearch /etc/default/elasticsearch && sudo service elasticsearch restart
 
 notifications:
   email: false
