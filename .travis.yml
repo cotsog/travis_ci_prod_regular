@@ -1,9 +1,14 @@
 language: ruby
 rvm: 1.9.3
 
+matrix:
+  include:
+    - dist: trusty
+      env: DIST=trusty
+
 install: true
 script:
-  - gem install gpgme --source 'https://rubygems.org/'
+  - gem install gpgme -v '2.0.2' --source 'https://rubygems.org/'
   - cat /home/travis/.rvm/gems/ruby-1.9.3-p551/extensions/x86_64-linux/1.9.1/gpgme-2.0.2/mkmf.log
 
 notifications:
