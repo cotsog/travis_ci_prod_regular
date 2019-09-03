@@ -1,11 +1,19 @@
-language: swift
-osx_image: xcode10.3
+language: java
+dist: trusty
+
+jdk:
+  - openjdk13
+  - oraclejdk12
+  - openjdk12
+  - oraclejdk11
+  - openjdk11
+  - openjdk10
+  - openjdk9
+  - openjdk8
+  - openjdk7
 
 install: true
-script:
-  - bundle --version
-  - travis_retry gem install bundler -v '2.0.1'
-  - bundle --version
+script: java -version
 
 notifications:
   email: false
