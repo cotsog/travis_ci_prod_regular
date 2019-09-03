@@ -1,27 +1,11 @@
-language: java
-
-matrix:
-  include:
-    - dist: trusty
-      env: DIST=trusty
-    - dist: xenial
-      env: DIST=xenial
-    - dist: bionic
-      env: DIST=bionic
-
-jdk:
-  - openjdk13
-  - oraclejdk12
-  - openjdk12
-  - oraclejdk11
-  - openjdk11
-  - openjdk10
-  - openjdk9
-  - openjdk8
-  - openjdk7
+language: swift
+osx_image: xcode10.3
 
 install: true
-script: true
+script:
+  - bundle --version
+  - travis_retry gem install bundler -v '2.0.1'
+  - bundle --version
 
 notifications:
   email: false
