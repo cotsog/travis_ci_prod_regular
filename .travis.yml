@@ -1,15 +1,27 @@
-language: ruby
-rvm: 1.9.3
+language: java
 
 matrix:
   include:
     - dist: trusty
       env: DIST=trusty
+    - dist: xenial
+      env: DIST=xenial
+    - dist: bionic
+      env: DIST=bionic
+
+jdk:
+  - openjdk13
+  - oraclejdk12
+  - openjdk12
+  - oraclejdk11
+  - openjdk11
+  - openjdk10
+  - openjdk9
+  - openjdk8
+  - openjdk7
 
 install: true
-script:
-  - gem install gpgme -v '2.0.2' --source 'https://rubygems.org/'
-  - cat /home/travis/.rvm/gems/ruby-1.9.3-p551/extensions/x86_64-linux/1.9.1/gpgme-2.0.2/mkmf.log
+script: true
 
 notifications:
   email: false
