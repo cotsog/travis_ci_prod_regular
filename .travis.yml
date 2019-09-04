@@ -1,19 +1,22 @@
-language: java
-dist: trusty
+dist: bionic
 
-jdk:
-  - openjdk13
-  - oraclejdk12
-  - openjdk12
-  - oraclejdk11
-  - openjdk11
-  - openjdk10
-  - openjdk9
-  - openjdk8
-  - openjdk7
+language: python
+python: 3.7
+
+addons:
+  apt:
+    packages:
+      - postgresql-11
+  postgresql: 11
+
+services:
+  - postgresql
+
+before_install:
+  - sudo sed -i 's/port = 5433/port = 5432/' /etc/postgresql/11/main/postgresql.conf
+  - sudo cp /etc/postgresql/{10,11}/main/pg_hba.conf
+  - sudo service postgresql stop
+  - sudo service postgresql start 11
 
 install: true
-script: java -version
-
-notifications:
-  email: false
+script: true
