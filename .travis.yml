@@ -1,25 +1,13 @@
-dist: bionic
+dist: xenial
 
 language: python
-python: 3.7
-
-addons:
-  apt:
-    packages:
-      - postgresql-11
-      - postgresql-client-11
-  postgresql: 11
-
-services:
-  - postgresql
+python: 3.6
 
 before_install:
-  - sudo sed -i 's/port = 5433/port = 5432/' /etc/postgresql/11/main/postgresql.conf
-  - sudo cp /etc/postgresql/{9.6,11}/main/pg_hba.conf
-  - sudo service postgresql stop
-  - sudo service postgresql start 11
+  - "echo \"unittest2\" > requirements.txt"
+  
+install:
+  - pip install -r requirements.txt
 
-install: true
 script:
-  - psql --version
-  - psql -c 'SELECT version()'
+  - python -m unittest
