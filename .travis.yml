@@ -21,6 +21,5 @@ before_install:
 
 install: true
 script:
-  - psql -c 'CREATE DATABASE myapp_test;' -U postgres
-  - psql -c 'CREATE ROLE travis SUPERUSER LOGIN CREATEDB;' -U postgres
-  - cp config/database.travis.yml config/database.yml
+  - pg_config --version
+  - psql --version
