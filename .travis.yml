@@ -1,13 +1,33 @@
-language: python
-
-dist: bionic
-
-python:
-  - 3.4
-  - 3.5
-  
-install: true
+language: node_js
+node_js:
+- 10.16.0
+- 12.7.0
+sudo: false
+cache: npm
+notifications:
+  email: false
+addons:
+  mariadb: 10.4
+services:
+- redis-server
+before_script:
+- sudo mysql -e "CREATE DATABASE TempstickTests;"
+- sudo mysql -e "CREATE USER 'travis'@'localhost';"
+- sudo mysql -e "GRANT ALL PRIVILEGES ON *.* TO 'travis'@'localhost';";
 script: true
 
-notifications:
-  email: false
+jobs:
+  include:
+    - script: skip
+      deploy:
+        provider: elasticbeanstalk
+        access_key_id: AKIA6KQOB6XUY436O2S4
+        secret_access_key:
+          secure: b4L+mneC4XYRu4NfgoL9EYSb6lX4qCfB/KEB1WHI+9Qzrvluw547jQ4H6cJ6T/teFqmo4HHvhf/E7yMyFMwajHw9O/gSIe8cdc2MIdwg3MqHikwXFY/xwF8VmthAUTEr97ypmkmAnmU5FhhYW+9PWeuOogQnLeGb0Wv4/dPYUqCo3ElAmsvKmjU4xTJPYtxhe3fIr/YaYXLuaDIBqHvOlFiEJ0FX13xtXa+mJrpM8Jt8lznXEle3mR/9hkVjYkHkj9HlwGm7hMCIooC1+FCLx0tKXjf5p0mn+WLrxjc1SUX8h/BcH5ZxtZdbljaYwkQgFUp1dxhTv/Vgjw6EKcl9oO5tJNboyBqLJsCf8qYdUoMC0mtRp9lqQcJHWOqYPciScDqC7cjBDI+7aCM3OaOUnqGra+EGFm89xaSBU2shUVGmbrhFlnBnuUcyIcchetiBAjG3mkNWln0yHGsZgAh98OhwlpzwpMUhBOYP/dPvsyAPAELDp3MtiuMiyO15mLml/g2RsfYu1i8W4yHxfXr0gp0HnAKJzbly7iut570Xrl+7HxbU2XWbZAxmGiQdasRCK4FrCiAWgLfP6jcqRulewb3vV5dD9m39Nz7IdEr1c3UsTyXSBKzoKfm75IbjbRKHdGc+9hCeyga0Rq7PQru3strwoLsRN1bS5Zlfje6REh0=
+        region: us-west-1
+        app: tempstick-api-EBApplication-11SB89LH147L5
+        env: temp-EBEn-GNHJGB8KEUJP
+        bucket_name: elasticbeanstalk-us-west-1-984650741225
+        on:
+        repo: idealsciences/tempstick-api
+        branch: master
