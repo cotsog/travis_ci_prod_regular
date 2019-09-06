@@ -16,7 +16,8 @@ android:
 install: true
 
 before_script:
-- echo no | android create avd --force -n test -t android-19 --abi armeabi-v7a -c 100M
+# - echo no | android create avd --force -n test -t android-19 --abi armeabi-v7a -c 100M
+- echo no | android create avd --force -n test --abi "armeabi-v7a" -t android-19 --device "3.2in QVGA (ADP2)"
 - emulator -avd test -no-audio -no-window &
 - android-wait-for-emulator
 - adb shell input keyevent 82 &
