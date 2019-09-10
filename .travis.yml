@@ -1,16 +1,33 @@
-matrix:
-  include:
-    - dist: trusty
-      env: DIST=trusty
-    - dist: xenial
-      env: DIST=xenial
-    - dist: bionic
-      env: DIST=bionic
-      
+dist: trusty
+sudo: false
+language: elixir
+elixir:
+  - 1.6.6
+otp_release:
+  - 20.1
+jdk:
+  - oraclejdk8
+env:
+  global:
+    - export JOB_COUNT=5
+    - export MIX_ENV=test
+    - export MIGRATE=true
+    - export TRAVIS_PGSQL_PORT=5433
+    - export TRAVIS_PGSQL_PASSWORD=postgres
+addons:
+  postgresql: "10"
+  apt:
+    packages:
+      - google-chrome-stable
+      - postgresql-10
+      - postgresql-client-10
+      - xz-utils
+services:
+  - redis-server
+  - docker
+
 install: true
-script:
-  - sudo apt-get update
-  - sudo -E apt-get -yq --no-install-suggests --no-install-recommends $(travis_apt_get_options) install google-chrome-stable
+script: true
 
 notifications:
   email: false
