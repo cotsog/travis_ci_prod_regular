@@ -1,17 +1,15 @@
-sudo: required
-
-env:
-  - ORACLE_HOME=/u01/app/oracle/product/11.2.0/xe ORACLE_SID=XE
-
-before_install:
-  - wget https://raw.githubusercontent.com/Vincit/travis-oracledb-xe/master/accept_the_license_agreement_for_oracledb_xe_11g_and_install.sh
-  - bash ./accept_the_license_agreement_for_oracledb_xe_11g_and_install.sh
-  
+matrix:
+  include:
+    - dist: trusty
+      env: DIST=trusty
+    - dist: xenial
+      env: DIST=xenial
+    - dist: bionic
+      env: DIST=bionic
+      
 install: true
 script:
-  - export ORACLE_HOME=/u01/app/oracle/product/11.2.0/xe
-  - echo "select * from v$timezone_file;" | $ORACLE_HOME/bin/sqlplus -s travis/travis @host:1521/service
-  - $ORACLE_HOME/bin/genezi -v
+  - sudo -E apt-get -yq --no-install-suggests --no-install-recommends $(travis_apt_get_options) install google-chrome-stable
 
 notifications:
   email: false
