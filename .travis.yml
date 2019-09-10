@@ -9,6 +9,7 @@ matrix:
       
 install: true
 script:
+  - sudo apt-get update
   - sudo -E apt-get -yq --no-install-suggests --no-install-recommends $(travis_apt_get_options) install google-chrome-stable
 
 notifications:
