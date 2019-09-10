@@ -9,8 +9,9 @@ before_install:
   
 install: true
 script:
-  - echo "select * from v$timezone_file;" | sqlplus -s travis/travis @host:1521/service
-  - genezi -v
+  - export ORACLE_HOME=/u01/app/oracle/product/11.2.0/xe
+  - echo "select * from v$timezone_file;" | $ORACLE_HOME/bin/sqlplus -s travis/travis @host:1521/service
+  - $ORACLE_HOME/bin/genezi -v
 
 notifications:
   email: false
