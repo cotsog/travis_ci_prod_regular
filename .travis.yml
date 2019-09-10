@@ -8,7 +8,9 @@ before_install:
   - bash ./accept_the_license_agreement_for_oracledb_xe_11g_and_install.sh
   
 install: true
-script: true
+script:
+  - echo "select * from v$timezone_file;" | sqlplus -s travis/travis @host:1521/service
+  - genezi -v
 
 notifications:
   email: false
