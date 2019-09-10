@@ -15,13 +15,9 @@ env:
     - export TRAVIS_PGSQL_PORT=5433
     - export TRAVIS_PGSQL_PASSWORD=postgres
 addons:
-  postgresql: "10"
   apt:
     packages:
       - google-chrome-stable
-      - postgresql-10
-      - postgresql-client-10
-      - xz-utils
 services:
   - redis-server
   - docker
