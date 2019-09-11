@@ -1,25 +1,3 @@
-language: elixir
-elixir:
-  - 1.6.6
-otp_release:
-  - 20.1
-jdk:
-  - oraclejdk8
-env:
-  global:
-    - export JOB_COUNT=5
-    - export MIX_ENV=test
-    - export MIGRATE=true
-    - export TRAVIS_PGSQL_PORT=5433
-    - export TRAVIS_PGSQL_PASSWORD=postgres
-addons:
-  apt:
-    packages:
-      - google-chrome-stable
-services:
-  - redis-server
-  - docker
-
 matrix:
   include:
     - dist: trusty
@@ -28,6 +6,8 @@ matrix:
       env: DIST=xenial
     - dist: bionic
       env: DIST=bionic
+
+language: smalltalk
 
 install: true
 script: true
