@@ -1,15 +1,9 @@
-# change
-language: node_js
-node_js:
-  - "8"
-sudo: required
-dist: trusty
-services:
-  - docker
+os: freebsd
+dist: freebsd
+language: sh
 
-before_install:
-  - openssl aes-256-cbc -K $encrypted_1f5bbc1408e8_key -iv $encrypted_1f5bbc1408e8_iv -in hello.txt.enc -out hello.txt -d
+install: true
+script: true
 
-install: skip
-script:
-  - cat hello.txt
+notifications:
+  email: false
