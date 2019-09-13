@@ -1,5 +1,11 @@
 language: python
 
+addons:
+  apt:
+    packages:
+      - unixodbc
+      - unixodbc-dev
+
 install: true
 script:
   - pip install pyodbc
