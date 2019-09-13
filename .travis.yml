@@ -1,10 +1,17 @@
-language: generic
+language: python
 
-os:
-  - osx
+python:
+  - 3.6
 
-install: true
-script: python -V
+matrix:
+  include:
+    - env: PURPOSE=BUILD_DEB
+      install: true
+      script: true
+
+    - env: PURPOSE=BUILD_DOCKER
+      install: true
+      script: true
 
 notifications:
   email: false
