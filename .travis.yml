@@ -7,12 +7,9 @@ dist: trusty
 services:
   - docker
 
-install:
-# Install latest docker
-  - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-  - sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-  - sudo apt-get update
-  - sudo apt-get -y install docker-ce
-  - docker --version
+before_install:
+  - openssl aes-256-cbc -K $encrypted_1f5bbc1408e8_key -iv $encrypted_1f5bbc1408e8_iv -in hello.txt.enc -out hello.txt -d
 
-script: skip
+install: skip
+script:
+  - cat hello.txt
