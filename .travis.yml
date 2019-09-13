@@ -1,9 +1,8 @@
-os: freebsd
-dist: freebsd
-language: sh
+language: python
 
 install: true
-script: true
+script:
+  - pip install pyodbc
 
 notifications:
   email: false
