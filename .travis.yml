@@ -1,15 +1,10 @@
-language: python
-
-python:
-  - 3.6
-  - 3.7
-  - nightly
+language: generic
 
 os:
   - osx
 
 install: true
-script: true
+script: python -V
 
 notifications:
   email: false
