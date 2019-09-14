@@ -1,17 +1,12 @@
-language: python
+language: objective-c
 
-python:
-  - 3.6
-
-matrix:
-  include:
-    - env: PURPOSE=BUILD_DEB
-      install: true
-      script: true
-
-    - env: PURPOSE=BUILD_DOCKER
-      install: true
-      script: true
+osx_image:
+  - xcode10.3
+  - xcode11
+  
+install: true
+script:
+  - mdls -name kMDItemVersion /Applications/Safari.app/
 
 notifications:
   email: false
