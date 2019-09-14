@@ -7,6 +7,7 @@ osx_image:
 install: true
 script:
   - mdls -name kMDItemVersion /Applications/Safari.app/
+  - sleep 10
 
 notifications:
   email: false
