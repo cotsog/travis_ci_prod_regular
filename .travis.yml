@@ -1,13 +1,6 @@
-language: objective-c
-
-osx_image:
-  - xcode10.3
-  - xcode11
-  
 install: true
 script:
-  - mdls -name kMDItemVersion /Applications/Safari.app/
-  - sleep 10
+  - ping apt.postgresql.org -c 1
 
 notifications:
   email: false
