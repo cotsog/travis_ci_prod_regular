@@ -4,6 +4,7 @@ addons:
   homebrew:
     packages:
       - beanstalk
+    update: true
       
 install: true
 script: true
