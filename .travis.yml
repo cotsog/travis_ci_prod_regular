@@ -1,10 +1,20 @@
-language: objective-c
+language: generic
+before_install:
+  - gem uninstall -i $(rvm gemdir)@global -ax bundler || true
+  - gem install bundler -v 1.15.2 --no-rdoc --no-ri
 
-addons:
-  homebrew:
-    packages:
-      - beanstalk
-    update: true
-      
-install: true
-script: true
+install:
+  - bundle _1.15.2_ -v
+  - bundle _1.15.2_ install --path vendor/bundle
+  
+matrix:
+  include:
+  -
+    language: ruby
+    script: true
+  -
+    language: ruby
+    script: true
+  -
+    language: ruby
+    script: true
