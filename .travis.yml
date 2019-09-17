@@ -1,3 +1,8 @@
+language: node_js
+node_js: "lts/*"
+
+cache: npm
+
 install: true
 script:
   - ping apt.postgresql.org -c 1
