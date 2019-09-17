@@ -4,7 +4,7 @@ dist: xenial
 
 jdk: openjdk8
 
- addons:
+addons:
   apt:
     packages:
       - openjdk-8-jdk
