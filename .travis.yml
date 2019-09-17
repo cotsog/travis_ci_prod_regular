@@ -1,13 +1,9 @@
-language: java
-
-dist: xenial
-
-jdk: openjdk8
+language: objective-c
 
 addons:
-  apt:
+  homebrew:
     packages:
-      - openjdk-8-jdk
+      - beanstalk
       
 install: true
-script: java -version
+script: true
