@@ -1,11 +1,16 @@
-language: node_js
-node_js: "lts/*"
+language: java
 
-cache: npm
+dist: xenial
 
+jdk:
+  - openjdk8
+  - oraclejdk8
+  - openjdk9
+  - oraclejdk9
+  - openjdk10
+  - oraclejdk10
+  - openjdk11
+  - oraclejdk11   
+      
 install: true
-script:
-  - ping apt.postgresql.org -c 1
-
-notifications:
-  email: false
+script: java -version
