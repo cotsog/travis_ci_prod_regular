@@ -1,17 +1,7 @@
-language: python
-python:
-  - 2.7
-  - 3.6
-
-matrix:
-  include:
-    - language: node_js
-      node_js: 10
-    - language: node_js
-      node_js: 12
+language: c
 
 install: true
-script: true
+script: gimme
 
 notifications:
   email: false
