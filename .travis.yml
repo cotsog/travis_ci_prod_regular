@@ -1,20 +1,11 @@
-language: generic
-before_install:
-  - gem uninstall -i $(rvm gemdir)@global -ax bundler || true
-  - gem install bundler -v 1.15.2 --no-rdoc --no-ri
+language: go
 
-install:
-  - bundle _1.15.2_ -v
-  - bundle _1.15.2_ install --path vendor/bundle
-  
-matrix:
-  include:
-  -
-    language: ruby
-    script: true
-  -
-    language: ruby
-    script: true
-  -
-    language: ruby
-    script: true
+go:
+  - master
+  - 1.13.x
+
+install: true
+script: true
+
+notifications:
+  email: false
