@@ -1,8 +1,13 @@
-language: go
+language: python
+python:
+  - 2.7
+  - 3.6
 
-go:
-  - master
-  - 1.13.x
+matrix:
+  - language: node_js
+    node_js: 10
+  - language: node_js
+    node_js: 12
 
 install: true
 script: true
