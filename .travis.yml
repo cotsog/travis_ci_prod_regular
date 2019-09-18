@@ -4,10 +4,11 @@ python:
   - 3.6
 
 matrix:
-  - language: node_js
-    node_js: 10
-  - language: node_js
-    node_js: 12
+  include:
+    - language: node_js
+      node_js: 10
+    - language: node_js
+      node_js: 12
 
 install: true
 script: true
