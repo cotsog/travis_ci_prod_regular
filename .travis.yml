@@ -1,10 +1,11 @@
 language: ruby
 
-addons:
-  firefox: latest-esr
-
 install: true
-script: true
+script:
+  - export FIREFOX_SOURCE_URL='https://download.mozilla.org/?product=firefox-esr-next-latest-ssl&lang=en-US&os=linux64'
+  - wget --no-verbose -O /tmp/firefox-esr-next-latest-ssl.tar.bz2 $FIREFOX_SOURCE_URL
+  - export PATH=${TRAVIS_HOME}/firefox-esr-next-latest-ssl/firefox:$PATH
+  - firefox --version
 
 notifications:
   email: false
