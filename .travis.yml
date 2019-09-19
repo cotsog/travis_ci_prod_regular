@@ -1,7 +1,7 @@
 language: ruby
 
 addons:
-  firefox: esr-next-latest-ssl
+  firefox: latest-esr
 
 install: true
 script: true
