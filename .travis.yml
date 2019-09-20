@@ -1,12 +1,9 @@
-language: ruby
+language: objective-c
+
+osx_image: xcode11
 
 install: true
-script:
-  - export FIREFOX_SOURCE_URL='https://download.mozilla.org/?product=firefox-esr-next-latest-ssl&lang=en-US&os=linux64'
-  - wget --no-verbose -O /tmp/firefox-esr-next-latest-ssl.tar.bz2 $FIREFOX_SOURCE_URL
-  - tar xf /tmp/firefox-esr-next-latest-ssl.tar.bz2
-  - export PATH=${TRAVIS_HOME}/firefox-esr-next-latest-ssl/firefox:$PATH
-  - firefox --version
+script: true
 
 notifications:
   email: false
