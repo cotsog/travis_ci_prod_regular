@@ -3,7 +3,7 @@ language: objective-c
 osx_image: xcode11
 
 install: true
-script: true
+script: sleep 10
 
 notifications:
   email: false
