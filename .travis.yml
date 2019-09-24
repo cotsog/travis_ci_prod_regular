@@ -1,19 +1,14 @@
-language: python
-sudo: enabled
-services:
-    - mysql
-python:
-    - "3.7.3"
-env:
-    global:
-     - TRAVIS=true
-before_install:
-    - sudo mysql -e 'CREATE DATABASE pianyuan;'
-    - sudo mysql -e 'select database();'
-    - sudo mysql -e 'SHOW DATABASES;'
-    - sudo mysql -e 'USE pianyuan;'
-    - sudo mysql -e 'select database();'
-    - sudo mysql --version
+language: ruby
+rvm: ruby-head
+
+matrix:
+  include:
+    - dist: trusty
+      env: DIST=trusty
+    - dist: xenial
+      env: DIST=xenial
+    - dist: bionic
+      env: DIST=bionic
 
 install: true
 script: true
