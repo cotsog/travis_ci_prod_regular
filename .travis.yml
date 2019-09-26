@@ -1,13 +1,6 @@
-language: minimal
+language: node_js
 
-matrix:
-  include:
-    - dist: trusty
-      env: DIST=trusty
-    - dist: xenial
-      env: DIST=xenial
-    - dist: bionic
-      env: DIST=bionic
+os: osx
 
 install: true
 script:
