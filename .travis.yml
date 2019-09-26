@@ -1,5 +1,4 @@
-language: ruby
-rvm: ruby-head
+language: minimal
 
 matrix:
   include:
@@ -11,11 +10,8 @@ matrix:
       env: DIST=bionic
 
 install: true
-script: true
+script:
+  - df -h
 
 notifications:
-  email:
-    recipients:
-      - $MY_EMAIL
-    on_success: always # default: change
-    on_failure: always # default: always
+  email: false
