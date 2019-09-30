@@ -3,8 +3,7 @@ language: node_js
 os: osx
 
 install: true
-script:
-  - df -h
+script: true
 
 notifications:
   email: false
