@@ -33,33 +33,6 @@ script:
     s3://unee-t-media/frontend/commit/${COMMIT}.tar.gz;
     fi
 
-matrix:
-  include:
-    - env: DEPLOY=demo
-      if: tag IS present
-      deploy:
-        provider: script
-        skip_cleanup: true
-        script:
-          - AWS_ACCESS_KEY_ID=$AWS_915001051872_ID
-            AWS_SECRET_ACCESS_KEY=$AWS_915001051872_SECRET
-            ./deploy.sh -d
-        on:
-          tags: true
-    - env: DEPLOY=prod
-      if: tag IS present
-      deploy:
-        provider: script
-        skip_cleanup: true
-        script:
-          - AWS_ACCESS_KEY_ID=$AWS_192458993663_ID
-            AWS_SECRET_ACCESS_KEY=$AWS_192458993663_SECRET
-            ./deploy.sh -p
-          - AWS_ACCESS_KEY_ID=$AWS_192458993663_ID AWS_SECRET_ACCESS_KEY=$AWS_192458993663_SECRET aws cloudfront create-invalidation
-            --distribution-id E173XT6X8V4A18 --paths '/*'
-        on:
-          tags: true
-
 env:
   global:
     - COMMIT=${TRAVIS_COMMIT::7}
