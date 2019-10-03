@@ -4,11 +4,10 @@ node_js: node
 
 os:
   - linux
-  - osx
-  - windows
 
 install: true
-script: true
+script:
+  - sudo cat /etc/docker/daemon.json
 
 notifications:
   email: false
