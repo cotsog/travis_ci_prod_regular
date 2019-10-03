@@ -7,7 +7,7 @@ os:
 
 install: true
 script:
-  - sudo cat /etc/docker/daemon.json
-
+  - echo '{"registry-mirrors":["https://mirror.gcr.io"]}' | sudo tee /etc/docker/daemon.json
+  - sudo service docker restart
 notifications:
   email: false
