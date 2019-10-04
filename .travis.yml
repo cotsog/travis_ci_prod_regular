@@ -1,24 +1,9 @@
-language: bash
-env:
-    global:
-        - MASTER_BRANCH=master
-cache:
-  directories:
-  - $HOME/testing
-jobs:
-  include:
-      - stage: "Test"
-        name: "Always run this stage."
-        script:
-            - mkdir -p $HOME/testing
-            - echo "THIS ALWAYS RUNS" | tee -a $HOME/testing/testfile.out
-      - stage: "Master"
-        name: "Run only on master branch"
-        if: branch =~ /^master$/
-        script:
-            - echo "BRANCH IS MASTER." | tee -a $HOME/testing/testfile.out
-      - stage: "Not Master"
-        name: "Run only when not master branch"
-        if: NOT branch = master
-        script:
-            - echo "BRANCH IS NOT MASTER." | tee -a $HOME/testing/testfile.out
+language: python
+
+python: nightly
+
+install: true
+script: python -V
+
+notifications:
+  email: false
