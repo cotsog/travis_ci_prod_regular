@@ -1,9 +1,9 @@
-language: python
+language: ruby
 
-python: nightly
+rvm: 2.4.9
 
 install: true
-script: python -V
+script: true
 
 notifications:
   email: false
