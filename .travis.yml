@@ -21,8 +21,8 @@ install: true
 script:
   - psql --version
   - psql -c 'SELECT version()'
-  - psql -c 'CREATE DATABASE travis_ci_test;' -U postgres CREATE DATABASE
-  - psql -c 'CREATE EXTENSION IF NOT EXISTS postgis' -U postgres CREATE EXTENSION
+  - psql -c 'CREATE DATABASE travis_ci_test;' -U postgres
+  - psql -c 'CREATE EXTENSION IF NOT EXISTS postgis' -U postgres
   - psql -c 'SELECT PostGIS_full_version()' -U postgres
 
 notifications:
