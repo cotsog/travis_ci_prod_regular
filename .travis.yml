@@ -1,20 +1,29 @@
 language: ruby
 
-rvm: 2.4.9
+addons:
+  apt:
+    packages:
+      - postgresql-11
+      - postgresql-11-postgis-2.5
+      - postgresql-11-postgis-2.5-scripts
+  postgresql: '11'
 
-env:
-  global:
-    - PROD_SLACK=true
+before_install:
+  - sudo sed -i 's/port = 5433/port = 5432/' /etc/postgresql/11/main/postgresql.conf
+  - sudo cp /etc/postgresql/{10,11}/main/pg_hba.conf
+  - sudo service postgresql stop
+  - sudo service postgresql start 11
 
+services:
+  - postgresql
+  
 install: true
-script: true
+script:
+  - psql --version
+  - psql -c 'SELECT version()'
+  - psql -c 'CREATE DATABASE travis_ci_test;' -U postgres CREATE DATABASE
+  - psql -c 'CREATE EXTENSION IF NOT EXISTS postgis' -U postgres CREATE EXTENSION
+  - psql -c 'SELECT PostGIS_full_version()' -U postgres
 
 notifications:
-  email: false
-  slack:
-    - rooms:
-        secure: bSDx+4sBCfaLnIQu+0LTtwFZq62/oKzwIdhpkbHMtVQ9yneJcY+OtL4pWvXDMx7DN1KzDgw8q2vDpNFR4Om9SIjjo4zhJAgJqYXYOyhYee/D8yrXvEuEbASAMnOgSfagoufpJfVUqkJiJYq9iI+sL5vUi/0USS1VHEo0doZaOEXQPuXk7zfiBstth8nbgHgH3ay4Ea7zLZPTXTtaHqUaUr/Je6vsZ70f3NDl1pDMzc1yj9YAKWEidXpPr5BC+g3U5oDJkim0IEyp5GfRxaorGvtG4LfBtUWJ9usVRmHl6EshnKFyGtT4/ckv4PiewfWffXH36wnHMhH+6AOH1pMaJ8WQGvzQQ7Cj9oOQFbT9m1hq+8LFSISE8CJ71/6SE2SHf2cjOxPvIXEU9X8k3F6e2Nfj/XHiahzrD2voDUh7uC7ILmVXe2NNI7+lgnlpgI62xwkDU1POU3ES9SY1Ke1E0CYHhpbMGFCqtbKZMRV8l5JB/DCybcb0sicLe138UYQ6Vv9OpFTHIx8QDVA90wSvcHKAxzoeInTmAumBb7YMTP0XcMg2F78ULzCycSy4PKeCaffFtCNteMlVILiTUj+dWkesnZWqWOsExRjqTT8+LZmCDkMFrGuy3rBStzCp5Rh71iNj0TgWDi4xqZ2RVSlIaCz/Ch/R+53e3nyQ+wChDkU=
-      if: env(TEST_SLACK)
-    - rooms:
-        secure: bSDx+4sBCfaLnIQu+0LTtwFZq62/oKzwIdhpkbHMtVQ9yneJcY+OtL4pWvXDMx7DN1KzDgw8q2vDpNFR4Om9SIjjo4zhJAgJqYXYOyhYee/D8yrXvEuEbASAMnOgSfagoufpJfVUqkJiJYq9iI+sL5vUi/0USS1VHEo0doZaOEXQPuXk7zfiBstth8nbgHgH3ay4Ea7zLZPTXTtaHqUaUr/Je6vsZ70f3NDl1pDMzc1yj9YAKWEidXpPr5BC+g3U5oDJkim0IEyp5GfRxaorGvtG4LfBtUWJ9usVRmHl6EshnKFyGtT4/ckv4PiewfWffXH36wnHMhH+6AOH1pMaJ8WQGvzQQ7Cj9oOQFbT9m1hq+8LFSISE8CJ71/6SE2SHf2cjOxPvIXEU9X8k3F6e2Nfj/XHiahzrD2voDUh7uC7ILmVXe2NNI7+lgnlpgI62xwkDU1POU3ES9SY1Ke1E0CYHhpbMGFCqtbKZMRV8l5JB/DCybcb0sicLe138UYQ6Vv9OpFTHIx8QDVA90wSvcHKAxzoeInTmAumBb7YMTP0XcMg2F78ULzCycSy4PKeCaffFtCNteMlVILiTUj+dWkesnZWqWOsExRjqTT8+LZmCDkMFrGuy3rBStzCp5Rh71iNj0TgWDi4xqZ2RVSlIaCz/Ch/R+53e3nyQ+wChDkU=
-      if: env(PROD_SLACK)
+  email: false
