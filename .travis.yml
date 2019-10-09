@@ -1,4 +1,6 @@
-dist: anything
+language: go
+
+go: 1.13
 
 install: true
 script: true
