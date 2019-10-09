@@ -1,10 +1,7 @@
-language: perl
+dist: anything
 
 install: true
-script:
-  - python -V
-  - which pip || sudo easy_install pip
-  - pip -V
+script: true
 
 notifications:
   email: false
