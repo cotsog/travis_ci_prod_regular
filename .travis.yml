@@ -1,6 +1,6 @@
-language: go
+language: android
 
-go: 1.13
+dist: bionic
 
 install: true
 script: true
