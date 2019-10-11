@@ -1,6 +1,6 @@
-language: android
+language: ruby
 
-dist: bionic
+import: cotsog/travis_ci_prod_regular/rubies.yml@master
 
 install: true
 script: true
