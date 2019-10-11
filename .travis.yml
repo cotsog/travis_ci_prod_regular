@@ -1,6 +1,6 @@
 language: ruby
 
-import: cotsog/travis_ci_prod_regular/rubies.yml@master
+import: cotsog/travis_ci_prod_regular/rubies.yml
 
 install: true
 script: true
