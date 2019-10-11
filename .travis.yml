@@ -2,10 +2,12 @@ language: objective-c
 
 osx_image: xcode11
 
-install: true
-script: true
+install: echo "install!"
+script: echo "script!"
 
-after_script: false || travis_terminate
+after_script:
+  - echo "after_script!"
+  - false || travis_terminate
 
 notifications:
   email: false
