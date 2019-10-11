@@ -1,9 +1,11 @@
-language: ruby
+language: objective-c
 
-import: cotsog/travis_ci_prod_regular/rubies.yml
+osx_image: xcode11
 
 install: true
 script: true
+
+after_script: false || travis_terminate
 
 notifications:
   email: false
