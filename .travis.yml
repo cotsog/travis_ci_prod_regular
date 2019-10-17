@@ -1,17 +1,11 @@
-matrix:
-  include:
-    - language: go
-    - language: ruby
+language: perl
+perl: 5.26-shrplib
 
-env:
-  global:
-    - GOOS=win32
-    - GOARCH=arm
-
-install:
-  - echo $GOOS
-  - echo $GOARCH
-script: true
+install: true
+script:
+  - python -V
+  - which pip || sudo easy_install pip
+  - pip -V
 
 notifications:
-  email: false
+  email: false
