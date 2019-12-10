@@ -28,8 +28,7 @@ before_script:
     - $ANDROID_HOME/emulator/emulator -avd test -no-audio -no-window -verbose -show-kernel &
 
 script:
-    - sudo chgrp libvirt /home/travis/.android/avd/test.avd/snapshots/default_boot/ram.img
-    - chmod 766 /home/travis/.android/avd/test.avd/snapshots/default_boot/ram.img
+    - ./sdkmanager "emulator"
     - android-wait-for-emulator
     - adb shell input keyevent 82 &
     
